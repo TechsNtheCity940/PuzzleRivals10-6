@@ -135,6 +135,12 @@ def get_relative_path(path):
     return os.path.basename(path)
 
 
+def should_write_redesign(src, out):
+    if not os.path.exists(out):
+        return True
+    return os.path.getmtime(src) > os.path.getmtime(out)
+
+
 def process():
     sheets = find_sheets()
     processed = []
@@ -148,15 +154,20 @@ def process():
             flag = True
         if not flag:
             continue
+        out = os.path.splitext(s)[0] + '_redesign_sheet.png'
+        if not should_write_redesign(s, out):
+            print(f"Skipping unchanged redesign: {get_relative_path(out)}")
+            continue
+        is_new = not os.path.exists(out)
         # generate
         if uc <= 1:
             # use frame 0
             new_frames = generate_variations_single(frames[0])
         else:
             new_frames = generate_interpolated(frames)
-        out = os.path.splitext(s)[0] + '_redesign_sheet.png'
         compose_sheet(new_frames, out)
-        print(f'Wrote redesign: {get_relative_path(out)} (was {rel})')
+        action = 'Created' if is_new else 'Updated'
+        print(f'{action} redesign: {get_relative_path(out)} (was {rel})')
         processed.append(out)
     print(f'Done. Processed {len(processed)} assets.')
 
