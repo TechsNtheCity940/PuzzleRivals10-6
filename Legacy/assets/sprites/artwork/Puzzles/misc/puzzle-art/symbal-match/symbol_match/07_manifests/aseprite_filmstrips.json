@@ -1,0 +1,1492 @@
+{
+  "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_diamond_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_star_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_sun_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_moon_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_wave_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_rune_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_hex_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "symbol_tile_disc_reveal_play",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_tile_back_shimmer_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_shimmer_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_tile_back_shimmer_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "tile_back_shimmer_loop",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  },
+  "memory_lights_symbol_match_tile_back_focus_06f_v01": {
+    "frames": {
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 0.aseprite": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 1.aseprite": {
+        "frame": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 2.aseprite": {
+        "frame": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 3.aseprite": {
+        "frame": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 4.aseprite": {
+        "frame": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      },
+      "memory_lights_symbol_match_tile_back_focus_06f_v01 5.aseprite": {
+        "frame": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        "sourceSize": {
+          "w": 256,
+          "h": 256
+        },
+        "duration": 100
+      }
+    },
+    "meta": {
+      "app": "codex-sprite-pack",
+      "version": "1.0",
+      "image": "memory_lights_symbol_match_tile_back_focus_06f_v01.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1536,
+        "h": 256
+      },
+      "scale": "1",
+      "frameTags": [
+        {
+          "name": "tile_back_focus_loop",
+          "from": 0,
+          "to": 5,
+          "direction": "forward"
+        }
+      ]
+    }
+  }
+}

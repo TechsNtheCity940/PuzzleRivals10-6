@@ -1,0 +1,65 @@
+{
+  "name": "Shard Stack Visual Theme",
+  "mood": "matte, crystalline, tech, premium, competitive, industrial, pressure, tactical, explosive",
+  "finish": "glossy hard-surface with controlled bloom",
+  "baseColors": {
+    "base": [
+      "#0a0d1a",
+      "#0d1224",
+      "#111830"
+    ],
+    "primary": [
+      "#00e5ff",
+      "#00bcd4",
+      "#0097a7"
+    ],
+    "secondary": [
+      "#e040fb",
+      "#aa00ff",
+      "#7b1fa2"
+    ],
+    "accent": [
+      "#ffc400",
+      "#ff9800",
+      "#ffd740"
+    ],
+    "danger": [
+      "#ff1744",
+      "#f44336",
+      "#ff5252"
+    ],
+    "success": [
+      "#00e676",
+      "#00c853",
+      "#69f0ae"
+    ],
+    "neutral": [
+      "#37474f",
+      "#546e7a",
+      "#78909c"
+    ]
+  },
+  "contrastLevel": "high",
+  "bloomLevel": "controlled",
+  "particleUsage": "moderate",
+  "silhouetteConstraints": [
+    "clean outer silhouette readable at 64px",
+    "no detail that disappears below 128px",
+    "no decorative filigree on gameplay pieces",
+    "Mobile Readability Notes",
+    "cells must be large enough to show shard silhouettes clearlydrag ghost must be readablerotation preview must be instantillegal placement state must be obviousqueue pieces must remain visible and distinctboard cannot be overloaded with decorative crystal clutter",
+    "cells must be large enough to show shard silhouettes clearly"
+  ],
+  "readabilityNotes": [
+    "gameplay state must be readable from tile color/shape alone",
+    "flow direction must be readable without tooltips",
+    "high contrast against dark board backgrounds required",
+    "no clutter within tile bounds",
+    "Mobile Readability Notes",
+    "cells must be large enough to show shard silhouettes clearlydrag ghost must be readablerotation preview must be instantillegal placement state must be obviousqueue pieces must remain visible and distinctboard cannot be overloaded with decorative crystal clutter",
+    "cells must be large enough to show shard silhouettes clearly",
+    "cells must be large enough to show shard silhouettes clearly"
+  ],
+  "uniqueLanguage": "Precision geometry: clean-edged block forms with subtle inner glow on valid placement. Strong edge contrast for piece differentiation. Snap feedback is crisp and immediate. Area completion is rewarding and visible.",
+  "styleProfile": "sci-fi-arcade"
+}

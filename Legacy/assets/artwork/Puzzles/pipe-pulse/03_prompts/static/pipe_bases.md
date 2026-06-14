@@ -1,0 +1,1 @@
+Generate a top-down sprite sheet of modular neon pipe puzzle pieces for Pipe Pulse including straight, 90-degree corner, T junction, 4-way cross, pump, reservoir, start, end cap, and two broken pipe variants, transparent background, even spacing, premium pixel art, readable black/navy outlines, glowing interiors.

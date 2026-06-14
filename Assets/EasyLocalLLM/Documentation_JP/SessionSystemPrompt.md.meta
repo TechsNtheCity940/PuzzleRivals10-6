@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f1cd558a869871346bdd6fb13d08965f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Documentation_JP/SessionSystemPrompt.md
+  uploadId: 902466

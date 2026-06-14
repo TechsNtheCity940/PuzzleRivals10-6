@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0f01becd5bde5434296d90aaf8acb834
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Documentation/Tools/InputSchema_Examples.md
+  uploadId: 902466

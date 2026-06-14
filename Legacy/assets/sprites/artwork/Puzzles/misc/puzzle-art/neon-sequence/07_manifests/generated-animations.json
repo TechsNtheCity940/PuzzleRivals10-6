@@ -1,0 +1,138 @@
+[
+  {
+    "asset_key": "board_sizes_static",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_board_environment_board_sizes_static_03f_v03.png",
+    "frameWidth": 512,
+    "frameHeight": 512,
+    "frameCount": 3,
+    "animated": false,
+    "loopType": "static",
+    "defaultFps": null,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/static/phaser_puzzle_pack_neon_sequence_recall_board_environment_board_sizes_static_03f_v03.png",
+    "animations": []
+  },
+  {
+    "asset_key": "light_tiles_static",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_placeable_pieces_light_tiles_static_06f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 6,
+    "animated": false,
+    "loopType": "static",
+    "defaultFps": null,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/static/phaser_puzzle_pack_neon_sequence_recall_placeable_pieces_light_tiles_static_06f_v03.png",
+    "animations": []
+  },
+  {
+    "asset_key": "flash_overlay_loop",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_fx_overlays_flash_overlay_loop_08f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 8,
+    "animated": true,
+    "loopType": "loop",
+    "defaultFps": 12,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/fx/phaser_puzzle_pack_neon_sequence_recall_fx_overlays_flash_overlay_loop_08f_v03.png",
+    "animations": [
+      {
+        "key": "flash_overlay_loop",
+        "start": 0,
+        "end": 7,
+        "frameRate": 12,
+        "repeat": -1
+      }
+    ]
+  },
+  {
+    "asset_key": "selection_ring_loop",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_fx_overlays_selection_ring_loop_08f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 8,
+    "animated": true,
+    "loopType": "loop",
+    "defaultFps": 10,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/fx/phaser_puzzle_pack_neon_sequence_recall_fx_overlays_selection_ring_loop_08f_v03.png",
+    "animations": [
+      {
+        "key": "selection_ring_loop",
+        "start": 0,
+        "end": 7,
+        "frameRate": 10,
+        "repeat": -1
+      }
+    ]
+  },
+  {
+    "asset_key": "confirm_burst_oneshot",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_fx_overlays_confirm_burst_oneshot_08f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 8,
+    "animated": true,
+    "loopType": "oneshot",
+    "defaultFps": 16,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/fx/phaser_puzzle_pack_neon_sequence_recall_fx_overlays_confirm_burst_oneshot_08f_v03.png",
+    "animations": [
+      {
+        "key": "confirm_burst_oneshot",
+        "start": 0,
+        "end": 7,
+        "frameRate": 16,
+        "repeat": 0
+      }
+    ]
+  },
+  {
+    "asset_key": "error_burst_oneshot",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_fx_overlays_error_burst_oneshot_08f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 8,
+    "animated": true,
+    "loopType": "oneshot",
+    "defaultFps": 18,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/fx/phaser_puzzle_pack_neon_sequence_recall_fx_overlays_error_burst_oneshot_08f_v03.png",
+    "animations": [
+      {
+        "key": "error_burst_oneshot",
+        "start": 0,
+        "end": 7,
+        "frameRate": 18,
+        "repeat": 0
+      }
+    ]
+  },
+  {
+    "asset_key": "countdown_ring_loop",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_objectives_countdown_ring_loop_08f_v03.png",
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 8,
+    "animated": true,
+    "loopType": "loop",
+    "defaultFps": 8,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/animation/phaser_puzzle_pack_neon_sequence_recall_objectives_countdown_ring_loop_08f_v03.png",
+    "animations": [
+      {
+        "key": "countdown_ring_loop",
+        "start": 0,
+        "end": 7,
+        "frameRate": 8,
+        "repeat": -1
+      }
+    ]
+  },
+  {
+    "asset_key": "ui_icons_static",
+    "filename": "phaser_puzzle_pack_neon_sequence_recall_ui_ui_icons_static_06f_v03.png",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "frameCount": 6,
+    "animated": false,
+    "loopType": "static",
+    "defaultFps": null,
+    "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/ui/phaser_puzzle_pack_neon_sequence_recall_ui_ui_icons_static_06f_v03.png",
+    "animations": []
+  }
+]

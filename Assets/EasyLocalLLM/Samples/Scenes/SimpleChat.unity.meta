@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 59505e527420e2746bb760467a8455b2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/Scenes/SimpleChat.unity
+  uploadId: 902466

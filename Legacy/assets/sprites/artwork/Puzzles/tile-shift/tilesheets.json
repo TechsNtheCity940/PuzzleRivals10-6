@@ -1,0 +1,289 @@
+[
+  {
+    "filename": "tile-shift_board_tiles.png",
+    "assetKey": "tile-shift_board_tiles",
+    "category": "board-tile",
+    "sheetType": "static-variants",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 6,
+    "rows": 3,
+    "totalFrames": 18,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "this.load.spritesheet() in scene preload; individual frames drawn per cell",
+    "animationKeys": [],
+    "animations": [],
+    "styleNotes": "Row 0: empty cell variants (default, hover, selected). Row 1: source node states (unpressurized, active, pulsing, overloaded). Row 2: destination node states (unfulfilled, receiving, satisfied, overflow). All cells: 128×128px, transparent bg, dark navy base, cyan accent energy.",
+    "gameplayReadabilityNotes": "Source/destination nodes must be immediately distinguishable from connectors. Node aperture must be clearly directional."
+  },
+  {
+    "filename": "tile-shift_pipe_pieces.png",
+    "assetKey": "tile-shift_pipe_pieces",
+    "category": "gameplay-piece",
+    "sheetType": "animation-sheet",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 6,
+    "totalFrames": 48,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "spritesheet with named animation regions per pipe type × state",
+    "animationKeys": [
+      "tile-shift_straight_flow",
+      "tile-shift_straight_pressure",
+      "tile-shift_corner_flow",
+      "tile-shift_t_flow",
+      "tile-shift_cross_flow"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_straight_idle",
+        "description": "Straight pipe — empty/idle",
+        "frameRange": {
+          "start": 0,
+          "end": 3
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "idle"
+      },
+      {
+        "key": "tile-shift_straight_flow",
+        "description": "Straight pipe — flow pulse",
+        "frameRange": {
+          "start": 4,
+          "end": 11
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "active"
+      },
+      {
+        "key": "tile-shift_straight_pressure",
+        "description": "Straight pipe — pressure escalation",
+        "frameRange": {
+          "start": 12,
+          "end": 19
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "charged"
+      },
+      {
+        "key": "tile-shift_corner_flow",
+        "description": "Corner pipe — flow pulse",
+        "frameRange": {
+          "start": 20,
+          "end": 27
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "active"
+      },
+      {
+        "key": "tile-shift_t_flow",
+        "description": "T-junction — split flow pulse",
+        "frameRange": {
+          "start": 28,
+          "end": 35
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "active"
+      },
+      {
+        "key": "tile-shift_cross_flow",
+        "description": "Cross — dual flow pulse",
+        "frameRange": {
+          "start": 36,
+          "end": 43
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "active"
+      },
+      {
+        "key": "tile-shift_pipe_burst",
+        "description": "Any pipe — burst explosion",
+        "frameRange": {
+          "start": 44,
+          "end": 47
+        },
+        "frameRate": 18,
+        "loop": "once",
+        "gameplayState": "burst"
+      }
+    ],
+    "styleNotes": "Consistent pipe diameter across all piece types. Flow shown as luminous cyan energy travelling through the pipe interior. Pressure state: cyan → amber with pulsing glow. Burst: violent pipe rupture, debris, energy discharge — orange/white FX.",
+    "gameplayReadabilityNotes": "Pipe openings must be clearly visible as half-circles at tile edges. Flow direction animated from entry opening to exit opening. Empty pipe must contrast against board background."
+  },
+  {
+    "filename": "tile-shift_flow_glow.png",
+    "assetKey": "tile-shift_flow_glow",
+    "category": "glow-aura",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 1,
+    "totalFrames": 8,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "blended additive overlay on flowing pipe sprites",
+    "animationKeys": [
+      "tile-shift_flow_glow_loop"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_flow_glow_loop",
+        "description": "Ambient flow glow pulse",
+        "frameRange": {
+          "start": 0,
+          "end": 7
+        },
+        "frameRate": 10,
+        "loop": "loop",
+        "gameplayState": "active"
+      }
+    ],
+    "styleNotes": "Pure additive glow layer. Electric cyan to white center. Soft pulsing brightness variation across 8 frames. No hard edges.",
+    "gameplayReadabilityNotes": "Glow must not obscure pipe shape or connection openings."
+  },
+  {
+    "filename": "tile-shift_burst_fx.png",
+    "assetKey": "tile-shift_burst_fx",
+    "category": "destruction-burst",
+    "sheetType": "animation-strip",
+    "frameWidth": 192,
+    "frameHeight": 192,
+    "columns": 8,
+    "rows": 2,
+    "totalFrames": 14,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "played once at pipe burst location, centered on tile",
+    "animationKeys": [
+      "tile-shift_pipe_burst_fx"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_pipe_burst_fx",
+        "description": "Pipe pressure burst explosion",
+        "frameRange": {
+          "start": 0,
+          "end": 13
+        },
+        "frameRate": 18,
+        "loop": "once",
+        "gameplayState": "burst"
+      }
+    ],
+    "styleNotes": "Energetic decompression explosion. Starts cyan core, expands to orange/amber shockwave, fragments of pipe debris scatter, ends with white flash then alpha fade. Frames slightly larger than pipe tile (192px) to allow FX overflow. No excessive particle clouds — contained destructive burst.",
+    "gameplayReadabilityNotes": "Burst must be visually dramatic enough to communicate failure. Must not persist long enough to obscure neighboring tiles during gameplay."
+  },
+  {
+    "filename": "tile-shift_pressure_warning.png",
+    "assetKey": "tile-shift_pressure_warning",
+    "category": "fx-overlay",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 1,
+    "totalFrames": 8,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "looped overlay on pipe tiles approaching burst state",
+    "animationKeys": [
+      "tile-shift_pressure_warning_loop"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_pressure_warning_loop",
+        "description": "Pressure danger ring pulse",
+        "frameRange": {
+          "start": 0,
+          "end": 7
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "charged"
+      }
+    ],
+    "styleNotes": "Red-amber pulsing ring overlay, centered on tile. Brightness escalates from frame 0 to 4, then fades back. No opaque fill — ring only, transparent interior.",
+    "gameplayReadabilityNotes": "Must be visible over both empty and flowing pipe states."
+  },
+  {
+    "filename": "tile-shift_connection_snap.png",
+    "assetKey": "tile-shift_connection_snap",
+    "category": "pulse-indicator",
+    "sheetType": "animation-strip",
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "columns": 6,
+    "rows": 1,
+    "totalFrames": 6,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "played once at connection point when valid rotation is made",
+    "animationKeys": [
+      "tile-shift_snap"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_snap",
+        "description": "Connection snap spark",
+        "frameRange": {
+          "start": 0,
+          "end": 5
+        },
+        "frameRate": 24,
+        "loop": "once",
+        "gameplayState": "active"
+      }
+    ],
+    "styleNotes": "Small 4-point star spark in bright cyan. Flash and fade in 6 frames. Clean, crisp, brief. No lingering glow. Single burst point.",
+    "gameplayReadabilityNotes": "Must be small enough not to compete with flow animation. Additive blend mode."
+  },
+  {
+    "filename": "tile-shift_route_complete_fx.png",
+    "assetKey": "tile-shift_route_complete_fx",
+    "category": "fx-overlay",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 12,
+    "rows": 1,
+    "totalFrames": 12,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "played along each route tile simultaneously when route is completed",
+    "animationKeys": [
+      "tile-shift_route_complete"
+    ],
+    "animations": [
+      {
+        "key": "tile-shift_route_complete",
+        "description": "Route completion path flash",
+        "frameRange": {
+          "start": 0,
+          "end": 11
+        },
+        "frameRate": 18,
+        "loop": "once",
+        "gameplayState": "success"
+      }
+    ],
+    "styleNotes": "White-cyan pulse that runs through the pipe like a wave. Sharp leading edge, fast fade trail. Non-destructive — pipe remains visible beneath.",
+    "gameplayReadabilityNotes": "The route flash must visually reinforce the \"this connected\" moment without distracting from ongoing play."
+  }
+]

@@ -1,0 +1,11 @@
+# Godot editor caches (regenerated on open)
+.godot/
+.godot_home/
+
+# Build artifacts (reproducible via export)
+web-export/
+.build_result.json
+
+# OS junk
+.DS_Store
+Thumbs.db

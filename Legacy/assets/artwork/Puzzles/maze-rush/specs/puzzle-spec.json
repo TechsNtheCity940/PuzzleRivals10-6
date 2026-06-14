@@ -1,0 +1,616 @@
+{
+  "title": "Maze Rush",
+  "slug": "maze-rush",
+  "internalId": "maze-rush",
+  "puzzleType": "maze",
+  "tags": [],
+  "gameplaySummary": "What Makes It Unique Maze Rush must be different from: Maze Rush must be different from: Link Lock: not node-link puzzle solvingMirror Maze: not reflection-firstPipe Pulse / Circuit Clash: not conduit constructionScore Attack / Combo Rush / Clear Rush: not cluster-clearingMemory Flash: not pure memorization without navigation pressure Link Lock: not node-link puzzle solving | Win: Win Condition | Players: 4",
+  "board": {
+    "width": 17,
+    "height": 17,
+    "cellCount": 289,
+    "gridType": "square",
+    "cellSizePx": 128,
+    "zoneTypes": [],
+    "hasHazardZones": true,
+    "hasLockedTiles": true,
+    "reservedHUDSpaces": []
+  },
+  "tiles": [
+    {
+      "id": "maze-rush_tile_floor",
+      "name": "Floor Tile",
+      "variants": [
+        "standard",
+        "worn",
+        "highlighted",
+        "path-trace"
+      ],
+      "states": [
+        "default",
+        "visited",
+        "current",
+        "hazard"
+      ],
+      "isInteractable": true,
+      "isRotatable": false,
+      "notes": "Base traversable floor. Multiple wear variants prevent tiled repetition."
+    },
+    {
+      "id": "maze-rush_tile_wall",
+      "name": "Wall Tile",
+      "variants": [
+        "solid",
+        "corner-ne",
+        "corner-nw",
+        "corner-se",
+        "corner-sw",
+        "doorway"
+      ],
+      "states": [
+        "default",
+        "lit",
+        "destructible"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Non-traversable boundary. Corner variants needed for visual variety."
+    },
+    {
+      "id": "maze-rush_tile_checkpoint",
+      "name": "Checkpoint Marker",
+      "variants": [
+        "active",
+        "triggered",
+        "locked"
+      ],
+      "states": [
+        "idle",
+        "pulsing",
+        "triggered",
+        "locked"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Mid-maze waypoint. Pulse animation on idle. Triggered = celebration flash."
+    },
+    {
+      "id": "maze-rush_tile_start",
+      "name": "Start Tile",
+      "variants": [
+        "normal"
+      ],
+      "states": [
+        "default",
+        "spawning"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Spawn point tile. Direction indicator shows initial heading."
+    },
+    {
+      "id": "maze-rush_tile_exit",
+      "name": "Exit Tile",
+      "variants": [
+        "locked",
+        "unlocked",
+        "open"
+      ],
+      "states": [
+        "locked",
+        "unlocked",
+        "active"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Goal tile. Locked until checkpoints triggered. Unlock animation required."
+    },
+    {
+      "id": "maze-rush_tile_hazard",
+      "name": "Hazard Lane",
+      "variants": [
+        "lane-h",
+        "lane-v",
+        "spike",
+        "laser"
+      ],
+      "states": [
+        "idle",
+        "warning",
+        "active",
+        "cooldown"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Timed danger tiles. Warning state before active. Clear idle/danger cycle."
+    },
+    {
+      "id": "maze-rush_tile_switch",
+      "name": "Switch Tile",
+      "variants": [
+        "inactive",
+        "activating",
+        "activated"
+      ],
+      "states": [
+        "default",
+        "activating",
+        "activated"
+      ],
+      "isInteractable": true,
+      "isRotatable": false,
+      "notes": "Triggers maze reroutes. Activation animation reroutes visible path."
+    },
+    {
+      "id": "maze-rush_tile_fog",
+      "name": "Fog of War Overlay",
+      "variants": [
+        "dense",
+        "partial",
+        "edge"
+      ],
+      "states": [
+        "opaque",
+        "partial",
+        "clearing",
+        "clear"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Overlay obscuring unexplored areas. Must not block interactability."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "maze-rush_piece_player",
+      "name": "Player Token",
+      "category": "avatar",
+      "variants": [
+        "default",
+        "boosted",
+        "stunned"
+      ],
+      "states": [
+        "idle",
+        "moving",
+        "stunned",
+        "checkpoint-hit",
+        "exit-reached"
+      ],
+      "animationNeeds": [
+        "idle-bob",
+        "run-cycle",
+        "stun-spin",
+        "checkpoint-flash",
+        "exit-celebration"
+      ],
+      "notes": "Player representation on the maze board. Must be smaller than tile."
+    },
+    {
+      "id": "maze-rush_piece_beacon",
+      "name": "Directional Beacon",
+      "category": "indicator",
+      "variants": [
+        "normal",
+        "urgent"
+      ],
+      "states": [
+        "idle",
+        "pulsing",
+        "urgent"
+      ],
+      "animationNeeds": [
+        "direction-pulse"
+      ],
+      "notes": "Navigational aid showing recommended path or hazard direction."
+    },
+    {
+      "id": "maze-rush_piece_reroute_marker",
+      "name": "Reroute Marker",
+      "category": "indicator",
+      "variants": [
+        "normal"
+      ],
+      "states": [
+        "appearing",
+        "idle",
+        "disappearing"
+      ],
+      "animationNeeds": [
+        "appear-fade",
+        "idle-pulse"
+      ],
+      "notes": "Temporary path redirection indicator after switch activation."
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "maze-rush_mech_navigation",
+      "name": "Directional Navigation",
+      "description": "Player moves token through maze via directional input.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "board-tile"
+      ]
+    },
+    {
+      "id": "maze-rush_mech_fog",
+      "name": "Fog of War",
+      "description": "Unexplored maze areas are obscured. Reveal on proximity.",
+      "affectsAssets": [
+        "state-overlay",
+        "environment-overlay"
+      ]
+    },
+    {
+      "id": "maze-rush_mech_hazards",
+      "name": "Timed Hazard Lanes",
+      "description": "Hazard tiles cycle between safe and dangerous states.",
+      "affectsAssets": [
+        "board-tile",
+        "fx-overlay",
+        "state-overlay"
+      ]
+    },
+    {
+      "id": "maze-rush_mech_checkpoints",
+      "name": "Checkpoint System",
+      "description": "Reaching checkpoints unlocks exit and awards score.",
+      "affectsAssets": [
+        "board-tile",
+        "fx-overlay",
+        "ui-feedback"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "maze-rush_fx_checkpoint",
+      "trigger": "player reaches checkpoint",
+      "type": "burst",
+      "durationFrames": 12,
+      "notes": "Bright burst from checkpoint, radiating outward."
+    },
+    {
+      "id": "maze-rush_fx_exit_unlock",
+      "trigger": "all checkpoints triggered",
+      "type": "transition",
+      "durationFrames": 20,
+      "notes": "Exit tile transforms from locked to open with a dramatic unlock sequence."
+    },
+    {
+      "id": "maze-rush_fx_hazard_trigger",
+      "trigger": "player hits hazard",
+      "type": "burst",
+      "durationFrames": 10,
+      "notes": "Red flash with stun overlay on player."
+    },
+    {
+      "id": "maze-rush_fx_fog_clear",
+      "trigger": "proximity to fog tile",
+      "type": "transition",
+      "durationFrames": 8,
+      "notes": "Fog dissolves smoothly on approach."
+    },
+    {
+      "id": "maze-rush_fx_path_trail",
+      "trigger": "player moves",
+      "type": "loop",
+      "durationFrames": 6,
+      "notes": "Faint glowing trail left behind player token."
+    }
+  ],
+  "visualTheme": {
+    "name": "Maze Rush Visual Theme",
+    "mood": "matte, tech, pressure, tactical, explosive",
+    "finish": "glossy hard-surface with controlled bloom",
+    "baseColors": {
+      "base": [
+        "#0a0d1a",
+        "#0d1224",
+        "#111830"
+      ],
+      "primary": [
+        "#00e5ff",
+        "#00bcd4",
+        "#0097a7"
+      ],
+      "secondary": [
+        "#e040fb",
+        "#aa00ff",
+        "#7b1fa2"
+      ],
+      "accent": [
+        "#ffc400",
+        "#ff9800",
+        "#ffd740"
+      ],
+      "danger": [
+        "#ff1744",
+        "#f44336",
+        "#ff5252"
+      ],
+      "success": [
+        "#00e676",
+        "#00c853",
+        "#69f0ae"
+      ],
+      "neutral": [
+        "#37474f",
+        "#546e7a",
+        "#78909c"
+      ]
+    },
+    "contrastLevel": "high",
+    "bloomLevel": "controlled",
+    "particleUsage": "moderate",
+    "silhouetteConstraints": [
+      "clean outer silhouette readable at 64px",
+      "no detail that disappears below 128px",
+      "no decorative filigree on gameplay pieces",
+      "Mobile Readability Notes",
+      "corridor versus wall readability is mandatorypartial-vision mask must be clean and readablebeacon must clearly show general direction, not exact solutionroute line must remain visible under fogcheckpoint markers must be unmistakable when within vision radius",
+      "corridor versus wall readability is mandatory"
+    ],
+    "readabilityNotes": [
+      "gameplay state must be readable from tile color/shape alone",
+      "flow direction must be readable without tooltips",
+      "high contrast against dark board backgrounds required",
+      "no clutter within tile bounds",
+      "Mobile Readability Notes",
+      "corridor versus wall readability is mandatorypartial-vision mask must be clean and readablebeacon must clearly show general direction, not exact solutionroute line must remain visible under fogcheckpoint markers must be unmistakable when within vision radius",
+      "corridor versus wall readability is mandatory",
+      "corridor versus wall readability is mandatory"
+    ],
+    "uniqueLanguage": "Tactical arena navigation: muted base geometry with bright traversal beacons. Fog-of-war creates mystery. Route clarity is paramount. Checkpoints pulse softly. Directional cues are always visible.",
+    "styleProfile": "sci-fi-arcade"
+  },
+  "assetRequirements": [
+    {
+      "id": "maze-rush_req_floor_wall",
+      "name": "Floor and Wall Tiles Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "Base traversable floor and wall boundary tiles"
+    },
+    {
+      "id": "maze-rush_req_checkpoints",
+      "name": "Checkpoint Marker Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "Mid-maze waypoints with idle and triggered states"
+    },
+    {
+      "id": "maze-rush_req_start_exit",
+      "name": "Start/Exit Tile Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "Spawn point and goal tiles"
+    },
+    {
+      "id": "maze-rush_req_hazard_tiles",
+      "name": "Hazard Lane Sheet",
+      "category": "board-tile",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: hazard mechanics require timed danger tile states"
+    },
+    {
+      "id": "maze-rush_req_player_token",
+      "name": "Player Token Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: navigation requires a player avatar"
+    },
+    {
+      "id": "maze-rush_req_fog_overlay",
+      "name": "Fog of War Overlay Sheet",
+      "category": "environment-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: fog mechanic requires an overlay sheet"
+    },
+    {
+      "id": "maze-rush_req_path_trail",
+      "name": "Path Trail FX Sheet",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "medium",
+      "notes": "Inferred: movement feedback needs a fading trail"
+    },
+    {
+      "id": "maze-rush_req_checkpoint_fx",
+      "name": "Checkpoint Trigger FX",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: checkpoint hit must have celebration feedback"
+    },
+    {
+      "id": "maze-rush_req_exit_unlock_fx",
+      "name": "Exit Unlock Transition Sheet",
+      "category": "transition",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: exit unlock is a key moment requiring animation"
+    }
+  ],
+  "spriteSheets": [
+    {
+      "filename": "maze-rush_board_tiles.png",
+      "assetKey": "maze-rush_board_tiles",
+      "category": "board-tile",
+      "sheetType": "static-variants",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 8,
+      "rows": 5,
+      "totalFrames": 40,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "individual frame index per tile type drawn to board grid",
+      "animationKeys": [
+        "maze-rush_checkpoint_pulse",
+        "maze-rush_hazard_cycle"
+      ],
+      "animations": [
+        {
+          "key": "maze-rush_checkpoint_pulse",
+          "description": "Checkpoint idle pulse",
+          "frameRange": {
+            "start": 16,
+            "end": 19
+          },
+          "frameRate": 8,
+          "loop": "loop",
+          "gameplayState": "idle"
+        },
+        {
+          "key": "maze-rush_hazard_warning",
+          "description": "Hazard warning cycle",
+          "frameRange": {
+            "start": 24,
+            "end": 27
+          },
+          "frameRate": 12,
+          "loop": "loop",
+          "gameplayState": "charged"
+        },
+        {
+          "key": "maze-rush_hazard_active",
+          "description": "Hazard active state",
+          "frameRange": {
+            "start": 28,
+            "end": 31
+          },
+          "frameRate": 18,
+          "loop": "loop",
+          "gameplayState": "burst"
+        }
+      ],
+      "styleNotes": "Floor tiles: dark slate base with subtle grid texture. Tactical/arena feel. Wall tiles: heavier navy-black, strong edge contrast. Checkpoints: glowing cyan marker on floor. Hazard tiles: amber warning / red-active state.",
+      "gameplayReadabilityNotes": "Wall/floor distinction must be clear at 128px and 64px. Hazard state must be unmistakable without relying on color alone (shape + intensity differ)."
+    },
+    {
+      "filename": "maze-rush_player_token.png",
+      "assetKey": "maze-rush_player_token",
+      "category": "gameplay-piece",
+      "sheetType": "animation-sheet",
+      "frameWidth": 80,
+      "frameHeight": 80,
+      "columns": 8,
+      "rows": 4,
+      "totalFrames": 30,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "animated player avatar, centered on current tile position",
+      "animationKeys": [
+        "maze-rush_player_idle",
+        "maze-rush_player_move",
+        "maze-rush_player_stun"
+      ],
+      "animations": [
+        {
+          "key": "maze-rush_player_idle",
+          "description": "Player idle bob",
+          "frameRange": {
+            "start": 0,
+            "end": 7
+          },
+          "frameRate": 8,
+          "loop": "loop",
+          "gameplayState": "idle"
+        },
+        {
+          "key": "maze-rush_player_move",
+          "description": "Player run cycle",
+          "frameRange": {
+            "start": 8,
+            "end": 15
+          },
+          "frameRate": 14,
+          "loop": "loop",
+          "gameplayState": "active"
+        },
+        {
+          "key": "maze-rush_player_stun",
+          "description": "Player stun spin",
+          "frameRange": {
+            "start": 16,
+            "end": 23
+          },
+          "frameRate": 12,
+          "loop": "once",
+          "gameplayState": "fail"
+        },
+        {
+          "key": "maze-rush_player_checkpoint",
+          "description": "Player checkpoint reaction",
+          "frameRange": {
+            "start": 24,
+            "end": 27
+          },
+          "frameRate": 12,
+          "loop": "once",
+          "gameplayState": "success"
+        },
+        {
+          "key": "maze-rush_player_exit",
+          "description": "Player exit celebration",
+          "frameRange": {
+            "start": 28,
+            "end": 29
+          },
+          "frameRate": 8,
+          "loop": "hold-last",
+          "gameplayState": "success"
+        }
+      ],
+      "styleNotes": "Premium stylized character token. Compact silhouette (fits in 80×80 on 128×128 tile). Energy trail element on movement frames. Cyan energy core visible on idle.",
+      "gameplayReadabilityNotes": "Must be immediately distinguishable from all tile types. Unique silhouette."
+    },
+    {
+      "filename": "maze-rush_fog_overlay.png",
+      "assetKey": "maze-rush_fog_overlay",
+      "category": "environment-overlay",
+      "sheetType": "animation-strip",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 8,
+      "rows": 1,
+      "totalFrames": 8,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "layered over unexplored tiles; fade out on approach",
+      "animationKeys": [
+        "maze-rush_fog_drift"
+      ],
+      "animations": [
+        {
+          "key": "maze-rush_fog_drift",
+          "description": "Fog of war slow drift",
+          "frameRange": {
+            "start": 0,
+            "end": 7
+          },
+          "frameRate": 6,
+          "loop": "loop",
+          "gameplayState": "idle"
+        }
+      ],
+      "styleNotes": "Deep navy/dark smoke texture with subtle drift animation. Semi-transparent at edges. Dense at center. Premium competitive feel — not cartoonish fog, more like arena sensor blackout.",
+      "gameplayReadabilityNotes": "Must preserve enough opacity to be effective, but not 100% opaque to hint at wall shapes."
+    }
+  ],
+  "rawMarkdownPath": "C:\\TechProjects\\PuzzleRivals\\Puzzles\\Maze Rush.md",
+  "processedAt": "2026-04-10T07:18:40.620Z",
+  "inferenceWarnings": [],
+  "missingInfo": []
+}

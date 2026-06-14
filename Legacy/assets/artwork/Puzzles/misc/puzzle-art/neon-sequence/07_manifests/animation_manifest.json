@@ -1,0 +1,52 @@
+[
+  {
+    "asset_slug": "flash_overlay_loop",
+    "animation_name": "flash_overlay_loop",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "frame_00",
+    "end_state": "frame_07",
+    "notes": "Use as additive glow during CPU playback."
+  },
+  {
+    "asset_slug": "selection_ring_loop",
+    "animation_name": "selection_ring_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "frame_00",
+    "end_state": "frame_07",
+    "notes": "Magenta-biased selection pulse."
+  },
+  {
+    "asset_slug": "confirm_burst_oneshot",
+    "animation_name": "confirm_burst_oneshot",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "frame_00",
+    "end_state": "frame_07",
+    "notes": "Fast green confirmation pulse."
+  },
+  {
+    "asset_slug": "error_burst_oneshot",
+    "animation_name": "error_burst_oneshot",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "frame_00",
+    "end_state": "frame_07",
+    "notes": "Red cross and shock ring for mistakes."
+  },
+  {
+    "asset_slug": "countdown_ring_loop",
+    "animation_name": "countdown_ring_loop",
+    "frame_count": 8,
+    "fps": 8,
+    "loop": true,
+    "start_state": "frame_00",
+    "end_state": "frame_07",
+    "notes": "Arc can be scrubbed manually for timed modes."
+  }
+]

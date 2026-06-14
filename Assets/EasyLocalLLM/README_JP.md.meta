@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5e3a3239dbbf02f40b3bf7171150f3be
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/README_JP.md
+  uploadId: 902466

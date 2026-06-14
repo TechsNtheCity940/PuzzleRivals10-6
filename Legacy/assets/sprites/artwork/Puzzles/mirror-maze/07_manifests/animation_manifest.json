@@ -1,0 +1,102 @@
+[
+  {
+    "asset_slug": "source_emitter_strip",
+    "animation_name": "source_emitter_pulse",
+    "frame_count": 4,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle_charged",
+    "end_state": "idle_charged",
+    "notes": "Continuous source pulse for active emitters."
+  },
+  {
+    "asset_slug": "target_receiver_strip",
+    "animation_name": "target_receiver_charge",
+    "frame_count": 4,
+    "fps": 10,
+    "loop": true,
+    "start_state": "waiting",
+    "end_state": "charged",
+    "notes": "Can loop softly when lit or be used as a receive-state cycle."
+  },
+  {
+    "asset_slug": "traveling_beam_strip",
+    "animation_name": "traveling_beam_flow",
+    "frame_count": 4,
+    "fps": 14,
+    "loop": true,
+    "start_state": "beam_on",
+    "end_state": "beam_on",
+    "notes": "Tileable beam motion strip for straight travel."
+  },
+  {
+    "asset_slug": "activator_strip",
+    "animation_name": "activator_reactor_loop",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": true,
+    "start_state": "activated",
+    "end_state": "activated",
+    "notes": "Contained glow animation with upward churn like a sci-fi fireplace."
+  },
+  {
+    "asset_slug": "blocked_impact_strip",
+    "animation_name": "blocked_beam_impact",
+    "frame_count": 6,
+    "fps": 16,
+    "loop": true,
+    "start_state": "beam_blocked",
+    "end_state": "beam_blocked",
+    "notes": "Continuous impact burst while beam is obstructed."
+  },
+  {
+    "asset_slug": "prism_split_overlay_strip",
+    "animation_name": "prism_split_overlay",
+    "frame_count": 6,
+    "fps": 14,
+    "loop": true,
+    "start_state": "beam_entering",
+    "end_state": "split_active",
+    "notes": "Overlay effect to show prism beam refraction and split output."
+  },
+  {
+    "asset_slug": "traveling_beam_strip_refined",
+    "animation_name": "traveling_beam_flow_refined",
+    "frame_count": 4,
+    "fps": 14,
+    "loop": true,
+    "start_state": "beam_on",
+    "end_state": "beam_on",
+    "notes": "Preferred refined beam flow loop."
+  },
+  {
+    "asset_slug": "activator_strip_refined",
+    "animation_name": "activator_reactor_loop_refined",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": true,
+    "start_state": "activated",
+    "end_state": "activated",
+    "notes": "Preferred refined activator chamber loop."
+  },
+  {
+    "asset_slug": "blocked_impact_strip_refined",
+    "animation_name": "blocked_beam_impact_refined",
+    "frame_count": 6,
+    "fps": 16,
+    "loop": true,
+    "start_state": "beam_blocked",
+    "end_state": "beam_blocked",
+    "notes": "Preferred refined blocked-beam impact loop."
+  },
+  {
+    "asset_slug": "prism_split_overlay_strip_refined",
+    "animation_name": "prism_split_overlay_refined",
+    "frame_count": 6,
+    "fps": 14,
+    "loop": true,
+    "start_state": "beam_entering",
+    "end_state": "split_active",
+    "notes": "Preferred refined prism split overlay loop."
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "name": "Mirror Maze Visual Theme",
+  "mood": "matte, crystalline, tech, industrial, pressure, tactical",
+  "finish": "glossy hard-surface with controlled bloom",
+  "baseColors": {
+    "base": [
+      "#0a0d1a",
+      "#0d1224",
+      "#111830"
+    ],
+    "primary": [
+      "#00e5ff",
+      "#00bcd4",
+      "#0097a7"
+    ],
+    "secondary": [
+      "#e040fb",
+      "#aa00ff",
+      "#7b1fa2"
+    ],
+    "accent": [
+      "#ffc400",
+      "#ff9800",
+      "#ffd740"
+    ],
+    "danger": [
+      "#ff1744",
+      "#f44336",
+      "#ff5252"
+    ],
+    "success": [
+      "#00e676",
+      "#00c853",
+      "#69f0ae"
+    ],
+    "neutral": [
+      "#37474f",
+      "#546e7a",
+      "#78909c"
+    ]
+  },
+  "contrastLevel": "high",
+  "bloomLevel": "controlled",
+  "particleUsage": "minimal",
+  "silhouetteConstraints": [
+    "clean outer silhouette readable at 64px",
+    "no detail that disappears below 128px",
+    "no decorative filigree on gameplay pieces",
+    "Mobile Readability Notes",
+    "beams must be extremely readablemirrors must have clean silhouetteshidden cells must not be confused with empty cellsprisms must be visually distinct from standard mirrorsblocked mirrors and shutters must be unmistakableall effects must support path readability, not obscure it",
+    "beams must be extremely readable"
+  ],
+  "readabilityNotes": [
+    "gameplay state must be readable from tile color/shape alone",
+    "flow direction must be readable without tooltips",
+    "high contrast against dark board backgrounds required",
+    "no clutter within tile bounds",
+    "Mobile Readability Notes",
+    "beams must be extremely readablemirrors must have clean silhouetteshidden cells must not be confused with empty cellsprisms must be visually distinct from standard mirrorsblocked mirrors and shutters must be unmistakableall effects must support path readability, not obscure it",
+    "beams must be extremely readable",
+    "beams must be extremely readable"
+  ],
+  "uniqueLanguage": "Tactical arena navigation: muted base geometry with bright traversal beacons. Fog-of-war creates mystery. Route clarity is paramount. Checkpoints pulse softly. Directional cues are always visible.",
+  "styleProfile": "sci-fi-arcade"
+}

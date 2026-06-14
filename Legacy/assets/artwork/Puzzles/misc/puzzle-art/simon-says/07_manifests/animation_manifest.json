@@ -1,0 +1,142 @@
+[
+  {
+    "asset_slug": "floor_tiles_cyan_glow",
+    "animation_name": "a3_simon_says_tiles_cyan_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "dim_tile",
+    "end_state": "dim_tile",
+    "notes": "Looping tile pulse for Simon Says sequence playback and validation feedback."
+  },
+  {
+    "asset_slug": "floor_tiles_purple_glow",
+    "animation_name": "a3_simon_says_tiles_purple_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "dim_tile",
+    "end_state": "dim_tile",
+    "notes": "Looping tile pulse for Simon Says sequence playback and validation feedback."
+  },
+  {
+    "asset_slug": "floor_tiles_green_glow",
+    "animation_name": "a3_simon_says_tiles_green_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "dim_tile",
+    "end_state": "dim_tile",
+    "notes": "Looping tile pulse for Simon Says sequence playback and validation feedback."
+  },
+  {
+    "asset_slug": "floor_tiles_gold_glow",
+    "animation_name": "a3_simon_says_tiles_gold_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "dim_tile",
+    "end_state": "dim_tile",
+    "notes": "Looping tile pulse for Simon Says sequence playback and validation feedback."
+  },
+  {
+    "asset_slug": "floor_tiles_red_glow",
+    "animation_name": "a3_simon_says_tiles_red_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "dim_tile",
+    "end_state": "dim_tile",
+    "notes": "Looping tile pulse for Simon Says sequence playback and validation feedback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_red_cross_glow",
+    "animation_name": "a3_simon_says_tiles_red_cross_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_blue_ring_glow",
+    "animation_name": "a3_simon_says_tiles_blue_ring_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_green_octagon_glow",
+    "animation_name": "a3_simon_says_tiles_green_octagon_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_gold_frame_glow",
+    "animation_name": "a3_simon_says_tiles_gold_frame_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_purple_diamond_glow",
+    "animation_name": "a3_simon_says_tiles_purple_diamond_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_cyan_clover_glow",
+    "animation_name": "a3_simon_says_tiles_cyan_clover_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_orange_dial_glow",
+    "animation_name": "a3_simon_says_tiles_orange_dial_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_pink_square_glow",
+    "animation_name": "a3_simon_says_tiles_pink_square_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  },
+  {
+    "asset_slug": "industrial_floor_tiles_white_hex_glow",
+    "animation_name": "a3_simon_says_tiles_white_hex_glow",
+    "frame_count": 8,
+    "fps": 12,
+    "loop": true,
+    "start_state": "inactive_tile",
+    "end_state": "inactive_tile",
+    "notes": "Looping industrial tile pulse for Simon Says pattern playback."
+  }
+]

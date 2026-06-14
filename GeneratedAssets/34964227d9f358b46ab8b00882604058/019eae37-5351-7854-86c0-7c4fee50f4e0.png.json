@@ -1,0 +1,28 @@
+{
+    "asset": "34964227d9f358b46ab8b00882604058",
+    "fileName": "019eae37-5351-7854-86c0-7c4fee50f4e0.png",
+    "prompt": "Esports emblem icon for a geometer called VERTEX, a sharp geometric origami polygon with interconnected triangular facets and node points, bold simple silhouette, pure white monochrome flat icon, centered, isolated on a fully transparent background, clean game UI badge",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

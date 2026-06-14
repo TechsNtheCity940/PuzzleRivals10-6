@@ -1,0 +1,90 @@
+{
+  "neon_board_tiles": {
+    "path": "06_exports/png/static/pipe_pulse_board_tiles_v01.png",
+    "frameWidth": null,
+    "frameHeight": 1254,
+    "frameCount": 1,
+    "animated": false,
+    "slicingStatus": "static_sheet"
+  },
+  "pipe_base_pieces": {
+    "path": "06_exports/png/static/pipe_pulse_pipe_bases_v01.png",
+    "frameWidth": null,
+    "frameHeight": 1254,
+    "frameCount": 1,
+    "animated": false,
+    "slicingStatus": "static_sheet"
+  },
+  "broken_pipe_variants": {
+    "path": "06_exports/png/static/pipe_pulse_broken_pipes_v01.png",
+    "frameWidth": null,
+    "frameHeight": 1254,
+    "frameCount": 1,
+    "animated": false,
+    "slicingStatus": "static_sheet"
+  },
+  "flow_straight": {
+    "path": "06_exports/png/fx/pipe_pulse_flow_straight_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 724,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "flow_corner": {
+    "path": "06_exports/png/fx/pipe_pulse_flow_corner_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 748,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "flow_tjunction": {
+    "path": "06_exports/png/fx/pipe_pulse_flow_tjunction_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 756,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "flow_cross": {
+    "path": "06_exports/png/fx/pipe_pulse_flow_cross_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 759,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "pump_flow": {
+    "path": "06_exports/png/animation/pipe_pulse_pump_flow_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 724,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "reservoir_fill": {
+    "path": "06_exports/png/animation/pipe_pulse_reservoir_fill_10f_v01.png",
+    "frameWidth": null,
+    "frameHeight": 724,
+    "frameCount": 10,
+    "animated": true,
+    "slicingStatus": "review_required"
+  },
+  "pipe_burst": {
+    "path": "06_exports/png/fx/pipe_pulse_pipe_burst_12f_v01.png",
+    "frameWidth": 181,
+    "frameHeight": 724,
+    "frameCount": 12,
+    "animated": true,
+    "slicingStatus": "uniform_strip"
+  },
+  "ui_icons": {
+    "path": "06_exports/png/ui/pipe_pulse_ui_icons_v01.png",
+    "frameWidth": null,
+    "frameHeight": 1254,
+    "frameCount": 1,
+    "animated": false,
+    "slicingStatus": "static_sheet"
+  }
+}

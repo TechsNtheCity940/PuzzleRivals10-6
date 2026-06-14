@@ -1,0 +1,452 @@
+[
+  {
+    "asset_slug": "tile_01_top_left_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_01_top_left_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_01_top_left_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_01_top_left_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_01_top_left_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_01_top_left_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_01_top_left_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_01_top_left_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_02_top_center_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_02_top_center_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_02_top_center_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_02_top_center_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_02_top_center_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_02_top_center_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_02_top_center_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_02_top_center_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_03_top_right_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_03_top_right_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_03_top_right_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_03_top_right_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_03_top_right_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_03_top_right_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_03_top_right_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_03_top_right_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_04_mid_left_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_04_mid_left_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_04_mid_left_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_04_mid_left_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_04_mid_left_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_04_mid_left_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_04_mid_left_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_04_mid_left_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_05_mid_center_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_05_mid_center_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_05_mid_center_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_05_mid_center_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_05_mid_center_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_05_mid_center_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_05_mid_center_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_05_mid_center_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_06_mid_right_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_06_mid_right_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_06_mid_right_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_06_mid_right_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_06_mid_right_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_06_mid_right_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_06_mid_right_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_06_mid_right_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_07_bottom_left_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_07_bottom_left_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_07_bottom_left_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_07_bottom_left_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_07_bottom_left_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_07_bottom_left_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_07_bottom_left_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_07_bottom_left_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_08_bottom_center_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_08_bottom_center_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_08_bottom_center_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_08_bottom_center_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_08_bottom_center_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_08_bottom_center_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_08_bottom_center_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_08_bottom_center_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_09_blank_slide_left",
+    "animation_name": "e1_sliding_puzzle_tile_09_blank_slide_left",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_09_blank_slide_right",
+    "animation_name": "e1_sliding_puzzle_tile_09_blank_slide_right",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_09_blank_slide_up",
+    "animation_name": "e1_sliding_puzzle_tile_09_blank_slide_up",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_09_blank_slide_down",
+    "animation_name": "e1_sliding_puzzle_tile_09_blank_slide_down",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "off_cell",
+    "end_state": "settled",
+    "notes": "Destination-anchored movement strip for one-cell slide motion."
+  },
+  {
+    "asset_slug": "tile_01_top_left_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_01_top_left_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_02_top_center_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_02_top_center_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_03_top_right_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_03_top_right_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_04_mid_left_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_04_mid_left_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_05_mid_center_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_05_mid_center_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_06_mid_right_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_06_mid_right_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_07_bottom_left_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_07_bottom_left_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_08_bottom_center_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_08_bottom_center_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  },
+  {
+    "asset_slug": "tile_09_blank_solved_overlay",
+    "animation_name": "e1_sliding_puzzle_tile_09_blank_solved_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot solved-state overlay pulse."
+  }
+]

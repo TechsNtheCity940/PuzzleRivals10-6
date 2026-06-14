@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a1af76ccf04a4f4f8e54b7657f4d8f5b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/LoadModelProgress.cs
+  uploadId: 902466

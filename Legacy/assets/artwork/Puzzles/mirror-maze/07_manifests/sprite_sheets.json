@@ -1,0 +1,17 @@
+[
+  "mirror_maze_board_tiles.png",
+  "mirror_maze_player_token.png",
+  "mirror_maze_fog_overlay.png",
+  "mirror_maze_board_idle.png",
+  "mirror_maze_beam_travel.png",
+  "mirror_maze_reflect_flash.png",
+  "mirror_maze_prism_split.png",
+  "mirror_maze_hidden_reveal.png",
+  "mirror_maze_blocker_unlock.png",
+  "mirror_maze_objective_activate.png",
+  "mirror_maze_progress_lane.png",
+  "mirror_maze_player_card_shimmer.png",
+  "mirror_maze_endgame_focus.png",
+  "mirror_maze_final_receptor_complete.png",
+  "mirror_maze_optics_atlas.png"
+]

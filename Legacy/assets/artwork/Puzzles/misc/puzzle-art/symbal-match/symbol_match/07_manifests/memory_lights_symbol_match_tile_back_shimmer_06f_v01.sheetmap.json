@@ -1,0 +1,20 @@
+{
+  "asset_key": "memory_lights_symbol_match_tile_back_shimmer_06f_v01",
+  "sheet_kind": "animation_strip",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frame_count": 6,
+  "animations": [
+    {
+      "key": "tile_back_shimmer_loop",
+      "start": 0,
+      "end": 5,
+      "frameRate": 8,
+      "repeat": -1
+    }
+  ],
+  "confidence": "high",
+  "notes": [
+    "Direct source strip."
+  ]
+}

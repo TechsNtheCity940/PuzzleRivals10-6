@@ -1,0 +1,74 @@
+[
+  {
+    "id": "mirror-maze_req_floor_wall",
+    "name": "Floor and Wall Tiles Sheet",
+    "category": "board-tile",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Base traversable floor and wall boundary tiles"
+  },
+  {
+    "id": "mirror-maze_req_checkpoints",
+    "name": "Checkpoint Marker Sheet",
+    "category": "board-tile",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Mid-maze waypoints with idle and triggered states"
+  },
+  {
+    "id": "mirror-maze_req_start_exit",
+    "name": "Start/Exit Tile Sheet",
+    "category": "board-tile",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Spawn point and goal tiles"
+  },
+  {
+    "id": "mirror-maze_req_hazard_tiles",
+    "name": "Hazard Lane Sheet",
+    "category": "board-tile",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: hazard mechanics require timed danger tile states"
+  },
+  {
+    "id": "mirror-maze_req_player_token",
+    "name": "Player Token Sheet",
+    "category": "gameplay-piece",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: navigation requires a player avatar"
+  },
+  {
+    "id": "mirror-maze_req_fog_overlay",
+    "name": "Fog of War Overlay Sheet",
+    "category": "environment-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: fog mechanic requires an overlay sheet"
+  },
+  {
+    "id": "mirror-maze_req_path_trail",
+    "name": "Path Trail FX Sheet",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "medium",
+    "notes": "Inferred: movement feedback needs a fading trail"
+  },
+  {
+    "id": "mirror-maze_req_checkpoint_fx",
+    "name": "Checkpoint Trigger FX",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: checkpoint hit must have celebration feedback"
+  },
+  {
+    "id": "mirror-maze_req_exit_unlock_fx",
+    "name": "Exit Unlock Transition Sheet",
+    "category": "transition",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: exit unlock is a key moment requiring animation"
+  }
+]

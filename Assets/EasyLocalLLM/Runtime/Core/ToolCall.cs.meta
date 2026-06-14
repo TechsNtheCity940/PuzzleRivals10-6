@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 1352b0f4d413a6d41a9d267a62735706
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/ToolCall.cs
+  uploadId: 902466

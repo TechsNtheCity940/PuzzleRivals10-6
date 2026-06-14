@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 04ee3f8a5d52cf3469bf7f65146a0f4f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/ChatError.cs
+  uploadId: 902466

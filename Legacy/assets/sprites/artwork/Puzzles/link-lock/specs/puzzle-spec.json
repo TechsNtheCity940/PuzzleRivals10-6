@@ -1,0 +1,388 @@
+{
+  "title": "Link Lock",
+  "slug": "link-lock",
+  "internalId": "link-lock",
+  "puzzleType": "circuit",
+  "tags": [],
+  "gameplaySummary": "What Makes It Unique Link Lock must be different from nearby modes: Link Lock must be different from nearby modes: unlike Maze Rush, the player is not a traveler moving through corridorsunlike Pipe Pulse, there is no live pressure flow systemunlike Circuit Clash, there are no electrical objective chains or relays as the primary identityunlike Tile Shift, the puzzle is not about rearranging the whole boardunlike Score Attack / Combo Rush / Clear Rush, it is not about clearing clustersunlike Mirror Maze, the challenge is not reflection logicunlike Spatial Spin, rotation is not the main feature unlike Maze Rush, the player is not a traveler moving through corridors | Win: Win Condition A player wins by: A player wins by: | Players: 4",
+  "board": {
+    "width": 8,
+    "height": 8,
+    "cellCount": 64,
+    "gridType": "square",
+    "cellSizePx": 128,
+    "zoneTypes": [],
+    "hasHazardZones": false,
+    "hasLockedTiles": true,
+    "reservedHUDSpaces": []
+  },
+  "tiles": [
+    {
+      "id": "link-lock_tile_node",
+      "name": "Logic Node",
+      "variants": [
+        "input",
+        "output",
+        "gate-and",
+        "gate-or",
+        "gate-not",
+        "gate-xor"
+      ],
+      "states": [
+        "inactive",
+        "active",
+        "error",
+        "solved"
+      ],
+      "isInteractable": true,
+      "isRotatable": true,
+      "notes": "Logic gate and node tiles. State driven by signal propagation."
+    },
+    {
+      "id": "link-lock_tile_wire",
+      "name": "Wire Segment",
+      "variants": [
+        "straight-h",
+        "straight-v",
+        "corner-ne",
+        "corner-nw",
+        "corner-se",
+        "corner-sw",
+        "cross"
+      ],
+      "states": [
+        "idle",
+        "signal-low",
+        "signal-high",
+        "error"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Electrical trace connecting nodes. Signal state expressed through brightness/color."
+    },
+    {
+      "id": "link-lock_tile_power",
+      "name": "Power Source",
+      "variants": [
+        "on",
+        "off",
+        "pulsing"
+      ],
+      "states": [
+        "off",
+        "idle",
+        "active"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Signal emitter tile. Pulses when active."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "link-lock_piece_gate",
+      "name": "Placeable Gate",
+      "category": "logic-piece",
+      "variants": [
+        "and",
+        "or",
+        "not",
+        "xor",
+        "buffer"
+      ],
+      "states": [
+        "inactive",
+        "active",
+        "error"
+      ],
+      "animationNeeds": [
+        "activation-flash",
+        "error-flash",
+        "signal-pass"
+      ],
+      "notes": "Draggable logic gate pieces."
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "link-lock_mech_signal",
+      "name": "Signal Propagation",
+      "description": "Signals flow from power sources through wires and gates to outputs.",
+      "affectsAssets": [
+        "board-tile",
+        "gameplay-piece",
+        "pulse-indicator"
+      ]
+    },
+    {
+      "id": "link-lock_mech_gate_placement",
+      "name": "Gate Placement",
+      "description": "Player places/repositions gates to route signals correctly.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "ui-feedback"
+      ]
+    },
+    {
+      "id": "link-lock_mech_circuit_complete",
+      "name": "Circuit Solve",
+      "description": "All outputs receive correct signal = circuit solved.",
+      "affectsAssets": [
+        "fx-overlay",
+        "transition",
+        "destruction-burst"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "link-lock_fx_signal_pulse",
+      "trigger": "signal passes through wire",
+      "type": "pulse",
+      "durationFrames": 6,
+      "notes": "Traveling dot of light along wire."
+    },
+    {
+      "id": "link-lock_fx_gate_activate",
+      "trigger": "gate receives correct signal",
+      "type": "burst",
+      "durationFrames": 8,
+      "notes": "Gate lights up with activation flash."
+    },
+    {
+      "id": "link-lock_fx_circuit_error",
+      "trigger": "incorrect signal path",
+      "type": "warning",
+      "durationFrames": 10,
+      "notes": "Red circuit-break flash on error segments."
+    },
+    {
+      "id": "link-lock_fx_circuit_solve",
+      "trigger": "all outputs satisfied",
+      "type": "burst",
+      "durationFrames": 20,
+      "notes": "Full board power-surge success animation."
+    }
+  ],
+  "visualTheme": {
+    "name": "Link Lock Visual Theme",
+    "mood": "tech, premium, competitive, pressure, tactical, explosive, geometric",
+    "finish": "glossy hard-surface with controlled bloom",
+    "baseColors": {
+      "base": [
+        "#0a0d1a",
+        "#0d1224",
+        "#111830"
+      ],
+      "primary": [
+        "#00e5ff",
+        "#00bcd4",
+        "#0097a7"
+      ],
+      "secondary": [
+        "#e040fb",
+        "#aa00ff",
+        "#7b1fa2"
+      ],
+      "accent": [
+        "#ffc400",
+        "#ff9800",
+        "#ffd740"
+      ],
+      "danger": [
+        "#ff1744",
+        "#f44336",
+        "#ff5252"
+      ],
+      "success": [
+        "#00e676",
+        "#00c853",
+        "#69f0ae"
+      ],
+      "neutral": [
+        "#37474f",
+        "#546e7a",
+        "#78909c"
+      ]
+    },
+    "contrastLevel": "high",
+    "bloomLevel": "controlled",
+    "particleUsage": "moderate",
+    "silhouetteConstraints": [
+      "clean outer silhouette readable at 64px",
+      "no detail that disappears below 128px",
+      "no decorative filigree on gameplay pieces",
+      "Mobile Readability Notes",
+      "node pair colors/shapes must be unmistakablelinks must be thick enough to read on phonecompleted vs incomplete vs invalid links must be visually distinctroute cells must not look clutteredoverlapping path ambiguity must be impossible",
+      "node pair colors/shapes must be unmistakable"
+    ],
+    "readabilityNotes": [
+      "gameplay state must be readable from tile color/shape alone",
+      "flow direction must be readable without tooltips",
+      "high contrast against dark board backgrounds required",
+      "no clutter within tile bounds",
+      "Mobile Readability Notes",
+      "node pair colors/shapes must be unmistakablelinks must be thick enough to read on phonecompleted vs incomplete vs invalid links must be visually distinctroute cells must not look clutteredoverlapping path ambiguity must be impossible",
+      "node pair colors/shapes must be unmistakable",
+      "node pair colors/shapes must be unmistakable"
+    ],
+    "uniqueLanguage": "Logic pathway engineering: clean node-to-node wire traces, logic gate clarity, signal pulse flow. Activation is bright and directional. Error states flash red with a circuit-break aesthetic.",
+    "styleProfile": "sci-fi-arcade"
+  },
+  "assetRequirements": [
+    {
+      "id": "link-lock_req_nodes",
+      "name": "Logic Node Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "All gate types × all states"
+    },
+    {
+      "id": "link-lock_req_wires",
+      "name": "Wire Segment Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "Wire traces in all orientations × signal states"
+    },
+    {
+      "id": "link-lock_req_signal_pulse",
+      "name": "Signal Pulse Indicator",
+      "category": "pulse-indicator",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: signal flow requires traveling pulse animation"
+    },
+    {
+      "id": "link-lock_req_gate_pieces",
+      "name": "Placeable Gate Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "high",
+      "notes": "Draggable gate pieces"
+    },
+    {
+      "id": "link-lock_req_error_fx",
+      "name": "Circuit Error FX",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: error path needs red flash indicator"
+    },
+    {
+      "id": "link-lock_req_solve_fx",
+      "name": "Circuit Solve Burst FX",
+      "category": "destruction-burst",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: circuit completion is a major moment"
+    }
+  ],
+  "spriteSheets": [
+    {
+      "filename": "link-lock_logic_nodes.png",
+      "assetKey": "link-lock_logic_nodes",
+      "category": "board-tile",
+      "sheetType": "animation-sheet",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 6,
+      "rows": 4,
+      "totalFrames": 24,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "per gate type, animated by signal state",
+      "animationKeys": [
+        "link-lock_gate_activate",
+        "link-lock_gate_error"
+      ],
+      "animations": [
+        {
+          "key": "link-lock_gate_inactive",
+          "description": "Gate inactive state",
+          "frameRange": {
+            "start": 0,
+            "end": 1
+          },
+          "frameRate": 12,
+          "loop": "loop",
+          "gameplayState": "idle"
+        },
+        {
+          "key": "link-lock_gate_activate",
+          "description": "Gate activation flash",
+          "frameRange": {
+            "start": 2,
+            "end": 7
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "active"
+        },
+        {
+          "key": "link-lock_gate_error",
+          "description": "Gate error flash",
+          "frameRange": {
+            "start": 8,
+            "end": 13
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "fail"
+        },
+        {
+          "key": "link-lock_gate_solved",
+          "description": "Gate solved glow",
+          "frameRange": {
+            "start": 14,
+            "end": 17
+          },
+          "frameRate": 12,
+          "loop": "loop",
+          "gameplayState": "success"
+        }
+      ],
+      "styleNotes": "Clean geometric gate symbols. Cyan accent on active state. Red on error. White solve state. Circuit-board aesthetic with hard precision edges.",
+      "gameplayReadabilityNotes": "Gate type (AND/OR/NOT/XOR) must be readable from symbol shape alone, not color alone."
+    },
+    {
+      "filename": "link-lock_wire_segments.png",
+      "assetKey": "link-lock_wire_segments",
+      "category": "board-tile",
+      "sheetType": "static-variants",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 7,
+      "rows": 3,
+      "totalFrames": 21,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "frame per wire orientation × signal state",
+      "animationKeys": [
+        "link-lock_wire_signal"
+      ],
+      "animations": [
+        {
+          "key": "link-lock_wire_signal",
+          "description": "Signal traveling pulse",
+          "frameRange": {
+            "start": 14,
+            "end": 20
+          },
+          "frameRate": 24,
+          "loop": "loop",
+          "gameplayState": "active"
+        }
+      ],
+      "styleNotes": "Precise circuit-trace lines. Low = dim gray. High = bright cyan. Error = red flash overlay. Transparent base for board integration.",
+      "gameplayReadabilityNotes": "Signal state must be instantly legible. High-contrast difference between low/high signal required."
+    }
+  ],
+  "rawMarkdownPath": "C:\\TechProjects\\PuzzleRivals\\Puzzles\\Link Lock.md",
+  "processedAt": "2026-04-10T07:18:39.724Z",
+  "inferenceWarnings": [],
+  "missingInfo": []
+}

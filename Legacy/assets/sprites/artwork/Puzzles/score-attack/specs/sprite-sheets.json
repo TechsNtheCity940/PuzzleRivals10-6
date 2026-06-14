@@ -1,0 +1,148 @@
+[
+  {
+    "filename": "score-attack_gems.png",
+    "assetKey": "score-attack_gems",
+    "category": "gameplay-piece",
+    "sheetType": "animation-sheet",
+    "frameWidth": 96,
+    "frameHeight": 96,
+    "columns": 8,
+    "rows": 6,
+    "totalFrames": 48,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "spritesheet per color variant; individual animations per state",
+    "animationKeys": [
+      "score-attack_gem_idle",
+      "score-attack_gem_select",
+      "score-attack_gem_match",
+      "score-attack_gem_clear"
+    ],
+    "animations": [
+      {
+        "key": "score-attack_gem_idle",
+        "description": "Gem idle shimmer",
+        "frameRange": {
+          "start": 0,
+          "end": 3
+        },
+        "frameRate": 6,
+        "loop": "loop",
+        "gameplayState": "idle"
+      },
+      {
+        "key": "score-attack_gem_select",
+        "description": "Gem selected pop",
+        "frameRange": {
+          "start": 4,
+          "end": 7
+        },
+        "frameRate": 18,
+        "loop": "once",
+        "gameplayState": "active"
+      },
+      {
+        "key": "score-attack_gem_match",
+        "description": "Gem match flash",
+        "frameRange": {
+          "start": 8,
+          "end": 13
+        },
+        "frameRate": 24,
+        "loop": "once",
+        "gameplayState": "charged"
+      },
+      {
+        "key": "score-attack_gem_clear",
+        "description": "Gem clear burst",
+        "frameRange": {
+          "start": 14,
+          "end": 21
+        },
+        "frameRate": 24,
+        "loop": "once",
+        "gameplayState": "burst"
+      },
+      {
+        "key": "score-attack_gem_fall",
+        "description": "Gem falling motion",
+        "frameRange": {
+          "start": 22,
+          "end": 25
+        },
+        "frameRate": 14,
+        "loop": "loop",
+        "gameplayState": "active"
+      }
+    ],
+    "styleNotes": "Each row = 1 color variant (cyan, magenta, amber, green, red, neutral). Strong gem silhouette with faceted surface. Bright inner glow per color. Match flash = white-burst then color explosion. Selected state = gem enlarges slightly with ring outline.",
+    "gameplayReadabilityNotes": "Color variants must remain distinguishable even at small sizes (64px). No two variants similar in hue."
+  },
+  {
+    "filename": "score-attack_match_burst_fx.png",
+    "assetKey": "score-attack_match_burst_fx",
+    "category": "destruction-burst",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 10,
+    "rows": 1,
+    "totalFrames": 10,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "played once at match location, tinted per gem color",
+    "animationKeys": [
+      "score-attack_match_burst"
+    ],
+    "animations": [
+      {
+        "key": "score-attack_match_burst",
+        "description": "Match explosion burst",
+        "frameRange": {
+          "start": 0,
+          "end": 9
+        },
+        "frameRate": 20,
+        "loop": "once",
+        "gameplayState": "burst"
+      }
+    ],
+    "styleNotes": "Neutral white-cyan burst designed to be color-tinted at runtime. Crystal shatter + energy burst. Brief and punchy.",
+    "gameplayReadabilityNotes": "Burst must complete before next player action registers. No persistent smoke."
+  },
+  {
+    "filename": "score-attack_board_danger_overlay.png",
+    "assetKey": "score-attack_board_danger_overlay",
+    "category": "environment-overlay",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 6,
+    "rows": 1,
+    "totalFrames": 6,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "looped overlay applied to board edges when danger threshold reached",
+    "animationKeys": [
+      "score-attack_board_danger_loop"
+    ],
+    "animations": [
+      {
+        "key": "score-attack_board_danger_loop",
+        "description": "Board danger edge pulse",
+        "frameRange": {
+          "start": 0,
+          "end": 5
+        },
+        "frameRate": 8,
+        "loop": "loop",
+        "gameplayState": "charged"
+      }
+    ],
+    "styleNotes": "Dark red vignette that pulses inward. Edge-only, transparent center. Unsettling but not blinding.",
+    "gameplayReadabilityNotes": "Center of board must remain fully playable — no center tinting."
+  }
+]

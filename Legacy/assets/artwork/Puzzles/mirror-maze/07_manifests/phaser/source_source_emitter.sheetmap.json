@@ -1,0 +1,95 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_source_source_emitter_pulse_04f_v01.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\animation\\mirror_maze_main_puzzle_source_source_emitter_pulse_04f_v01_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "source_source_emitter",
+  "base_asset_key": "source_source_emitter",
+  "asset_slug": "source_emitter_strip",
+  "sheet_kind": "animation_strip",
+  "frame_width": 256,
+  "frame_height": 256,
+  "frame_count": 4,
+  "animation_groups": [
+    {
+      "key": "source_source_emitter_loop",
+      "start": 0,
+      "end": 3,
+      "frameRate": 10,
+      "repeat": -1
+    }
+  ],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 13,
+        "y": 12,
+        "w": 229,
+        "h": 232
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 13,
+        "y": 12,
+        "w": 230,
+        "h": 232
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 13,
+        "y": 12,
+        "w": 230,
+        "h": 232
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 12,
+        "w": 231,
+        "h": 232
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "Primary beam source ignition loop."
+}

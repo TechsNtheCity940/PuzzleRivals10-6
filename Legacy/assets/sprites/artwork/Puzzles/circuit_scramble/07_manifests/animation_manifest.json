@@ -1,0 +1,112 @@
+[
+  {
+    "asset_slug": "straight_flow",
+    "animation_name": "straight_flow_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "elbow_flow",
+    "animation_name": "elbow_flow_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "t_junction_flow",
+    "animation_name": "t_junction_flow_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "cross_flow",
+    "animation_name": "cross_flow_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "splitter_branch_effect",
+    "animation_name": "splitter_branch_effect_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "booster_surge",
+    "animation_name": "booster_surge_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "gate_activation_sparkle",
+    "animation_name": "gate_activation_sparkle_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "trap_redirect_flash",
+    "animation_name": "trap_redirect_flash_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "hijack_siphon_arc",
+    "animation_name": "hijack_siphon_arc_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "power_core_charge_pulse",
+    "animation_name": "power_core_charge_pulse_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  },
+  {
+    "asset_slug": "central_node_radial_burst",
+    "animation_name": "central_node_radial_burst_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static overlay tile on sheet."
+  }
+]

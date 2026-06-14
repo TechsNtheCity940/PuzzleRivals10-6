@@ -1,0 +1,89 @@
+{
+  "textureKey": "a3_simon_says_tiles_floor_tiles_glow_master",
+  "frameConfig": {
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "margin": 0,
+    "spacing": 0
+  },
+  "source": "custom_puzzle_pack_a3_simon_says_tiles_floor_tiles_sequence_glow_master_08f_v01.png",
+  "animations": [
+    {
+      "key": "a3_simon_says_tiles_cyan_glow",
+      "start": 0,
+      "end": 7,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "a3_simon_says_tiles_purple_glow",
+      "start": 8,
+      "end": 15,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "a3_simon_says_tiles_green_glow",
+      "start": 16,
+      "end": 23,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "a3_simon_says_tiles_gold_glow",
+      "start": 24,
+      "end": 31,
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "a3_simon_says_tiles_red_glow",
+      "start": 32,
+      "end": 39,
+      "frameRate": 12,
+      "repeat": -1
+    }
+  ],
+  "rows": [
+    {
+      "color": "cyan",
+      "rowIndex": 0,
+      "frameRange": [
+        0,
+        7
+      ]
+    },
+    {
+      "color": "purple",
+      "rowIndex": 1,
+      "frameRange": [
+        8,
+        15
+      ]
+    },
+    {
+      "color": "green",
+      "rowIndex": 2,
+      "frameRange": [
+        16,
+        23
+      ]
+    },
+    {
+      "color": "gold",
+      "rowIndex": 3,
+      "frameRange": [
+        24,
+        31
+      ]
+    },
+    {
+      "color": "red",
+      "rowIndex": 4,
+      "frameRange": [
+        32,
+        39
+      ]
+    }
+  ]
+}

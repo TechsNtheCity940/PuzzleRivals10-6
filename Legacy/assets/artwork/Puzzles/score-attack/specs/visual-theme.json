@@ -1,0 +1,65 @@
+{
+  "name": "Score Attack Visual Theme",
+  "mood": "tech, arcade, premium, competitive, pressure",
+  "finish": "glossy hard-surface with controlled bloom",
+  "baseColors": {
+    "base": [
+      "#0a0d1a",
+      "#0d1224",
+      "#111830"
+    ],
+    "primary": [
+      "#00e5ff",
+      "#00bcd4",
+      "#0097a7"
+    ],
+    "secondary": [
+      "#e040fb",
+      "#aa00ff",
+      "#7b1fa2"
+    ],
+    "accent": [
+      "#ffc400",
+      "#ff9800",
+      "#ffd740"
+    ],
+    "danger": [
+      "#ff1744",
+      "#f44336",
+      "#ff5252"
+    ],
+    "success": [
+      "#00e676",
+      "#00c853",
+      "#69f0ae"
+    ],
+    "neutral": [
+      "#37474f",
+      "#546e7a",
+      "#78909c"
+    ]
+  },
+  "contrastLevel": "high",
+  "bloomLevel": "controlled",
+  "particleUsage": "minimal",
+  "silhouetteConstraints": [
+    "clean outer silhouette readable at 64px",
+    "no detail that disappears below 128px",
+    "no decorative filigree on gameplay pieces",
+    "Mobile Readability Notes",
+    "minimum tile tap target: 56 px visual target, 64 px interaction-safe targetboard should occupy roughly 55% to 65% of vertical mobile view in portrait-adapted modetile symbols must remain readable without text labelsscore indicators must be glanceableno VFX should cover more than 20% of the board at once in standard play",
+    "minimum tile tap target: 56 px visual target, 64 px interaction-safe target"
+  ],
+  "readabilityNotes": [
+    "gameplay state must be readable from tile color/shape alone",
+    "flow direction must be readable without tooltips",
+    "high contrast against dark board backgrounds required",
+    "no clutter within tile bounds",
+    "Mobile Readability Notes",
+    "minimum tile tap target: 56 px visual target, 64 px interaction-safe targetboard should occupy roughly 55% to 65% of vertical mobile view in portrait-adapted modetile symbols must remain readable without text labelsscore indicators must be glanceableno VFX should cover more than 20% of the board at once in standard play",
+    "minimum tile tap target: 56 px visual target, 64 px interaction-safe target",
+    "minimum tile tap target: 56 px visual target, 64 px interaction-safe target"
+  ],
+  "uniqueLanguage": "Reactive cascade engine: gem-bright saturated pieces, explosive chain reactions, punchy clear FX. Each piece type has strong color identity. Combo bursts are high-contrast. Board danger expressed through darkening overlay.",
+  "styleProfile": "sci-fi-arcade"
+}

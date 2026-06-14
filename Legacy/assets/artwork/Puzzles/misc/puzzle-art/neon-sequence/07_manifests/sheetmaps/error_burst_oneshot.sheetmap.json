@@ -1,0 +1,20 @@
+{
+  "asset_key": "error_burst_oneshot",
+  "filename": "phaser_puzzle_pack_neon_sequence_recall_fx_overlays_error_burst_oneshot_08f_v03.png",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frameCount": 8,
+  "animated": true,
+  "loopType": "oneshot",
+  "defaultFps": 18,
+  "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/fx/phaser_puzzle_pack_neon_sequence_recall_fx_overlays_error_burst_oneshot_08f_v03.png",
+  "animations": [
+    {
+      "key": "error_burst_oneshot",
+      "start": 0,
+      "end": 7,
+      "frameRate": 18,
+      "repeat": 0
+    }
+  ]
+}

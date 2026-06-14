@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c2fba0a87e50f8d42909b762c35b03b6
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/QuickStart.cs
+  uploadId: 902466

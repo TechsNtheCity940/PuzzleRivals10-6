@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "generatedBy": "codex",
+    "projectSlug": "memory_lights",
+    "modeSlug": "color_sequence"
+  },
+  "files": [
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_red_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_red_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_yellow_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_yellow_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_green_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_green_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_cyan_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_cyan_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_blue_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_blue_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_input_pad_purple_pulse_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_input_pad_purple_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_red_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_red_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_red_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_red_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_blue_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_blue_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_blue_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_blue_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_green_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_green_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_green_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_green_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_yellow_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_yellow_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_yellow_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_yellow_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_purple_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_purple_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_purple_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_purple_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_orange_glow_soft_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_orange_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_color_sequence_signal_orb_orange_glow_08f_v01",
+      "url": "06_exports/png/memory_lights_color_sequence_signal_orb_orange_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      }
+    }
+  ]
+}

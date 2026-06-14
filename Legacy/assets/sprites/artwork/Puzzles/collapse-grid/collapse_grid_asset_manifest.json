@@ -1,0 +1,502 @@
+{
+  "version": "1.0.0",
+  "puzzle": "collapse_grid",
+  "art_style": "readable structural demolition, neon load-state colors, rocky/glass support tiles",
+  "image": {
+    "collapse_grid_support_idle": {
+      "file": "spritesheets/collapse_grid_support_idle.png",
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "support tile idle tension / subtle shimmer"
+    },
+    "collapse_grid_weak_spot_pulse": {
+      "file": "spritesheets/collapse_grid_weak_spot_pulse.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "unstable support warning"
+    },
+    "collapse_grid_crack_spread": {
+      "file": "spritesheets/collapse_grid_crack_spread.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "crack line propagation"
+    },
+    "collapse_grid_remove_tile": {
+      "file": "spritesheets/collapse_grid_remove_tile.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "support removal feedback"
+    },
+    "collapse_grid_shake_structure": {
+      "file": "spritesheets/collapse_grid_shake_structure.png",
+      "frameWidth": 640,
+      "frameHeight": 640,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "board shake / instability pulse"
+    },
+    "collapse_grid_debris_fall": {
+      "file": "spritesheets/collapse_grid_debris_fall.png",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 5,
+      "rows": 2,
+      "frames": 10,
+      "transparentBackground": true,
+      "purpose": "falling debris / chunk collapse"
+    },
+    "collapse_grid_dust_plume": {
+      "file": "spritesheets/collapse_grid_dust_plume.png",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "collapse dust cloud"
+    },
+    "collapse_grid_controlled_chain": {
+      "file": "spritesheets/collapse_grid_controlled_chain.png",
+      "frameWidth": 320,
+      "frameHeight": 160,
+      "columns": 5,
+      "rows": 2,
+      "frames": 10,
+      "transparentBackground": true,
+      "purpose": "controlled collapse scoring flourish"
+    },
+    "collapse_grid_self_damage_warning": {
+      "file": "spritesheets/collapse_grid_self_damage_warning.png",
+      "frameWidth": 256,
+      "frameHeight": 128,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "own board danger alert"
+    },
+    "collapse_grid_score_lane": {
+      "file": "spritesheets/collapse_grid_score_lane.png",
+      "frameWidth": 128,
+      "frameHeight": 512,
+      "columns": 2,
+      "rows": 4,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "score / stability / danger lane"
+    },
+    "collapse_grid_player_card_shimmer": {
+      "file": "spritesheets/collapse_grid_player_card_shimmer.png",
+      "frameWidth": 512,
+      "frameHeight": 160,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "player card shimmer"
+    },
+    "collapse_grid_endgame_pressure": {
+      "file": "spritesheets/collapse_grid_endgame_pressure.png",
+      "frameWidth": 1024,
+      "frameHeight": 256,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "final phase instability framing"
+    },
+    "collapse_grid_crack_tile": {
+      "file": "spritesheets/collapse_grid_crack_tile.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "enemy tile crack attack"
+    },
+    "collapse_grid_weight_drop": {
+      "file": "spritesheets/collapse_grid_weight_drop.png",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "heavy block impact onto enemy structure"
+    },
+    "collapse_grid_aftershock": {
+      "file": "spritesheets/collapse_grid_aftershock.png",
+      "frameWidth": 640,
+      "frameHeight": 640,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "board-wide shake attack"
+    },
+    "collapse_grid_dust_cloud": {
+      "file": "spritesheets/collapse_grid_dust_cloud.png",
+      "frameWidth": 640,
+      "frameHeight": 640,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "weak spot obscuring effect"
+    },
+    "collapse_grid_reinforce": {
+      "file": "spritesheets/collapse_grid_reinforce.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "support strengthening effect"
+    },
+    "collapse_grid_brace": {
+      "file": "spritesheets/collapse_grid_brace.png",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "columns": 4,
+      "rows": 2,
+      "frames": 8,
+      "transparentBackground": true,
+      "purpose": "temporary collapse prevention field"
+    },
+    "collapse_grid_survey": {
+      "file": "spritesheets/collapse_grid_survey.png",
+      "frameWidth": 640,
+      "frameHeight": 640,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "weak area highlight scan"
+    },
+    "collapse_grid_patch": {
+      "file": "spritesheets/collapse_grid_patch.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 3,
+      "rows": 2,
+      "frames": 6,
+      "transparentBackground": true,
+      "purpose": "cracked tile repair"
+    }
+  },
+  "animations": {
+    "collapse_grid_support_idle": {
+      "key": "cg_support_idle",
+      "source": "collapse_grid_support_idle",
+      "start": 0,
+      "end": 7,
+      "frameRate": 8,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_weak_spot_pulse": {
+      "key": "cg_weak_spot_pulse",
+      "source": "collapse_grid_weak_spot_pulse",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_crack_spread": {
+      "key": "cg_crack_spread",
+      "source": "collapse_grid_crack_spread",
+      "start": 0,
+      "end": 7,
+      "frameRate": 12,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_remove_tile": {
+      "key": "cg_remove_tile",
+      "source": "collapse_grid_remove_tile",
+      "start": 0,
+      "end": 5,
+      "frameRate": 14,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_shake_structure": {
+      "key": "cg_shake_structure",
+      "source": "collapse_grid_shake_structure",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_debris_fall": {
+      "key": "cg_debris_fall",
+      "source": "collapse_grid_debris_fall",
+      "start": 0,
+      "end": 9,
+      "frameRate": 16,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_dust_plume": {
+      "key": "cg_dust_plume",
+      "source": "collapse_grid_dust_plume",
+      "start": 0,
+      "end": 7,
+      "frameRate": 12,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_controlled_chain": {
+      "key": "cg_controlled_chain",
+      "source": "collapse_grid_controlled_chain",
+      "start": 0,
+      "end": 9,
+      "frameRate": 14,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_self_damage_warning": {
+      "key": "cg_self_damage_warning",
+      "source": "collapse_grid_self_damage_warning",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_score_lane": {
+      "key": "cg_score_lane",
+      "source": "collapse_grid_score_lane",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_player_card_shimmer": {
+      "key": "cg_player_card_shimmer",
+      "source": "collapse_grid_player_card_shimmer",
+      "start": 0,
+      "end": 5,
+      "frameRate": 8,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_endgame_pressure": {
+      "key": "cg_endgame_pressure",
+      "source": "collapse_grid_endgame_pressure",
+      "start": 0,
+      "end": 5,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_crack_tile": {
+      "key": "cg_crack_tile",
+      "source": "collapse_grid_crack_tile",
+      "start": 0,
+      "end": 7,
+      "frameRate": 12,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_weight_drop": {
+      "key": "cg_weight_drop",
+      "source": "collapse_grid_weight_drop",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_aftershock": {
+      "key": "cg_aftershock",
+      "source": "collapse_grid_aftershock",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_dust_cloud": {
+      "key": "cg_dust_cloud",
+      "source": "collapse_grid_dust_cloud",
+      "start": 0,
+      "end": 5,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_reinforce": {
+      "key": "cg_reinforce",
+      "source": "collapse_grid_reinforce",
+      "start": 0,
+      "end": 5,
+      "frameRate": 12,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_brace": {
+      "key": "cg_brace",
+      "source": "collapse_grid_brace",
+      "start": 0,
+      "end": 7,
+      "frameRate": 10,
+      "repeat": -1,
+      "hideOnComplete": false
+    },
+    "collapse_grid_survey": {
+      "key": "cg_survey",
+      "source": "collapse_grid_survey",
+      "start": 0,
+      "end": 5,
+      "frameRate": 10,
+      "repeat": 0,
+      "hideOnComplete": true
+    },
+    "collapse_grid_patch": {
+      "key": "cg_patch",
+      "source": "collapse_grid_patch",
+      "start": 0,
+      "end": 5,
+      "frameRate": 12,
+      "repeat": 0,
+      "hideOnComplete": true
+    }
+  },
+  "atlas": {
+    "collapse_grid_support_atlas": {
+      "file": "spritesheets/collapse_grid_support_atlas.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "columns": 8,
+      "rows": 3,
+      "frames": 24,
+      "entries": [
+        {
+          "index": 0,
+          "key": "support_cyan"
+        },
+        {
+          "index": 1,
+          "key": "support_magenta"
+        },
+        {
+          "index": 2,
+          "key": "support_gold"
+        },
+        {
+          "index": 3,
+          "key": "support_green"
+        },
+        {
+          "index": 4,
+          "key": "support_stone"
+        },
+        {
+          "index": 5,
+          "key": "support_cracked_cyan"
+        },
+        {
+          "index": 6,
+          "key": "support_cracked_magenta"
+        },
+        {
+          "index": 7,
+          "key": "support_reinforced"
+        },
+        {
+          "index": 8,
+          "key": "objective_core"
+        },
+        {
+          "index": 9,
+          "key": "objective_core_damaged"
+        },
+        {
+          "index": 10,
+          "key": "lock_blue"
+        },
+        {
+          "index": 11,
+          "key": "lock_red"
+        },
+        {
+          "index": 12,
+          "key": "weight_1t"
+        },
+        {
+          "index": 13,
+          "key": "weight_2t"
+        },
+        {
+          "index": 14,
+          "key": "anchor_gold"
+        },
+        {
+          "index": 15,
+          "key": "blocked_cell"
+        },
+        {
+          "index": 16,
+          "key": "debris_blue"
+        },
+        {
+          "index": 17,
+          "key": "debris_pink"
+        },
+        {
+          "index": 18,
+          "key": "debris_gold"
+        },
+        {
+          "index": 19,
+          "key": "dust_patch"
+        },
+        {
+          "index": 20,
+          "key": "brace_marker"
+        },
+        {
+          "index": 21,
+          "key": "danger_marker"
+        },
+        {
+          "index": 22,
+          "key": "survey_marker"
+        },
+        {
+          "index": 23,
+          "key": "empty_shadow"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "All sprite sheets use uniform cells. Use transparent PNGs. Origins should generally be 0.5,0.5 for FX and 0.5,1.0 for falling debris when parented to tile bases.",
+    "Large overlay sheets are intentionally board-space effects. Keep them pooled in Phaser rather than recreated.",
+    "Support atlas uses 64x64 static frames for board tiles; animation sheets are separate FX layers so tile state remains readable."
+  ]
+}

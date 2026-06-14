@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 71fdf36a41db2404a85364690c6f85e1
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Manager/ChatSessionPersistence.cs
+  uploadId: 902466

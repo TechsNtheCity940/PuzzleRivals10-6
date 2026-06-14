@@ -1,0 +1,199 @@
+{
+  "puzzleSlug": "tile-shift",
+  "puzzleType": "sliding",
+  "sceneKey": "TileShiftScene",
+  "assets": [
+    {
+      "assetKey": "tile-shift_board_tiles",
+      "filePath": "./assets/tile-shift/tile-shift_board_tiles.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_board_tiles', './assets/tile-shift/tile-shift_board_tiles.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "// No animations defined for 'tile-shift_board_tiles'",
+      "stateMap": {}
+    },
+    {
+      "assetKey": "tile-shift_pipe_pieces",
+      "filePath": "./assets/tile-shift/tile-shift_pipe_pieces.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_straight_idle",
+          "frameStart": 0,
+          "frameEnd": 3,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_straight_flow",
+          "frameStart": 4,
+          "frameEnd": 11,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_straight_pressure",
+          "frameStart": 12,
+          "frameEnd": 19,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_corner_flow",
+          "frameStart": 20,
+          "frameEnd": 27,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_t_flow",
+          "frameStart": 28,
+          "frameEnd": 35,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_cross_flow",
+          "frameStart": 36,
+          "frameEnd": 43,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "tile-shift_pipe_burst",
+          "frameStart": 44,
+          "frameEnd": 47,
+          "frameRate": 18,
+          "repeat": 0
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_pipe_pieces', './assets/tile-shift/tile-shift_pipe_pieces.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_straight_idle',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 0, end: 3 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_straight_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 4, end: 11 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_straight_pressure',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 12, end: 19 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_corner_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 20, end: 27 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_t_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 28, end: 35 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_cross_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 36, end: 43 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_pipe_burst',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 44, end: 47 }),\n  frameRate: 18,\n  repeat: 0,\n});",
+      "stateMap": {
+        "idle": "tile-shift_straight_idle",
+        "active": "tile-shift_cross_flow",
+        "charged": "tile-shift_straight_pressure",
+        "burst": "tile-shift_pipe_burst"
+      }
+    },
+    {
+      "assetKey": "tile-shift_flow_glow",
+      "filePath": "./assets/tile-shift/tile-shift_flow_glow.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_flow_glow_loop",
+          "frameStart": 0,
+          "frameEnd": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_flow_glow', './assets/tile-shift/tile-shift_flow_glow.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_flow_glow_loop',\n  frames: this.anims.generateFrameNumbers('tile-shift_flow_glow', { start: 0, end: 7 }),\n  frameRate: 10,\n  repeat: -1,\n});",
+      "stateMap": {
+        "active": "tile-shift_flow_glow_loop"
+      }
+    },
+    {
+      "assetKey": "tile-shift_burst_fx",
+      "filePath": "./assets/tile-shift/tile-shift_burst_fx.png",
+      "frameWidth": 192,
+      "frameHeight": 192,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_pipe_burst_fx",
+          "frameStart": 0,
+          "frameEnd": 13,
+          "frameRate": 18,
+          "repeat": 0
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_burst_fx', './assets/tile-shift/tile-shift_burst_fx.png', {\"frameWidth\":192,\"frameHeight\":192});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_pipe_burst_fx',\n  frames: this.anims.generateFrameNumbers('tile-shift_burst_fx', { start: 0, end: 13 }),\n  frameRate: 18,\n  repeat: 0,\n});",
+      "stateMap": {
+        "burst": "tile-shift_pipe_burst_fx"
+      }
+    },
+    {
+      "assetKey": "tile-shift_pressure_warning",
+      "filePath": "./assets/tile-shift/tile-shift_pressure_warning.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_pressure_warning_loop",
+          "frameStart": 0,
+          "frameEnd": 7,
+          "frameRate": 12,
+          "repeat": -1
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_pressure_warning', './assets/tile-shift/tile-shift_pressure_warning.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_pressure_warning_loop',\n  frames: this.anims.generateFrameNumbers('tile-shift_pressure_warning', { start: 0, end: 7 }),\n  frameRate: 12,\n  repeat: -1,\n});",
+      "stateMap": {
+        "charged": "tile-shift_pressure_warning_loop"
+      }
+    },
+    {
+      "assetKey": "tile-shift_connection_snap",
+      "filePath": "./assets/tile-shift/tile-shift_connection_snap.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_snap",
+          "frameStart": 0,
+          "frameEnd": 5,
+          "frameRate": 24,
+          "repeat": 0
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_connection_snap', './assets/tile-shift/tile-shift_connection_snap.png', {\"frameWidth\":64,\"frameHeight\":64});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_snap',\n  frames: this.anims.generateFrameNumbers('tile-shift_connection_snap', { start: 0, end: 5 }),\n  frameRate: 24,\n  repeat: 0,\n});",
+      "stateMap": {
+        "active": "tile-shift_snap"
+      }
+    },
+    {
+      "assetKey": "tile-shift_route_complete_fx",
+      "filePath": "./assets/tile-shift/tile-shift_route_complete_fx.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "tile-shift_route_complete",
+          "frameStart": 0,
+          "frameEnd": 11,
+          "frameRate": 18,
+          "repeat": 0
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('tile-shift_route_complete_fx', './assets/tile-shift/tile-shift_route_complete_fx.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'tile-shift_route_complete',\n  frames: this.anims.generateFrameNumbers('tile-shift_route_complete_fx', { start: 0, end: 11 }),\n  frameRate: 18,\n  repeat: 0,\n});",
+      "stateMap": {
+        "success": "tile-shift_route_complete"
+      }
+    }
+  ],
+  "preloadBlock": "// ── TileShiftScene — Preload ────────────────────────────────────────────────\n// Auto-generated by Puzzle Art Pipeline\n// Paste into your Phaser Scene preload() method\n\nthis.load.spritesheet('tile-shift_board_tiles', './assets/tile-shift/tile-shift_board_tiles.png', {\"frameWidth\":128,\"frameHeight\":128});\nthis.load.spritesheet('tile-shift_pipe_pieces', './assets/tile-shift/tile-shift_pipe_pieces.png', {\"frameWidth\":128,\"frameHeight\":128});\nthis.load.spritesheet('tile-shift_flow_glow', './assets/tile-shift/tile-shift_flow_glow.png', {\"frameWidth\":128,\"frameHeight\":128});\nthis.load.spritesheet('tile-shift_burst_fx', './assets/tile-shift/tile-shift_burst_fx.png', {\"frameWidth\":192,\"frameHeight\":192});\nthis.load.spritesheet('tile-shift_pressure_warning', './assets/tile-shift/tile-shift_pressure_warning.png', {\"frameWidth\":128,\"frameHeight\":128});\nthis.load.spritesheet('tile-shift_connection_snap', './assets/tile-shift/tile-shift_connection_snap.png', {\"frameWidth\":64,\"frameHeight\":64});\nthis.load.spritesheet('tile-shift_route_complete_fx', './assets/tile-shift/tile-shift_route_complete_fx.png', {\"frameWidth\":128,\"frameHeight\":128});",
+  "animCreateBlock": "// ── TileShiftScene — Animation Definitions ────────────────────────────────────\n// Auto-generated by Puzzle Art Pipeline\n// Paste into your Phaser Scene create() method (or a dedicated animation setup function)\n\n// tile-shift_pipe_pieces\nthis.anims.create({\n  key: 'tile-shift_straight_idle',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 0, end: 3 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_straight_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 4, end: 11 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_straight_pressure',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 12, end: 19 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_corner_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 20, end: 27 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_t_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 28, end: 35 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_cross_flow',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 36, end: 43 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'tile-shift_pipe_burst',\n  frames: this.anims.generateFrameNumbers('tile-shift_pipe_pieces', { start: 44, end: 47 }),\n  frameRate: 18,\n  repeat: 0,\n});\n\n// tile-shift_flow_glow\nthis.anims.create({\n  key: 'tile-shift_flow_glow_loop',\n  frames: this.anims.generateFrameNumbers('tile-shift_flow_glow', { start: 0, end: 7 }),\n  frameRate: 10,\n  repeat: -1,\n});\n\n// tile-shift_burst_fx\nthis.anims.create({\n  key: 'tile-shift_pipe_burst_fx',\n  frames: this.anims.generateFrameNumbers('tile-shift_burst_fx', { start: 0, end: 13 }),\n  frameRate: 18,\n  repeat: 0,\n});\n\n// tile-shift_pressure_warning\nthis.anims.create({\n  key: 'tile-shift_pressure_warning_loop',\n  frames: this.anims.generateFrameNumbers('tile-shift_pressure_warning', { start: 0, end: 7 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\n// tile-shift_connection_snap\nthis.anims.create({\n  key: 'tile-shift_snap',\n  frames: this.anims.generateFrameNumbers('tile-shift_connection_snap', { start: 0, end: 5 }),\n  frameRate: 24,\n  repeat: 0,\n});\n\n// tile-shift_route_complete_fx\nthis.anims.create({\n  key: 'tile-shift_route_complete',\n  frames: this.anims.generateFrameNumbers('tile-shift_route_complete_fx', { start: 0, end: 11 }),\n  frameRate: 18,\n  repeat: 0,\n});\n\n// ── State → Animation Key Mapping ─────────────────────────────────────────\n// Use these mappings when triggering animations from gameplay state:\n// tile-shift_pipe_pieces:\n//   'idle' → play('tile-shift_straight_idle')\n//   'active' → play('tile-shift_cross_flow')\n//   'charged' → play('tile-shift_straight_pressure')\n//   'burst' → play('tile-shift_pipe_burst')\n// tile-shift_flow_glow:\n//   'active' → play('tile-shift_flow_glow_loop')\n// tile-shift_burst_fx:\n//   'burst' → play('tile-shift_pipe_burst_fx')\n// tile-shift_pressure_warning:\n//   'charged' → play('tile-shift_pressure_warning_loop')\n// tile-shift_connection_snap:\n//   'active' → play('tile-shift_snap')\n// tile-shift_route_complete_fx:\n//   'success' → play('tile-shift_route_complete')",
+  "generatedAt": "2026-04-10T07:19:23.785Z"
+}

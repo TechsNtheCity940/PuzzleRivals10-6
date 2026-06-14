@@ -1,0 +1,28 @@
+{
+    "asset": "dcc944d8527bcd441afeb4ff4099261f",
+    "fileName": "019eae36-ee6b-7a21-b96e-5ff7c536de03.png",
+    "prompt": "Neon cyberpunk game UI card frame border, thin angular sci-fi tech edges with glowing corners and small circuit notches, completely hollow transparent empty center, pure white and light grey monochrome line art only (no fill color), clean vector HUD style, isolated on a fully transparent background, portrait card border",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

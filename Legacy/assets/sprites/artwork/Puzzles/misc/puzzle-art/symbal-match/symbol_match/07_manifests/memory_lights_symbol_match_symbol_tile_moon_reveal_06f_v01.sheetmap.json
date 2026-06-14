@@ -1,0 +1,20 @@
+{
+  "asset_key": "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01",
+  "sheet_kind": "animation_strip",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frame_count": 6,
+  "animations": [
+    {
+      "key": "symbol_tile_moon_reveal_play",
+      "start": 0,
+      "end": 5,
+      "frameRate": 12,
+      "repeat": 0
+    }
+  ],
+  "confidence": "high",
+  "notes": [
+    "Exact grid slice from source symbol sheet."
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "asset_slug": "flow_straight",
+    "animation_name": "flow_straight_loop",
+    "frame_count": 10,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Steady water pulse moves left to right through a neon tube."
+  },
+  {
+    "asset_slug": "flow_corner",
+    "animation_name": "flow_corner_loop",
+    "frame_count": 10,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Water pulse curves through a 90-degree elbow with rim glow."
+  },
+  {
+    "asset_slug": "flow_tjunction",
+    "animation_name": "flow_tjunction_loop",
+    "frame_count": 10,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Water pulse enters then branches across the T junction."
+  },
+  {
+    "asset_slug": "flow_cross",
+    "animation_name": "flow_cross_loop",
+    "frame_count": 10,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Cross node cycles pressure across four directions."
+  },
+  {
+    "asset_slug": "pump_flow",
+    "animation_name": "pump_flow_loop",
+    "frame_count": 10,
+    "fps": 12,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Pump core spins and pushes bright water pressure outward."
+  },
+  {
+    "asset_slug": "reservoir_fill",
+    "animation_name": "reservoir_fill_loop",
+    "frame_count": 10,
+    "fps": 8,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Reservoir liquid level rises with soft neon bloom."
+  },
+  {
+    "asset_slug": "pipe_burst",
+    "animation_name": "pipe_burst_burst",
+    "frame_count": 12,
+    "fps": 18,
+    "loop": false,
+    "start_state": "stable",
+    "end_state": "ruptured",
+    "notes": "Pipe shell cracks, bursts, and throws bright water spray."
+  }
+]

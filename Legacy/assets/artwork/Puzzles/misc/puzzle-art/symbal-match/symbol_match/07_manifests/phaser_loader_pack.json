@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "generatedBy": "codex",
+    "projectSlug": "memory_lights",
+    "modeSlug": "symbol_match"
+  },
+  "files": [
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_tile_back_shimmer_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_tile_back_shimmer_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    },
+    {
+      "type": "spritesheet",
+      "key": "memory_lights_symbol_match_tile_back_focus_06f_v01",
+      "url": "06_exports/png/memory_lights_symbol_match_tile_back_focus_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      }
+    }
+  ]
+}

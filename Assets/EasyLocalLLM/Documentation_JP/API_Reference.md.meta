@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2959e01d3bfb4d46af1b5cac7a8e736
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Documentation_JP/API_Reference.md
+  uploadId: 902466

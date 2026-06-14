@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-30T11:13:05.349Z",
+  "tagline": "Pass the bomb. Solve the puzzle. Be the last brain standing.",
+  "description": "**PUZZLE RIVALS** is a neon-soaked competitive puzzle arena where every solve matters and every miss explodes.\n\nDrop into **4-player Bomb FFA** — one player gets a lit bomb, a random puzzle appears, and the timer starts counting down. Solve it and toss the bomb to a rival. Miss the deadline and *boom* — you're out. Last brain standing wins.\n\nOr go head-to-head in **Brain VS Brain** — two players, the same puzzle, parallel boards. Build points faster than your opponent and unleash sabotage attacks on their screen: shake their view, invert their controls, freeze their inputs, rescramble their puzzle. Fall behind and you accrue defensive moves — block, mirror, auto-solve a chunk, or claw back points.\n\nEleven distinct puzzle modes — Pipe Pulse, Circuit Scramble, Mirror Beam Mayhem, Maze Rush, Crystal Rush and more — keep every round feeling fresh. The puzzles get harder as the round drags on. Built for fast sessions, ruthless rivalries, and that satisfying *click* of a perfect solve.",
+  "theme": {
+    "color_theme": "neon",
+    "font_family": "modern",
+    "border_radius": "medium"
+  },
+  "category_slug": "puzzle",
+  "tag_slugs": [
+    "competitive",
+    "multiplayer",
+    "puzzle-solving",
+    "short-sessions",
+    "neon-cyberpunk",
+    "tense"
+  ]
+}

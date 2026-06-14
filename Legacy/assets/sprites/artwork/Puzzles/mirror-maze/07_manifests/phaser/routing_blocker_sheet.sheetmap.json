@@ -1,0 +1,87 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_routing_blocker_sheet_idle_v01.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\static\\mirror_maze_main_puzzle_routing_blocker_sheet_idle_v01_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "routing_blocker_sheet",
+  "base_asset_key": "routing_blocker_sheet",
+  "asset_slug": "blocker_sheet",
+  "sheet_kind": "sprite_sheet",
+  "frame_width": 256,
+  "frame_height": 256,
+  "frame_count": 4,
+  "animation_groups": [],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 14,
+        "y": 12,
+        "w": 228,
+        "h": 232
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 13,
+        "y": 12,
+        "w": 230,
+        "h": 232
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 12,
+        "w": 232,
+        "h": 232
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 12,
+        "w": 231,
+        "h": 232
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "Blocking puzzle pieces that visibly absorb or stop beams."
+}

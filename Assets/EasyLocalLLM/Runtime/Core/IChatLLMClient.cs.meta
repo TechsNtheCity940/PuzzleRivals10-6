@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e192ccf9fd2f2364995fd695b3067af2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/IChatLLMClient.cs
+  uploadId: 902466

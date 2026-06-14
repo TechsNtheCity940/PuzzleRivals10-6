@@ -1,0 +1,123 @@
+{
+  "puzzleSlug": "maze-rush",
+  "puzzleType": "maze",
+  "sceneKey": "MazeRushScene",
+  "assets": [
+    {
+      "assetKey": "maze-rush_board_tiles",
+      "filePath": "./assets/maze-rush/maze-rush_board_tiles.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "maze-rush_checkpoint_pulse",
+          "frameStart": 16,
+          "frameEnd": 19,
+          "frameRate": 8,
+          "repeat": -1
+        },
+        {
+          "key": "maze-rush_hazard_warning",
+          "frameStart": 24,
+          "frameEnd": 27,
+          "frameRate": 12,
+          "repeat": -1
+        },
+        {
+          "key": "maze-rush_hazard_active",
+          "frameStart": 28,
+          "frameEnd": 31,
+          "frameRate": 18,
+          "repeat": -1
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('maze-rush_board_tiles', './assets/maze-rush/maze-rush_board_tiles.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'maze-rush_checkpoint_pulse',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 16, end: 19 }),\n  frameRate: 8,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_hazard_warning',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 24, end: 27 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_hazard_active',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 28, end: 31 }),\n  frameRate: 18,\n  repeat: -1,\n});",
+      "stateMap": {
+        "idle": "maze-rush_checkpoint_pulse",
+        "charged": "maze-rush_hazard_warning",
+        "burst": "maze-rush_hazard_active"
+      }
+    },
+    {
+      "assetKey": "maze-rush_player_token",
+      "filePath": "./assets/maze-rush/maze-rush_player_token.png",
+      "frameWidth": 80,
+      "frameHeight": 80,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "maze-rush_player_idle",
+          "frameStart": 0,
+          "frameEnd": 7,
+          "frameRate": 8,
+          "repeat": -1
+        },
+        {
+          "key": "maze-rush_player_move",
+          "frameStart": 8,
+          "frameEnd": 15,
+          "frameRate": 14,
+          "repeat": -1
+        },
+        {
+          "key": "maze-rush_player_stun",
+          "frameStart": 16,
+          "frameEnd": 23,
+          "frameRate": 12,
+          "repeat": 0
+        },
+        {
+          "key": "maze-rush_player_checkpoint",
+          "frameStart": 24,
+          "frameEnd": 27,
+          "frameRate": 12,
+          "repeat": 0
+        },
+        {
+          "key": "maze-rush_player_exit",
+          "frameStart": 28,
+          "frameEnd": 29,
+          "frameRate": 8,
+          "repeat": 0
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('maze-rush_player_token', './assets/maze-rush/maze-rush_player_token.png', {\"frameWidth\":80,\"frameHeight\":80});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'maze-rush_player_idle',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 0, end: 7 }),\n  frameRate: 8,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_move',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 8, end: 15 }),\n  frameRate: 14,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_stun',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 16, end: 23 }),\n  frameRate: 12,\n  repeat: 0,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_checkpoint',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 24, end: 27 }),\n  frameRate: 12,\n  repeat: 0,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_exit',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 28, end: 29 }),\n  frameRate: 8,\n  repeat: 0,\n});",
+      "stateMap": {
+        "idle": "maze-rush_player_idle",
+        "active": "maze-rush_player_move",
+        "fail": "maze-rush_player_stun",
+        "success": "maze-rush_player_exit"
+      }
+    },
+    {
+      "assetKey": "maze-rush_fog_overlay",
+      "filePath": "./assets/maze-rush/maze-rush_fog_overlay.png",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "spacing": 0,
+      "margin": 0,
+      "animDefs": [
+        {
+          "key": "maze-rush_fog_drift",
+          "frameStart": 0,
+          "frameEnd": 7,
+          "frameRate": 6,
+          "repeat": -1
+        }
+      ],
+      "preloadSnippet": "this.load.spritesheet('maze-rush_fog_overlay', './assets/maze-rush/maze-rush_fog_overlay.png', {\"frameWidth\":128,\"frameHeight\":128});",
+      "animCreateSnippet": "this.anims.create({\n  key: 'maze-rush_fog_drift',\n  frames: this.anims.generateFrameNumbers('maze-rush_fog_overlay', { start: 0, end: 7 }),\n  frameRate: 6,\n  repeat: -1,\n});",
+      "stateMap": {
+        "idle": "maze-rush_fog_drift"
+      }
+    }
+  ],
+  "preloadBlock": "// ── MazeRushScene — Preload ────────────────────────────────────────────────\n// Auto-generated by Puzzle Art Pipeline\n// Paste into your Phaser Scene preload() method\n\nthis.load.spritesheet('maze-rush_board_tiles', './assets/maze-rush/maze-rush_board_tiles.png', {\"frameWidth\":128,\"frameHeight\":128});\nthis.load.spritesheet('maze-rush_player_token', './assets/maze-rush/maze-rush_player_token.png', {\"frameWidth\":80,\"frameHeight\":80});\nthis.load.spritesheet('maze-rush_fog_overlay', './assets/maze-rush/maze-rush_fog_overlay.png', {\"frameWidth\":128,\"frameHeight\":128});",
+  "animCreateBlock": "// ── MazeRushScene — Animation Definitions ────────────────────────────────────\n// Auto-generated by Puzzle Art Pipeline\n// Paste into your Phaser Scene create() method (or a dedicated animation setup function)\n\n// maze-rush_board_tiles\nthis.anims.create({\n  key: 'maze-rush_checkpoint_pulse',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 16, end: 19 }),\n  frameRate: 8,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_hazard_warning',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 24, end: 27 }),\n  frameRate: 12,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_hazard_active',\n  frames: this.anims.generateFrameNumbers('maze-rush_board_tiles', { start: 28, end: 31 }),\n  frameRate: 18,\n  repeat: -1,\n});\n\n// maze-rush_player_token\nthis.anims.create({\n  key: 'maze-rush_player_idle',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 0, end: 7 }),\n  frameRate: 8,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_move',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 8, end: 15 }),\n  frameRate: 14,\n  repeat: -1,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_stun',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 16, end: 23 }),\n  frameRate: 12,\n  repeat: 0,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_checkpoint',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 24, end: 27 }),\n  frameRate: 12,\n  repeat: 0,\n});\n\nthis.anims.create({\n  key: 'maze-rush_player_exit',\n  frames: this.anims.generateFrameNumbers('maze-rush_player_token', { start: 28, end: 29 }),\n  frameRate: 8,\n  repeat: 0,\n});\n\n// maze-rush_fog_overlay\nthis.anims.create({\n  key: 'maze-rush_fog_drift',\n  frames: this.anims.generateFrameNumbers('maze-rush_fog_overlay', { start: 0, end: 7 }),\n  frameRate: 6,\n  repeat: -1,\n});\n\n// ── State → Animation Key Mapping ─────────────────────────────────────────\n// Use these mappings when triggering animations from gameplay state:\n// maze-rush_board_tiles:\n//   'idle' → play('maze-rush_checkpoint_pulse')\n//   'charged' → play('maze-rush_hazard_warning')\n//   'burst' → play('maze-rush_hazard_active')\n// maze-rush_player_token:\n//   'idle' → play('maze-rush_player_idle')\n//   'active' → play('maze-rush_player_move')\n//   'fail' → play('maze-rush_player_stun')\n//   'success' → play('maze-rush_player_exit')\n// maze-rush_fog_overlay:\n//   'idle' → play('maze-rush_fog_drift')",
+  "generatedAt": "2026-04-10T07:18:40.653Z"
+}

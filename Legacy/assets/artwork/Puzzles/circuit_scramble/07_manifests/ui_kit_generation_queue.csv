@@ -1,0 +1,13 @@
+order,family,asset_slug,prompt_id,dependency,priority,output_path,filename
+1,ui_kit,panel_corner_frame_piece,ui_01,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+2,ui_kit,panel_edge_segment,ui_02,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+3,ui_kit,score_badge,ui_03,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+4,ui_kit,turn_indicator_ring,ui_04,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+5,ui_kit,wire_icon,ui_05,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+6,ui_kit,logic_gate_icon,ui_06,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+7,ui_kit,trap_icon,ui_07,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+8,ui_kit,hijack_icon,ui_08,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+9,ui_kit,splitter_icon,ui_09,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+10,ui_kit,booster_icon,ui_10,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+11,ui_kit,battery_icon,ui_11,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png
+12,ui_kit,central_node_icon,ui_12,none,high,06_exports/png,circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png

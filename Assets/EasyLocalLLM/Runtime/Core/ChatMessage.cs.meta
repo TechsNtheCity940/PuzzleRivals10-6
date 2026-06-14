@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0a632d4bc8079ab47abca0e5e6194e1c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/ChatMessage.cs
+  uploadId: 902466

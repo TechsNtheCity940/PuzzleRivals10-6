@@ -1,0 +1,58 @@
+[
+  {
+    "id": "combo-rush_req_gems",
+    "name": "Standard Gem Sheet",
+    "category": "gameplay-piece",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "All 6 color variants × all states"
+  },
+  {
+    "id": "combo-rush_req_special_gems",
+    "name": "Special Gem Sheet",
+    "category": "gameplay-piece",
+    "isExplicit": true,
+    "priority": "high",
+    "notes": "Special combo-earned pieces"
+  },
+  {
+    "id": "combo-rush_req_board_cell",
+    "name": "Board Cell Sheet",
+    "category": "board-tile",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: board background cells needed"
+  },
+  {
+    "id": "combo-rush_req_match_burst",
+    "name": "Match Burst FX Sheet",
+    "category": "destruction-burst",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: match clear requires burst FX"
+  },
+  {
+    "id": "combo-rush_req_combo_fx",
+    "name": "Combo Chain FX Sheet",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: cascading combos need escalating FX"
+  },
+  {
+    "id": "combo-rush_req_board_danger",
+    "name": "Board Danger Overlay",
+    "category": "environment-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: board fill mechanic requires danger state overlay"
+  },
+  {
+    "id": "combo-rush_req_fall_sheet",
+    "name": "Gem Fall Animation Sheet",
+    "category": "state-overlay",
+    "isExplicit": false,
+    "priority": "medium",
+    "notes": "Inferred: cascade requires motion blur on falling gems"
+  }
+]

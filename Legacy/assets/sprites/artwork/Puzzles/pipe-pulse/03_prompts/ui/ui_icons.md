@@ -1,0 +1,1 @@
+Generate a small top-down compatible UI icon sheet for Pipe Pulse: rotate arrow, reroute hand, warning burst symbol, goal drop, pump status, broken pipe alert, transparent background, crisp neon pixel art, no text.

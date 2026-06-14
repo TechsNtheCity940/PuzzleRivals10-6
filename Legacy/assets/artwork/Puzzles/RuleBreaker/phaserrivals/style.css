@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #020612;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  touch-action: manipulation;
+}
+
+#game-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}

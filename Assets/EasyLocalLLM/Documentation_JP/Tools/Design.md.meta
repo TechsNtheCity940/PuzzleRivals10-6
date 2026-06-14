@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 496d309993e13b64d824b55db3dfad96
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Documentation_JP/Tools/Design.md
+  uploadId: 902466

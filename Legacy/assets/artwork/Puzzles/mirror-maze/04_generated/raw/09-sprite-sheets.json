@@ -1,0 +1,170 @@
+[
+  {
+    "filename": "mirror-maze_board_tiles.png",
+    "assetKey": "mirror-maze_board_tiles",
+    "category": "board-tile",
+    "sheetType": "static-variants",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 5,
+    "totalFrames": 40,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "individual frame index per tile type drawn to board grid",
+    "animationKeys": [
+      "mirror-maze_checkpoint_pulse",
+      "mirror-maze_hazard_cycle"
+    ],
+    "animations": [
+      {
+        "key": "mirror-maze_checkpoint_pulse",
+        "description": "Checkpoint idle pulse",
+        "frameRange": {
+          "start": 16,
+          "end": 19
+        },
+        "frameRate": 8,
+        "loop": "loop",
+        "gameplayState": "idle"
+      },
+      {
+        "key": "mirror-maze_hazard_warning",
+        "description": "Hazard warning cycle",
+        "frameRange": {
+          "start": 24,
+          "end": 27
+        },
+        "frameRate": 12,
+        "loop": "loop",
+        "gameplayState": "charged"
+      },
+      {
+        "key": "mirror-maze_hazard_active",
+        "description": "Hazard active state",
+        "frameRange": {
+          "start": 28,
+          "end": 31
+        },
+        "frameRate": 18,
+        "loop": "loop",
+        "gameplayState": "burst"
+      }
+    ],
+    "styleNotes": "Floor tiles: dark slate base with subtle grid texture. Tactical/arena feel. Wall tiles: heavier navy-black, strong edge contrast. Checkpoints: glowing cyan marker on floor. Hazard tiles: amber warning / red-active state.",
+    "gameplayReadabilityNotes": "Wall/floor distinction must be clear at 128px and 64px. Hazard state must be unmistakable without relying on color alone (shape + intensity differ)."
+  },
+  {
+    "filename": "mirror-maze_player_token.png",
+    "assetKey": "mirror-maze_player_token",
+    "category": "gameplay-piece",
+    "sheetType": "animation-sheet",
+    "frameWidth": 80,
+    "frameHeight": 80,
+    "columns": 8,
+    "rows": 4,
+    "totalFrames": 30,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "animated player avatar, centered on current tile position",
+    "animationKeys": [
+      "mirror-maze_player_idle",
+      "mirror-maze_player_move",
+      "mirror-maze_player_stun"
+    ],
+    "animations": [
+      {
+        "key": "mirror-maze_player_idle",
+        "description": "Player idle bob",
+        "frameRange": {
+          "start": 0,
+          "end": 7
+        },
+        "frameRate": 8,
+        "loop": "loop",
+        "gameplayState": "idle"
+      },
+      {
+        "key": "mirror-maze_player_move",
+        "description": "Player run cycle",
+        "frameRange": {
+          "start": 8,
+          "end": 15
+        },
+        "frameRate": 14,
+        "loop": "loop",
+        "gameplayState": "active"
+      },
+      {
+        "key": "mirror-maze_player_stun",
+        "description": "Player stun spin",
+        "frameRange": {
+          "start": 16,
+          "end": 23
+        },
+        "frameRate": 12,
+        "loop": "once",
+        "gameplayState": "fail"
+      },
+      {
+        "key": "mirror-maze_player_checkpoint",
+        "description": "Player checkpoint reaction",
+        "frameRange": {
+          "start": 24,
+          "end": 27
+        },
+        "frameRate": 12,
+        "loop": "once",
+        "gameplayState": "success"
+      },
+      {
+        "key": "mirror-maze_player_exit",
+        "description": "Player exit celebration",
+        "frameRange": {
+          "start": 28,
+          "end": 29
+        },
+        "frameRate": 8,
+        "loop": "hold-last",
+        "gameplayState": "success"
+      }
+    ],
+    "styleNotes": "Premium stylized character token. Compact silhouette (fits in 80×80 on 128×128 tile). Energy trail element on movement frames. Cyan energy core visible on idle.",
+    "gameplayReadabilityNotes": "Must be immediately distinguishable from all tile types. Unique silhouette."
+  },
+  {
+    "filename": "mirror-maze_fog_overlay.png",
+    "assetKey": "mirror-maze_fog_overlay",
+    "category": "environment-overlay",
+    "sheetType": "animation-strip",
+    "frameWidth": 128,
+    "frameHeight": 128,
+    "columns": 8,
+    "rows": 1,
+    "totalFrames": 8,
+    "spacing": 0,
+    "margin": 0,
+    "transparentBackground": true,
+    "phaserUsage": "layered over unexplored tiles; fade out on approach",
+    "animationKeys": [
+      "mirror-maze_fog_drift"
+    ],
+    "animations": [
+      {
+        "key": "mirror-maze_fog_drift",
+        "description": "Fog of war slow drift",
+        "frameRange": {
+          "start": 0,
+          "end": 7
+        },
+        "frameRate": 6,
+        "loop": "loop",
+        "gameplayState": "idle"
+      }
+    ],
+    "styleNotes": "Deep navy/dark smoke texture with subtle drift animation. Semi-transparent at edges. Dense at center. Premium competitive feel — not cartoonish fog, more like arena sensor blackout.",
+    "gameplayReadabilityNotes": "Must preserve enough opacity to be effective, but not 100% opaque to hint at wall shapes."
+  }
+]

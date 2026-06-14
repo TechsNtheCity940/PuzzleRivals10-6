@@ -1,0 +1,125 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_beam_prism_split_overlay_loop_06f_v01.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\fx\\mirror_maze_main_puzzle_beam_prism_split_overlay_loop_06f_v01_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "beam_prism_split_overlay",
+  "base_asset_key": "beam_prism_split_overlay",
+  "asset_slug": "prism_split_overlay_strip",
+  "sheet_kind": "animation_strip",
+  "frame_width": 341,
+  "frame_height": 341,
+  "frame_count": 6,
+  "animation_groups": [
+    {
+      "key": "beam_prism_split_overlay_loop",
+      "start": 0,
+      "end": 5,
+      "frameRate": 14,
+      "repeat": -1
+    }
+  ],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 112,
+        "y": 113,
+        "w": 117,
+        "h": 114
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 341,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 61,
+        "y": 54,
+        "w": 219,
+        "h": 233
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 682,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 52,
+        "y": 40,
+        "w": 237,
+        "h": 261
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 1023,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 40,
+        "y": 40,
+        "w": 260,
+        "h": 260
+      }
+    },
+    {
+      "index": 4,
+      "frame": {
+        "x": 1364,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 50,
+        "w": 317,
+        "h": 241
+      }
+    },
+    {
+      "index": 5,
+      "frame": {
+        "x": 1705,
+        "y": 0,
+        "w": 341,
+        "h": 341
+      },
+      "content_bounds": {
+        "x": 42,
+        "y": 12,
+        "w": 257,
+        "h": 317
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "Compact overlay VFX for split-beam prism activation."
+}

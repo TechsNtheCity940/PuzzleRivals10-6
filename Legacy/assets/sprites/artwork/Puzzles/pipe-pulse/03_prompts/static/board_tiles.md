@@ -1,0 +1,1 @@
+Generate a top-down sprite sheet of neon puzzle board tiles for Pipe Pulse: energized sockets, plain grid plates, hazard-marked panels, goal pads, and subtle cracked variants, transparent background, even spacing, crisp premium pixel art, no text.

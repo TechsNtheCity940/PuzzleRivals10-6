@@ -1,0 +1,455 @@
+﻿{
+    "frames":  {
+                   "board-panel":  {
+                                       "frame":  {
+                                                     "x":  16,
+                                                     "y":  16,
+                                                     "w":  392,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  392,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  392,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "start-node":  {
+                                      "frame":  {
+                                                    "x":  424,
+                                                    "y":  16,
+                                                    "w":  120,
+                                                    "h":  108
+                                                },
+                                      "rotated":  false,
+                                      "trimmed":  false,
+                                      "spriteSourceSize":  {
+                                                               "x":  0,
+                                                               "y":  0,
+                                                               "w":  120,
+                                                               "h":  108
+                                                           },
+                                      "sourceSize":  {
+                                                         "w":  120,
+                                                         "h":  108
+                                                     }
+                                  },
+                   "checkpoint-node-active":  {
+                                                  "frame":  {
+                                                                "x":  560,
+                                                                "y":  16,
+                                                                "w":  140,
+                                                                "h":  112
+                                                            },
+                                                  "rotated":  false,
+                                                  "trimmed":  false,
+                                                  "spriteSourceSize":  {
+                                                                           "x":  0,
+                                                                           "y":  0,
+                                                                           "w":  140,
+                                                                           "h":  112
+                                                                       },
+                                                  "sourceSize":  {
+                                                                     "w":  140,
+                                                                     "h":  112
+                                                                 }
+                                              },
+                   "goal-node-idle":  {
+                                          "frame":  {
+                                                        "x":  716,
+                                                        "y":  16,
+                                                        "w":  112,
+                                                        "h":  88
+                                                    },
+                                          "rotated":  false,
+                                          "trimmed":  false,
+                                          "spriteSourceSize":  {
+                                                                   "x":  0,
+                                                                   "y":  0,
+                                                                   "w":  112,
+                                                                   "h":  88
+                                                               },
+                                          "sourceSize":  {
+                                                             "w":  112,
+                                                             "h":  88
+                                                         }
+                                      },
+                   "goal-node-active":  {
+                                            "frame":  {
+                                                          "x":  844,
+                                                          "y":  16,
+                                                          "w":  152,
+                                                          "h":  144
+                                                      },
+                                            "rotated":  false,
+                                            "trimmed":  false,
+                                            "spriteSourceSize":  {
+                                                                     "x":  0,
+                                                                     "y":  0,
+                                                                     "w":  152,
+                                                                     "h":  144
+                                                                 },
+                                            "sourceSize":  {
+                                                               "w":  152,
+                                                               "h":  144
+                                                           }
+                                        },
+                   "player-token":  {
+                                        "frame":  {
+                                                      "x":  16,
+                                                      "y":  176,
+                                                      "w":  104,
+                                                      "h":  95
+                                                  },
+                                        "rotated":  false,
+                                        "trimmed":  false,
+                                        "spriteSourceSize":  {
+                                                                 "x":  0,
+                                                                 "y":  0,
+                                                                 "w":  104,
+                                                                 "h":  95
+                                                             },
+                                        "sourceSize":  {
+                                                           "w":  104,
+                                                           "h":  95
+                                                       }
+                                    },
+                   "switch-gate-idle":  {
+                                            "frame":  {
+                                                          "x":  136,
+                                                          "y":  176,
+                                                          "w":  120,
+                                                          "h":  82
+                                                      },
+                                            "rotated":  false,
+                                            "trimmed":  false,
+                                            "spriteSourceSize":  {
+                                                                     "x":  0,
+                                                                     "y":  0,
+                                                                     "w":  120,
+                                                                     "h":  82
+                                                                 },
+                                            "sourceSize":  {
+                                                               "w":  120,
+                                                               "h":  82
+                                                           }
+                                        },
+                   "switch-gate-active":  {
+                                              "frame":  {
+                                                            "x":  272,
+                                                            "y":  176,
+                                                            "w":  130,
+                                                            "h":  82
+                                                        },
+                                              "rotated":  false,
+                                              "trimmed":  false,
+                                              "spriteSourceSize":  {
+                                                                       "x":  0,
+                                                                       "y":  0,
+                                                                       "w":  130,
+                                                                       "h":  82
+                                                                   },
+                                              "sourceSize":  {
+                                                                 "w":  130,
+                                                                 "h":  82
+                                                             }
+                                          },
+                   "hazard-plaque-idle":  {
+                                              "frame":  {
+                                                            "x":  418,
+                                                            "y":  176,
+                                                            "w":  216,
+                                                            "h":  98
+                                                        },
+                                              "rotated":  false,
+                                              "trimmed":  false,
+                                              "spriteSourceSize":  {
+                                                                       "x":  0,
+                                                                       "y":  0,
+                                                                       "w":  216,
+                                                                       "h":  98
+                                                                   },
+                                              "sourceSize":  {
+                                                                 "w":  216,
+                                                                 "h":  98
+                                                             }
+                                          },
+                   "hazard-plaque-armed":  {
+                                               "frame":  {
+                                                             "x":  650,
+                                                             "y":  176,
+                                                             "w":  130,
+                                                             "h":  94
+                                                         },
+                                               "rotated":  false,
+                                               "trimmed":  false,
+                                               "spriteSourceSize":  {
+                                                                        "x":  0,
+                                                                        "y":  0,
+                                                                        "w":  130,
+                                                                        "h":  94
+                                                                    },
+                                               "sourceSize":  {
+                                                                  "w":  130,
+                                                                  "h":  94
+                                                              }
+                                           },
+                   "checkpoint-node-captured":  {
+                                                    "frame":  {
+                                                                  "x":  796,
+                                                                  "y":  176,
+                                                                  "w":  104,
+                                                                  "h":  95
+                                                              },
+                                                    "rotated":  false,
+                                                    "trimmed":  false,
+                                                    "spriteSourceSize":  {
+                                                                             "x":  0,
+                                                                             "y":  0,
+                                                                             "w":  104,
+                                                                             "h":  95
+                                                                         },
+                                                    "sourceSize":  {
+                                                                       "w":  104,
+                                                                       "h":  95
+                                                                   }
+                                                },
+                   "lock-gate-cyan":  {
+                                          "frame":  {
+                                                        "x":  16,
+                                                        "y":  290,
+                                                        "w":  98,
+                                                        "h":  92
+                                                    },
+                                          "rotated":  false,
+                                          "trimmed":  false,
+                                          "spriteSourceSize":  {
+                                                                   "x":  0,
+                                                                   "y":  0,
+                                                                   "w":  98,
+                                                                   "h":  92
+                                                               },
+                                          "sourceSize":  {
+                                                             "w":  98,
+                                                             "h":  92
+                                                         }
+                                      },
+                   "lock-gate-pink":  {
+                                          "frame":  {
+                                                        "x":  130,
+                                                        "y":  290,
+                                                        "w":  98,
+                                                        "h":  92
+                                                    },
+                                          "rotated":  false,
+                                          "trimmed":  false,
+                                          "spriteSourceSize":  {
+                                                                   "x":  0,
+                                                                   "y":  0,
+                                                                   "w":  98,
+                                                                   "h":  92
+                                                               },
+                                          "sourceSize":  {
+                                                             "w":  98,
+                                                             "h":  92
+                                                         }
+                                      },
+                   "lock-gate-green":  {
+                                           "frame":  {
+                                                         "x":  244,
+                                                         "y":  290,
+                                                         "w":  100,
+                                                         "h":  92
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  100,
+                                                                    "h":  92
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  100,
+                                                              "h":  92
+                                                          }
+                                       },
+                   "lock-gate-gold":  {
+                                          "frame":  {
+                                                        "x":  360,
+                                                        "y":  290,
+                                                        "w":  112,
+                                                        "h":  96
+                                                    },
+                                          "rotated":  false,
+                                          "trimmed":  false,
+                                          "spriteSourceSize":  {
+                                                                   "x":  0,
+                                                                   "y":  0,
+                                                                   "w":  112,
+                                                                   "h":  96
+                                                               },
+                                          "sourceSize":  {
+                                                             "w":  112,
+                                                             "h":  96
+                                                         }
+                                      },
+                   "lock-gate-exit":  {
+                                          "frame":  {
+                                                        "x":  488,
+                                                        "y":  290,
+                                                        "w":  132,
+                                                        "h":  104
+                                                    },
+                                          "rotated":  false,
+                                          "trimmed":  false,
+                                          "spriteSourceSize":  {
+                                                                   "x":  0,
+                                                                   "y":  0,
+                                                                   "w":  132,
+                                                                   "h":  104
+                                                               },
+                                          "sourceSize":  {
+                                                             "w":  132,
+                                                             "h":  104
+                                                         }
+                                      },
+                   "floor-node-cyan":  {
+                                           "frame":  {
+                                                         "x":  636,
+                                                         "y":  290,
+                                                         "w":  112,
+                                                         "h":  94
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  112,
+                                                                    "h":  94
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  112,
+                                                              "h":  94
+                                                          }
+                                       },
+                   "floor-node-pink":  {
+                                           "frame":  {
+                                                         "x":  764,
+                                                         "y":  290,
+                                                         "w":  112,
+                                                         "h":  94
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  112,
+                                                                    "h":  94
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  112,
+                                                              "h":  94
+                                                          }
+                                       },
+                   "floor-node-green":  {
+                                            "frame":  {
+                                                          "x":  892,
+                                                          "y":  290,
+                                                          "w":  114,
+                                                          "h":  94
+                                                      },
+                                            "rotated":  false,
+                                            "trimmed":  false,
+                                            "spriteSourceSize":  {
+                                                                     "x":  0,
+                                                                     "y":  0,
+                                                                     "w":  114,
+                                                                     "h":  94
+                                                                 },
+                                            "sourceSize":  {
+                                                               "w":  114,
+                                                               "h":  94
+                                                           }
+                                        },
+                   "floor-node-gold":  {
+                                           "frame":  {
+                                                         "x":  16,
+                                                         "y":  410,
+                                                         "w":  112,
+                                                         "h":  94
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  112,
+                                                                    "h":  94
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  112,
+                                                              "h":  94
+                                                          }
+                                       },
+                   "beacon-arrow":  {
+                                        "frame":  {
+                                                      "x":  144,
+                                                      "y":  410,
+                                                      "w":  280,
+                                                      "h":  82
+                                                  },
+                                        "rotated":  false,
+                                        "trimmed":  false,
+                                        "spriteSourceSize":  {
+                                                                 "x":  0,
+                                                                 "y":  0,
+                                                                 "w":  280,
+                                                                 "h":  82
+                                                             },
+                                        "sourceSize":  {
+                                                           "w":  280,
+                                                           "h":  82
+                                                       }
+                                    },
+                   "slipstream-lane":  {
+                                           "frame":  {
+                                                         "x":  440,
+                                                         "y":  410,
+                                                         "w":  522,
+                                                         "h":  92
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  522,
+                                                                    "h":  92
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  522,
+                                                              "h":  92
+                                                          }
+                                       }
+               },
+    "meta":  {
+                 "app":  "Puzzle Rivals Maze Rush runtime atlas generator",
+                 "version":  "1.0",
+                 "image":  "maze-rush-runtime-atlas.png",
+                 "format":  "RGBA8888",
+                 "size":  {
+                              "w":  1024,
+                              "h":  528
+                          },
+                 "scale":  "1"
+             }
+}

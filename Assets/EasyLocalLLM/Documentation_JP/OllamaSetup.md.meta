@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 375e722714dad3c469b1fa6ec6344cf8
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Documentation_JP/OllamaSetup.md
+  uploadId: 902466

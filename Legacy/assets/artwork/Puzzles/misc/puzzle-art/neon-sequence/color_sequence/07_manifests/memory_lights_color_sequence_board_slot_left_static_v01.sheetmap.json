@@ -1,0 +1,12 @@
+{
+  "asset_key": "memory_lights_color_sequence_board_slot_left_static_v01",
+  "sheet_kind": "sprite_frame",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frame_count": 1,
+  "animations": [],
+  "confidence": "medium",
+  "notes": [
+    "Background removal inferred from flat board backdrop."
+  ]
+}

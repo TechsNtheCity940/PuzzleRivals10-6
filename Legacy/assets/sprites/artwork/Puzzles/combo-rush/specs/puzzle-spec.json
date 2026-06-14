@@ -1,0 +1,456 @@
+{
+  "title": "Combo Rush",
+  "slug": "combo-rush",
+  "internalId": "combo-rush",
+  "puzzleType": "match",
+  "tags": [],
+  "gameplaySummary": "What Makes It Unique Combo Rush must be clearly different from all other puzzle types: Combo Rush must be clearly different from all other puzzle types: unlike Score Attack, maintaining combo matters more than raw isolated solve valueunlike Clear Rush, board emptying is not the main goalunlike Color Hunt, target selection is not constrained by a fixed hunt colorunlike RuleBreaker, the core solve rules do not mutateunlike Memory Flash / Glyph Rush, there is no recall phaseunlike Number Crunch, the puzzle is not arithmetic-ledunlike Link Lock / Circuit Clash / Pipe Pulse, success is not about persistent path building unlike Score Attack, maintaining combo matters more than raw isolated solve value | Win: Win Condition A player wins by: A player wins by: | Players: 4",
+  "board": {
+    "width": 6,
+    "height": 7,
+    "cellCount": 42,
+    "gridType": "square",
+    "cellSizePx": 128,
+    "zoneTypes": [],
+    "hasHazardZones": false,
+    "hasLockedTiles": true,
+    "reservedHUDSpaces": []
+  },
+  "tiles": [
+    {
+      "id": "combo-rush_tile_board_cell",
+      "name": "Board Cell",
+      "variants": [
+        "normal",
+        "highlighted",
+        "danger"
+      ],
+      "states": [
+        "default",
+        "match-flash",
+        "clearing"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Base board cell background."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "combo-rush_gem_standard",
+      "name": "Standard Gem",
+      "category": "match-piece",
+      "variants": [
+        "cyan",
+        "magenta",
+        "amber",
+        "green",
+        "red",
+        "neutral"
+      ],
+      "states": [
+        "idle",
+        "selected",
+        "matched",
+        "clearing",
+        "falling"
+      ],
+      "animationNeeds": [
+        "idle-shimmer",
+        "select-pop",
+        "match-flash",
+        "clear-burst",
+        "fall-motion"
+      ],
+      "notes": "6 color variants, each with matching states. Core match mechanic pieces."
+    },
+    {
+      "id": "combo-rush_gem_special",
+      "name": "Special Gem",
+      "category": "match-piece",
+      "variants": [
+        "row-clear",
+        "col-clear",
+        "bomb",
+        "wildcard"
+      ],
+      "states": [
+        "idle",
+        "charged",
+        "activating",
+        "triggered"
+      ],
+      "animationNeeds": [
+        "charge-glow",
+        "activation-burst",
+        "chain-trigger"
+      ],
+      "notes": "Special piece types earned via combos. Must be visually distinct from standard."
+    },
+    {
+      "id": "combo-rush_piece_blocker",
+      "name": "Blocker Tile",
+      "category": "blocker",
+      "variants": [
+        "standard",
+        "cracked",
+        "breaking"
+      ],
+      "states": [
+        "idle",
+        "damaged",
+        "breaking",
+        "cleared"
+      ],
+      "animationNeeds": [
+        "crack-damage",
+        "break-burst"
+      ],
+      "notes": "Non-matchable obstruction. Requires hit to clear."
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "combo-rush_mech_swap",
+      "name": "Gem Swap",
+      "description": "Player swaps adjacent gems to form matches.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "ui-feedback"
+      ]
+    },
+    {
+      "id": "combo-rush_mech_cascade",
+      "name": "Cascade Fill",
+      "description": "Gems fall to fill cleared spaces; may trigger chain matches.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "fx-overlay"
+      ]
+    },
+    {
+      "id": "combo-rush_mech_combo",
+      "name": "Combo Chain",
+      "description": "Sequential matches trigger escalating combo bonuses.",
+      "affectsAssets": [
+        "fx-overlay",
+        "ui-feedback",
+        "destruction-burst"
+      ]
+    },
+    {
+      "id": "combo-rush_mech_board_danger",
+      "name": "Board Danger",
+      "description": "Unmatched build-up darkens the board and threatens overflow.",
+      "affectsAssets": [
+        "environment-overlay",
+        "state-overlay"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "combo-rush_fx_match_burst",
+      "trigger": "3+ match",
+      "type": "burst",
+      "durationFrames": 10,
+      "notes": "Color-matched burst from cleared gems."
+    },
+    {
+      "id": "combo-rush_fx_combo_cascade",
+      "trigger": "combo chain",
+      "type": "burst",
+      "durationFrames": 14,
+      "notes": "Escalating burst per combo count. Bigger and brighter at higher combos."
+    },
+    {
+      "id": "combo-rush_fx_board_danger",
+      "trigger": "board fill threshold",
+      "type": "overlay",
+      "durationFrames": 0,
+      "notes": "Looping danger overlay darkening board edges."
+    },
+    {
+      "id": "combo-rush_fx_special_activate",
+      "trigger": "special gem triggered",
+      "type": "burst",
+      "durationFrames": 16,
+      "notes": "Dramatic clear sweep across row/column or explosion radius."
+    }
+  ],
+  "visualTheme": {
+    "name": "Combo Rush Visual Theme",
+    "mood": "matte, tech, arcade, competitive, pressure, explosive",
+    "finish": "glossy hard-surface with controlled bloom",
+    "baseColors": {
+      "base": [
+        "#0a0d1a",
+        "#0d1224",
+        "#111830"
+      ],
+      "primary": [
+        "#00e5ff",
+        "#00bcd4",
+        "#0097a7"
+      ],
+      "secondary": [
+        "#e040fb",
+        "#aa00ff",
+        "#7b1fa2"
+      ],
+      "accent": [
+        "#ffc400",
+        "#ff9800",
+        "#ffd740"
+      ],
+      "danger": [
+        "#ff1744",
+        "#f44336",
+        "#ff5252"
+      ],
+      "success": [
+        "#00e676",
+        "#00c853",
+        "#69f0ae"
+      ],
+      "neutral": [
+        "#37474f",
+        "#546e7a",
+        "#78909c"
+      ]
+    },
+    "contrastLevel": "high",
+    "bloomLevel": "controlled",
+    "particleUsage": "moderate",
+    "silhouetteConstraints": [
+      "clean outer silhouette readable at 64px",
+      "no detail that disappears below 128px",
+      "no decorative filigree on gameplay pieces",
+      "Mobile Readability Notes",
+      "minimum tile interaction size: 56 to 64 pxcombo meter must be readable in under a glancescore should be secondary to combo visibility in this modehigh-intensity VFX must never hide future move opportunitiescombo warning effects should frame the board, not wash over it",
+      "minimum tile interaction size: 56 to 64 px"
+    ],
+    "readabilityNotes": [
+      "gameplay state must be readable from tile color/shape alone",
+      "flow direction must be readable without tooltips",
+      "high contrast against dark board backgrounds required",
+      "no clutter within tile bounds",
+      "Mobile Readability Notes",
+      "minimum tile interaction size: 56 to 64 pxcombo meter must be readable in under a glancescore should be secondary to combo visibility in this modehigh-intensity VFX must never hide future move opportunitiescombo warning effects should frame the board, not wash over it",
+      "minimum tile interaction size: 56 to 64 px",
+      "minimum tile interaction size: 56 to 64 px"
+    ],
+    "uniqueLanguage": "Reactive cascade engine: gem-bright saturated pieces, explosive chain reactions, punchy clear FX. Each piece type has strong color identity. Combo bursts are high-contrast. Board danger expressed through darkening overlay.",
+    "styleProfile": "sci-fi-arcade"
+  },
+  "assetRequirements": [
+    {
+      "id": "combo-rush_req_gems",
+      "name": "Standard Gem Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "All 6 color variants × all states"
+    },
+    {
+      "id": "combo-rush_req_special_gems",
+      "name": "Special Gem Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "high",
+      "notes": "Special combo-earned pieces"
+    },
+    {
+      "id": "combo-rush_req_board_cell",
+      "name": "Board Cell Sheet",
+      "category": "board-tile",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: board background cells needed"
+    },
+    {
+      "id": "combo-rush_req_match_burst",
+      "name": "Match Burst FX Sheet",
+      "category": "destruction-burst",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: match clear requires burst FX"
+    },
+    {
+      "id": "combo-rush_req_combo_fx",
+      "name": "Combo Chain FX Sheet",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: cascading combos need escalating FX"
+    },
+    {
+      "id": "combo-rush_req_board_danger",
+      "name": "Board Danger Overlay",
+      "category": "environment-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: board fill mechanic requires danger state overlay"
+    },
+    {
+      "id": "combo-rush_req_fall_sheet",
+      "name": "Gem Fall Animation Sheet",
+      "category": "state-overlay",
+      "isExplicit": false,
+      "priority": "medium",
+      "notes": "Inferred: cascade requires motion blur on falling gems"
+    }
+  ],
+  "spriteSheets": [
+    {
+      "filename": "combo-rush_gems.png",
+      "assetKey": "combo-rush_gems",
+      "category": "gameplay-piece",
+      "sheetType": "animation-sheet",
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "columns": 8,
+      "rows": 6,
+      "totalFrames": 48,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "spritesheet per color variant; individual animations per state",
+      "animationKeys": [
+        "combo-rush_gem_idle",
+        "combo-rush_gem_select",
+        "combo-rush_gem_match",
+        "combo-rush_gem_clear"
+      ],
+      "animations": [
+        {
+          "key": "combo-rush_gem_idle",
+          "description": "Gem idle shimmer",
+          "frameRange": {
+            "start": 0,
+            "end": 3
+          },
+          "frameRate": 6,
+          "loop": "loop",
+          "gameplayState": "idle"
+        },
+        {
+          "key": "combo-rush_gem_select",
+          "description": "Gem selected pop",
+          "frameRange": {
+            "start": 4,
+            "end": 7
+          },
+          "frameRate": 18,
+          "loop": "once",
+          "gameplayState": "active"
+        },
+        {
+          "key": "combo-rush_gem_match",
+          "description": "Gem match flash",
+          "frameRange": {
+            "start": 8,
+            "end": 13
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "charged"
+        },
+        {
+          "key": "combo-rush_gem_clear",
+          "description": "Gem clear burst",
+          "frameRange": {
+            "start": 14,
+            "end": 21
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "burst"
+        },
+        {
+          "key": "combo-rush_gem_fall",
+          "description": "Gem falling motion",
+          "frameRange": {
+            "start": 22,
+            "end": 25
+          },
+          "frameRate": 14,
+          "loop": "loop",
+          "gameplayState": "active"
+        }
+      ],
+      "styleNotes": "Each row = 1 color variant (cyan, magenta, amber, green, red, neutral). Strong gem silhouette with faceted surface. Bright inner glow per color. Match flash = white-burst then color explosion. Selected state = gem enlarges slightly with ring outline.",
+      "gameplayReadabilityNotes": "Color variants must remain distinguishable even at small sizes (64px). No two variants similar in hue."
+    },
+    {
+      "filename": "combo-rush_match_burst_fx.png",
+      "assetKey": "combo-rush_match_burst_fx",
+      "category": "destruction-burst",
+      "sheetType": "animation-strip",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 10,
+      "rows": 1,
+      "totalFrames": 10,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "played once at match location, tinted per gem color",
+      "animationKeys": [
+        "combo-rush_match_burst"
+      ],
+      "animations": [
+        {
+          "key": "combo-rush_match_burst",
+          "description": "Match explosion burst",
+          "frameRange": {
+            "start": 0,
+            "end": 9
+          },
+          "frameRate": 20,
+          "loop": "once",
+          "gameplayState": "burst"
+        }
+      ],
+      "styleNotes": "Neutral white-cyan burst designed to be color-tinted at runtime. Crystal shatter + energy burst. Brief and punchy.",
+      "gameplayReadabilityNotes": "Burst must complete before next player action registers. No persistent smoke."
+    },
+    {
+      "filename": "combo-rush_board_danger_overlay.png",
+      "assetKey": "combo-rush_board_danger_overlay",
+      "category": "environment-overlay",
+      "sheetType": "animation-strip",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 6,
+      "rows": 1,
+      "totalFrames": 6,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "looped overlay applied to board edges when danger threshold reached",
+      "animationKeys": [
+        "combo-rush_board_danger_loop"
+      ],
+      "animations": [
+        {
+          "key": "combo-rush_board_danger_loop",
+          "description": "Board danger edge pulse",
+          "frameRange": {
+            "start": 0,
+            "end": 5
+          },
+          "frameRate": 8,
+          "loop": "loop",
+          "gameplayState": "charged"
+        }
+      ],
+      "styleNotes": "Dark red vignette that pulses inward. Edge-only, transparent center. Unsettling but not blinding.",
+      "gameplayReadabilityNotes": "Center of board must remain fully playable — no center tinting."
+    }
+  ],
+  "rawMarkdownPath": "C:\\TechProjects\\PuzzleRivals\\Puzzles\\Combo Rush.md",
+  "processedAt": "2026-04-10T07:18:39.282Z",
+  "inferenceWarnings": [],
+  "missingInfo": []
+}

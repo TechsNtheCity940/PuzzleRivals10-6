@@ -1,0 +1,12 @@
+order,family,asset_slug,prompt_id,dependency,priority,output_path,filename
+1,board_environment,neon_board_tiles,neon_board_tiles_prompt,,high,06_exports/png/static/pipe_pulse_board_tiles_v01.png,pipe_pulse_board_tiles_v01.png
+2,gameplay_pieces,pipe_base_pieces,pipe_base_pieces_prompt,,high,06_exports/png/static/pipe_pulse_pipe_bases_v01.png,pipe_pulse_pipe_bases_v01.png
+3,hazards,broken_pipe_variants,broken_pipe_variants_prompt,,high,06_exports/png/static/pipe_pulse_broken_pipes_v01.png,pipe_pulse_broken_pipes_v01.png
+4,fx_overlays,flow_straight,flow_straight_prompt,,high,06_exports/png/fx/pipe_pulse_flow_straight_10f_v01.png,pipe_pulse_flow_straight_10f_v01.png
+5,fx_overlays,flow_corner,flow_corner_prompt,,high,06_exports/png/fx/pipe_pulse_flow_corner_10f_v01.png,pipe_pulse_flow_corner_10f_v01.png
+6,fx_overlays,flow_tjunction,flow_tjunction_prompt,,high,06_exports/png/fx/pipe_pulse_flow_tjunction_10f_v01.png,pipe_pulse_flow_tjunction_10f_v01.png
+7,fx_overlays,flow_cross,flow_cross_prompt,,high,06_exports/png/fx/pipe_pulse_flow_cross_10f_v01.png,pipe_pulse_flow_cross_10f_v01.png
+8,objectives,pump_flow,pump_flow_prompt,,high,06_exports/png/animation/pipe_pulse_pump_flow_10f_v01.png,pipe_pulse_pump_flow_10f_v01.png
+9,objectives,reservoir_fill,reservoir_fill_prompt,,high,06_exports/png/animation/pipe_pulse_reservoir_fill_10f_v01.png,pipe_pulse_reservoir_fill_10f_v01.png
+10,fx_overlays,pipe_burst,pipe_burst_prompt,,high,06_exports/png/fx/pipe_pulse_pipe_burst_12f_v01.png,pipe_pulse_pipe_burst_12f_v01.png
+11,ui_icons,ui_icons,ui_icons_prompt,,medium,06_exports/png/ui/pipe_pulse_ui_icons_v01.png,pipe_pulse_ui_icons_v01.png

@@ -1,0 +1,1 @@
+Generate a 10-frame horizontal sprite strip of neon water turning through a 90-degree pipe corner, top-down orthographic view, transparent background, exact 10 frames, readable motion and pressure pulse.

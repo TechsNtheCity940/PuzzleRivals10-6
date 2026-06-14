@@ -1,0 +1,30 @@
+{
+  "sceneKey": "MirrorMazeScene",
+  "puzzleSlug": "mirror_maze",
+  "assets": [
+    {
+      "assetKey": "mirror_maze_board_tiles",
+      "filePath": "./assets/mirror-maze/mirror_maze_board_tiles.png",
+      "frameWidth": 128,
+      "frameHeight": 128
+    },
+    {
+      "assetKey": "mirror_maze_player_token",
+      "filePath": "./assets/mirror-maze/mirror_maze_player_token.png",
+      "frameWidth": 80,
+      "frameHeight": 80
+    },
+    {
+      "assetKey": "mirror_maze_fog_overlay",
+      "filePath": "./assets/mirror-maze/mirror_maze_fog_overlay.png",
+      "frameWidth": 128,
+      "frameHeight": 128
+    },
+    {
+      "assetKey": "mirror_maze_optics_atlas",
+      "filePath": "./assets/mirror-maze/mirror_maze_optics_atlas.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    }
+  ]
+}

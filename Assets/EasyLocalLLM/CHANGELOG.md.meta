@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3151984663697e34c9e841006590c895
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/CHANGELOG.md
+  uploadId: 902466

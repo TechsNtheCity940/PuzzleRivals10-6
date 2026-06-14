@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Style src="MainMenu.uss" />
+    <ui:VisualElement name="root" class="menu-container">
+        <ui:VisualElement class="menu-panel">
+            <ui:VisualElement name="logo" class="logo" />
+            <ui:VisualElement class="button-container">
+                <ui:Button name="btnPlay" class="menu-button btn-play" text="" />
+                <ui:Button name="btnProfile" class="menu-button btn-nav" text="PROFILE" />
+                <ui:Button name="btnStore" class="menu-button btn-nav" text="STORE" />
+                <ui:Button name="btnSeasonPass" class="menu-button btn-nav" text="SEASON PASS" />
+                <ui:Button name="btnQuit" class="menu-button btn-quit" text="" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

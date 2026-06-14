@@ -1,0 +1,132 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_ui_puzzle_icon_sheet_idle_v01.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\ui\\mirror_maze_main_puzzle_ui_puzzle_icon_sheet_idle_v01_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "ui_puzzle_icon_sheet",
+  "base_asset_key": "ui_puzzle_icon_sheet",
+  "asset_slug": "puzzle_ui_icon_sheet",
+  "sheet_kind": "sprite_sheet",
+  "frame_width": 292,
+  "frame_height": 292,
+  "frame_count": 7,
+  "animation_groups": [],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 262,
+        "h": 260
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 292,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 17,
+        "y": 16,
+        "w": 257,
+        "h": 259
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 584,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 20,
+        "y": 16,
+        "w": 252,
+        "h": 259
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 876,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 19,
+        "y": 16,
+        "w": 254,
+        "h": 259
+      }
+    },
+    {
+      "index": 4,
+      "frame": {
+        "x": 1168,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 18,
+        "y": 16,
+        "w": 255,
+        "h": 259
+      }
+    },
+    {
+      "index": 5,
+      "frame": {
+        "x": 1460,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 17,
+        "y": 16,
+        "w": 257,
+        "h": 260
+      }
+    },
+    {
+      "index": 6,
+      "frame": {
+        "x": 1752,
+        "y": 0,
+        "w": 292,
+        "h": 292
+      },
+      "content_bounds": {
+        "x": 17,
+        "y": 16,
+        "w": 258,
+        "h": 259
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "HUD-friendly icon sheet for game states and puzzle pieces."
+}

@@ -1,0 +1,1 @@
+Generate a top-down sprite sheet of broken neon pipe pieces for Pipe Pulse: snapped straight pipe, ruptured corner, cracked T junction, leaking cross, each centered on transparent background with shard detail and glow damage, readable at small scale.

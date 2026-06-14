@@ -1,0 +1,1 @@
+Generate a 10-frame horizontal sprite strip of neon water flow through a straight pipe, top-down orthographic view, transparent background, centered strip, glowing cyan core with magenta edge bloom, exact 10 frames.

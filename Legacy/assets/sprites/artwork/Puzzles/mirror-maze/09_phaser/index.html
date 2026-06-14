@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirror Maze Preview</title>
+    <style>
+      html, body, #app {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #06070b;
+        color: #f5f7fb;
+        font-family: "Segoe UI", sans-serif;
+      }
+      #app {
+        display: grid;
+        grid-template-columns: minmax(280px, 360px) 1fr;
+      }
+      .sidebar {
+        padding: 20px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        background:
+          linear-gradient(180deg, rgba(7,12,20,0.98), rgba(8,10,15,0.98)),
+          radial-gradient(circle at top, rgba(71,205,255,0.12), transparent 45%);
+        overflow: auto;
+      }
+      .sidebar h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+      }
+      .sidebar p {
+        margin: 0 0 16px;
+        color: rgba(245,247,251,0.74);
+        line-height: 1.45;
+      }
+      .sidebar ul {
+        padding-left: 18px;
+        line-height: 1.5;
+      }
+      #game {
+        position: relative;
+        min-width: 0;
+      }
+      canvas {
+        display: block;
+      }
+      @media (max-width: 920px) {
+        #app {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr;
+        }
+        .sidebar {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <h1>Mirror Maze</h1>
+        <p>Phaser preview scaffold for the generated art package. The right side renders a compact board and effect lineup using the normalized v03 sheets and latest preferred runtime keys.</p>
+        <ul>
+          <li>Uses the generated preload and animation helper</li>
+          <li>Displays preferred mirror v02 alongside board support art</li>
+          <li>Plays source, target, beam, activator, prism split, and blocked-impact loops</li>
+        </ul>
+      </aside>
+      <div id="game"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

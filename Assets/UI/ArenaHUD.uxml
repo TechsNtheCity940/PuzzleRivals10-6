@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Style src="ArenaHUD.uss" />
+    <ui:VisualElement class="hud-container">
+        <ui:VisualElement class="hud-panel">
+            <ui:VisualElement class="timer-row">
+                <ui:VisualElement class="timer-icon" />
+                <ui:ProgressBar name="timerBar" class="timer-bar" />
+            </ui:VisualElement>
+            <ui:Label name="hudLabel" class="hud-label" text="ROUND 1" />
+        </ui:VisualElement>
+        <ui:Label name="statusLabel" class="status-label" text="" />
+        <ui:Label name="clutchLabel" class="clutch-label" text="CLUTCH SOLVE!" />
+    </ui:VisualElement>
+</ui:UXML>

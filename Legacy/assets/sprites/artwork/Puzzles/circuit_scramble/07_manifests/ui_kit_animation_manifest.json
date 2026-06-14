@@ -1,0 +1,122 @@
+[
+  {
+    "asset_slug": "panel_corner_frame_piece",
+    "animation_name": "panel_corner_frame_piece_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "panel_edge_segment",
+    "animation_name": "panel_edge_segment_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "score_badge",
+    "animation_name": "score_badge_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "turn_indicator_ring",
+    "animation_name": "turn_indicator_ring_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "wire_icon",
+    "animation_name": "wire_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "logic_gate_icon",
+    "animation_name": "logic_gate_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "trap_icon",
+    "animation_name": "trap_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "hijack_icon",
+    "animation_name": "hijack_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "splitter_icon",
+    "animation_name": "splitter_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "booster_icon",
+    "animation_name": "booster_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "battery_icon",
+    "animation_name": "battery_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  },
+  {
+    "asset_slug": "central_node_icon",
+    "animation_name": "central_node_icon_static",
+    "frame_count": 1,
+    "fps": 0,
+    "loop": false,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Static UI atlas tile."
+  }
+]

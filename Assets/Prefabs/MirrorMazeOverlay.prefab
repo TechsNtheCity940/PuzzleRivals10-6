@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4585334709260082017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324967662535813487}
+  m_Layer: 0
+  m_Name: GridContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &324967662535813487
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585334709260082017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3566509411357181492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: -200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &9022437816757979526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3566509411357181492}
+  - component: {fileID: 1506862348222590320}
+  - component: {fileID: 2901818438054219428}
+  - component: {fileID: 7911144806083339501}
+  m_Layer: 0
+  m_Name: MirrorMazeOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3566509411357181492
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022437816757979526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 324967662535813487}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 750}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1506862348222590320
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022437816757979526}
+  m_CullTransparentMesh: 1
+--- !u!114 &2901818438054219428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022437816757979526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f74bfe2ea09b3264aa174a1a0d50ae63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7911144806083339501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022437816757979526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fb068dbb38d124a8b27ac547dba406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MirrorMazePuzzle
+  puzzleName: 
+  puzzleTime: 30
+  isSolved: 0
+  isTimedOut: 0
+  inputEnabled: 1
+  difficulty: 1
+  gridSize: 6
+  mirrorPrefab: {fileID: 5078969085130178101, guid: 8a4f63c3630c41f4eab619a8b376f833, type: 3}
+  beamPrefab: {fileID: 5078969085130178101, guid: 8a4f63c3630c41f4eab619a8b376f833, type: 3}
+  gridContainer: {fileID: 324967662535813487}
+  tileSpacing: 84
+  floorFrames:
+  - {fileID: 4782831941444758146, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
+  - {fileID: -637747193867663511, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
+  - {fileID: 221536855026110153, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
+  - {fileID: -8723229057925353710, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
+  mirrorFrames:
+  - {fileID: -5859924749441980320, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
+  - {fileID: 9127293865635285405, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
+  - {fileID: 8697633946174401186, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
+  - {fileID: -7888221358593944325, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
+  emitterFrames:
+  - {fileID: 8699378065767593572, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
+  - {fileID: -2311178662700079571, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
+  - {fileID: 1737785759363854616, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
+  - {fileID: -246490290913976002, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
+  receiverFrames:
+  - {fileID: 8246836817340332161, guid: 6903488b940dec1449cb920117fed453, type: 3}
+  - {fileID: 8928772687914177908, guid: 6903488b940dec1449cb920117fed453, type: 3}
+  - {fileID: 7546222134269877698, guid: 6903488b940dec1449cb920117fed453, type: 3}
+  - {fileID: -7903991650574578558, guid: 6903488b940dec1449cb920117fed453, type: 3}
+  prismFrames:
+  - {fileID: 4387198725737959746, guid: b1d760c09cc12ff4f8264f52ee921ac3, type: 3}
+  - {fileID: -7453599173700430406, guid: b1d760c09cc12ff4f8264f52ee921ac3, type: 3}
+  - {fileID: -8259919897259406910, guid: b1d760c09cc12ff4f8264f52ee921ac3, type: 3}
+  - {fileID: -4622671784875907647, guid: b1d760c09cc12ff4f8264f52ee921ac3, type: 3}
+  activatorFrames:
+  - {fileID: 6658813466380376081, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  - {fileID: -691102722265253320, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  - {fileID: 5602606502331628330, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  - {fileID: -1140491620111630671, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  - {fileID: -8595867798336337349, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  - {fileID: 2709499972426096358, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
+  beamFrames:
+  - {fileID: 9110993038474415374, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
+  - {fileID: -1851820676766581191, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
+  - {fileID: 8292020794403056428, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
+  - {fileID: 501733578931142392, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
+  floorSprite: {fileID: -1597271601891495331, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  mirrorSprite: {fileID: -7173022553347797208, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
+  emitterSprite: {fileID: 5972313705596275511, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
+  receiverSprite: {fileID: -4728004157261287187, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
+  prismSprite: {fileID: 0}
+  activatorSprite: {fileID: 0}
+  beamSprite: {fileID: -6132122435961555908, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  beamStepDelay: 0.05

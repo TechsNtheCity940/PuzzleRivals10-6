@@ -1,0 +1,456 @@
+{
+  "title": "Score Attack",
+  "slug": "score-attack",
+  "internalId": "score-attack",
+  "puzzleType": "match",
+  "tags": [],
+  "gameplaySummary": "What Makes It Unique Score Attack must be different from every other mode in these ways: Score Attack must be different from every other mode in these ways: unlike Combo Rush, score is primary and combo is only supportive, not the entire economyunlike Clear Rush, clearing the board is not the main goalunlike Color Hunt, there is no restricted target color objectiveunlike Tile Shift, the challenge is not board rearrangementunlike Number Crunch, solving is not arithmetic-firstunlike Link Lock / Circuit Clash / Pipe Pulse, the player is not constructing persistent routesunlike Memory Flash / Glyph Rush, the challenge is not recallunlike RuleBreaker, the rules do not mutate mid-match unlike Combo Rush, score is primary and combo is only supportive, not the entire economy | Win: Win Condition A player wins by: A player wins by: | Players: 4",
+  "board": {
+    "width": 7,
+    "height": 7,
+    "cellCount": 49,
+    "gridType": "square",
+    "cellSizePx": 128,
+    "zoneTypes": [],
+    "hasHazardZones": true,
+    "hasLockedTiles": true,
+    "reservedHUDSpaces": []
+  },
+  "tiles": [
+    {
+      "id": "score-attack_tile_board_cell",
+      "name": "Board Cell",
+      "variants": [
+        "normal",
+        "highlighted",
+        "danger"
+      ],
+      "states": [
+        "default",
+        "match-flash",
+        "clearing"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Base board cell background."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "score-attack_gem_standard",
+      "name": "Standard Gem",
+      "category": "match-piece",
+      "variants": [
+        "cyan",
+        "magenta",
+        "amber",
+        "green",
+        "red",
+        "neutral"
+      ],
+      "states": [
+        "idle",
+        "selected",
+        "matched",
+        "clearing",
+        "falling"
+      ],
+      "animationNeeds": [
+        "idle-shimmer",
+        "select-pop",
+        "match-flash",
+        "clear-burst",
+        "fall-motion"
+      ],
+      "notes": "6 color variants, each with matching states. Core match mechanic pieces."
+    },
+    {
+      "id": "score-attack_gem_special",
+      "name": "Special Gem",
+      "category": "match-piece",
+      "variants": [
+        "row-clear",
+        "col-clear",
+        "bomb",
+        "wildcard"
+      ],
+      "states": [
+        "idle",
+        "charged",
+        "activating",
+        "triggered"
+      ],
+      "animationNeeds": [
+        "charge-glow",
+        "activation-burst",
+        "chain-trigger"
+      ],
+      "notes": "Special piece types earned via combos. Must be visually distinct from standard."
+    },
+    {
+      "id": "score-attack_piece_blocker",
+      "name": "Blocker Tile",
+      "category": "blocker",
+      "variants": [
+        "standard",
+        "cracked",
+        "breaking"
+      ],
+      "states": [
+        "idle",
+        "damaged",
+        "breaking",
+        "cleared"
+      ],
+      "animationNeeds": [
+        "crack-damage",
+        "break-burst"
+      ],
+      "notes": "Non-matchable obstruction. Requires hit to clear."
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "score-attack_mech_swap",
+      "name": "Gem Swap",
+      "description": "Player swaps adjacent gems to form matches.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "ui-feedback"
+      ]
+    },
+    {
+      "id": "score-attack_mech_cascade",
+      "name": "Cascade Fill",
+      "description": "Gems fall to fill cleared spaces; may trigger chain matches.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "fx-overlay"
+      ]
+    },
+    {
+      "id": "score-attack_mech_combo",
+      "name": "Combo Chain",
+      "description": "Sequential matches trigger escalating combo bonuses.",
+      "affectsAssets": [
+        "fx-overlay",
+        "ui-feedback",
+        "destruction-burst"
+      ]
+    },
+    {
+      "id": "score-attack_mech_board_danger",
+      "name": "Board Danger",
+      "description": "Unmatched build-up darkens the board and threatens overflow.",
+      "affectsAssets": [
+        "environment-overlay",
+        "state-overlay"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "score-attack_fx_match_burst",
+      "trigger": "3+ match",
+      "type": "burst",
+      "durationFrames": 10,
+      "notes": "Color-matched burst from cleared gems."
+    },
+    {
+      "id": "score-attack_fx_combo_cascade",
+      "trigger": "combo chain",
+      "type": "burst",
+      "durationFrames": 14,
+      "notes": "Escalating burst per combo count. Bigger and brighter at higher combos."
+    },
+    {
+      "id": "score-attack_fx_board_danger",
+      "trigger": "board fill threshold",
+      "type": "overlay",
+      "durationFrames": 0,
+      "notes": "Looping danger overlay darkening board edges."
+    },
+    {
+      "id": "score-attack_fx_special_activate",
+      "trigger": "special gem triggered",
+      "type": "burst",
+      "durationFrames": 16,
+      "notes": "Dramatic clear sweep across row/column or explosion radius."
+    }
+  ],
+  "visualTheme": {
+    "name": "Score Attack Visual Theme",
+    "mood": "tech, arcade, premium, competitive, pressure",
+    "finish": "glossy hard-surface with controlled bloom",
+    "baseColors": {
+      "base": [
+        "#0a0d1a",
+        "#0d1224",
+        "#111830"
+      ],
+      "primary": [
+        "#00e5ff",
+        "#00bcd4",
+        "#0097a7"
+      ],
+      "secondary": [
+        "#e040fb",
+        "#aa00ff",
+        "#7b1fa2"
+      ],
+      "accent": [
+        "#ffc400",
+        "#ff9800",
+        "#ffd740"
+      ],
+      "danger": [
+        "#ff1744",
+        "#f44336",
+        "#ff5252"
+      ],
+      "success": [
+        "#00e676",
+        "#00c853",
+        "#69f0ae"
+      ],
+      "neutral": [
+        "#37474f",
+        "#546e7a",
+        "#78909c"
+      ]
+    },
+    "contrastLevel": "high",
+    "bloomLevel": "controlled",
+    "particleUsage": "minimal",
+    "silhouetteConstraints": [
+      "clean outer silhouette readable at 64px",
+      "no detail that disappears below 128px",
+      "no decorative filigree on gameplay pieces",
+      "Mobile Readability Notes",
+      "minimum tile tap target: 56 px visual target, 64 px interaction-safe targetboard should occupy roughly 55% to 65% of vertical mobile view in portrait-adapted modetile symbols must remain readable without text labelsscore indicators must be glanceableno VFX should cover more than 20% of the board at once in standard play",
+      "minimum tile tap target: 56 px visual target, 64 px interaction-safe target"
+    ],
+    "readabilityNotes": [
+      "gameplay state must be readable from tile color/shape alone",
+      "flow direction must be readable without tooltips",
+      "high contrast against dark board backgrounds required",
+      "no clutter within tile bounds",
+      "Mobile Readability Notes",
+      "minimum tile tap target: 56 px visual target, 64 px interaction-safe targetboard should occupy roughly 55% to 65% of vertical mobile view in portrait-adapted modetile symbols must remain readable without text labelsscore indicators must be glanceableno VFX should cover more than 20% of the board at once in standard play",
+      "minimum tile tap target: 56 px visual target, 64 px interaction-safe target",
+      "minimum tile tap target: 56 px visual target, 64 px interaction-safe target"
+    ],
+    "uniqueLanguage": "Reactive cascade engine: gem-bright saturated pieces, explosive chain reactions, punchy clear FX. Each piece type has strong color identity. Combo bursts are high-contrast. Board danger expressed through darkening overlay.",
+    "styleProfile": "sci-fi-arcade"
+  },
+  "assetRequirements": [
+    {
+      "id": "score-attack_req_gems",
+      "name": "Standard Gem Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "All 6 color variants × all states"
+    },
+    {
+      "id": "score-attack_req_special_gems",
+      "name": "Special Gem Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "high",
+      "notes": "Special combo-earned pieces"
+    },
+    {
+      "id": "score-attack_req_board_cell",
+      "name": "Board Cell Sheet",
+      "category": "board-tile",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: board background cells needed"
+    },
+    {
+      "id": "score-attack_req_match_burst",
+      "name": "Match Burst FX Sheet",
+      "category": "destruction-burst",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: match clear requires burst FX"
+    },
+    {
+      "id": "score-attack_req_combo_fx",
+      "name": "Combo Chain FX Sheet",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: cascading combos need escalating FX"
+    },
+    {
+      "id": "score-attack_req_board_danger",
+      "name": "Board Danger Overlay",
+      "category": "environment-overlay",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: board fill mechanic requires danger state overlay"
+    },
+    {
+      "id": "score-attack_req_fall_sheet",
+      "name": "Gem Fall Animation Sheet",
+      "category": "state-overlay",
+      "isExplicit": false,
+      "priority": "medium",
+      "notes": "Inferred: cascade requires motion blur on falling gems"
+    }
+  ],
+  "spriteSheets": [
+    {
+      "filename": "score-attack_gems.png",
+      "assetKey": "score-attack_gems",
+      "category": "gameplay-piece",
+      "sheetType": "animation-sheet",
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "columns": 8,
+      "rows": 6,
+      "totalFrames": 48,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "spritesheet per color variant; individual animations per state",
+      "animationKeys": [
+        "score-attack_gem_idle",
+        "score-attack_gem_select",
+        "score-attack_gem_match",
+        "score-attack_gem_clear"
+      ],
+      "animations": [
+        {
+          "key": "score-attack_gem_idle",
+          "description": "Gem idle shimmer",
+          "frameRange": {
+            "start": 0,
+            "end": 3
+          },
+          "frameRate": 6,
+          "loop": "loop",
+          "gameplayState": "idle"
+        },
+        {
+          "key": "score-attack_gem_select",
+          "description": "Gem selected pop",
+          "frameRange": {
+            "start": 4,
+            "end": 7
+          },
+          "frameRate": 18,
+          "loop": "once",
+          "gameplayState": "active"
+        },
+        {
+          "key": "score-attack_gem_match",
+          "description": "Gem match flash",
+          "frameRange": {
+            "start": 8,
+            "end": 13
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "charged"
+        },
+        {
+          "key": "score-attack_gem_clear",
+          "description": "Gem clear burst",
+          "frameRange": {
+            "start": 14,
+            "end": 21
+          },
+          "frameRate": 24,
+          "loop": "once",
+          "gameplayState": "burst"
+        },
+        {
+          "key": "score-attack_gem_fall",
+          "description": "Gem falling motion",
+          "frameRange": {
+            "start": 22,
+            "end": 25
+          },
+          "frameRate": 14,
+          "loop": "loop",
+          "gameplayState": "active"
+        }
+      ],
+      "styleNotes": "Each row = 1 color variant (cyan, magenta, amber, green, red, neutral). Strong gem silhouette with faceted surface. Bright inner glow per color. Match flash = white-burst then color explosion. Selected state = gem enlarges slightly with ring outline.",
+      "gameplayReadabilityNotes": "Color variants must remain distinguishable even at small sizes (64px). No two variants similar in hue."
+    },
+    {
+      "filename": "score-attack_match_burst_fx.png",
+      "assetKey": "score-attack_match_burst_fx",
+      "category": "destruction-burst",
+      "sheetType": "animation-strip",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 10,
+      "rows": 1,
+      "totalFrames": 10,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "played once at match location, tinted per gem color",
+      "animationKeys": [
+        "score-attack_match_burst"
+      ],
+      "animations": [
+        {
+          "key": "score-attack_match_burst",
+          "description": "Match explosion burst",
+          "frameRange": {
+            "start": 0,
+            "end": 9
+          },
+          "frameRate": 20,
+          "loop": "once",
+          "gameplayState": "burst"
+        }
+      ],
+      "styleNotes": "Neutral white-cyan burst designed to be color-tinted at runtime. Crystal shatter + energy burst. Brief and punchy.",
+      "gameplayReadabilityNotes": "Burst must complete before next player action registers. No persistent smoke."
+    },
+    {
+      "filename": "score-attack_board_danger_overlay.png",
+      "assetKey": "score-attack_board_danger_overlay",
+      "category": "environment-overlay",
+      "sheetType": "animation-strip",
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "columns": 6,
+      "rows": 1,
+      "totalFrames": 6,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "looped overlay applied to board edges when danger threshold reached",
+      "animationKeys": [
+        "score-attack_board_danger_loop"
+      ],
+      "animations": [
+        {
+          "key": "score-attack_board_danger_loop",
+          "description": "Board danger edge pulse",
+          "frameRange": {
+            "start": 0,
+            "end": 5
+          },
+          "frameRate": 8,
+          "loop": "loop",
+          "gameplayState": "charged"
+        }
+      ],
+      "styleNotes": "Dark red vignette that pulses inward. Edge-only, transparent center. Unsettling but not blinding.",
+      "gameplayReadabilityNotes": "Center of board must remain fully playable — no center tinting."
+    }
+  ],
+  "rawMarkdownPath": "C:\\TechProjects\\PuzzleRivals\\Puzzles\\Score Attack.md",
+  "processedAt": "2026-04-10T07:18:41.742Z",
+  "inferenceWarnings": [],
+  "missingInfo": []
+}

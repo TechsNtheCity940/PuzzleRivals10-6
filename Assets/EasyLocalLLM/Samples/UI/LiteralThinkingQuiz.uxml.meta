@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 008520001e88d2e45892a0cffbce9dc9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 13804, guid: 0000000000000000e000000000000000, type: 0}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/UI/LiteralThinkingQuiz.uxml
+  uploadId: 902466

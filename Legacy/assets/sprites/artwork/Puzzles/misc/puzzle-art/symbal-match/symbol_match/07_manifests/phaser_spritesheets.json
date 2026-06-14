@@ -1,0 +1,345 @@
+{
+  "recommendedBackVariant": "tile_back_shimmer",
+  "sheets": [
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_diamond_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_diamond_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_star_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_star_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_sun_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_sun_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_moon_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_moon_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_wave_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_wave_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_rune_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_rune_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_hex_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_hex_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_symbol_tile_disc_reveal_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "symbol_tile_disc_reveal_play",
+          "start": 0,
+          "end": 5,
+          "frameRate": 12,
+          "repeat": 0
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_tile_back_shimmer_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_tile_back_shimmer_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "tile_back_shimmer_loop",
+          "start": 0,
+          "end": 5,
+          "frameRate": 8,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_tile_back_focus_06f_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_tile_back_focus_06f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 5
+      },
+      "animations": [
+        {
+          "key": "tile_back_focus_loop",
+          "start": 0,
+          "end": 5,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_01_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_01_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_02_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_02_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_03_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_03_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_04_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_04_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_05_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_05_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_06_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_06_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_07_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_07_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_08_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_08_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_09_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_09_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_10_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_10_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_11_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_11_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_12_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_12_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_13_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_13_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_14_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_14_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_15_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_15_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_symbol_match_board_slot_16_static_v01",
+      "path": "06_exports/png/memory_lights_symbol_match_board_slot_16_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    }
+  ]
+}

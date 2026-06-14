@@ -1,0 +1,28 @@
+{
+    "asset": "c6efa2aa93738424398a96c0f95120d4",
+    "fileName": "019eae37-7c3e-757c-8d72-5e3ebd60c704.png",
+    "prompt": "Esports emblem icon for a codebreaker called CIPHER, a stylized padlock fused with a circuit key and binary cipher rings, bold simple silhouette, pure white monochrome flat icon, centered, isolated on a fully transparent background, clean game UI badge",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

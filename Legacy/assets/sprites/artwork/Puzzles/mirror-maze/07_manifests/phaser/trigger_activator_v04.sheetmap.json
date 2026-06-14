@@ -1,0 +1,125 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_trigger_activator_loop_06f_v04.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\animation\\mirror_maze_main_puzzle_trigger_activator_loop_06f_v04_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "trigger_activator_v04",
+  "base_asset_key": "trigger_activator",
+  "asset_slug": "activator_strip_refined",
+  "sheet_kind": "animation_strip",
+  "frame_width": 256,
+  "frame_height": 256,
+  "frame_count": 6,
+  "animation_groups": [
+    {
+      "key": "trigger_activator_v04_loop",
+      "start": 0,
+      "end": 5,
+      "frameRate": 12,
+      "repeat": -1
+    }
+  ],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 27,
+        "y": 12,
+        "w": 202,
+        "h": 232
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 50,
+        "y": 12,
+        "w": 155,
+        "h": 232
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 24,
+        "y": 12,
+        "w": 207,
+        "h": 232
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 45,
+        "y": 12,
+        "w": 166,
+        "h": 232
+      }
+    },
+    {
+      "index": 4,
+      "frame": {
+        "x": 1024,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 23,
+        "y": 12,
+        "w": 209,
+        "h": 232
+      }
+    },
+    {
+      "index": 5,
+      "frame": {
+        "x": 1280,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "content_bounds": {
+        "x": 25,
+        "y": 12,
+        "w": 205,
+        "h": 232
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "Preferred refined activator strip with cleaner frame spacing."
+}

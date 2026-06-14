@@ -1,0 +1,32 @@
+[
+  {
+    "asset_slug": "flow_straight",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  },
+  {
+    "asset_slug": "flow_corner",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  },
+  {
+    "asset_slug": "flow_tjunction",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  },
+  {
+    "asset_slug": "flow_cross",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  },
+  {
+    "asset_slug": "pump_flow",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  },
+  {
+    "asset_slug": "reservoir_fill",
+    "issue": "Generated strip width is not evenly divisible by frame count.",
+    "suggested_action": "Run a cleanup slicing pass before direct engine import."
+  }
+]

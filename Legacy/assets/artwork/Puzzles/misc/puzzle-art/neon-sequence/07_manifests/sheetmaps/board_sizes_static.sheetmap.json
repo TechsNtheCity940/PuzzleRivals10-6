@@ -1,0 +1,12 @@
+{
+  "asset_key": "board_sizes_static",
+  "filename": "phaser_puzzle_pack_neon_sequence_recall_board_environment_board_sizes_static_03f_v03.png",
+  "frameWidth": 512,
+  "frameHeight": 512,
+  "frameCount": 3,
+  "animated": false,
+  "loopType": "static",
+  "defaultFps": null,
+  "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/static/phaser_puzzle_pack_neon_sequence_recall_board_environment_board_sizes_static_03f_v03.png",
+  "animations": []
+}

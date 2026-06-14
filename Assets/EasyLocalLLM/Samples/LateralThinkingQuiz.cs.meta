@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7c1986a2636798642bac05056de58dd9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/LateralThinkingQuiz.cs
+  uploadId: 902466

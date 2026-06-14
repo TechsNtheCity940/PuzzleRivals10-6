@@ -1,0 +1,58 @@
+[
+  {
+    "id": "shard-stack_req_board_slots",
+    "name": "Board Slot Sheet",
+    "category": "board-tile",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Grid slot tiles in all states"
+  },
+  {
+    "id": "shard-stack_req_piece_shapes",
+    "name": "Block Shape Sheet",
+    "category": "gameplay-piece",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "All tetromino-style shapes × states"
+  },
+  {
+    "id": "shard-stack_req_snap_fx",
+    "name": "Placement Snap FX",
+    "category": "pulse-indicator",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: placement feedback requires snap indicator"
+  },
+  {
+    "id": "shard-stack_req_invalid_shake",
+    "name": "Invalid Placement Shake FX",
+    "category": "ui-feedback",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: invalid placement needs visual rejection feedback"
+  },
+  {
+    "id": "shard-stack_req_zone_clear_fx",
+    "name": "Zone Clear Burst FX",
+    "category": "destruction-burst",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: zone clear is primary reward moment"
+  },
+  {
+    "id": "shard-stack_req_send_opponent_fx",
+    "name": "Opponent Send FX",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "medium",
+    "notes": "Inferred: competitive mechanic needs send feedback"
+  },
+  {
+    "id": "shard-stack_req_area_glow",
+    "name": "Area Fill Glow Overlay",
+    "category": "glow-aura",
+    "isExplicit": false,
+    "priority": "medium",
+    "notes": "Inferred: nearly-complete zones should glow to hint completion"
+  }
+]

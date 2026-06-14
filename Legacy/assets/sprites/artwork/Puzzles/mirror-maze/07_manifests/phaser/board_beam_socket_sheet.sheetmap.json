@@ -1,0 +1,87 @@
+{
+  "source_image_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\06_exports\\engine_ready\\mirror_maze_main_puzzle_board_beam_socket_sheet_idle_v01.png",
+  "normalized_sheet_path": "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\05_sheets\\static\\mirror_maze_main_puzzle_board_beam_socket_sheet_idle_v01_v03_sheet.png",
+  "puzzle_slug": "mirror-maze",
+  "asset_key": "board_beam_socket_sheet",
+  "base_asset_key": "board_beam_socket_sheet",
+  "asset_slug": "beam_socket_sheet",
+  "sheet_kind": "sprite_sheet",
+  "frame_width": 384,
+  "frame_height": 384,
+  "frame_count": 4,
+  "animation_groups": [],
+  "frame_rects": [
+    {
+      "index": 0,
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 14,
+        "w": 360,
+        "h": 355
+      }
+    },
+    {
+      "index": 1,
+      "frame": {
+        "x": 384,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      "content_bounds": {
+        "x": 14,
+        "y": 12,
+        "w": 356,
+        "h": 360
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 12,
+        "w": 360,
+        "h": 360
+      }
+    },
+    {
+      "index": 3,
+      "frame": {
+        "x": 1152,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      "content_bounds": {
+        "x": 12,
+        "y": 12,
+        "w": 359,
+        "h": 360
+      }
+    }
+  ],
+  "warnings": [],
+  "confidence_notes": [
+    {
+      "level": "medium",
+      "note": "Frame slicing inferred from manifest frame count and normalized into fixed frame canvases."
+    }
+  ],
+  "companion_metadata_sources_used": [
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\asset_manifest.json",
+    "C:\\TechProjects\\PuzzleRivals\\public\\Puzzles\\mirror-maze\\07_manifests\\animation_manifest.json"
+  ],
+  "notes": "Sockets and connector pads for beam anchors and board routing."
+}

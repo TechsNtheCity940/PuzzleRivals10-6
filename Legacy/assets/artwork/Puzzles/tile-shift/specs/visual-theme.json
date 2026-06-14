@@ -1,0 +1,65 @@
+{
+  "name": "Tile Shift Visual Theme",
+  "mood": "matte, tech, arcade, premium, pressure, explosive",
+  "finish": "glossy hard-surface with controlled bloom",
+  "baseColors": {
+    "base": [
+      "#0a0d1a",
+      "#0d1224",
+      "#111830"
+    ],
+    "primary": [
+      "#00e5ff",
+      "#00bcd4",
+      "#0097a7"
+    ],
+    "secondary": [
+      "#e040fb",
+      "#aa00ff",
+      "#7b1fa2"
+    ],
+    "accent": [
+      "#ffc400",
+      "#ff9800",
+      "#ffd740"
+    ],
+    "danger": [
+      "#ff1744",
+      "#f44336",
+      "#ff5252"
+    ],
+    "success": [
+      "#00e676",
+      "#00c853",
+      "#69f0ae"
+    ],
+    "neutral": [
+      "#37474f",
+      "#546e7a",
+      "#78909c"
+    ]
+  },
+  "contrastLevel": "high",
+  "bloomLevel": "controlled",
+  "particleUsage": "moderate",
+  "silhouetteConstraints": [
+    "clean outer silhouette readable at 64px",
+    "no detail that disappears below 128px",
+    "no decorative filigree on gameplay pieces",
+    "Mobile Readability Notes",
+    "shift arrows must be obviousselected row/column highlight must be clearboard must not become cluttered by too many guidance overlaysrow and column boundaries must be visually readablewraparound destination preview should be clean and brief",
+    "shift arrows must be obvious"
+  ],
+  "readabilityNotes": [
+    "gameplay state must be readable from tile color/shape alone",
+    "flow direction must be readable without tooltips",
+    "high contrast against dark board backgrounds required",
+    "no clutter within tile bounds",
+    "Mobile Readability Notes",
+    "shift arrows must be obviousselected row/column highlight must be clearboard must not become cluttered by too many guidance overlaysrow and column boundaries must be visually readablewraparound destination preview should be clean and brief",
+    "shift arrows must be obvious",
+    "shift arrows must be obvious"
+  ],
+  "uniqueLanguage": "Smooth spatial precision: tile edge clarity is critical. Slide trails are brief and directional. Goal tile distinguished by strong accent color. Path completion has a satisfying lock-in flash.",
+  "styleProfile": "sci-fi-arcade"
+}

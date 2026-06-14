@@ -1,0 +1,22 @@
+{
+  "cs_board_foundation_01.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/static/circuit_scramble_circuit_scramble_board_foundations_foundation_sheet_static_09f_v01.png",
+  "cs_wire_primitives_01.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/static/circuit_scramble_circuit_scramble_wire_modules_wire_sheet_static_12f_v01.png",
+  "cs_special_modules_01.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/static/circuit_scramble_circuit_scramble_special_modules_special_sheet_static_09f_v01.png",
+  "cs_objectives_01.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/static/circuit_scramble_circuit_scramble_objectives_objective_sheet_static_06f_v01.png",
+  "cs_wire_straight_flow_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_wire_animation_straight_horizontal_flow_loop_08f_v01.png",
+  "cs_wire_elbow_flow_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_wire_animation_elbow_ne_flow_loop_08f_v01.png",
+  "cs_wire_tjunction_flow_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_wire_animation_t_up_flow_loop_08f_v01.png",
+  "cs_wire_cross_flow_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_wire_animation_cross_flow_loop_08f_v01.png",
+  "cs_gate_and_activate_08f.png": "/workspace/output/circuit_scramble_and_gate_flow_strip_v01_alpha.png",
+  "cs_gate_or_activate_08f.png": "/workspace/output/circuit_scramble_or_gate_flow_strip_v01_alpha.png",
+  "cs_gate_xor_activate_08f.png": "/workspace/output/circuit_scramble_xor_gate_flow_strip_v01_alpha.png",
+  "cs_gate_not_activate_08f.png": "/workspace/output/circuit_scramble_not_inverter_flow_strip_v01_alpha.png",
+  "cs_hijack_activate_12f.png": "/workspace/output/circuit_scramble_hijack_junction_flow_strip_v01_alpha.png",
+  "cs_trap_redirect_10f.png": "/workspace/output/circuit_scramble_trap_redirector_flow_strip_v01_alpha.png",
+  "cs_splitter_activate_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_logic_animation_splitter_flow_loop_08f_v01.png",
+  "cs_booster_overcharge_08f.png": "/workspace/circuit_scramble/circuit_scramble/05_sheets/animation/circuit_scramble_circuit_scramble_logic_animation_booster_flow_loop_08f_v01.png",
+  "cs_core_charge_08f.png": "/workspace/output/circuit_scramble_corner_power_core_charge_strip_v01_alpha.png",
+  "cs_center_capture_12f.png": "/workspace/output/circuit_scramble_central_node_activation_strip_v01_alpha.png",
+  "cs_fx_emissive_overlay_01.png": "/workspace/output/circuit_scramble/circuit_scramble/06_exports/png/circuit_scramble_circuit_scramble_fx_overlay_sheet_11up_v01.png",
+  "cs_ui_kit_01.png": "/workspace/output/circuit_scramble/circuit_scramble/06_exports/png/circuit_scramble_circuit_scramble_ui_kit_sheet_12up_v01.png"
+}

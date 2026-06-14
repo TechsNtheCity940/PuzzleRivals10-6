@@ -1,0 +1,28 @@
+{
+    "asset": "a566e756f0618af428db72f49054a842",
+    "fileName": "019eae36-e137-7bbd-8959-bc61c26d5af5.png",
+    "prompt": "Subtle sci-fi UI panel background texture, faint hexagonal tech grid and thin circuit lines, soft diagonal scanlines, light grey and white monochrome on transparent, very low contrast minimal pattern suitable as a tintable card background, flat HUD style, fills a portrait rectangle",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Combo Rush Visual Theme",
+  "mood": "matte, tech, arcade, competitive, pressure, explosive",
+  "finish": "glossy hard-surface with controlled bloom",
+  "baseColors": {
+    "base": [
+      "#0a0d1a",
+      "#0d1224",
+      "#111830"
+    ],
+    "primary": [
+      "#00e5ff",
+      "#00bcd4",
+      "#0097a7"
+    ],
+    "secondary": [
+      "#e040fb",
+      "#aa00ff",
+      "#7b1fa2"
+    ],
+    "accent": [
+      "#ffc400",
+      "#ff9800",
+      "#ffd740"
+    ],
+    "danger": [
+      "#ff1744",
+      "#f44336",
+      "#ff5252"
+    ],
+    "success": [
+      "#00e676",
+      "#00c853",
+      "#69f0ae"
+    ],
+    "neutral": [
+      "#37474f",
+      "#546e7a",
+      "#78909c"
+    ]
+  },
+  "contrastLevel": "high",
+  "bloomLevel": "controlled",
+  "particleUsage": "moderate",
+  "silhouetteConstraints": [
+    "clean outer silhouette readable at 64px",
+    "no detail that disappears below 128px",
+    "no decorative filigree on gameplay pieces",
+    "Mobile Readability Notes",
+    "minimum tile interaction size: 56 to 64 pxcombo meter must be readable in under a glancescore should be secondary to combo visibility in this modehigh-intensity VFX must never hide future move opportunitiescombo warning effects should frame the board, not wash over it",
+    "minimum tile interaction size: 56 to 64 px"
+  ],
+  "readabilityNotes": [
+    "gameplay state must be readable from tile color/shape alone",
+    "flow direction must be readable without tooltips",
+    "high contrast against dark board backgrounds required",
+    "no clutter within tile bounds",
+    "Mobile Readability Notes",
+    "minimum tile interaction size: 56 to 64 pxcombo meter must be readable in under a glancescore should be secondary to combo visibility in this modehigh-intensity VFX must never hide future move opportunitiescombo warning effects should frame the board, not wash over it",
+    "minimum tile interaction size: 56 to 64 px",
+    "minimum tile interaction size: 56 to 64 px"
+  ],
+  "uniqueLanguage": "Reactive cascade engine: gem-bright saturated pieces, explosive chain reactions, punchy clear FX. Each piece type has strong color identity. Combo bursts are high-contrast. Board danger expressed through darkening overlay.",
+  "styleProfile": "sci-fi-arcade"
+}

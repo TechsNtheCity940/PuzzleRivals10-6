@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 23687d131773bf247818252537343c8f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/QuickStart.md
+  uploadId: 902466

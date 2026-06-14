@@ -1,0 +1,484 @@
+{
+  "title": "Shard Stack",
+  "slug": "shard-stack",
+  "internalId": "shard-stack",
+  "puzzleType": "shape-packing",
+  "tags": [],
+  "gameplaySummary": "What Makes It Unique Shard Stack must be clearly different from every nearby mode: Shard Stack must be clearly different from every nearby mode: unlike Tile Shift, players do not manipulate the whole board. They place one shape at a time.unlike Clear Rush, removal comes from completed rows/zones, not tap-clears.unlike Spatial Spin, rotation supports shape fit, but the identity is queue-based placement.unlike Link Lock / Circuit Clash / Pipe Pulse, there is no route-building or flow logic.unlike Score Attack / Combo Rush, no cluster solving is involved.unlike Maze Rush / Mirror Maze, there is no navigation or beam pathing. unlike Tile Shift, players do not manipulate the whole board. They place one shape at a time. | Win: Win Condition A player wins by: A player wins by: | Players: 4",
+  "board": {
+    "width": 10,
+    "height": 10,
+    "cellCount": 100,
+    "gridType": "irregular",
+    "cellSizePx": 128,
+    "zoneTypes": [],
+    "hasHazardZones": false,
+    "hasLockedTiles": true,
+    "reservedHUDSpaces": []
+  },
+  "tiles": [
+    {
+      "id": "shard-stack_tile_slot",
+      "name": "Board Slot",
+      "variants": [
+        "empty",
+        "filled",
+        "highlighted",
+        "invalid"
+      ],
+      "states": [
+        "default",
+        "hover",
+        "valid-target",
+        "invalid-target",
+        "filled"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Individual placement slot on the board grid. Filled state shows piece color."
+    },
+    {
+      "id": "shard-stack_tile_zone_complete",
+      "name": "Zone Complete",
+      "variants": [
+        "normal",
+        "bonus"
+      ],
+      "states": [
+        "incomplete",
+        "completing",
+        "complete"
+      ],
+      "isInteractable": false,
+      "isRotatable": false,
+      "notes": "Area clear indicator when a zone fills entirely."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "shard-stack_piece_l_shape",
+      "name": "L-Shape Block",
+      "category": "placement-piece",
+      "variants": [
+        "r0",
+        "r90",
+        "r180",
+        "r270"
+      ],
+      "states": [
+        "held",
+        "valid-placement",
+        "invalid-placement",
+        "placed",
+        "clearing"
+      ],
+      "animationNeeds": [
+        "placement-snap",
+        "invalid-shake",
+        "clear-dissolve"
+      ],
+      "notes": "L-tetromino shape with 4 rotation states."
+    },
+    {
+      "id": "shard-stack_piece_t_shape",
+      "name": "T-Shape Block",
+      "category": "placement-piece",
+      "variants": [
+        "r0",
+        "r90",
+        "r180",
+        "r270"
+      ],
+      "states": [
+        "held",
+        "valid-placement",
+        "invalid-placement",
+        "placed"
+      ],
+      "animationNeeds": [
+        "placement-snap",
+        "invalid-shake"
+      ],
+      "notes": "T-tetromino with 4 rotations."
+    },
+    {
+      "id": "shard-stack_piece_straight",
+      "name": "Straight Block",
+      "category": "placement-piece",
+      "variants": [
+        "horizontal",
+        "vertical"
+      ],
+      "states": [
+        "held",
+        "valid-placement",
+        "invalid-placement",
+        "placed"
+      ],
+      "animationNeeds": [
+        "placement-snap",
+        "invalid-shake"
+      ],
+      "notes": "I-piece, 2 orientations."
+    },
+    {
+      "id": "shard-stack_piece_square",
+      "name": "Square Block",
+      "category": "placement-piece",
+      "variants": [
+        "2x2"
+      ],
+      "states": [
+        "held",
+        "valid-placement",
+        "invalid-placement",
+        "placed"
+      ],
+      "animationNeeds": [
+        "placement-snap",
+        "invalid-shake"
+      ],
+      "notes": "2×2 block, no rotation needed."
+    },
+    {
+      "id": "shard-stack_piece_s_z_shape",
+      "name": "S/Z-Shape Block",
+      "category": "placement-piece",
+      "variants": [
+        "s-r0",
+        "s-r90",
+        "z-r0",
+        "z-r90"
+      ],
+      "states": [
+        "held",
+        "valid-placement",
+        "invalid-placement",
+        "placed"
+      ],
+      "animationNeeds": [
+        "placement-snap",
+        "invalid-shake"
+      ],
+      "notes": "S and Z shapes, 2 orientations each."
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "shard-stack_mech_placement",
+      "name": "Piece Placement",
+      "description": "Player drags/drops pieces onto the grid.",
+      "affectsAssets": [
+        "gameplay-piece",
+        "board-tile",
+        "ui-feedback"
+      ]
+    },
+    {
+      "id": "shard-stack_mech_rotation",
+      "name": "Piece Rotation",
+      "description": "Pieces can be rotated before placement.",
+      "affectsAssets": [
+        "gameplay-piece"
+      ]
+    },
+    {
+      "id": "shard-stack_mech_zone_clear",
+      "name": "Zone Clear",
+      "description": "Completing a zone clears it and awards score.",
+      "affectsAssets": [
+        "board-tile",
+        "fx-overlay",
+        "destruction-burst"
+      ]
+    },
+    {
+      "id": "shard-stack_mech_opponent_send",
+      "name": "Send to Opponent",
+      "description": "Completing zones sends penalty blocks to opponent in competitive mode.",
+      "affectsAssets": [
+        "fx-overlay",
+        "ui-feedback"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "shard-stack_fx_snap_place",
+      "trigger": "valid placement",
+      "type": "pulse",
+      "durationFrames": 6,
+      "notes": "Crisp snap FX on placement. Brief, satisfying."
+    },
+    {
+      "id": "shard-stack_fx_invalid_shake",
+      "trigger": "invalid placement attempt",
+      "type": "pulse",
+      "durationFrames": 8,
+      "notes": "Short shake animation on piece. Red flash feedback."
+    },
+    {
+      "id": "shard-stack_fx_zone_clear",
+      "trigger": "zone fills completely",
+      "type": "burst",
+      "durationFrames": 14,
+      "notes": "Zone area dissolves with a flash and radiates outward."
+    },
+    {
+      "id": "shard-stack_fx_send_to_opponent",
+      "trigger": "zone cleared in competitive",
+      "type": "burst",
+      "durationFrames": 12,
+      "notes": "Penalty block flies to opponent board."
+    }
+  ],
+  "visualTheme": {
+    "name": "Shard Stack Visual Theme",
+    "mood": "matte, crystalline, tech, premium, competitive, industrial, pressure, tactical, explosive",
+    "finish": "glossy hard-surface with controlled bloom",
+    "baseColors": {
+      "base": [
+        "#0a0d1a",
+        "#0d1224",
+        "#111830"
+      ],
+      "primary": [
+        "#00e5ff",
+        "#00bcd4",
+        "#0097a7"
+      ],
+      "secondary": [
+        "#e040fb",
+        "#aa00ff",
+        "#7b1fa2"
+      ],
+      "accent": [
+        "#ffc400",
+        "#ff9800",
+        "#ffd740"
+      ],
+      "danger": [
+        "#ff1744",
+        "#f44336",
+        "#ff5252"
+      ],
+      "success": [
+        "#00e676",
+        "#00c853",
+        "#69f0ae"
+      ],
+      "neutral": [
+        "#37474f",
+        "#546e7a",
+        "#78909c"
+      ]
+    },
+    "contrastLevel": "high",
+    "bloomLevel": "controlled",
+    "particleUsage": "moderate",
+    "silhouetteConstraints": [
+      "clean outer silhouette readable at 64px",
+      "no detail that disappears below 128px",
+      "no decorative filigree on gameplay pieces",
+      "Mobile Readability Notes",
+      "cells must be large enough to show shard silhouettes clearlydrag ghost must be readablerotation preview must be instantillegal placement state must be obviousqueue pieces must remain visible and distinctboard cannot be overloaded with decorative crystal clutter",
+      "cells must be large enough to show shard silhouettes clearly"
+    ],
+    "readabilityNotes": [
+      "gameplay state must be readable from tile color/shape alone",
+      "flow direction must be readable without tooltips",
+      "high contrast against dark board backgrounds required",
+      "no clutter within tile bounds",
+      "Mobile Readability Notes",
+      "cells must be large enough to show shard silhouettes clearlydrag ghost must be readablerotation preview must be instantillegal placement state must be obviousqueue pieces must remain visible and distinctboard cannot be overloaded with decorative crystal clutter",
+      "cells must be large enough to show shard silhouettes clearly",
+      "cells must be large enough to show shard silhouettes clearly"
+    ],
+    "uniqueLanguage": "Precision geometry: clean-edged block forms with subtle inner glow on valid placement. Strong edge contrast for piece differentiation. Snap feedback is crisp and immediate. Area completion is rewarding and visible.",
+    "styleProfile": "sci-fi-arcade"
+  },
+  "assetRequirements": [
+    {
+      "id": "shard-stack_req_board_slots",
+      "name": "Board Slot Sheet",
+      "category": "board-tile",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "Grid slot tiles in all states"
+    },
+    {
+      "id": "shard-stack_req_piece_shapes",
+      "name": "Block Shape Sheet",
+      "category": "gameplay-piece",
+      "isExplicit": true,
+      "priority": "critical",
+      "notes": "All tetromino-style shapes × states"
+    },
+    {
+      "id": "shard-stack_req_snap_fx",
+      "name": "Placement Snap FX",
+      "category": "pulse-indicator",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: placement feedback requires snap indicator"
+    },
+    {
+      "id": "shard-stack_req_invalid_shake",
+      "name": "Invalid Placement Shake FX",
+      "category": "ui-feedback",
+      "isExplicit": false,
+      "priority": "high",
+      "notes": "Inferred: invalid placement needs visual rejection feedback"
+    },
+    {
+      "id": "shard-stack_req_zone_clear_fx",
+      "name": "Zone Clear Burst FX",
+      "category": "destruction-burst",
+      "isExplicit": false,
+      "priority": "critical",
+      "notes": "Inferred: zone clear is primary reward moment"
+    },
+    {
+      "id": "shard-stack_req_send_opponent_fx",
+      "name": "Opponent Send FX",
+      "category": "fx-overlay",
+      "isExplicit": false,
+      "priority": "medium",
+      "notes": "Inferred: competitive mechanic needs send feedback"
+    },
+    {
+      "id": "shard-stack_req_area_glow",
+      "name": "Area Fill Glow Overlay",
+      "category": "glow-aura",
+      "isExplicit": false,
+      "priority": "medium",
+      "notes": "Inferred: nearly-complete zones should glow to hint completion"
+    }
+  ],
+  "spriteSheets": [
+    {
+      "filename": "shard-stack_board_slots.png",
+      "assetKey": "shard-stack_board_slots",
+      "category": "board-tile",
+      "sheetType": "static-variants",
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "columns": 6,
+      "rows": 1,
+      "totalFrames": 6,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "frame index per slot state drawn to grid",
+      "animationKeys": [],
+      "animations": [],
+      "styleNotes": "Clean geometric slot recess. Dark inset, subtle grid lines. Hover state = subtle cyan edge. Valid target = brighter edge. Invalid = red edge.",
+      "gameplayReadabilityNotes": "Slot boundaries must be clearly visible to guide placement decisions."
+    },
+    {
+      "filename": "shard-stack_blocks.png",
+      "assetKey": "shard-stack_blocks",
+      "category": "gameplay-piece",
+      "sheetType": "animation-sheet",
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "columns": 8,
+      "rows": 4,
+      "totalFrames": 32,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "per-piece type, animated states via frame ranges",
+      "animationKeys": [
+        "shard-stack_block_held",
+        "shard-stack_block_snap",
+        "shard-stack_block_invalid"
+      ],
+      "animations": [
+        {
+          "key": "shard-stack_block_held",
+          "description": "Block held/dragging state",
+          "frameRange": {
+            "start": 0,
+            "end": 1
+          },
+          "frameRate": 12,
+          "loop": "loop",
+          "gameplayState": "active"
+        },
+        {
+          "key": "shard-stack_block_snap",
+          "description": "Block placement snap",
+          "frameRange": {
+            "start": 2,
+            "end": 7
+          },
+          "frameRate": 20,
+          "loop": "once",
+          "gameplayState": "active"
+        },
+        {
+          "key": "shard-stack_block_invalid",
+          "description": "Block invalid shake",
+          "frameRange": {
+            "start": 8,
+            "end": 13
+          },
+          "frameRate": 20,
+          "loop": "once",
+          "gameplayState": "fail"
+        },
+        {
+          "key": "shard-stack_block_clear",
+          "description": "Block zone clear dissolve",
+          "frameRange": {
+            "start": 14,
+            "end": 21
+          },
+          "frameRate": 12,
+          "loop": "once",
+          "gameplayState": "burst"
+        }
+      ],
+      "styleNotes": "Solid color block with inner chamfer/bevel edge. Glossy hard-surface. Per-piece color identity: each piece type has distinct color family. Held state: slight float effect + drop shadow. Snap: bright edge flash.",
+      "gameplayReadabilityNotes": "Block shapes must be read at a glance. Shape identity (L, T, I, S, Z) must survive small scale."
+    },
+    {
+      "filename": "shard-stack_zone_clear_fx.png",
+      "assetKey": "shard-stack_zone_clear_fx",
+      "category": "destruction-burst",
+      "sheetType": "animation-strip",
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "columns": 7,
+      "rows": 1,
+      "totalFrames": 7,
+      "spacing": 0,
+      "margin": 0,
+      "transparentBackground": true,
+      "phaserUsage": "played once centered on cleared zone, scaled to fit zone size",
+      "animationKeys": [
+        "shard-stack_zone_clear"
+      ],
+      "animations": [
+        {
+          "key": "shard-stack_zone_clear",
+          "description": "Zone clear burst",
+          "frameRange": {
+            "start": 0,
+            "end": 6
+          },
+          "frameRate": 18,
+          "loop": "once",
+          "gameplayState": "success"
+        }
+      ],
+      "styleNotes": "Large burst covering completed zone area. Bright white flash → cyan spread → fade. Geometric angular shards fly outward. Premium, crisp, celebratory.",
+      "gameplayReadabilityNotes": "Must not persist longer than 0.5s. Board must be readable immediately after."
+    }
+  ],
+  "rawMarkdownPath": "C:\\TechProjects\\PuzzleRivals\\Puzzles\\Shard Stack.md",
+  "processedAt": "2026-04-10T07:47:11.611Z",
+  "inferenceWarnings": [],
+  "missingInfo": []
+}

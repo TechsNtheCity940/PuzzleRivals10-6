@@ -1,0 +1,12 @@
+{
+  "asset_key": "light_tiles_static",
+  "filename": "phaser_puzzle_pack_neon_sequence_recall_placeable_pieces_light_tiles_static_06f_v03.png",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frameCount": 6,
+  "animated": false,
+  "loopType": "static",
+  "defaultFps": null,
+  "path": "/workspace/output/phaser_puzzle_pack/neon_sequence_recall/05_sheets/static/phaser_puzzle_pack_neon_sequence_recall_placeable_pieces_light_tiles_static_06f_v03.png",
+  "animations": []
+}

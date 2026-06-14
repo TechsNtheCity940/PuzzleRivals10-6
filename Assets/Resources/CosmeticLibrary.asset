@@ -1,0 +1,460 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5987f6b2345e1774a9502f76cbe168fc, type: 3}
+  m_Name: CosmeticLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::CosmeticLibrary
+  frames:
+  - id: 0
+    key: basic_01
+    category: 0
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 325309a381fbedf449b2aea32041cef8, type: 3}
+  - id: 1
+    key: basic_02
+    category: 0
+    rarity: 0
+    sprite: {fileID: 21300000, guid: f8634692e6d446942913592e9471431e, type: 3}
+  - id: 2
+    key: basic_03
+    category: 0
+    rarity: 0
+    sprite: {fileID: 21300000, guid: e241ccb174f37d84a860ece9c49d400d, type: 3}
+  - id: 3
+    key: uncommon_01
+    category: 0
+    rarity: 1
+    sprite: {fileID: 21300000, guid: a199231c1f9bd554e84570a954caa7e7, type: 3}
+  - id: 4
+    key: uncommon_02
+    category: 0
+    rarity: 1
+    sprite: {fileID: 21300000, guid: f84f3681b4d5cb243906ece0fc313455, type: 3}
+  - id: 5
+    key: uncommon_03
+    category: 0
+    rarity: 1
+    sprite: {fileID: 21300000, guid: d5e389c55c495624eac4c713ac215237, type: 3}
+  - id: 6
+    key: rare_01
+    category: 0
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 4de3ffbe606946949892268ad1261ed6, type: 3}
+  - id: 7
+    key: rare_02
+    category: 0
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 8c8542cd92537e84493196919b89d457, type: 3}
+  - id: 8
+    key: rare_03
+    category: 0
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 81142bce15664454f86dbb0c4353cc01, type: 3}
+  - id: 9
+    key: epic_01
+    category: 0
+    rarity: 3
+    sprite: {fileID: 21300000, guid: c3b49f5c04db07d48b7936dd7356cc5c, type: 3}
+  - id: 10
+    key: epic_02
+    category: 0
+    rarity: 3
+    sprite: {fileID: 21300000, guid: 4b44d2e6ec0b800458447b070a87e44f, type: 3}
+  - id: 11
+    key: epic_03
+    category: 0
+    rarity: 3
+    sprite: {fileID: 21300000, guid: 325f9e1ed935b3041911d7e4ee7b45ef, type: 3}
+  - id: 12
+    key: legendary_01
+    category: 0
+    rarity: 4
+    sprite: {fileID: 21300000, guid: 4620f94b994bb3e449b3c161ef419133, type: 3}
+  - id: 13
+    key: legendary_02
+    category: 0
+    rarity: 4
+    sprite: {fileID: 21300000, guid: 49bf10945159fb4449aea20d8537bb99, type: 3}
+  - id: 14
+    key: legendeayr_03
+    category: 0
+    rarity: 4
+    sprite: {fileID: 21300000, guid: 1041d48c3ac07d3439278af1f76999e9, type: 3}
+  - id: 15
+    key: grandmaster_01
+    category: 0
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 97571bf37e928e545bffbb2ab04cec07, type: 3}
+  - id: 16
+    key: grandmaster_02
+    category: 0
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 3cc8bf41eaf5a6349a619c56304958ce, type: 3}
+  - id: 17
+    key: grandmaster_03
+    category: 0
+    rarity: 5
+    sprite: {fileID: 21300000, guid: c9dc28a82f43db94e9d7ed96561d5884, type: 3}
+  - id: 18
+    key: AuroraEliteFrameS1
+    category: 0
+    rarity: 6
+    sprite: {fileID: 21300000, guid: 4c9527c28c6980847b6527bea1ecfc7d, type: 3}
+  - id: 19
+    key: InfernoEliteFrameS1
+    category: 0
+    rarity: 6
+    sprite: {fileID: 21300000, guid: 14e97fe7e8e94524e95aa8ac456d2528, type: 3}
+  - id: 20
+    key: NovaEliteFrameS1
+    category: 0
+    rarity: 6
+    sprite: {fileID: 21300000, guid: f4de52d5bcbf44f40a856a724c3a00c5, type: 3}
+  - id: 21
+    key: ObsidianEliteFrameS1
+    category: 0
+    rarity: 6
+    sprite: {fileID: 21300000, guid: 3ddc0781f072e144a8878ecdeffc4845, type: 3}
+  nameplates:
+  - id: 0
+    key: basic_01
+    category: 1
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 427b5d2448657854696e645d2a24f85d, type: 3}
+  - id: 1
+    key: basic_02
+    category: 1
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 7b5c64e6d27c3974fb3b0dd6cdfacd76, type: 3}
+  - id: 2
+    key: basic_03
+    category: 1
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 7fb669340deee2941a459b8501937840, type: 3}
+  - id: 3
+    key: basic_04
+    category: 1
+    rarity: 0
+    sprite: {fileID: 21300000, guid: b59cf16a5d7910a4e8745b37259d317f, type: 3}
+  - id: 4
+    key: uncommon_01
+    category: 1
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 6efc179e0cdcb174cb8dbd3e6b3f2d40, type: 3}
+  - id: 5
+    key: uncommon_02
+    category: 1
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 19faec04abc8f1e46925615b98710b3d, type: 3}
+  - id: 6
+    key: uncommon_03
+    category: 1
+    rarity: 1
+    sprite: {fileID: 21300000, guid: fadc2ba706d61b842b5ad9b7fd8053c0, type: 3}
+  - id: 7
+    key: uncommon_04
+    category: 1
+    rarity: 1
+    sprite: {fileID: 21300000, guid: b3e5b2968d6c12d4aae5bbab8c2d03e7, type: 3}
+  - id: 8
+    key: rare_01
+    category: 1
+    rarity: 2
+    sprite: {fileID: 21300000, guid: b57080e0aaa235c43bb8caf3ae8f2abb, type: 3}
+  - id: 9
+    key: rare_02
+    category: 1
+    rarity: 2
+    sprite: {fileID: 21300000, guid: fafae24e6a3e41e4b897aaa3fa31b66c, type: 3}
+  - id: 10
+    key: rare_03
+    category: 1
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 1da3688c6ee6337408900412357f7d4f, type: 3}
+  - id: 11
+    key: rare_04
+    category: 1
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 770ef10d9f8fafb4abba2dcf7a388494, type: 3}
+  - id: 12
+    key: epic_01
+    category: 1
+    rarity: 3
+    sprite: {fileID: 21300000, guid: d4cfc60850329534098bb725a1dfbc49, type: 3}
+  - id: 13
+    key: epic_02
+    category: 1
+    rarity: 3
+    sprite: {fileID: 21300000, guid: 080e8f1720a672c4ebf196019cbe9f89, type: 3}
+  - id: 14
+    key: epic_03
+    category: 1
+    rarity: 3
+    sprite: {fileID: 21300000, guid: f029edb4d47691f4dbced2b4e97e5de9, type: 3}
+  - id: 15
+    key: epic_04
+    category: 1
+    rarity: 3
+    sprite: {fileID: 21300000, guid: f1d991a6b0d2d7649b18e3a241161dc9, type: 3}
+  - id: 16
+    key: legendary_01
+    category: 1
+    rarity: 4
+    sprite: {fileID: 21300000, guid: ab00f54f6852a214b9d4ab4b2c3cdf44, type: 3}
+  - id: 17
+    key: legendary_02
+    category: 1
+    rarity: 4
+    sprite: {fileID: 21300000, guid: 049cc633e98c25445abae89e27a93e87, type: 3}
+  - id: 18
+    key: legendary_03
+    category: 1
+    rarity: 4
+    sprite: {fileID: 21300000, guid: b768960188d381642acfc9ed0e68bce2, type: 3}
+  - id: 19
+    key: legendary_04
+    category: 1
+    rarity: 4
+    sprite: {fileID: 21300000, guid: d32e2b635a8baac4096c70ca2c20a38a, type: 3}
+  - id: 20
+    key: grandmaster_01
+    category: 1
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 735a1302336d868428615704ad352a07, type: 3}
+  - id: 21
+    key: grandmaster_02
+    category: 1
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 91c2ba81b96699e45be146fc96907f42, type: 3}
+  - id: 22
+    key: grandmaster_03
+    category: 1
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 080342a66fb201d43bfc2e849b364cb8, type: 3}
+  - id: 23
+    key: grandmaster_04
+    category: 1
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 455860f085564b34095b1a91a0edce0d, type: 3}
+  banners:
+  - id: 0
+    key: basic_01
+    category: 2
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 2abc791887a13904baca7ce06835354d, type: 3}
+  - id: 1
+    key: basic_02
+    category: 2
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 7bd349bbc8516ef4999f48ab3ed65e6f, type: 3}
+  - id: 2
+    key: uncommon_01
+    category: 2
+    rarity: 1
+    sprite: {fileID: 21300000, guid: d046561136a0f844d8dfc228ccb15a40, type: 3}
+  - id: 3
+    key: uncommon_02
+    category: 2
+    rarity: 1
+    sprite: {fileID: 21300000, guid: eb887138d5e698a4393a5fb557c75dca, type: 3}
+  - id: 4
+    key: rare_01
+    category: 2
+    rarity: 2
+    sprite: {fileID: 21300000, guid: f5a142f5971bda141aba1d5a810bff1b, type: 3}
+  - id: 5
+    key: rare_02
+    category: 2
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 46839eb14c3f2864bb78ce6af6e5e503, type: 3}
+  - id: 6
+    key: epic_01
+    category: 2
+    rarity: 3
+    sprite: {fileID: 21300000, guid: 58b89d86a893b914a9d34cd8854a1730, type: 3}
+  - id: 7
+    key: epic_02
+    category: 2
+    rarity: 3
+    sprite: {fileID: 21300000, guid: aa08ec9ee80802b46906c912146dca52, type: 3}
+  - id: 8
+    key: legendary_01
+    category: 2
+    rarity: 4
+    sprite: {fileID: 21300000, guid: b56d64e8219ad7c488be5da47cdd072b, type: 3}
+  - id: 9
+    key: legendary_02
+    category: 2
+    rarity: 4
+    sprite: {fileID: 21300000, guid: cf236fa5d9fd33f458382c4566c5e666, type: 3}
+  - id: 10
+    key: grandmaster_01
+    category: 2
+    rarity: 5
+    sprite: {fileID: 21300000, guid: 924bfd0f95259eb4b83a4f33e0cb1230, type: 3}
+  - id: 11
+    key: grandmaster_02
+    category: 2
+    rarity: 5
+    sprite: {fileID: 21300000, guid: d6b0bf1ca6e2da943a41093bf72ef8dd, type: 3}
+  backgroundCards:
+  - id: 0
+    key: basic_01
+    category: 3
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 57c21b4ef0b5e2d43aa7e0a1260902a4, type: 3}
+  - id: 1
+    key: basic_02
+    category: 3
+    rarity: 0
+    sprite: {fileID: 21300000, guid: b3927c1ef2e72fe41835346a0ba68d6e, type: 3}
+  - id: 2
+    key: basic_03
+    category: 3
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 39983c84a6af38644bb950c772d02a6c, type: 3}
+  - id: 3
+    key: basic_04
+    category: 3
+    rarity: 0
+    sprite: {fileID: 21300000, guid: ef83a8122317fe54da92f428da6f2de3, type: 3}
+  - id: 4
+    key: uncommon_01
+    category: 3
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 04a9210ec5227cd4ca19f40ec2352508, type: 3}
+  - id: 5
+    key: uncommon_02
+    category: 3
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 01967c09b742fe842aabfec720701568, type: 3}
+  - id: 6
+    key: uncommon_03
+    category: 3
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 26de308be6930e148b0e93f0faf17613, type: 3}
+  - id: 7
+    key: uncommon_04
+    category: 3
+    rarity: 1
+    sprite: {fileID: 21300000, guid: 77d8783feb1c63045b2cb82af9fee199, type: 3}
+  - id: 8
+    key: rare_01
+    category: 3
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 5aebbbbc95a6a774cae0a5a7f6475df4, type: 3}
+  - id: 9
+    key: rare_02
+    category: 3
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 6c65e73fc894ab940823f9b8553bc3a3, type: 3}
+  - id: 10
+    key: rare_03
+    category: 3
+    rarity: 2
+    sprite: {fileID: 21300000, guid: cd01ca9d8b199bf47b385e4936716b8e, type: 3}
+  - id: 11
+    key: rare_04
+    category: 3
+    rarity: 2
+    sprite: {fileID: 21300000, guid: 033d8fe74b7a8dc4b89f18b9241d9cda, type: 3}
+  - id: 12
+    key: epic_01
+    category: 3
+    rarity: 3
+    sprite: {fileID: 21300000, guid: d6c3e82d72c9c2c47b1d6dc6537ac4e4, type: 3}
+  - id: 13
+    key: epic_02
+    category: 3
+    rarity: 3
+    sprite: {fileID: 21300000, guid: b00f7b53cda668e42beb620f954ce54b, type: 3}
+  - id: 14
+    key: epic_03
+    category: 3
+    rarity: 3
+    sprite: {fileID: 21300000, guid: 8ab5d6cc0db4bc04599ad6283b55c8d8, type: 3}
+  - id: 15
+    key: legendary_01
+    category: 3
+    rarity: 4
+    sprite: {fileID: 21300000, guid: 55488e5a1a7b97a41b032bc3ed8cf080, type: 3}
+  emblems:
+  - id: 0
+    key: BronzeEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: f61d9866850720f4aa9e62ff6678cec6, type: 3}
+  - id: 1
+    key: SilverEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 5a2975a5a91ddbc449c1a2b0e6ece980, type: 3}
+  - id: 2
+    key: GoldEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 4eee00946b987e248a6b04cb4efd8d51, type: 3}
+  - id: 3
+    key: PlatinumEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 0a0aa7346c5639b47a48070290aabb73, type: 3}
+  - id: 4
+    key: DiamonEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: de065bb7a80cf6f4fb7852af850b0b77, type: 3}
+  - id: 5
+    key: MasterEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 6ea6caad0a9493b4ab66ed71bdc86f62, type: 3}
+  - id: 6
+    key: GrandMasterEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 0d40974d7855db24796cb806d5a1f9f0, type: 3}
+  - id: 7
+    key: LegendEmblemS1
+    category: 4
+    rarity: 0
+    sprite: {fileID: 21300000, guid: f5873f539beb8374b965ae53eb118647, type: 3}
+  avatars:
+  - id: 0
+    key: violet-popper
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: fbb8dcd0086820a438344fd880fed3ad, type: 3}
+  - id: 1
+    key: rival
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 40f98c298e929c549a19e7e2cd50be03, type: 3}
+  - id: 2
+    key: orange-cube
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 1080a3c1849261841a636b00a97ff12e, type: 3}
+  - id: 3
+    key: green-cube
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: dad35bf52875a4644a08b3591ba41049, type: 3}
+  - id: 4
+    key: GlitchCommander
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: cdb6ccf1c1c0aec45b6053bdc3a20841, type: 3}
+  - id: 5
+    key: blue-spinner
+    category: 5
+    rarity: 0
+    sprite: {fileID: 21300000, guid: 440b79705deef5d449039dfe540194a5, type: 3}

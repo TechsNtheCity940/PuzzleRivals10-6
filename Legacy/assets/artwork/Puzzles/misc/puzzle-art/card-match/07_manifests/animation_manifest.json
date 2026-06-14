@@ -1,0 +1,722 @@
+[
+  {
+    "asset_slug": "card_01",
+    "animation_name": "d1_card_flip_card_01_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_02",
+    "animation_name": "d1_card_flip_card_02_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_03",
+    "animation_name": "d1_card_flip_card_03_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_04",
+    "animation_name": "d1_card_flip_card_04_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_05",
+    "animation_name": "d1_card_flip_card_05_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_06",
+    "animation_name": "d1_card_flip_card_06_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_07",
+    "animation_name": "d1_card_flip_card_07_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_08",
+    "animation_name": "d1_card_flip_card_08_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_09",
+    "animation_name": "d1_card_flip_card_09_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_10",
+    "animation_name": "d1_card_flip_card_10_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_11",
+    "animation_name": "d1_card_flip_card_11_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_12",
+    "animation_name": "d1_card_flip_card_12_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_13",
+    "animation_name": "d1_card_flip_card_13_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_14",
+    "animation_name": "d1_card_flip_card_14_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_15",
+    "animation_name": "d1_card_flip_card_15_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_16",
+    "animation_name": "d1_card_flip_card_16_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_17",
+    "animation_name": "d1_card_flip_card_17_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_18",
+    "animation_name": "d1_card_flip_card_18_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_19",
+    "animation_name": "d1_card_flip_card_19_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_20",
+    "animation_name": "d1_card_flip_card_20_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_21",
+    "animation_name": "d1_card_flip_card_21_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_22",
+    "animation_name": "d1_card_flip_card_22_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_23",
+    "animation_name": "d1_card_flip_card_23_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_24",
+    "animation_name": "d1_card_flip_card_24_flip_open",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": false,
+    "start_state": "face_down",
+    "end_state": "face_up",
+    "notes": "Use reverse playback for the flip-close animation."
+  },
+  {
+    "asset_slug": "card_01_match_overlay",
+    "animation_name": "d1_card_flip_card_01_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_01_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_01_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_02_match_overlay",
+    "animation_name": "d1_card_flip_card_02_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_02_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_02_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_03_match_overlay",
+    "animation_name": "d1_card_flip_card_03_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_03_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_03_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_04_match_overlay",
+    "animation_name": "d1_card_flip_card_04_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_04_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_04_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_05_match_overlay",
+    "animation_name": "d1_card_flip_card_05_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_05_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_05_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_06_match_overlay",
+    "animation_name": "d1_card_flip_card_06_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_06_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_06_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_07_match_overlay",
+    "animation_name": "d1_card_flip_card_07_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_07_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_07_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_08_match_overlay",
+    "animation_name": "d1_card_flip_card_08_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_08_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_08_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_09_match_overlay",
+    "animation_name": "d1_card_flip_card_09_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_09_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_09_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_10_match_overlay",
+    "animation_name": "d1_card_flip_card_10_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_10_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_10_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_11_match_overlay",
+    "animation_name": "d1_card_flip_card_11_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_11_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_11_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_12_match_overlay",
+    "animation_name": "d1_card_flip_card_12_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_12_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_12_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_13_match_overlay",
+    "animation_name": "d1_card_flip_card_13_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_13_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_13_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_14_match_overlay",
+    "animation_name": "d1_card_flip_card_14_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_14_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_14_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_15_match_overlay",
+    "animation_name": "d1_card_flip_card_15_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_15_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_15_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_16_match_overlay",
+    "animation_name": "d1_card_flip_card_16_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_16_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_16_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_17_match_overlay",
+    "animation_name": "d1_card_flip_card_17_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_17_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_17_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_18_match_overlay",
+    "animation_name": "d1_card_flip_card_18_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_18_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_18_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_19_match_overlay",
+    "animation_name": "d1_card_flip_card_19_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_19_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_19_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_20_match_overlay",
+    "animation_name": "d1_card_flip_card_20_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_20_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_20_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_21_match_overlay",
+    "animation_name": "d1_card_flip_card_21_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_21_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_21_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_22_match_overlay",
+    "animation_name": "d1_card_flip_card_22_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_22_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_22_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_23_match_overlay",
+    "animation_name": "d1_card_flip_card_23_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_23_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_23_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  },
+  {
+    "asset_slug": "card_24_match_overlay",
+    "animation_name": "d1_card_flip_card_24_match_overlay",
+    "frame_count": 8,
+    "fps": 16,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot match confirmation overlay."
+  },
+  {
+    "asset_slug": "card_24_mismatch_overlay",
+    "animation_name": "d1_card_flip_card_24_mismatch_overlay",
+    "frame_count": 8,
+    "fps": 18,
+    "loop": false,
+    "start_state": "transparent",
+    "end_state": "transparent",
+    "notes": "One-shot mismatch warning overlay."
+  }
+]

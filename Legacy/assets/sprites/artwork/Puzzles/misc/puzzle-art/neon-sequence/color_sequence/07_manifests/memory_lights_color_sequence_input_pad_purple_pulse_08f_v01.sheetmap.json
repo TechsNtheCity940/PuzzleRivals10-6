@@ -1,0 +1,20 @@
+{
+  "asset_key": "memory_lights_color_sequence_input_pad_purple_pulse_08f_v01",
+  "sheet_kind": "animation_strip",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frame_count": 8,
+  "animations": [
+    {
+      "key": "input_pad_purple_pulse_loop",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": -1
+    }
+  ],
+  "confidence": "high",
+  "notes": [
+    "Exact grid slice from source pulse sheet."
+  ]
+}

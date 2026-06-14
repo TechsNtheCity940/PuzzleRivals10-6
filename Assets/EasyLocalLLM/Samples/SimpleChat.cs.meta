@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 414fd6eff5ef4334c97bda2cd0a6b2c2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/SimpleChat.cs
+  uploadId: 902466

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "tile-shift_req_board_tiles",
+    "name": "Board Tile Sheet",
+    "category": "board-tile",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Base empty cells, source nodes, destination nodes, blocked cells"
+  },
+  {
+    "id": "tile-shift_req_pipe_pieces",
+    "name": "Pipe Piece Sheets",
+    "category": "gameplay-piece",
+    "isExplicit": true,
+    "priority": "critical",
+    "notes": "Straight, corner, T-junction, cross pipes with all states"
+  },
+  {
+    "id": "tile-shift_req_flow_overlay",
+    "name": "Flow Overlay Sheet",
+    "category": "state-overlay",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: flowing energy must have a looping overlay animation layer"
+  },
+  {
+    "id": "tile-shift_req_pressure_overlay",
+    "name": "Pressure Buildup Overlay",
+    "category": "state-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: pressure escalation requires a tint/overlay animation"
+  },
+  {
+    "id": "tile-shift_req_burst_fx",
+    "name": "Burst FX Sheet",
+    "category": "destruction-burst",
+    "isExplicit": false,
+    "priority": "critical",
+    "notes": "Inferred: pressure overflow must have a burst explosion animation"
+  },
+  {
+    "id": "tile-shift_req_connection_pulse",
+    "name": "Connection Pulse Indicator",
+    "category": "pulse-indicator",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: valid connection feedback needs a brief snap indicator"
+  },
+  {
+    "id": "tile-shift_req_route_complete_fx",
+    "name": "Route Complete FX",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: route completion needs a celebratory glow flash"
+  },
+  {
+    "id": "tile-shift_req_pressure_warning",
+    "name": "Pressure Warning Overlay",
+    "category": "fx-overlay",
+    "isExplicit": false,
+    "priority": "high",
+    "notes": "Inferred: near-burst segments need a warning pulse loop"
+  },
+  {
+    "id": "tile-shift_req_glow_aura",
+    "name": "Flow Glow Aura Sheet",
+    "category": "glow-aura",
+    "isExplicit": false,
+    "priority": "medium",
+    "notes": "Inferred: active flow channels should have ambient energy glow"
+  }
+]

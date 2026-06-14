@@ -1,0 +1,105 @@
+# Mirror Maze Prompt Pack
+
+## Prompt MM-P01
+- family: routing_pieces
+- asset_slug: angled_mirror_sheet
+- prompt_type: static_variants
+- positive_prompt: Bright neon sci-fi puzzle game angled mirrors for a top-down board, four modular variants in one image, each mirror redirects light at 90 degrees, polished reflective glass set in beveled dark metal housings, cyan and magenta emissive guide lines, orthographic top-down view, centered composition, transparent background, consistent scale, text-free, premium gameplay readability, no cropped assets.
+- negative_prompt: No text, no logos, no watermarks, no perspective tilt, no scenery, no characters, no duplicate overlap, no muddy colors.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P02
+- family: routing_pieces
+- asset_slug: prism_sheet
+- prompt_type: static_variants
+- positive_prompt: Bright neon sci-fi puzzle game prisms for a top-down board, four modular prism variants that split incoming beams into multiple directions, faceted crystal optics inside dark graphite housings, cyan magenta amber and lime refraction glow, orthographic top-down view, centered assets, transparent background, stable scale, text-free, premium puzzle readability, no cropped sprites.
+- negative_prompt: No text, no logos, no watermarks, no perspective tilt, no scenery, no characters, no muddy colors, no overlapping objects.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P03
+- family: source_target
+- asset_slug: source_emitter_strip
+- prompt_type: animated_strip
+- positive_prompt: Four-frame horizontal animation strip for a top-down neon energy source emitter in a puzzle game, circular emitter pad with glass core and metal housing, pulsing cyan white energy ignition, subtle rotating glow, centered in every frame, transparent background, orthographic top-down view, stable lighting and scale, premium puzzle readability, text-free, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no merged frames, no extra props.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P04
+- family: source_target
+- asset_slug: target_receiver_strip
+- prompt_type: animated_strip
+- positive_prompt: Four-frame horizontal animation strip for a top-down neon target receiver in a puzzle game, futuristic receiving socket with glass lens and luminous ring, gradually intensifying magenta and amber glow as if accepting a beam, centered in every frame, transparent background, orthographic top-down view, stable lighting and scale, premium gameplay readability, text-free, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no merged frames, no extra props.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P05
+- family: beam_fx
+- asset_slug: traveling_beam_strip
+- prompt_type: animated_strip
+- positive_prompt: Four-frame horizontal animation strip of a top-down traveling beam of light and energy for a neon sci-fi puzzle game, straight beam segment with white-hot center, cyan outer glow, subtle pulse and motion ripples moving along the beam, modular segment designed for tiling between puzzle objects, centered in each frame, transparent background, stable scale, no cropped frames, text-free, premium FX quality.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective distortion, no merged frames, no duplicated beam crossings.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P06
+- family: trigger_system
+- asset_slug: activator_strip
+- prompt_type: animated_strip
+- positive_prompt: Six-frame horizontal animation strip for a top-down neon activator in a puzzle game, futuristic circular chamber that lights up when hit by a beam, looping glow like a contained sci-fi fireplace, swirling cyan magenta energy rising inside a metal housing, implies activation of a secondary source, centered in every frame, transparent background, orthographic top-down view, stable scale, text-free, premium FX readability, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no merged frames, no extra props.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P07
+- family: beam_fx
+- asset_slug: blocked_impact_strip
+- prompt_type: animated_strip
+- positive_prompt: Six-frame horizontal animation strip for a top-down blocked beam impact in a neon puzzle game, beam hits an immovable blocker and produces a small continuous energy explosion that never resolves, white-hot contact core, cyan magenta sparks, compressed circular blast and crackling fragments, modular impact effect for a stopped beam, centered in every frame, transparent background, orthographic top-down view, stable scale, text-free, premium FX quality, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no merged frames, no giant explosion cloud, no debris that hides the board.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P08
+- family: routing_pieces
+- asset_slug: blocker_sheet
+- prompt_type: static_variants
+- positive_prompt: Bright neon sci-fi puzzle game blockers for a top-down board, four modular blocking objects that visibly stop beams, dense dark graphite masses with subtle warning glow and hard light-absorbing surfaces, orthographic top-down view, centered variants, transparent background, stable scale, readable silhouette, text-free, premium puzzle readability, no cropped sprites.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no characters, no muddy colors, no overlapping objects.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P09
+- family: routing_pieces
+- asset_slug: angled_mirror_sheet_refined
+- prompt_type: static_variants
+- positive_prompt: Refined production sprite sheet for a top-down neon sci-fi puzzle game, four angled mirror variants laid out clearly in one horizontal row with generous spacing, each variant perfectly centered and isolated for slicing, polished reflective glass mirror planes inside dark beveled metal housings, strong cyan magenta guide glows, crisp orientation readability for 90-degree beam deflection, transparent background, orthographic top-down view, stable scale and lighting, premium modular game asset quality, text-free, no cropped elements.
+- negative_prompt: No text, no logos, no watermarks, no perspective tilt, no scenery, no duplicate overlap, no touching frames, no muddy colors, no extra props.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P10
+- family: board_environment
+- asset_slug: board_tile_sheet
+- prompt_type: static_variants
+- positive_prompt: Top-down neon sci-fi puzzle board tile sprite sheet, four modular floor tile variants for Mirror Maze, dark graphite panels with glowing channel lines, subtle glass insets and precision panel seams, built for bright cyan magenta amber lime beam gameplay, perfectly centered and evenly spaced in one row, transparent background, orthographic top-down view, stable scale and lighting, premium board readability, text-free, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no characters, no overlapping tiles, no muddy colors.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P11
+- family: board_environment
+- asset_slug: beam_socket_sheet
+- prompt_type: static_variants
+- positive_prompt: Top-down neon sci-fi puzzle beam sockets and connector pads, four modular socket variants for Mirror Maze board routing, circular and square energy anchor plates with glass cores and luminous channel connectors, dark metal bases with cyan and amber accent rings, centered in one clean horizontal row, transparent background, orthographic top-down view, stable lighting and scale, text-free, premium puzzle readability, no cropped elements.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no characters, no overlapping frames, no muddy colors.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.
+
+## Prompt MM-P12
+- family: beam_fx
+- asset_slug: prism_split_overlay_strip
+- prompt_type: animated_strip
+- positive_prompt: Six-frame horizontal animation strip for a top-down neon prism split-beam overlay in Mirror Maze, bright white core beam entering a prism and splitting into multiple colored energy paths, cyan magenta amber lime refracted streaks, compact modular VFX designed to layer over a prism tile, clear frame spacing, centered in every frame, transparent background, orthographic top-down view, stable scale and lighting, premium FX readability, text-free, no cropped frames.
+- negative_prompt: No text, no logos, no watermarks, no scenery, no perspective tilt, no merged frames, no giant explosion cloud, no overlapping beams outside the intended compact effect.
+- wrapper_prompt: One-row horizontal animation strip, exact frame count specified, centered asset in every frame, transparent background, stable orthographic top-down view, stable lighting and scale, clean spacing between frames, no frame bleed, no cropped effects, no merged frames, no text, premium neon puzzle FX quality.
+
+## Prompt MM-P13
+- family: ui_icons
+- asset_slug: puzzle_ui_icon_sheet
+- prompt_type: static_variants
+- positive_prompt: Top-down neon sci-fi puzzle UI icon sheet for Mirror Maze, clean readable icons representing source, target, mirror, prism, blocker, activator, and beam energy, premium arcade HUD style, bright cyan magenta amber lime on dark metallic tokens, centered icons in a clean evenly spaced horizontal layout, transparent background, crisp shapes for small-size readability, text-free, no cropped icons, consistent style.
+- negative_prompt: No text, no letters, no numbers, no logos, no watermarks, no scenery, no perspective tilt, no clutter, no muddy colors.
+- wrapper_prompt: One-row sprite sheet for a top-down puzzle game asset, evenly spaced frames or variants, centered in each frame, transparent background, stable lighting and scale, consistent neon sci-fi rendering, crisp silhouette readability, no cropping, no merged frames, no text, premium game production quality.

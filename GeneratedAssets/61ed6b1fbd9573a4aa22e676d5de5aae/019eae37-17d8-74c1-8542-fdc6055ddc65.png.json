@@ -1,0 +1,28 @@
+{
+    "asset": "61ed6b1fbd9573a4aa22e676d5de5aae",
+    "fileName": "019eae37-17d8-74c1-8542-fdc6055ddc65.png",
+    "prompt": "Esports emblem icon for a hacker called GLITCH, a stylized glitched broken pixel skull-like sigil with datamosh shards and corrupted pixel fragments, bold simple silhouette, pure white monochrome flat icon, centered, isolated on a fully transparent background, clean game UI badge",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

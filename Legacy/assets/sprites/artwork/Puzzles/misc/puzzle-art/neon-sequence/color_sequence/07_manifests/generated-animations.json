@@ -1,0 +1,435 @@
+{
+  "puzzle_slug": "color_sequence",
+  "analyzed_assets": [
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_red_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_red_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_yellow_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_yellow_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_green_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_green_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_cyan_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_cyan_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_blue_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_blue_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_input_pad_purple_pulse_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "input_pad_purple_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ],
+      "confidence": "high",
+      "notes": [
+        "Exact grid slice from source pulse sheet."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_red_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_red_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_red_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_red_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_blue_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_blue_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_blue_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_blue_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_green_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_green_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_green_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_green_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_yellow_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_yellow_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_yellow_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_yellow_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_purple_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_purple_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_purple_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_purple_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_orange_glow_soft_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_orange_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and soft procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_signal_orb_orange_glow_08f_v01",
+      "sheet_kind": "animation_strip",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 8,
+      "animations": [
+        {
+          "key": "signal_orb_orange_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ],
+      "confidence": "medium",
+      "notes": [
+        "Frame motion inferred from static source orb and full procedural halo timing."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_board_slot_up_static_v01",
+      "sheet_kind": "sprite_frame",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 1,
+      "animations": [],
+      "confidence": "medium",
+      "notes": [
+        "Background removal inferred from flat board backdrop."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_board_slot_left_static_v01",
+      "sheet_kind": "sprite_frame",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 1,
+      "animations": [],
+      "confidence": "medium",
+      "notes": [
+        "Background removal inferred from flat board backdrop."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_board_slot_center_static_v01",
+      "sheet_kind": "sprite_frame",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 1,
+      "animations": [],
+      "confidence": "medium",
+      "notes": [
+        "Background removal inferred from flat board backdrop."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_board_slot_right_static_v01",
+      "sheet_kind": "sprite_frame",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 1,
+      "animations": [],
+      "confidence": "medium",
+      "notes": [
+        "Background removal inferred from flat board backdrop."
+      ]
+    },
+    {
+      "asset_key": "memory_lights_color_sequence_board_slot_down_static_v01",
+      "sheet_kind": "sprite_frame",
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frame_count": 1,
+      "animations": [],
+      "confidence": "medium",
+      "notes": [
+        "Background removal inferred from flat board backdrop."
+      ]
+    }
+  ],
+  "generated_helper_path": "06_exports/engine_ready/color_sequence.animations.ts",
+  "recommended_glow_variant": "soft",
+  "warnings": [
+    "Orb glow timing and intermediate frames were inferred from static source orb art.",
+    "Board slot alpha isolation was inferred from the flat background color."
+  ],
+  "assets_requiring_manual_review": [
+    "board_slot_center",
+    "signal_orb_orange_glow_soft"
+  ]
+}

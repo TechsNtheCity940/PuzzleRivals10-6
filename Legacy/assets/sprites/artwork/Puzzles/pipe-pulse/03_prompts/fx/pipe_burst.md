@@ -1,0 +1,1 @@
+Generate a 12-frame horizontal sprite strip of a pipe bursting in a neon puzzle game, top-down orthographic view, transparent background, exact 12 frames, water spray, bright crack flash, metallic shards.

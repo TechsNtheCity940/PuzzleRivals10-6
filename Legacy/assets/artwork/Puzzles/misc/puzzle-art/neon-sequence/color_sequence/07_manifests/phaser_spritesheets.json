@@ -1,0 +1,379 @@
+{
+  "recommendedGlowVariant": "soft",
+  "sheets": [
+    {
+      "key": "memory_lights_color_sequence_input_pad_red_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_red_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_red_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_input_pad_yellow_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_yellow_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_yellow_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_input_pad_green_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_green_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_green_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_input_pad_cyan_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_cyan_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_cyan_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_input_pad_blue_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_blue_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_blue_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_input_pad_purple_pulse_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_input_pad_purple_pulse_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "input_pad_purple_pulse_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 14,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_red_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_red_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_red_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_red_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_red_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_red_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_blue_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_blue_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_blue_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_blue_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_blue_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_blue_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_green_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_green_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_green_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_green_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_green_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_green_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_yellow_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_yellow_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_yellow_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_yellow_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_yellow_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_yellow_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_purple_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_purple_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_purple_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_purple_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_purple_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_purple_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_orange_glow_soft_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_orange_glow_soft_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_orange_glow_soft_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 9,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_signal_orb_orange_glow_08f_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_signal_orb_orange_glow_08f_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 7
+      },
+      "animations": [
+        {
+          "key": "signal_orb_orange_glow_loop",
+          "start": 0,
+          "end": 7,
+          "frameRate": 10,
+          "repeat": -1
+        }
+      ]
+    },
+    {
+      "key": "memory_lights_color_sequence_board_slot_up_static_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_board_slot_up_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_color_sequence_board_slot_left_static_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_board_slot_left_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_color_sequence_board_slot_center_static_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_board_slot_center_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_color_sequence_board_slot_right_static_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_board_slot_right_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    },
+    {
+      "key": "memory_lights_color_sequence_board_slot_down_static_v01",
+      "path": "06_exports/png/memory_lights_color_sequence_board_slot_down_static_v01.png",
+      "frameConfig": {
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "endFrame": 0
+      },
+      "animations": []
+    }
+  ]
+}

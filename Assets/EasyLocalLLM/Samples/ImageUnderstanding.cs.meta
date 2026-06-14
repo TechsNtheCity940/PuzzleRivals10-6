@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: db0fa98b39d83424c8d2ae245c268807
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/ImageUnderstanding.cs
+  uploadId: 902466

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d02aa056d5e04984eb491ea9855ae665
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Factory/LLMClientFactory.cs
+  uploadId: 902466

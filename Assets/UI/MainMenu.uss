@@ -1,0 +1,92 @@
+/*
+2026-06-09 AI-Tag
+This was created with the help of Assistant, a Unity Artificial Intelligence product.
+*/
+:root {
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 15, 30);
+    background-image: url("project://database/Assets/Textures/Backgrounds/menu_bg.png");
+    -unity-background-scale-mode: scale-and-crop;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-panel {
+    width: 820px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 60px;
+    padding-right: 60px;
+    align-items: center;
+    justify-content: center;
+    background-image: url("project://database/Assets/Textures/UI/panel_main.png");
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.logo {
+    width: 620px;
+    height: 210px;
+    margin-bottom: 50px;
+    background-image: url("project://database/Assets/Textures/UI/wordmark_title.png");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.button-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-quit {
+    width: 280px;
+    height: 96px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Textures/UI/btn_quit.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-width: 0;
+    transition-duration: 0.2s;
+}
+
+.btn-quit:hover {
+    background-color: rgba(0, 0, 0, 0);
+    scale: 1.08;
+}
+
+.menu-button {
+    width: 250px;
+    height: 80px;
+    margin: 10px;
+    background-color: rgba(0, 230, 255, 0.1);
+    border-width: 2px;
+    border-color: rgb(0, 230, 255);
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    -unity-font-style: bold;
+    transition-duration: 0.2s;
+}
+
+.menu-button:hover {
+    background-color: rgba(0, 230, 255, 0.3);
+    scale: 1.1;
+}
+
+.btn-play {
+    width: 360px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Textures/UI/btn_play.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-width: 0;
+    transition-duration: 0.2s;
+}
+
+.btn-play:hover {
+    background-color: rgba(0, 0, 0, 0);
+    scale: 1.08;
+}

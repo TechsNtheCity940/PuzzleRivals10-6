@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 29f6ebd8c25379b4388698def118a8b0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/LICENSE.txt
+  uploadId: 902466

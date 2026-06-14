@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d4d045003686aff4eae929f6b3db7bdf
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 12388, guid: 0000000000000000e000000000000000, type: 0}
+  disableValidation: 0
+  unsupportedSelectorAction: 0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/UI/GlobalSetthing/UnityThemes/UnityDefaultRuntimeTheme.tss
+  uploadId: 902466

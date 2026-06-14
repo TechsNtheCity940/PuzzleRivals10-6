@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5cd6f601881d0974f8e911c65f172199
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/Scenes/ImageUnderstanding.unity
+  uploadId: 902466

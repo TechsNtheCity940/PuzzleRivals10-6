@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 5d0d068c7f5fea84c99c6bd5d9e3e5ae
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Ollama/OllamaConfig.cs
+  uploadId: 902466

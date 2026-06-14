@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e2e997e89dbd79c43a50cc9886dac93b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Samples/UI/GlobalSetthing/PanelSettings.asset
+  uploadId: 902466

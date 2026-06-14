@@ -1,0 +1,794 @@
+{
+  "version": 1,
+  "assets": {
+    "assets/ui/wordmark_title.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "PUZZLE RIVALS \u2014 Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "wordmark_title",
+          "type": "wordmark",
+          "size": {
+            "width": 1200,
+            "height": 400
+          },
+          "aspect": "wide_3_1",
+          "label": "PUZZLE RIVALS"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/btn_play.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Play \u2014 Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "btn_play",
+          "type": "button_9slice",
+          "size": {
+            "width": 480,
+            "height": 160
+          },
+          "aspect": "wide_3_1",
+          "label": "Play"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/btn_quit.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Quit \u2014 Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "btn_quit",
+          "type": "button_9slice",
+          "size": {
+            "width": 480,
+            "height": 160
+          },
+          "aspect": "wide_3_1",
+          "label": "Quit"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/btn_mode_ffa.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "4P BOMB FFA \u2014 Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "btn_mode_ffa",
+          "type": "button_9slice",
+          "size": {
+            "width": 600,
+            "height": 200
+          },
+          "aspect": "wide_3_1",
+          "label": "4P BOMB FFA"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/btn_mode_bvb.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "BRAIN VS BRAIN \u2014 Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "btn_mode_bvb",
+          "type": "button_9slice",
+          "size": {
+            "width": 600,
+            "height": 200
+          },
+          "aspect": "wide_3_1",
+          "label": "BRAIN VS BRAIN"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/panel_main.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "panel_main",
+          "type": "panel_9slice",
+          "size": {
+            "width": 900,
+            "height": 600
+          },
+          "aspect": "landscape_4_3"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/panel_hud.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "panel_hud",
+          "type": "panel_9slice",
+          "size": {
+            "width": 900,
+            "height": 300
+          },
+          "aspect": "wide_3_1"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/panel_dialog.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "panel_dialog",
+          "type": "panel_9slice",
+          "size": {
+            "width": 700,
+            "height": 500
+          },
+          "aspect": "landscape_4_3"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/frame_avatar.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "frame_avatar",
+          "type": "frame",
+          "size": {
+            "width": 320,
+            "height": 320
+          },
+          "aspect": "square"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/icon_bomb.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "icon_bomb",
+          "type": "icon",
+          "size": {
+            "width": 256,
+            "height": 256
+          },
+          "aspect": "square"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/icon_timer.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "icon_timer",
+          "type": "icon",
+          "size": {
+            "width": 256,
+            "height": 256
+          },
+          "aspect": "square"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/icon_skull.png": {
+      "tool": "mcp__game-assets__generate_ui_kit",
+      "primary_prompt": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces.",
+      "raw_input": {
+        "element": {
+          "id": "icon_skull",
+          "type": "icon",
+          "size": {
+            "width": 256,
+            "height": 256
+          },
+          "aspect": "square"
+        },
+        "kit_styleBrief": "Neon arcade modern UI, dark navy and pure black backgrounds with glowing magenta cyan lime and orange neon edges, bold thick outlined chrome, holographic glow halos, soft inner light, slight chromatic aberration, 80s-90s arcade cabinet meets cyberpunk hacker terminal. Buttons feel raised and electric like glowing keycaps. Panels feel flat and recessed like circuit-board surfaces."
+      },
+      "tool_use_id": "toolu_01Q9VwVRGLgmFHQB6sRhbcPk",
+      "updated_at": "2026-05-30T11:11:22.235097"
+    },
+    "assets/ui/title_poster.webp": {
+      "tool": "mcp__game-assets__generate_2d_images_batch",
+      "primary_prompt": "four neon arcade puzzle rivals locked in competitive duel around glowing bomb, holographic puzzle grids, bright neon magenta cyan lime orange channels on dark navy and black, electric lightning energy, Competitive Puzzle Arcade, intense, modern, glowing bomb center, four player podiums, neon puzzle pieces, circuit patterns",
+      "raw_input": {
+        "type": "title_poster",
+        "gameName": "PUZZLE RIVALS",
+        "theme": "four neon arcade puzzle rivals locked in competitive duel around glowing bomb, holographic puzzle grids, bright neon magenta cyan lime orange channels on dark navy and black, electric lightning energy",
+        "genre": "Competitive Puzzle Arcade",
+        "style": "modern",
+        "mood": "intense",
+        "elements": [
+          "glowing bomb center",
+          "four player podiums",
+          "neon puzzle pieces",
+          "circuit patterns"
+        ]
+      },
+      "tool_use_id": "toolu_01K2ZpA3MnJ2ALrBSsReQunN",
+      "updated_at": "2026-05-30T11:11:56.562780"
+    },
+    "assets/ui/loading_screen.png": {
+      "tool": "mcp__game-assets__generate_2d_images_batch",
+      "primary_prompt": "neon arcade splash, dark navy and black backdrop with magenta cyan lime orange neon light streaks, holographic puzzle grids floating, distant glowing bomb silhouette, no text and no progress bar baked in, modern",
+      "raw_input": {
+        "type": "loading_screen",
+        "gameName": "PUZZLE RIVALS",
+        "theme": "neon arcade splash, dark navy and black backdrop with magenta cyan lime orange neon light streaks, holographic puzzle grids floating, distant glowing bomb silhouette, no text and no progress bar baked in",
+        "style": "modern",
+        "includeProgressBar": false
+      },
+      "tool_use_id": "toolu_01K2ZpA3MnJ2ALrBSsReQunN",
+      "updated_at": "2026-05-30T11:11:56.562780"
+    },
+    "assets/textures/backgrounds/menu_bg.png": {
+      "tool": "mcp__game-assets__generate_2d_images_batch",
+      "primary_prompt": "neon arcade menu backdrop, dark navy and black with subtle glowing magenta cyan lime orange grid lines, distant holographic puzzle pieces drifting, soft glow halos, no text, no characters, intense, modern",
+      "raw_input": {
+        "type": "background",
+        "name": "menu_bg",
+        "theme": "neon arcade menu backdrop, dark navy and black with subtle glowing magenta cyan lime orange grid lines, distant holographic puzzle pieces drifting, soft glow halos, no text, no characters",
+        "style": "modern",
+        "mood": "intense",
+        "perspective": "top-down"
+      },
+      "tool_use_id": "toolu_01K2ZpA3MnJ2ALrBSsReQunN",
+      "updated_at": "2026-05-30T11:11:56.562780"
+    },
+    "assets/textures/backgrounds/arena_ffa_bg.png": {
+      "tool": "mcp__game-assets__generate_2d_images_batch",
+      "primary_prompt": "top-down neon arcade arena floor with four glowing colored podium platforms arranged in a square around a central glowing circular puzzle pad, magenta cyan lime orange lit corners, dark navy floor with grid lines, circuit board patterns, soft halo glow, no text, intense, modern",
+      "raw_input": {
+        "type": "background",
+        "name": "arena_ffa_bg",
+        "theme": "top-down neon arcade arena floor with four glowing colored podium platforms arranged in a square around a central glowing circular puzzle pad, magenta cyan lime orange lit corners, dark navy floor with grid lines, circuit board patterns, soft halo glow, no text",
+        "style": "modern",
+        "mood": "intense",
+        "perspective": "top-down"
+      },
+      "tool_use_id": "toolu_01K2ZpA3MnJ2ALrBSsReQunN",
+      "updated_at": "2026-05-30T11:11:56.562780"
+    },
+    "assets/textures/backgrounds/arena_bvb_bg.png": {
+      "tool": "mcp__game-assets__generate_2d_images_batch",
+      "primary_prompt": "top-down neon arcade dueling arena split into two zones by a glowing white central divider, left zone magenta glow, right zone cyan glow, dark navy floor with circuit grid lines, holographic score meter outline running down the middle, soft halo glow, no text, intense, modern",
+      "raw_input": {
+        "type": "background",
+        "name": "arena_bvb_bg",
+        "theme": "top-down neon arcade dueling arena split into two zones by a glowing white central divider, left zone magenta glow, right zone cyan glow, dark navy floor with circuit grid lines, holographic score meter outline running down the middle, soft halo glow, no text",
+        "style": "modern",
+        "mood": "intense",
+        "perspective": "top-down"
+      },
+      "tool_use_id": "toolu_01K2ZpA3MnJ2ALrBSsReQunN",
+      "updated_at": "2026-05-30T11:11:56.562780"
+    },
+    "assets/sprites/characters/rival_magenta_idle.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Neon arcade hacker rival, glowing magenta hooded silhouette with bright neon pink jacket, dark navy bodysuit, glowing visor with magenta eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+      "raw_input": {
+        "type": "character",
+        "name": "rival_magenta",
+        "description": "Neon arcade hacker rival, glowing magenta hooded silhouette with bright neon pink jacket, dark navy bodysuit, glowing visor with magenta eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+        "state": "idle",
+        "style": "modern",
+        "size": 512
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/characters/rival_cyan_idle.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Neon arcade coder rival, glowing cyan hooded silhouette with bright neon blue jacket, dark navy bodysuit, glowing visor with cyan eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+      "raw_input": {
+        "type": "character",
+        "name": "rival_cyan",
+        "description": "Neon arcade coder rival, glowing cyan hooded silhouette with bright neon blue jacket, dark navy bodysuit, glowing visor with cyan eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+        "state": "idle",
+        "style": "modern",
+        "size": 512
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/characters/rival_lime_idle.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Neon arcade alchemist rival, glowing lime green hooded silhouette with bright neon green jacket, dark navy bodysuit, glowing visor with lime eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+      "raw_input": {
+        "type": "character",
+        "name": "rival_lime",
+        "description": "Neon arcade alchemist rival, glowing lime green hooded silhouette with bright neon green jacket, dark navy bodysuit, glowing visor with lime eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+        "state": "idle",
+        "style": "modern",
+        "size": 512
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/characters/rival_orange_idle.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Neon arcade strategist rival, glowing orange hooded silhouette with bright neon orange jacket, dark navy bodysuit, glowing visor with orange eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+      "raw_input": {
+        "type": "character",
+        "name": "rival_orange",
+        "description": "Neon arcade strategist rival, glowing orange hooded silhouette with bright neon orange jacket, dark navy bodysuit, glowing visor with orange eyes, cyberpunk gloves, holographic puzzle piece floating in palm, full body, front view, centered",
+        "state": "idle",
+        "style": "modern",
+        "size": 512
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/effects/bomb_idle.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Round neon glowing bomb sphere, dark navy core with bright magenta and cyan glowing seams, small fuse on top unlit, holographic energy halo, top-down centered view, vivid neon outline",
+      "raw_input": {
+        "type": "effect",
+        "name": "bomb_idle",
+        "effectType": "custom",
+        "color": "magenta",
+        "description": "Round neon glowing bomb sphere, dark navy core with bright magenta and cyan glowing seams, small fuse on top unlit, holographic energy halo, top-down centered view, vivid neon outline",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/effects/bomb_lit.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Round neon glowing bomb sphere with bright orange and yellow lit fuse spitting sparks, dark navy core with bright magenta and cyan glowing seams cracking with red energy, danger glow halo, top-down centered view",
+      "raw_input": {
+        "type": "effect",
+        "name": "bomb_lit",
+        "effectType": "fire",
+        "color": "orange",
+        "description": "Round neon glowing bomb sphere with bright orange and yellow lit fuse spitting sparks, dark navy core with bright magenta and cyan glowing seams cracking with red energy, danger glow halo, top-down centered view",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/effects/explosion.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Bright neon arcade explosion burst, expanding ring of orange yellow magenta and white energy, jagged shockwave lines, dark navy void behind, top-down view, centered, transparent edges",
+      "raw_input": {
+        "type": "effect",
+        "name": "explosion",
+        "effectType": "explosion",
+        "color": "orange",
+        "description": "Bright neon arcade explosion burst, expanding ring of orange yellow magenta and white energy, jagged shockwave lines, dark navy void behind, top-down view, centered, transparent edges",
+        "style": "modern",
+        "size": 512
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/sprites/effects/shield_burst.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "Hexagonal cyan shield burst with concentric rings of bright cyan and white light, defensive barrier effect, holographic, transparent edges, centered top-down",
+      "raw_input": {
+        "type": "effect",
+        "name": "shield_burst",
+        "effectType": "magic",
+        "color": "cyan",
+        "description": "Hexagonal cyan shield burst with concentric rings of bright cyan and white light, defensive barrier effect, holographic, transparent edges, centered top-down",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01M9qUG87ifjNazM3W4ryeHz",
+      "updated_at": "2026-05-30T11:12:39.021244"
+    },
+    "assets/audio/music/music_menu_menu_theme.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "neon arcade electronic synthwave, cool confident anticipation, moderate 110 BPM",
+      "raw_input": {
+        "type": "music",
+        "name": "menu_theme",
+        "gameState": "menu",
+        "style": "neon arcade electronic synthwave",
+        "mood": "cool confident anticipation",
+        "tempo": "moderate 110 BPM",
+        "instruments": "warm analog synths, deep sub bass, soft pad chords, light hi-hats",
+        "durationSeconds": 60
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/music/music_gameplay_gameplay_theme.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "neon arcade electronic synth, tense competitive driving, fast 140 BPM",
+      "raw_input": {
+        "type": "music",
+        "name": "gameplay_theme",
+        "gameState": "gameplay",
+        "style": "neon arcade electronic synth",
+        "mood": "tense competitive driving",
+        "tempo": "fast 140 BPM",
+        "instruments": "punchy synth bass, arpeggiated leads, four-on-the-floor kicks, snares, glitchy textures",
+        "durationSeconds": 90
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/music/jingle_level_complete_round_win.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "synthwave arcade, triumphant electric",
+      "raw_input": {
+        "type": "jingle",
+        "name": "round_win",
+        "purpose": "level_complete",
+        "style": "synthwave arcade",
+        "mood": "triumphant electric",
+        "durationSeconds": 3
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/music/jingle_game_over_round_lose.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "synthwave arcade, defeated descending",
+      "raw_input": {
+        "type": "jingle",
+        "name": "round_lose",
+        "purpose": "game_over",
+        "style": "synthwave arcade",
+        "mood": "defeated descending",
+        "durationSeconds": 3
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/environment/environment_bomb_tick.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Short tense electronic clock tick, metallic high frequency click, single beat",
+      "raw_input": {
+        "type": "sfx",
+        "name": "bomb_tick",
+        "category": "environment",
+        "description": "Short tense electronic clock tick, metallic high frequency click, single beat",
+        "duration": 0.5
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/environment/environment_bomb_pass.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Whoosh of energy passing between players, electric synth swoosh with magnetic pull whine",
+      "raw_input": {
+        "type": "sfx",
+        "name": "bomb_pass",
+        "category": "environment",
+        "description": "Whoosh of energy passing between players, electric synth swoosh with magnetic pull whine",
+        "duration": 0.8
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/environment/environment_bomb_explosion.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Big bomb explosion with electric crackle, deep boom followed by glitchy synth aftermath",
+      "raw_input": {
+        "type": "sfx",
+        "name": "bomb_explosion",
+        "category": "environment",
+        "description": "Big bomb explosion with electric crackle, deep boom followed by glitchy synth aftermath",
+        "duration": 2
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_puzzle_solve.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Bright satisfying neon arcade chime, ascending three-note sparkle, holographic confirmation",
+      "raw_input": {
+        "type": "sfx",
+        "name": "puzzle_solve",
+        "category": "ui",
+        "description": "Bright satisfying neon arcade chime, ascending three-note sparkle, holographic confirmation",
+        "duration": 1.2
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_puzzle_piece_place.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Short crisp neon click of a holographic puzzle piece snapping into place, electric snap with subtle synth zing",
+      "raw_input": {
+        "type": "sfx",
+        "name": "puzzle_piece_place",
+        "category": "ui",
+        "description": "Short crisp neon click of a holographic puzzle piece snapping into place, electric snap with subtle synth zing",
+        "duration": 0.3
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_puzzle_piece_rotate.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "Soft mechanical synth click of a puzzle piece rotating, holographic flick",
+      "raw_input": {
+        "type": "sfx",
+        "name": "puzzle_piece_rotate",
+        "category": "ui",
+        "description": "Soft mechanical synth click of a puzzle piece rotating, holographic flick",
+        "duration": 0.2
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_ui_click.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "click",
+      "raw_input": {
+        "type": "ui",
+        "name": "ui_click",
+        "uiType": "click",
+        "style": "sci-fi"
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_ui_hover.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "hover",
+      "raw_input": {
+        "type": "ui",
+        "name": "ui_hover",
+        "uiType": "hover",
+        "style": "sci-fi"
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/audio/sfx/ui/ui_ui_confirm.mp3": {
+      "tool": "mcp__game-audio__generate_audio_batch",
+      "primary_prompt": "confirm",
+      "raw_input": {
+        "type": "ui",
+        "name": "ui_confirm",
+        "uiType": "confirm",
+        "style": "sci-fi"
+      },
+      "tool_use_id": "toolu_01DTQsgKqrHApuxnBmNQaYUU",
+      "updated_at": "2026-05-30T11:12:46.452737"
+    },
+    "assets/sprites/effects/mirror_diagonal.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A 3D rendered diagonal mirror bar oriented from bottom-left to top-right at exactly 45 degrees, polished chrome silver reflective surface, slim beveled metallic frame, glowing cyan neon edge highlights, isolated centered on transparent background, top-down arcade view, photorealistic with depth, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "effect",
+        "name": "mirror_diagonal",
+        "effectType": "custom",
+        "color": "cyan",
+        "description": "A 3D rendered diagonal mirror bar oriented from bottom-left to top-right at exactly 45 degrees, polished chrome silver reflective surface, slim beveled metallic frame, glowing cyan neon edge highlights, isolated centered on transparent background, top-down arcade view, photorealistic with depth, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/sprites/effects/pipe_straight_horizontal.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A 3D rendered horizontal chrome metallic pipe segment running left to right across the full image, polished steel finish, brass-style end flanges, glowing cyan energy plasma flow visible through transparent center band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "effect",
+        "name": "pipe_straight_horizontal",
+        "effectType": "custom",
+        "color": "cyan",
+        "description": "A 3D rendered horizontal chrome metallic pipe segment running left to right across the full image, polished steel finish, brass-style end flanges, glowing cyan energy plasma flow visible through transparent center band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/sprites/effects/pipe_curve_topright.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A 3D rendered chrome metallic pipe in a 90 degree elbow corner curve, entering from the bottom edge and exiting through the right edge, polished steel finish, brass end flanges, glowing cyan energy plasma flow visible inside through transparent band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "effect",
+        "name": "pipe_curve_topright",
+        "effectType": "custom",
+        "color": "cyan",
+        "description": "A 3D rendered chrome metallic pipe in a 90 degree elbow corner curve, entering from the bottom edge and exiting through the right edge, polished steel finish, brass end flanges, glowing cyan energy plasma flow visible inside through transparent band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/sprites/effects/pipe_tjunction_right.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A 3D rendered chrome metallic pipe T-junction with three openings facing top, right, and bottom edges, polished steel finish, brass end flanges, glowing cyan energy plasma flow visible inside through transparent band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "effect",
+        "name": "pipe_tjunction_right",
+        "effectType": "custom",
+        "color": "cyan",
+        "description": "A 3D rendered chrome metallic pipe T-junction with three openings facing top, right, and bottom edges, polished steel finish, brass end flanges, glowing cyan energy plasma flow visible inside through transparent band, isolated centered on transparent background, top-down arcade view, photorealistic with depth and reflections, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/sprites/items/crystal_gem.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A faceted 3D rendered hexagonal neon crystal gem with sharp polished facets, white iridescent translucent core, prismatic light refraction inside, glowing soft white inner light, slim glowing edges, isolated centered on transparent background, top-down arcade view, photorealistic with depth, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "item",
+        "name": "crystal_gem",
+        "category": "gem",
+        "description": "A faceted 3D rendered hexagonal neon crystal gem with sharp polished facets, white iridescent translucent core, prismatic light refraction inside, glowing soft white inner light, slim glowing edges, isolated centered on transparent background, top-down arcade view, photorealistic with depth, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/sprites/items/crystal_shard.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A vertical 3D rendered faceted neon crystal shard taller than wide, sharp pointed top, polished gem facets, white iridescent translucent core, glowing soft white inner light, slim glowing edges, isolated centered on transparent background, side view, photorealistic with depth, dramatic neon arcade lighting, no text",
+      "raw_input": {
+        "type": "item",
+        "name": "crystal_shard",
+        "category": "gem",
+        "description": "A vertical 3D rendered faceted neon crystal shard taller than wide, sharp pointed top, polished gem facets, white iridescent translucent core, glowing soft white inner light, slim glowing edges, isolated centered on transparent background, side view, photorealistic with depth, dramatic neon arcade lighting, no text",
+        "style": "modern",
+        "size": 256
+      },
+      "tool_use_id": "toolu_01D5npCsQFL3kXAiPfjyUBcu",
+      "updated_at": "2026-05-30T15:38:53.549696"
+    },
+    "assets/textures/walls/maze_wall.png": {
+      "tool": "mcp__game-assets__generate_textures_batch",
+      "primary_prompt": "Seamless tiling texture of a dark metallic high-tech wall panel, brushed gunmetal and deep navy plating, with glowing cyan and magenta neon circuit seams running between the panels, subtle hexagonal tech detailing, soft emissive light along the grooves, photorealistic 3D-rendered sci-fi arcade aesthetic, sharp specular highlights on the metal, tiles seamlessly on all edges",
+      "raw_input": {
+        "name": "maze_wall",
+        "category": "walls",
+        "style": "realistic",
+        "size": "512",
+        "seamless": true,
+        "prompt": "Seamless tiling texture of a dark metallic high-tech wall panel, brushed gunmetal and deep navy plating, with glowing cyan and magenta neon circuit seams running between the panels, subtle hexagonal tech detailing, soft emissive light along the grooves, photorealistic 3D-rendered sci-fi arcade aesthetic, sharp specular highlights on the metal, tiles seamlessly on all edges"
+      },
+      "tool_use_id": "toolu_01DHniSF2eDchbGjst4LAyBG",
+      "updated_at": "2026-05-30T21:12:42.400295"
+    },
+    "assets/textures/floors/circuit_floor.png": {
+      "tool": "mcp__game-assets__generate_textures_batch",
+      "primary_prompt": "Seamless tiling texture of a dark navy-black circuit-board floor, faint glowing cyan grid lines and thin magenta circuit traces, subtle reflective gloss like polished glass over a motherboard, tiny solder-point dots of light, photorealistic 3D-rendered neon arcade aesthetic, low contrast so game pieces read on top, tiles seamlessly on all edges",
+      "raw_input": {
+        "name": "circuit_floor",
+        "category": "floors",
+        "style": "realistic",
+        "size": "512",
+        "seamless": true,
+        "prompt": "Seamless tiling texture of a dark navy-black circuit-board floor, faint glowing cyan grid lines and thin magenta circuit traces, subtle reflective gloss like polished glass over a motherboard, tiny solder-point dots of light, photorealistic 3D-rendered neon arcade aesthetic, low contrast so game pieces read on top, tiles seamlessly on all edges"
+      },
+      "tool_use_id": "toolu_01DHniSF2eDchbGjst4LAyBG",
+      "updated_at": "2026-05-30T21:12:42.400295"
+    },
+    "assets/sprites/effects/player_orb.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A glowing cyan energy orb, a bright spherical plasma core with a luminous white-hot center and soft cyan glow halo, crackling electric filaments around it, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "effect",
+        "name": "player_orb",
+        "effectType": "magic",
+        "style": "realistic",
+        "size": 256,
+        "color": "cyan",
+        "description": "A glowing cyan energy orb, a bright spherical plasma core with a luminous white-hot center and soft cyan glow halo, crackling electric filaments around it, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    },
+    "assets/sprites/effects/exit_portal.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A glowing lime-green circular portal ring, swirling luminous energy in the center, bright emissive rim with soft outward glow, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "effect",
+        "name": "exit_portal",
+        "effectType": "magic",
+        "style": "realistic",
+        "size": 256,
+        "color": "green",
+        "description": "A glowing lime-green circular portal ring, swirling luminous energy in the center, bright emissive rim with soft outward glow, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    },
+    "assets/sprites/items/claim_crystal.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A faceted glowing orange energy crystal mounted on a small dark metallic tech base, sharp geometric gem facets with warm internal light and specular highlights, soft amber glow, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "item",
+        "name": "claim_crystal",
+        "category": "decoration",
+        "style": "realistic",
+        "size": 256,
+        "description": "A faceted glowing orange energy crystal mounted on a small dark metallic tech base, sharp geometric gem facets with warm internal light and specular highlights, soft amber glow, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    },
+    "assets/sprites/items/rival_core.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A menacing dark crimson-red spiked energy core orb, jagged metallic spikes radiating outward, glowing hot-red cracks across a dark metal sphere, hostile threatening look, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "item",
+        "name": "rival_core",
+        "category": "decoration",
+        "style": "realistic",
+        "size": 256,
+        "description": "A menacing dark crimson-red spiked energy core orb, jagged metallic spikes radiating outward, glowing hot-red cracks across a dark metal sphere, hostile threatening look, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    },
+    "assets/sprites/effects/score_target.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A neon cyan circular target button, concentric glowing rings around a bright illuminated center dot, glossy dark glass surface with emissive cyan rim light, like a futuristic arcade press-pad, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "effect",
+        "name": "score_target",
+        "effectType": "custom",
+        "style": "realistic",
+        "size": 256,
+        "color": "cyan",
+        "description": "A neon cyan circular target button, concentric glowing rings around a bright illuminated center dot, glossy dark glass surface with emissive cyan rim light, like a futuristic arcade press-pad, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    },
+    "assets/sprites/items/combo_node.png": {
+      "tool": "mcp__game-assets__generate_2d_assets_batch",
+      "primary_prompt": "A hexagonal glossy high-tech button tile, dark glass center surrounded by a bright glowing cyan neon hexagonal rim, beveled metallic edges with specular highlights, completely blank empty center with no text or symbols, photorealistic 3D-rendered neon arcade style, transparent background",
+      "raw_input": {
+        "type": "item",
+        "name": "combo_node",
+        "category": "decoration",
+        "style": "realistic",
+        "size": 256,
+        "description": "A hexagonal glossy high-tech button tile, dark glass center surrounded by a bright glowing cyan neon hexagonal rim, beveled metallic edges with specular highlights, completely blank empty center with no text or symbols, photorealistic 3D-rendered neon arcade style, transparent background"
+      },
+      "tool_use_id": "toolu_01Vw9BoBedu1LT3JW5KcKwwh",
+      "updated_at": "2026-05-30T21:13:47.122776"
+    }
+  }
+}

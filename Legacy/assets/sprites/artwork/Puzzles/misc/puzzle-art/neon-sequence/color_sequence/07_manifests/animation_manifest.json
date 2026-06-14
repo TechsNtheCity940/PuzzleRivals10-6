@@ -1,0 +1,182 @@
+[
+  {
+    "asset_slug": "input_pad_red_pulse",
+    "animation_name": "input_pad_red_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "input_pad_yellow_pulse",
+    "animation_name": "input_pad_yellow_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "input_pad_green_pulse",
+    "animation_name": "input_pad_green_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "input_pad_cyan_pulse",
+    "animation_name": "input_pad_cyan_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "input_pad_blue_pulse",
+    "animation_name": "input_pad_blue_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "input_pad_purple_pulse",
+    "animation_name": "input_pad_purple_pulse_loop",
+    "frame_count": 8,
+    "fps": 14,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Selection pulse loop inferred from uploaded strip."
+  },
+  {
+    "asset_slug": "signal_orb_red_glow_soft",
+    "animation_name": "signal_orb_red_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_red_glow",
+    "animation_name": "signal_orb_red_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_blue_glow_soft",
+    "animation_name": "signal_orb_blue_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_blue_glow",
+    "animation_name": "signal_orb_blue_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_green_glow_soft",
+    "animation_name": "signal_orb_green_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_green_glow",
+    "animation_name": "signal_orb_green_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_yellow_glow_soft",
+    "animation_name": "signal_orb_yellow_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_yellow_glow",
+    "animation_name": "signal_orb_yellow_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_purple_glow_soft",
+    "animation_name": "signal_orb_purple_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_purple_glow",
+    "animation_name": "signal_orb_purple_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_orange_glow_soft",
+    "animation_name": "signal_orb_orange_glow_soft_loop",
+    "frame_count": 8,
+    "fps": 9,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a soft procedural halo."
+  },
+  {
+    "asset_slug": "signal_orb_orange_glow",
+    "animation_name": "signal_orb_orange_glow_loop",
+    "frame_count": 8,
+    "fps": 10,
+    "loop": true,
+    "start_state": "dim",
+    "end_state": "dim",
+    "notes": "Glow loop inferred from approved orb source and rebuilt as a full procedural halo."
+  }
+]

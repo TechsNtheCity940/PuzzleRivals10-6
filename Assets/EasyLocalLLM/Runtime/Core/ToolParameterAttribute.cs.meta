@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3d9149a74108d9d49a6eb97a089e6f24
+AssetOrigin:
+  serializedVersion: 1
+  productId: 361070
+  packageName: EasyLocalLLM
+  packageVersion: 0.3.3
+  assetPath: Assets/EasyLocalLLM/Runtime/Core/ToolParameterAttribute.cs
+  uploadId: 902466

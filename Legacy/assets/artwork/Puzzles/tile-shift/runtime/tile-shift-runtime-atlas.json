@@ -1,0 +1,715 @@
+﻿{
+    "frames":  {
+                   "board-panel":  {
+                                       "frame":  {
+                                                     "x":  16,
+                                                     "y":  16,
+                                                     "w":  768,
+                                                     "h":  768
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  768,
+                                                                "h":  768
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  768,
+                                                          "h":  768
+                                                      }
+                                   },
+                   "scan-line":  {
+                                     "frame":  {
+                                                   "x":  800,
+                                                   "y":  16,
+                                                   "w":  768,
+                                                   "h":  28
+                                               },
+                                     "rotated":  false,
+                                     "trimmed":  false,
+                                     "spriteSourceSize":  {
+                                                              "x":  0,
+                                                              "y":  0,
+                                                              "w":  768,
+                                                              "h":  28
+                                                          },
+                                     "sourceSize":  {
+                                                        "w":  768,
+                                                        "h":  28
+                                                    }
+                                 },
+                   "row-lock-rail":  {
+                                         "frame":  {
+                                                       "x":  16,
+                                                       "y":  800,
+                                                       "w":  768,
+                                                       "h":  136
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  768,
+                                                                  "h":  136
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  768,
+                                                            "h":  136
+                                                        }
+                                     },
+                   "slot-idle":  {
+                                     "frame":  {
+                                                   "x":  800,
+                                                   "y":  800,
+                                                   "w":  128,
+                                                   "h":  128
+                                               },
+                                     "rotated":  false,
+                                     "trimmed":  false,
+                                     "spriteSourceSize":  {
+                                                              "x":  0,
+                                                              "y":  0,
+                                                              "w":  128,
+                                                              "h":  128
+                                                          },
+                                     "sourceSize":  {
+                                                        "w":  128,
+                                                        "h":  128
+                                                    }
+                                 },
+                   "slot-movable":  {
+                                        "frame":  {
+                                                      "x":  944,
+                                                      "y":  800,
+                                                      "w":  128,
+                                                      "h":  128
+                                                  },
+                                        "rotated":  false,
+                                        "trimmed":  false,
+                                        "spriteSourceSize":  {
+                                                                 "x":  0,
+                                                                 "y":  0,
+                                                                 "w":  128,
+                                                                 "h":  128
+                                                             },
+                                        "sourceSize":  {
+                                                           "w":  128,
+                                                           "h":  128
+                                                       }
+                                    },
+                   "slot-locked":  {
+                                       "frame":  {
+                                                     "x":  1088,
+                                                     "y":  800,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "blank-idle":  {
+                                      "frame":  {
+                                                    "x":  1232,
+                                                    "y":  800,
+                                                    "w":  128,
+                                                    "h":  128
+                                                },
+                                      "rotated":  false,
+                                      "trimmed":  false,
+                                      "spriteSourceSize":  {
+                                                               "x":  0,
+                                                               "y":  0,
+                                                               "w":  128,
+                                                               "h":  128
+                                                           },
+                                      "sourceSize":  {
+                                                         "w":  128,
+                                                         "h":  128
+                                                     }
+                                  },
+                   "blank-ready":  {
+                                       "frame":  {
+                                                     "x":  1376,
+                                                     "y":  800,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "slide-trail":  {
+                                       "frame":  {
+                                                     "x":  1520,
+                                                     "y":  800,
+                                                     "w":  192,
+                                                     "h":  56
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  192,
+                                                                "h":  56
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  192,
+                                                          "h":  56
+                                                      }
+                                   },
+                   "invalid-ring":  {
+                                        "frame":  {
+                                                      "x":  1728,
+                                                      "y":  800,
+                                                      "w":  192,
+                                                      "h":  192
+                                                  },
+                                        "rotated":  false,
+                                        "trimmed":  false,
+                                        "spriteSourceSize":  {
+                                                                 "x":  0,
+                                                                 "y":  0,
+                                                                 "w":  192,
+                                                                 "h":  192
+                                                             },
+                                        "sourceSize":  {
+                                                           "w":  192,
+                                                           "h":  192
+                                                       }
+                                    },
+                   "solve-burst":  {
+                                       "frame":  {
+                                                     "x":  16,
+                                                     "y":  1008,
+                                                     "w":  256,
+                                                     "h":  256
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  256,
+                                                                "h":  256
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  256,
+                                                          "h":  256
+                                                      }
+                                   },
+                   "tile-1-idle":  {
+                                       "frame":  {
+                                                     "x":  288,
+                                                     "y":  1008,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-1-selected":  {
+                                           "frame":  {
+                                                         "x":  432,
+                                                         "y":  1008,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-1-locked":  {
+                                         "frame":  {
+                                                       "x":  576,
+                                                       "y":  1008,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-2-idle":  {
+                                       "frame":  {
+                                                     "x":  720,
+                                                     "y":  1008,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-2-selected":  {
+                                           "frame":  {
+                                                         "x":  864,
+                                                         "y":  1008,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-2-locked":  {
+                                         "frame":  {
+                                                       "x":  1008,
+                                                       "y":  1008,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-3-idle":  {
+                                       "frame":  {
+                                                     "x":  1152,
+                                                     "y":  1008,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-3-selected":  {
+                                           "frame":  {
+                                                         "x":  1296,
+                                                         "y":  1008,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-3-locked":  {
+                                         "frame":  {
+                                                       "x":  1440,
+                                                       "y":  1008,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-4-idle":  {
+                                       "frame":  {
+                                                     "x":  1584,
+                                                     "y":  1008,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-4-selected":  {
+                                           "frame":  {
+                                                         "x":  1728,
+                                                         "y":  1008,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-4-locked":  {
+                                         "frame":  {
+                                                       "x":  1872,
+                                                       "y":  1008,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-5-idle":  {
+                                       "frame":  {
+                                                     "x":  16,
+                                                     "y":  1280,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-5-selected":  {
+                                           "frame":  {
+                                                         "x":  160,
+                                                         "y":  1280,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-5-locked":  {
+                                         "frame":  {
+                                                       "x":  304,
+                                                       "y":  1280,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-6-idle":  {
+                                       "frame":  {
+                                                     "x":  448,
+                                                     "y":  1280,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-6-selected":  {
+                                           "frame":  {
+                                                         "x":  592,
+                                                         "y":  1280,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-6-locked":  {
+                                         "frame":  {
+                                                       "x":  736,
+                                                       "y":  1280,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-7-idle":  {
+                                       "frame":  {
+                                                     "x":  880,
+                                                     "y":  1280,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-7-selected":  {
+                                           "frame":  {
+                                                         "x":  1024,
+                                                         "y":  1280,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-7-locked":  {
+                                         "frame":  {
+                                                       "x":  1168,
+                                                       "y":  1280,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     },
+                   "tile-8-idle":  {
+                                       "frame":  {
+                                                     "x":  1312,
+                                                     "y":  1280,
+                                                     "w":  128,
+                                                     "h":  128
+                                                 },
+                                       "rotated":  false,
+                                       "trimmed":  false,
+                                       "spriteSourceSize":  {
+                                                                "x":  0,
+                                                                "y":  0,
+                                                                "w":  128,
+                                                                "h":  128
+                                                            },
+                                       "sourceSize":  {
+                                                          "w":  128,
+                                                          "h":  128
+                                                      }
+                                   },
+                   "tile-8-selected":  {
+                                           "frame":  {
+                                                         "x":  1456,
+                                                         "y":  1280,
+                                                         "w":  128,
+                                                         "h":  128
+                                                     },
+                                           "rotated":  false,
+                                           "trimmed":  false,
+                                           "spriteSourceSize":  {
+                                                                    "x":  0,
+                                                                    "y":  0,
+                                                                    "w":  128,
+                                                                    "h":  128
+                                                                },
+                                           "sourceSize":  {
+                                                              "w":  128,
+                                                              "h":  128
+                                                          }
+                                       },
+                   "tile-8-locked":  {
+                                         "frame":  {
+                                                       "x":  1600,
+                                                       "y":  1280,
+                                                       "w":  128,
+                                                       "h":  128
+                                                   },
+                                         "rotated":  false,
+                                         "trimmed":  false,
+                                         "spriteSourceSize":  {
+                                                                  "x":  0,
+                                                                  "y":  0,
+                                                                  "w":  128,
+                                                                  "h":  128
+                                                              },
+                                         "sourceSize":  {
+                                                            "w":  128,
+                                                            "h":  128
+                                                        }
+                                     }
+               },
+    "meta":  {
+                 "app":  "Puzzle Rivals Tile Shift runtime atlas generator",
+                 "version":  "1.0",
+                 "image":  "tile-shift-runtime-atlas.png",
+                 "format":  "RGBA8888",
+                 "size":  {
+                              "w":  2048,
+                              "h":  1424
+                          },
+                 "scale":  "1"
+             }
+}

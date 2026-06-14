@@ -1,0 +1,102 @@
+[
+  {
+    "asset_slug": "symbol_tile_diamond_reveal",
+    "animation_name": "symbol_tile_diamond_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_star_reveal",
+    "animation_name": "symbol_tile_star_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_sun_reveal",
+    "animation_name": "symbol_tile_sun_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_moon_reveal",
+    "animation_name": "symbol_tile_moon_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_wave_reveal",
+    "animation_name": "symbol_tile_wave_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_rune_reveal",
+    "animation_name": "symbol_tile_rune_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_hex_reveal",
+    "animation_name": "symbol_tile_hex_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "symbol_tile_disc_reveal",
+    "animation_name": "symbol_tile_disc_reveal_play",
+    "frame_count": 6,
+    "fps": 12,
+    "loop": false,
+    "start_state": "hidden",
+    "end_state": "revealed",
+    "notes": "Quick reveal pulse for the memorize phase."
+  },
+  {
+    "asset_slug": "tile_back_shimmer",
+    "animation_name": "tile_back_shimmer_loop",
+    "frame_count": 6,
+    "fps": 8,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Soft default for hidden tiles."
+  },
+  {
+    "asset_slug": "tile_back_focus",
+    "animation_name": "tile_back_focus_loop",
+    "frame_count": 6,
+    "fps": 10,
+    "loop": true,
+    "start_state": "idle",
+    "end_state": "idle",
+    "notes": "Brighter hover/select variant for pair targeting."
+  }
+]

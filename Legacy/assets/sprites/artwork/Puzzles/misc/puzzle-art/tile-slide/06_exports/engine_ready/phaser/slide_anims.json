@@ -1,0 +1,321 @@
+{
+  "frameConfig": {
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "margin": 0,
+    "spacing": 0
+  },
+  "fps": 14,
+  "sheets": [
+    {
+      "direction": "left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "source": "slide_left.png"
+    },
+    {
+      "direction": "right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "source": "slide_right.png"
+    },
+    {
+      "direction": "up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "source": "slide_up.png"
+    },
+    {
+      "direction": "down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "source": "slide_down.png"
+    }
+  ],
+  "animations": [
+    {
+      "key": "e1_sliding_puzzle_tile_01_top_left_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_02_top_center_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 8,
+      "end": 15,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_03_top_right_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 16,
+      "end": 23,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_04_mid_left_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 24,
+      "end": 31,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_05_mid_center_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 32,
+      "end": 39,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_06_mid_right_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 40,
+      "end": 47,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_07_bottom_left_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 48,
+      "end": 55,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_08_bottom_center_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 56,
+      "end": 63,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_09_blank_slide_left",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_left_master",
+      "start": 64,
+      "end": 71,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_01_top_left_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_02_top_center_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 8,
+      "end": 15,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_03_top_right_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 16,
+      "end": 23,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_04_mid_left_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 24,
+      "end": 31,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_05_mid_center_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 32,
+      "end": 39,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_06_mid_right_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 40,
+      "end": 47,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_07_bottom_left_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 48,
+      "end": 55,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_08_bottom_center_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 56,
+      "end": 63,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_09_blank_slide_right",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_right_master",
+      "start": 64,
+      "end": 71,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_01_top_left_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_02_top_center_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 8,
+      "end": 15,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_03_top_right_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 16,
+      "end": 23,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_04_mid_left_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 24,
+      "end": 31,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_05_mid_center_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 32,
+      "end": 39,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_06_mid_right_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 40,
+      "end": 47,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_07_bottom_left_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 48,
+      "end": 55,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_08_bottom_center_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 56,
+      "end": 63,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_09_blank_slide_up",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_up_master",
+      "start": 64,
+      "end": 71,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_01_top_left_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 0,
+      "end": 7,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_02_top_center_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 8,
+      "end": 15,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_03_top_right_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 16,
+      "end": 23,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_04_mid_left_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 24,
+      "end": 31,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_05_mid_center_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 32,
+      "end": 39,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_06_mid_right_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 40,
+      "end": 47,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_07_bottom_left_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 48,
+      "end": 55,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_08_bottom_center_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 56,
+      "end": 63,
+      "frameRate": 14,
+      "repeat": 0
+    },
+    {
+      "key": "e1_sliding_puzzle_tile_09_blank_slide_down",
+      "textureKey": "e1_sliding_puzzle_sliding_tiles_down_master",
+      "start": 64,
+      "end": 71,
+      "frameRate": 14,
+      "repeat": 0
+    }
+  ]
+}
