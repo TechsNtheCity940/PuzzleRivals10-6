@@ -1,0 +1,37 @@
+name: Automated Puzzle Redesign
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  redesign:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Pillow
+
+      - name: Run automation script
+        shell: pwsh
+        run: pwsh -File tools\automate_redesign.ps1 -Commit $false
+
+      - name: Upload redesign sheets
+        uses: actions/upload-artifact@v4
+        with:
+          name: redesign-sheets
+          path: Assets/Textures/Puzzles/**/*_sheet.png
+
+      - name: Upload backups
+        uses: actions/upload-artifact@v4
+        with:
+          name: redesign-backup
+          path: backups/**
