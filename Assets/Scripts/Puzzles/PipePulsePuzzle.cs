@@ -26,6 +26,7 @@ public class PipePulsePuzzle : BasePuzzle
     }
 
     [Header("Art")]
+    public Sprite basePlateSprite;
     public PipeAnimationSet[] pipeAnimations;
     public Sprite[] pipeSprites; // 0: Straight, 1: Elbow, 2: T-Junction
     public Color emptyColor = Color.white;
@@ -38,43 +39,98 @@ public class PipePulsePuzzle : BasePuzzle
     private int[] targetRotations; // Target rotations to ensure solvability
     private bool solvingSequence;
 
+    private RectTransform topReservoirMarker;
+    private RectTransform bottomReservoirMarker;
+    private bool topReservoirFilled;
+    private bool bottomReservoirFilled;
+    private bool topReservoirBonusClaimed;
+    private bool bottomReservoirBonusClaimed;
+    private int topReservoirCol;
+    private int bottomReservoirCol;
+
     [Flags]
     private enum Port { None = 0, Top = 1, Right = 2, Bottom = 4, Left = 8 }
 
     private void SetupTileAnimation(GridTile tile, bool isFilled)
     {
-        if (pipeAnimations != null && tile.type < pipeAnimations.Length)
-        {
-            var animSet = pipeAnimations[tile.type];
-            UISpriteSheetAnimator anim = tile.GetComponent<UISpriteSheetAnimator>();
-            if (anim == null) anim = tile.gameObject.AddComponent<UISpriteSheetAnimator>();
+        // Set background plate
+        if (basePlateSprite != null) tile.Image.sprite = basePlateSprite;
 
-            Sprite[] frames = isFilled ? animSet.flowFrames : animSet.emptyFrames;
-            if (frames != null && frames.Length > 0)
+        UnityEngine.UI.Image targetImg = tile.OverlayImage != null ? tile.OverlayImage : tile.Image;
+        UISpriteSheetAnimator anim = targetImg.GetComponent<UISpriteSheetAnimator>();
+        if (anim == null) anim = targetImg.gameObject.AddComponent<UISpriteSheetAnimator>();
+
+        // Clean up secondary overlay if it's not a Cross-Junction anymore (e.g. from pooling/rebuilding)
+        Transform t2 = tile.transform.Find("PipeOverlay2");
+        if (t2 != null && tile.type != 3)
+        {
+            Destroy(t2.gameObject);
+        }
+
+        if (tile.type == 3) // Cross-Junction
+        {
+            // First, animate the main targetImg with straight pipe animations (type 0)
+            SetupAnimatorForType(anim, targetImg, 0, isFilled);
+
+            // Ensure we have a second overlay for the vertical crossing pipe
+            UnityEngine.UI.Image targetImg2 = null;
+            if (t2 == null && tile.OverlayImage != null)
             {
-                if (anim.frames != frames)
-                {
-                    anim.PlaySet(frames, 10f, true);
-                }
-                tile.SetColor(Color.white);
+                GameObject go2 = Instantiate(tile.OverlayImage.gameObject, tile.transform);
+                go2.name = "PipeOverlay2";
+                t2 = go2.transform;
+                t2.localRotation = Quaternion.Euler(0f, 0f, 90f);
             }
-            else
+            if (t2 != null)
             {
-                anim.Stop();
-                if (animSet.fallback != null) tile.SetSprite(animSet.fallback);
-                else if (pipeSprites != null && tile.type < pipeSprites.Length) 
-                    tile.SetSprite(pipeSprites[tile.type]);
-                
-                tile.SetColor(isFilled ? flowColor : emptyColor);
+                targetImg2 = t2.GetComponent<UnityEngine.UI.Image>();
+                UISpriteSheetAnimator anim2 = targetImg2.GetComponent<UISpriteSheetAnimator>();
+                if (anim2 == null) anim2 = targetImg2.gameObject.AddComponent<UISpriteSheetAnimator>();
+                SetupAnimatorForType(anim2, targetImg2, 0, isFilled);
             }
         }
         else
         {
-            if (pipeSprites != null && tile.type < pipeSprites.Length)
-                tile.SetSprite(pipeSprites[tile.type]);
-            tile.SetColor(isFilled ? flowColor : emptyColor);
+            // Standard shape animation (0, 1, 2)
+            SetupAnimatorForType(anim, targetImg, tile.type, isFilled);
         }
     }
+
+    private void SetupAnimatorForType(UISpriteSheetAnimator anim, UnityEngine.UI.Image targetImg, int shapeType, bool isFilled)
+    {
+        if (pipeAnimations != null && shapeType < pipeAnimations.Length)
+        {
+            var animSet = pipeAnimations[shapeType];
+            Sprite[] frames = isFilled ? animSet.flowFrames : animSet.emptyFrames;
+            
+            if (frames != null && frames.Length > 0)
+            {
+                if (anim.frames != frames)
+                {
+                    anim.PlaySet(frames, 12f, true);
+                }
+                targetImg.color = Color.white;
+            }
+            else
+            {
+                anim.Stop();
+                if (animSet.fallback != null) targetImg.sprite = animSet.fallback;
+                else if (pipeSprites != null && shapeType < pipeSprites.Length) 
+                    targetImg.sprite = pipeSprites[shapeType];
+                
+                targetImg.color = isFilled ? flowColor : emptyColor;
+            }
+        }
+        else
+        {
+            anim.Stop();
+            if (pipeSprites != null && shapeType < pipeSprites.Length)
+                targetImg.sprite = pipeSprites[shapeType];
+            targetImg.color = isFilled ? flowColor : emptyColor;
+        }
+    }
+    public RectTransform startMarker;
+    public RectTransform endMarker;
 
     protected override void BuildBoard()
     {
@@ -86,6 +142,25 @@ public class PipePulsePuzzle : BasePuzzle
         startRow = rng.Next(0, rows);
         endRow = rng.Next(0, rows);
 
+        topReservoirBonusClaimed = false;
+        bottomReservoirBonusClaimed = false;
+
+        // Choose columns for reservoirs (avoiding the left/rightmost columns where emitter/receiver are)
+        if (columns > 2)
+        {
+            topReservoirCol = rng.Next(1, columns - 1);
+            bottomReservoirCol = rng.Next(1, columns - 1);
+            if (topReservoirCol == bottomReservoirCol && columns > 3)
+            {
+                bottomReservoirCol = (topReservoirCol + 1) % (columns - 2) + 1;
+            }
+        }
+        else
+        {
+            topReservoirCol = 0;
+            bottomReservoirCol = columns - 1;
+        }
+
         if (reservoirSlider != null)
         {
             reservoirSlider.minValue = 0f;
@@ -93,16 +168,53 @@ public class PipePulsePuzzle : BasePuzzle
             reservoirSlider.value = 0;
         }
 
-        // 1. Generate a solvable path from left to right
-        List<Vector2Int> path = GeneratePath(startRow, endRow);
-        HashSet<Vector2Int> pathSet = new HashSet<Vector2Int>(path);
+        float originX = (columns - 1) * tileSpacing * 0.5f;
+        float originY = (rows - 1) * tileSpacing * 0.5f;
+
+        // Position markers
+        if (startMarker != null)
+        {
+            startMarker.anchoredPosition = new Vector2(-originX - tileSpacing * 0.7f, originY - startRow * tileSpacing);
+            startMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+        }
+        if (endMarker != null)
+        {
+            endMarker.anchoredPosition = new Vector2(originX + tileSpacing * 0.7f, originY - endRow * tileSpacing);
+            endMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+        }
+
+        // Spawn Reservoir Markers dynamically using endMarker as a template
+        if (endMarker != null && gridContainer != null)
+        {
+            topReservoirMarker = Instantiate(endMarker, gridContainer.parent);
+            topReservoirMarker.name = "TopReservoirMarker";
+            topReservoirMarker.anchoredPosition = new Vector2(topReservoirCol * tileSpacing - originX, originY + tileSpacing * 0.8f);
+            topReservoirMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+            topReservoirMarker.localRotation = Quaternion.Euler(0f, 0f, -90f); // Rotate pointing down/into the reservoir
+
+            UnityEngine.UI.Image topImg = topReservoirMarker.GetComponent<UnityEngine.UI.Image>();
+            if (topImg != null) topImg.color = emptyColor;
+
+            bottomReservoirMarker = Instantiate(endMarker, gridContainer.parent);
+            bottomReservoirMarker.name = "BottomReservoirMarker";
+            bottomReservoirMarker.anchoredPosition = new Vector2(bottomReservoirCol * tileSpacing - originX, -originY - tileSpacing * 0.8f);
+            bottomReservoirMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+            bottomReservoirMarker.localRotation = Quaternion.Euler(0f, 0f, 90f); // Rotate pointing up/into the reservoir
+
+            UnityEngine.UI.Image bottomImg = bottomReservoirMarker.GetComponent<UnityEngine.UI.Image>();
+            if (bottomImg != null) bottomImg.color = emptyColor;
+        }
+
+        // 1. Generate 2 solvable paths from left to right
+        List<Vector2Int> path1 = GeneratePath(startRow, endRow);
+        List<Vector2Int> path2 = GeneratePath(startRow, endRow); 
+        
+        HashSet<Vector2Int> pathSet = new HashSet<Vector2Int>(path1);
+        pathSet.UnionWith(path2);
 
         // 2. Instantiate and configure tiles
         if (pipePrefab != null && gridContainer != null)
         {
-            float originX = (columns - 1) * tileSpacing * 0.5f;
-            float originY = (rows - 1) * tileSpacing * 0.5f;
-
             for (int y = 0; y < rows; y++)
             {
                 for (int x = 0; x < columns; x++)
@@ -115,24 +227,49 @@ public class PipePulsePuzzle : BasePuzzle
                     GridTile tile = go.GetComponent<GridTile>();
                     if (tile == null) continue;
 
-                    int shape;
+                    int shape = 0;
                     int targetRot = 0;
 
                     if (pathSet.Contains(new Vector2Int(x, y)))
                     {
-                        // Tile is on the solution path; pick a shape/rotation that fits
-                        int idx = path.FindIndex(p => p.x == x && p.y == y);
-                        Vector2Int prev = (idx == 0) ? new Vector2Int(-1, startRow) : path[idx - 1];
-                        Vector2Int next = (idx == path.Count - 1) ? new Vector2Int(columns, endRow) : path[idx + 1];
+                        Port requiredPorts = Port.None;
 
-                        Port inPort = GetDirectionPort(prev.x - x, prev.y - y);
-                        Port outPort = GetDirectionPort(next.x - x, next.y - y);
-                        shape = GetShapeForPorts(inPort, outPort, out targetRot);
+                        if (path1.Contains(new Vector2Int(x, y)))
+                        {
+                            int idx = path1.FindIndex(p => p.x == x && p.y == y);
+                            Vector2Int prev = (idx == 0) ? new Vector2Int(-1, startRow) : path1[idx - 1];
+                            Vector2Int next = (idx == path1.Count - 1) ? new Vector2Int(columns, endRow) : path1[idx + 1];
+
+                            requiredPorts |= GetDirectionPort(prev.x - x, prev.y - y);
+                            requiredPorts |= GetDirectionPort(next.x - x, next.y - y);
+                        }
+
+                        if (path2.Contains(new Vector2Int(x, y)))
+                        {
+                            int idx = path2.FindIndex(p => p.x == x && p.y == y);
+                            Vector2Int prev = (idx == 0) ? new Vector2Int(-1, startRow) : path2[idx - 1];
+                            Vector2Int next = (idx == path2.Count - 1) ? new Vector2Int(columns, endRow) : path2[idx + 1];
+
+                            requiredPorts |= GetDirectionPort(prev.x - x, prev.y - y);
+                            requiredPorts |= GetDirectionPort(next.x - x, next.y - y);
+                        }
+
+                        // Add connections to the reservoirs if path tiles are on the reservoir columns at the borders
+                        if (x == topReservoirCol && y == 0)
+                        {
+                            requiredPorts |= Port.Top;
+                        }
+                        if (x == bottomReservoirCol && y == rows - 1)
+                        {
+                            requiredPorts |= Port.Bottom;
+                        }
+
+                        shape = GetShapeForPorts(requiredPorts, out targetRot);
                     }
                     else
                     {
-                        // Random decoration tile
-                        shape = rng.Next(0, 3);
+                        // Random decoration tile including T-Junctions and Cross-Junctions
+                        shape = rng.Next(0, 4);
                         targetRot = rng.Next(0, 4) * 90;
                     }
 
@@ -141,7 +278,7 @@ public class PipePulsePuzzle : BasePuzzle
                     // Randomize starting rotation
                     int currentRot;
                     do { currentRot = rng.Next(0, 4) * 90; }
-                    while (currentRot == targetRot && pathSet.Count > 1); // Avoid accidental solve on small paths
+                    while (currentRot == targetRot && pathSet.Count > 1);
 
                     tile.SetRotation(currentRot);
                     grid[x, y] = tile;
@@ -182,6 +319,63 @@ public class PipePulsePuzzle : BasePuzzle
         }
 
         if (reservoirSlider != null) reservoirSlider.value = filled.Count;
+
+        // Check reservoir filling
+        topReservoirFilled = false;
+        bottomReservoirFilled = false;
+
+        if (grid != null && topReservoirCol >= 0 && topReservoirCol < columns)
+        {
+            GridTile topTile = grid[topReservoirCol, 0];
+            if (topTile != null && filled.Contains(topTile))
+            {
+                if ((GetRotatedPorts(topTile) & Port.Top) != 0)
+                {
+                    topReservoirFilled = true;
+                }
+            }
+        }
+
+        if (grid != null && bottomReservoirCol >= 0 && bottomReservoirCol < columns)
+        {
+            GridTile bottomTile = grid[bottomReservoirCol, rows - 1];
+            if (bottomTile != null && filled.Contains(bottomTile))
+            {
+                if ((GetRotatedPorts(bottomTile) & Port.Bottom) != 0)
+                {
+                    bottomReservoirFilled = true;
+                }
+            }
+        }
+
+        if (topReservoirMarker != null)
+        {
+            UnityEngine.UI.Image img = topReservoirMarker.GetComponent<UnityEngine.UI.Image>();
+            if (img != null) img.color = topReservoirFilled ? flowColor : emptyColor;
+        }
+
+        if (bottomReservoirMarker != null)
+        {
+            UnityEngine.UI.Image img = bottomReservoirMarker.GetComponent<UnityEngine.UI.Image>();
+            if (img != null) img.color = bottomReservoirFilled ? flowColor : emptyColor;
+        }
+
+        // Apply bonus time once per round
+        if (topReservoirFilled && !topReservoirBonusClaimed)
+        {
+            topReservoirBonusClaimed = true;
+            timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
+            Debug.Log("Top Reservoir Filled! +5 Seconds Bonus!");
+            StartCoroutine(PulseMarker(topReservoirMarker));
+        }
+
+        if (bottomReservoirFilled && !bottomReservoirBonusClaimed)
+        {
+            bottomReservoirBonusClaimed = true;
+            timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
+            Debug.Log("Bottom Reservoir Filled! +5 Seconds Bonus!");
+            StartCoroutine(PulseMarker(bottomReservoirMarker));
+        }
 
         if (checkWin && flowData.reachedEnd)
         {
@@ -279,9 +473,10 @@ public class PipePulsePuzzle : BasePuzzle
         int basePorts = 0;
         switch (shape)
         {
-            case 0: basePorts = (int)(Port.Top | Port.Bottom); break; // Straight
+            case 0: basePorts = (int)(Port.Left | Port.Right); break; // Straight (Horizontal)
             case 1: basePorts = (int)(Port.Top | Port.Right); break;  // Elbow
-            case 2: basePorts = (int)(Port.Top | Port.Right | Port.Left); break; // T-Junction
+            case 2: basePorts = (int)(Port.Left | Port.Right | Port.Top); break; // T-Junction / Pump Splitter (3-way)
+            case 3: basePorts = (int)(Port.Left | Port.Right | Port.Top | Port.Bottom); break; // Cross-Junction (4-way)
             default: basePorts = 0; break;
         }
 
@@ -311,22 +506,32 @@ public class PipePulsePuzzle : BasePuzzle
         int curY = startY;
         path.Add(new Vector2Int(curX, curY));
 
-        while (curX < columns - 1)
+        int guard = 0;
+        while (curX < columns - 1 && guard++ < 200)
         {
-            int r = rng.Next(0, 3);
-            if (r == 0) curX++; // Right
-            else if (r == 1 && curY > 0 && !path.Contains(new Vector2Int(curX, curY - 1))) curY--; // Up
-            else if (r == 2 && curY < rows - 1 && !path.Contains(new Vector2Int(curX, curY + 1))) curY++; // Down
-            else curX++;
+            int r = rng.Next(0, 5); // Bias towards moving right
+            int nextX = curX;
+            int nextY = curY;
 
-            Vector2Int pos = new Vector2Int(curX, curY);
-            if (!path.Contains(pos)) path.Add(pos);
+            if (r <= 2) nextX++; // Right
+            else if (r == 3 && curY > 0) nextY--; // Up
+            else if (r == 4 && curY < rows - 1) nextY++; // Down
+
+            Vector2Int pos = new Vector2Int(nextX, nextY);
+            if (!path.Contains(pos))
+            {
+                curX = nextX;
+                curY = nextY;
+                path.Add(pos);
+            }
         }
         
-        while (curY != endY)
+        // Connect to endRow on the last column
+        guard = 0;
+        while (curY != endY && guard++ < 50)
         {
             curY += (endY > curY) ? 1 : -1;
-            Vector2Int pos = new Vector2Int(curX, curY);
+            Vector2Int pos = new Vector2Int(columns - 1, curY);
             if (!path.Contains(pos)) path.Add(pos);
         }
 

@@ -1,0 +1,32 @@
+{
+	"mcpServers": {
+		"coplaydev/unity-mcp": {
+			"type": "stdio",
+			"command": "other",
+			"args": [
+				"--directory",
+				"${input:unity_mcp_server_src}",
+				"run",
+				"server.py"
+			]
+		},
+		"microsoft/markitdown": {
+			"type": "stdio",
+			"command": "uvx",
+			"args": [
+				"markitdown-mcp@0.0.1a4"
+			]
+		},
+		"sunriseapps/imagesorcery-mcp": {
+			"type": "stdio",
+			"command": "other"
+		},
+		"unity-mcp": {
+			"type": "stdio",
+			"command": "C:\\Users\\wonde\\.unity/relay\\relay_win.exe",
+			"args": [
+				"--mcp"
+			]
+		}
+	}
+}

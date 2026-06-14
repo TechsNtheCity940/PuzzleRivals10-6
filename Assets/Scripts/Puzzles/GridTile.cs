@@ -17,15 +17,30 @@ public class GridTile : MonoBehaviour, IPointerClickHandler
 
     public event Action<GridTile> OnClicked;
 
-    private Image image;
+    private UnityEngine.UI.Image _image;
+    private UnityEngine.UI.Image _overlayImage;
     private Coroutine _moveRoutine;
 
-    public Image Image
+    public UnityEngine.UI.Image Image
     {
         get
         {
-            if (image == null) image = GetComponent<Image>();
-            return image;
+            if (_image == null) _image = GetComponent<UnityEngine.UI.Image>();
+            return _image;
+        }
+    }
+
+    public UnityEngine.UI.Image OverlayImage
+    {
+        get
+        {
+            if (_overlayImage == null)
+            {
+                Transform t = transform.Find("PipeOverlay");
+                if (t == null) t = transform.Find("Overlay");
+                if (t != null) _overlayImage = t.GetComponent<UnityEngine.UI.Image>();
+            }
+            return _overlayImage;
         }
     }
 
@@ -38,12 +53,14 @@ public class GridTile : MonoBehaviour, IPointerClickHandler
 
     public void SetSprite(Sprite sprite)
     {
-        Image.sprite = sprite;
+        if (OverlayImage != null) OverlayImage.sprite = sprite;
+        else Image.sprite = sprite;
     }
 
     public void SetColor(Color color)
     {
-        Image.color = color;
+        if (OverlayImage != null) OverlayImage.color = color;
+        else Image.color = color;
     }
 
     public void SetRotation(float zDegrees)
