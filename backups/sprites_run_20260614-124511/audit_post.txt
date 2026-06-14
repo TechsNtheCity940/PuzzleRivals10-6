@@ -1,0 +1,137 @@
+FLAG: CircuitScramble\cs_center_sheet.png | unique_frames=1 | avg_bbox_ratio=0.845 | issues=single-frame
+OK: CircuitScramble\cs_center_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.843 | issues=
+OK: CircuitScramble\cs_center_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.843 | issues=
+FLAG: CircuitScramble\cs_core_charge_sheet.png | unique_frames=3 | avg_bbox_ratio=0.428 | issues=low-variation(3)
+OK: CircuitScramble\cs_core_charge_sheet_redesign_sheet.png | unique_frames=15 | avg_bbox_ratio=0.449 | issues=
+OK: CircuitScramble\cs_core_charge_sheet_sheet.png | unique_frames=15 | avg_bbox_ratio=0.449 | issues=
+OK: CollapseGrid\brick_failure_sheet.png | unique_frames=6 | avg_bbox_ratio=0.474 | issues=
+FLAG: CollapseGrid\collapse_anim_sheet.png | unique_frames=1 | avg_bbox_ratio=0.809 | issues=single-frame
+OK: CollapseGrid\collapse_anim_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.815 | issues=
+OK: CollapseGrid\collapse_anim_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.815 | issues=
+FLAG: CollapseGrid\collapse_grid_aftershock_sheet.png | unique_frames=2 | avg_bbox_ratio=0.862 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_aftershock_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.764 | issues=
+OK: CollapseGrid\collapse_grid_aftershock_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.764 | issues=
+FLAG: CollapseGrid\collapse_grid_brace_sheet.png | unique_frames=2 | avg_bbox_ratio=0.675 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_brace_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.676 | issues=
+OK: CollapseGrid\collapse_grid_brace_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.676 | issues=
+OK: CollapseGrid\collapse_grid_controlled_chain_sheet.png | unique_frames=5 | avg_bbox_ratio=0.848 | issues=
+FLAG: CollapseGrid\collapse_grid_crack_spread_sheet.png | unique_frames=2 | avg_bbox_ratio=0.654 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_crack_spread_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.635 | issues=
+OK: CollapseGrid\collapse_grid_crack_spread_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.635 | issues=
+FLAG: CollapseGrid\collapse_grid_crack_tile_sheet.png | unique_frames=2 | avg_bbox_ratio=0.873 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_crack_tile_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.680 | issues=
+OK: CollapseGrid\collapse_grid_crack_tile_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.680 | issues=
+OK: CollapseGrid\collapse_grid_debris_fall_sheet.png | unique_frames=10 | avg_bbox_ratio=0.541 | issues=
+OK: CollapseGrid\collapse_grid_dust_cloud_sheet.png | unique_frames=6 | avg_bbox_ratio=0.449 | issues=
+FLAG: CollapseGrid\collapse_grid_dust_plume_sheet.png | unique_frames=2 | avg_bbox_ratio=0.691 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_dust_plume_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.553 | issues=
+OK: CollapseGrid\collapse_grid_dust_plume_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.553 | issues=
+OK: CollapseGrid\collapse_grid_endgame_pressure_sheet.png | unique_frames=6 | avg_bbox_ratio=1.000 | issues=
+OK: CollapseGrid\collapse_grid_patch_sheet.png | unique_frames=6 | avg_bbox_ratio=0.366 | issues=
+FLAG: CollapseGrid\collapse_grid_player_card_shimmer_sheet.png | unique_frames=1 | avg_bbox_ratio=0.174 | issues=single-frame
+OK: CollapseGrid\collapse_grid_player_card_shimmer_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.357 | issues=
+OK: CollapseGrid\collapse_grid_player_card_shimmer_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.357 | issues=
+OK: CollapseGrid\collapse_grid_reinforce_sheet.png | unique_frames=6 | avg_bbox_ratio=0.404 | issues=
+OK: CollapseGrid\collapse_grid_remove_tile_sheet.png | unique_frames=6 | avg_bbox_ratio=0.406 | issues=
+OK: CollapseGrid\collapse_grid_score_lane_sheet.png | unique_frames=7 | avg_bbox_ratio=0.769 | issues=
+FLAG: CollapseGrid\collapse_grid_self_damage_warning_sheet.png | unique_frames=2 | avg_bbox_ratio=0.827 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_self_damage_warning_sheet_redesign_sheet.png | unique_frames=8 | avg_bbox_ratio=0.827 | issues=
+OK: CollapseGrid\collapse_grid_self_damage_warning_sheet_sheet.png | unique_frames=8 | avg_bbox_ratio=0.827 | issues=
+FLAG: CollapseGrid\collapse_grid_shake_structure_sheet.png | unique_frames=2 | avg_bbox_ratio=0.872 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_shake_structure_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.750 | issues=
+OK: CollapseGrid\collapse_grid_shake_structure_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.750 | issues=
+FLAG: CollapseGrid\collapse_grid_support_atlas_sheet.png | unique_frames=1 | avg_bbox_ratio=0.359 | issues=single-frame
+OK: CollapseGrid\collapse_grid_support_atlas_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.513 | issues=
+OK: CollapseGrid\collapse_grid_support_atlas_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.513 | issues=
+FLAG: CollapseGrid\collapse_grid_support_idle_sheet.png | unique_frames=2 | avg_bbox_ratio=0.818 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_support_idle_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.805 | issues=
+OK: CollapseGrid\collapse_grid_support_idle_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.805 | issues=
+OK: CollapseGrid\collapse_grid_survey_sheet.png | unique_frames=6 | avg_bbox_ratio=0.618 | issues=
+FLAG: CollapseGrid\collapse_grid_weak_spot_pulse_sheet.png | unique_frames=2 | avg_bbox_ratio=0.731 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_weak_spot_pulse_sheet_redesign_sheet.png | unique_frames=9 | avg_bbox_ratio=0.667 | issues=
+OK: CollapseGrid\collapse_grid_weak_spot_pulse_sheet_sheet.png | unique_frames=9 | avg_bbox_ratio=0.667 | issues=
+FLAG: CollapseGrid\collapse_grid_weight_drop_sheet.png | unique_frames=2 | avg_bbox_ratio=0.893 | issues=low-variation(2)
+OK: CollapseGrid\collapse_grid_weight_drop_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.792 | issues=
+OK: CollapseGrid\collapse_grid_weight_drop_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.792 | issues=
+OK: CollapseGrid\crumble_sheet.png | unique_frames=6 | avg_bbox_ratio=1.000 | issues=
+FLAG: CollapseGrid\danger_sheet.png | unique_frames=1 | avg_bbox_ratio=1.000 | issues=single-frame
+OK: CollapseGrid\danger_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.997 | issues=
+OK: CollapseGrid\danger_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.997 | issues=
+OK: CollapseGrid\empty_grid_sheet.png | unique_frames=6 | avg_bbox_ratio=0.901 | issues=
+FLAG: CollapseGrid\grid_scan_sheet.png | unique_frames=1 | avg_bbox_ratio=0.903 | issues=single-frame
+OK: CollapseGrid\grid_scan_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.921 | issues=
+OK: CollapseGrid\grid_scan_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.921 | issues=
+FLAG: ComboRush\combo_gem_sheet.png | unique_frames=1 | avg_bbox_ratio=0.891 | issues=single-frame
+OK: ComboRush\combo_gem_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.924 | issues=
+OK: ComboRush\combo_gem_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.924 | issues=
+FLAG: ComboRush\combo_match_burst_sheet.png | unique_frames=1 | avg_bbox_ratio=0.032 | issues=single-frame;small-content(0.032)
+OK: ComboRush\combo_match_burst_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.176 | issues=
+OK: ComboRush\combo_match_burst_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.176 | issues=
+OK: MirrorMaze\angled_mirror_sheet.png | unique_frames=4 | avg_bbox_ratio=0.809 | issues=
+OK: MirrorMaze\board_tile_sheet.png | unique_frames=4 | avg_bbox_ratio=0.864 | issues=
+OK: MirrorMaze\source_emitter_sheet.png | unique_frames=4 | avg_bbox_ratio=0.817 | issues=
+OK: MirrorMaze\target_receiver_sheet.png | unique_frames=4 | avg_bbox_ratio=0.818 | issues=
+OK: MirrorMaze\traveling_beam_sheet.png | unique_frames=4 | avg_bbox_ratio=0.821 | issues=
+FLAG: PipePulse\pipe_angle_sheet.png | unique_frames=2 | avg_bbox_ratio=0.771 | issues=low-variation(2)
+OK: PipePulse\pipe_angle_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.767 | issues=
+OK: PipePulse\pipe_angle_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.767 | issues=
+FLAG: PipePulse\pipe_pump_sheet.png | unique_frames=2 | avg_bbox_ratio=0.703 | issues=low-variation(2)
+OK: PipePulse\pipe_pump_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.700 | issues=
+OK: PipePulse\pipe_pump_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.700 | issues=
+FLAG: PipePulse\pipe_straight_sheet.png | unique_frames=2 | avg_bbox_ratio=0.730 | issues=low-variation(2)
+OK: PipePulse\pipe_straight_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.726 | issues=
+OK: PipePulse\pipe_straight_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.726 | issues=
+FLAG: PipePulse\pp_angle_new_sheet.png | unique_frames=1 | avg_bbox_ratio=0.702 | issues=single-frame
+OK: PipePulse\pp_angle_new_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.734 | issues=
+OK: PipePulse\pp_angle_new_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.734 | issues=
+FLAG: PipePulse\pp_angle_sheet.png | unique_frames=1 | avg_bbox_ratio=0.626 | issues=single-frame
+OK: PipePulse\pp_angle_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.649 | issues=
+OK: PipePulse\pp_angle_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.649 | issues=
+FLAG: PipePulse\pp_base_sheet.png | unique_frames=2 | avg_bbox_ratio=0.797 | issues=low-variation(2)
+OK: PipePulse\pp_base_sheet_redesign_sheet.png | unique_frames=10 | avg_bbox_ratio=0.867 | issues=
+OK: PipePulse\pp_base_sheet_sheet.png | unique_frames=10 | avg_bbox_ratio=0.867 | issues=
+OK: PipePulse\pp_pump_new_sheet.png | unique_frames=4 | avg_bbox_ratio=0.855 | issues=
+FLAG: PipePulse\pp_pump_sheet.png | unique_frames=1 | avg_bbox_ratio=0.569 | issues=single-frame
+OK: PipePulse\pp_pump_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.615 | issues=
+OK: PipePulse\pp_pump_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.615 | issues=
+FLAG: PipePulse\pp_straight_new_sheet.png | unique_frames=1 | avg_bbox_ratio=0.922 | issues=single-frame
+OK: PipePulse\pp_straight_new_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.947 | issues=
+OK: PipePulse\pp_straight_new_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.947 | issues=
+FLAG: PipePulse\pp_straight_sheet.png | unique_frames=1 | avg_bbox_ratio=0.596 | issues=single-frame
+OK: PipePulse\pp_straight_sheet_redesign_sheet.png | unique_frames=16 | avg_bbox_ratio=0.643 | issues=
+OK: PipePulse\pp_straight_sheet_sheet.png | unique_frames=16 | avg_bbox_ratio=0.643 | issues=
+OK: ScoreAttack\targets_blue_shatter_sheet.png | unique_frames=8 | avg_bbox_ratio=0.692 | issues=
+OK: ScoreAttack\targets_green_shatter_sheet.png | unique_frames=8 | avg_bbox_ratio=0.678 | issues=
+OK: ScoreAttack\targets_purple_shatter_sheet.png | unique_frames=8 | avg_bbox_ratio=0.729 | issues=
+OK: ScoreAttack\targets_red_shatter_sheet.png | unique_frames=8 | avg_bbox_ratio=0.749 | issues=
+
+Audit summary:
+Total flagged: 28
+- CircuitScramble\cs_center_sheet.png: single-frame
+- CircuitScramble\cs_core_charge_sheet.png: low-variation(3)
+- CollapseGrid\collapse_anim_sheet.png: single-frame
+- CollapseGrid\collapse_grid_aftershock_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_brace_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_crack_spread_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_crack_tile_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_dust_plume_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_player_card_shimmer_sheet.png: single-frame
+- CollapseGrid\collapse_grid_self_damage_warning_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_shake_structure_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_support_atlas_sheet.png: single-frame
+- CollapseGrid\collapse_grid_support_idle_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_weak_spot_pulse_sheet.png: low-variation(2)
+- CollapseGrid\collapse_grid_weight_drop_sheet.png: low-variation(2)
+- CollapseGrid\danger_sheet.png: single-frame
+- CollapseGrid\grid_scan_sheet.png: single-frame
+- ComboRush\combo_gem_sheet.png: single-frame
+- ComboRush\combo_match_burst_sheet.png: single-frame,small-content(0.032)
+- PipePulse\pipe_angle_sheet.png: low-variation(2)
+- PipePulse\pipe_pump_sheet.png: low-variation(2)
+- PipePulse\pipe_straight_sheet.png: low-variation(2)
+- PipePulse\pp_angle_new_sheet.png: single-frame
+- PipePulse\pp_angle_sheet.png: single-frame
+- PipePulse\pp_base_sheet.png: low-variation(2)
+- PipePulse\pp_pump_sheet.png: single-frame
+- PipePulse\pp_straight_new_sheet.png: single-frame
+- PipePulse\pp_straight_sheet.png: single-frame

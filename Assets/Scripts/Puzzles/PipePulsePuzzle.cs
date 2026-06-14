@@ -547,21 +547,38 @@ public class PipePulsePuzzle : BasePuzzle
         return Port.None;
     }
 
-    private int GetShapeForPorts(Port p1, Port p2, out int rotation)
+    private int GetShapeForPorts(Port requiredPorts, out int rotation)
     {
-        // Try Straight
-        for (int r = 0; r < 360; r += 90)
-            if (GetRotatedPorts(0, r) == (p1 | p2)) { rotation = r; return 0; }
-        // Try Elbow
-        for (int r = 0; r < 360; r += 90)
-            if (GetRotatedPorts(1, r) == (p1 | p2)) { rotation = r; return 1; }
-        // Fallback to T-Junction
-        for (int r = 0; r < 360; r += 90)
+        // 1. First search for an exact match
+        for (int shape = 0; shape < 4; shape++)
         {
-            Port rp = GetRotatedPorts(2, r);
-            if ((rp & p1) != 0 && (rp & p2) != 0) { rotation = r; return 2; }
+            for (int r = 0; r < 360; r += 90)
+            {
+                if (GetRotatedPorts(shape, r) == requiredPorts)
+                {
+                    rotation = r;
+                    return shape;
+                }
+            }
         }
-        rotation = 0; return 0;
+
+        // 2. If no exact match, find the shape that contains all required ports with minimal extra ports
+        for (int shape = 0; shape < 4; shape++)
+        {
+            for (int r = 0; r < 360; r += 90)
+            {
+                Port rp = GetRotatedPorts(shape, r);
+                if ((rp & requiredPorts) == requiredPorts)
+                {
+                    rotation = r;
+                    return shape;
+                }
+            }
+        }
+
+        // Fallback to straight horizontal
+        rotation = 0;
+        return 0;
     }
 
     private IEnumerator SolveSequence(List<GridTile> path)
@@ -617,6 +634,45 @@ public class PipePulsePuzzle : BasePuzzle
             for (int i = gridContainer.childCount - 1; i >= 0; i--)
                 Destroy(gridContainer.GetChild(i).gameObject);
         }
+
+        if (topReservoirMarker != null)
+        {
+            Destroy(topReservoirMarker.gameObject);
+            topReservoirMarker = null;
+        }
+        if (bottomReservoirMarker != null)
+        {
+            Destroy(bottomReservoirMarker.gameObject);
+            bottomReservoirMarker = null;
+        }
+    }
+
+    private IEnumerator PulseMarker(RectTransform marker)
+    {
+        if (marker == null) yield break;
+        Vector3 originalScale = marker.localScale;
+        Vector3 peakScale = originalScale * 1.4f;
+        float duration = 0.3f;
+        float half = duration * 0.5f;
+
+        float elapsed = 0f;
+        while (elapsed < half)
+        {
+            if (marker == null) yield break;
+            elapsed += Time.deltaTime;
+            marker.localScale = Vector3.Lerp(originalScale, peakScale, elapsed / half);
+            yield return null;
+        }
+
+        elapsed = 0f;
+        while (elapsed < half)
+        {
+            if (marker == null) yield break;
+            elapsed += Time.deltaTime;
+            marker.localScale = Vector3.Lerp(peakScale, originalScale, elapsed / half);
+            yield return null;
+        }
+        if (marker != null) marker.localScale = originalScale;
     }
 }
 
