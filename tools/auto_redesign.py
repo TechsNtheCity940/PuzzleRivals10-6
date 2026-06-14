@@ -1,7 +1,10 @@
 from PIL import Image, ImageChops, ImageEnhance, ImageFilter, ImageDraw
 import os, random, math
 
-BASE = r"D:\\PuzzleRivals\\Assets\\Textures\\Puzzles"
+BASE_FOLDERS = [
+    r"D:\\PuzzleRivals\\Assets\\Textures\\Puzzles",
+    r"D:\\PuzzleRivals\\Assets\\Textures\\Effects",
+]
 FRAME_SIZE = 256
 COLS = 4
 ROWS = 4
@@ -12,12 +15,12 @@ OUT_H = FRAME_SIZE * ROWS
 
 def find_sheets():
     sheets = []
-    for root, dirs, files in os.walk(BASE):
-        for f in files:
-            if not f.lower().endswith('_sheet.png'):
-                continue
-            path = os.path.join(root, f)
-            sheets.append(path)
+    for base in BASE_FOLDERS:
+        for root, dirs, files in os.walk(base):
+            for f in files:
+                if not f.lower().endswith('_sheet.png'):
+                    continue
+                sheets.append(os.path.join(root, f))
     return sheets
 
 
@@ -125,6 +128,13 @@ def compose_sheet(frames, out_path):
     sheet.save(out_path)
 
 
+def get_relative_path(path):
+    for base in BASE_FOLDERS:
+        if os.path.commonpath([os.path.abspath(path), os.path.abspath(base)]) == os.path.abspath(base):
+            return os.path.relpath(path, base)
+    return os.path.basename(path)
+
+
 def process():
     sheets = find_sheets()
     processed = []
@@ -132,7 +142,7 @@ def process():
         frames = extract_frames_from_sheet(s)
         uc = unique_count(frames)
         ratio = bbox_area_ratio(frames)
-        rel = os.path.relpath(s, BASE)
+        rel = get_relative_path(s)
         flag = False
         if uc <= 1 or uc < 4 or ratio < 0.05:
             flag = True
@@ -146,7 +156,7 @@ def process():
             new_frames = generate_interpolated(frames)
         out = os.path.splitext(s)[0] + '_redesign_sheet.png'
         compose_sheet(new_frames, out)
-        print(f'Wrote redesign: {os.path.relpath(out, BASE)} (was {rel})')
+        print(f'Wrote redesign: {get_relative_path(out)} (was {rel})')
         processed.append(out)
     print(f'Done. Processed {len(processed)} assets.')
 
