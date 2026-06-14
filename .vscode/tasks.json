@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compose puzzle sprite sheets",
+      "type": "shell",
+      "command": "python tools\\make_spritesheets_all.py",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "inAgents": true
+    },
+    {
+      "label": "Run visual audit (pre/post)",
+      "type": "shell",
+      "command": "python tools\\visual_audit.py",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "inAgents": true
+    },
+    {
+      "label": "Auto-redesign (dry run, no commit)",
+      "type": "shell",
+      "command": "pwsh -File tools\\automate_redesign.ps1 -Commit:$false",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "inAgents": true
+    },
+    {
+      "label": "Auto-redesign and commit",
+      "type": "shell",
+      "command": "pwsh -File tools\\automate_redesign.ps1 -Commit:$true",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "inAgents": true
+    }
+  ]
+}
