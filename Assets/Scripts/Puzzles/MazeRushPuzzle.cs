@@ -44,6 +44,9 @@ public class MazeRushPuzzle : BasePuzzle
     private Vector2Int exitPos;
     private Vector2Int checkpointPos;  // the key
     private Vector2Int gatePos;        // locked door sealing the exit route
+    private Vector2Int portalAPos = new Vector2Int(-1, -1);
+    private Vector2Int portalBPos = new Vector2Int(-1, -1);
+    private bool justTeleported = false;
     private bool checkpointCollected;
     private bool gateOpen;
     private RectTransform playerIcon;
@@ -95,6 +98,42 @@ public class MazeRushPuzzle : BasePuzzle
         int cpIndex = Mathf.Clamp(path.Count / 2, 1, path.Count - 3);
         checkpointPos = path[cpIndex];
 
+        // Gather list of eligible floor tiles for Warp Portals
+        List<Vector2Int> eligibleFloors = new List<Vector2Int>();
+        for (int y = 1; y < boardSize - 1; y++)
+        {
+            for (int x = 1; x < boardSize - 1; x++)
+            {
+                Vector2Int pos = new Vector2Int(x, y);
+                if (maze[y, x] == FLOOR &&
+                    pos != startPos &&
+                    pos != exitPos &&
+                    pos != gatePos &&
+                    pos != checkpointPos)
+                {
+                    eligibleFloors.Add(pos);
+                }
+            }
+        }
+
+        portalAPos = new Vector2Int(-1, -1);
+        portalBPos = new Vector2Int(-1, -1);
+        justTeleported = false;
+
+        List<Vector2Int> leftFloors = eligibleFloors.FindAll(p => p.x < boardSize / 2);
+        List<Vector2Int> rightFloors = eligibleFloors.FindAll(p => p.x > boardSize / 2);
+
+        if (leftFloors.Count > 0 && rightFloors.Count > 0)
+        {
+            portalAPos = leftFloors[rng.Next(leftFloors.Count)];
+            portalBPos = rightFloors[rng.Next(rightFloors.Count)];
+        }
+        else if (eligibleFloors.Count >= 2)
+        {
+            portalAPos = eligibleFloors[0];
+            portalBPos = eligibleFloors[eligibleFloors.Count - 1];
+        }
+
         float center = (boardSize - 1) * spacing / 2f;
         for (int y = 0; y < boardSize; y++)
         {
@@ -114,6 +153,8 @@ public class MazeRushPuzzle : BasePuzzle
                 tile.SetExit(gp == exitPos);
                 tile.SetCheckpoint(gp == checkpointPos);
                 if (gp == gatePos) tile.SetGate(true, true);
+                if (gp == portalAPos) tile.SetPortal(true, 0);
+                else if (gp == portalBPos) tile.SetPortal(true, 1);
                 tile.OnClicked += HandleTileClicked;
                 tiles[y, x] = tile;
             }
@@ -232,19 +273,48 @@ public class MazeRushPuzzle : BasePuzzle
     {
         playerPos = gp;
 
+        bool teleportedNow = false;
+        Vector2Int originalTarget = gp;
+
+        if (gp == portalAPos && !justTeleported)
+        {
+            playerPos = portalBPos;
+            teleportedNow = true;
+            justTeleported = true;
+        }
+        else if (gp == portalBPos && !justTeleported)
+        {
+            playerPos = portalAPos;
+            teleportedNow = true;
+            justTeleported = true;
+        }
+        else if (gp != portalAPos && gp != portalBPos)
+        {
+            justTeleported = false;
+        }
+
         float center = (boardSize - 1) * spacing / 2f;
-        Vector2 targetPos = new Vector2(gp.x * spacing - center, -(gp.y * spacing) + center);
         
         if (playerIcon != null)
         {
-            StartCoroutine(SmoothMove(playerIcon, targetPos, 0.15f));
+            if (teleportedNow)
+            {
+                Vector2 midPos = new Vector2(originalTarget.x * spacing - center, -(originalTarget.y * spacing) + center);
+                Vector2 finalPos = new Vector2(playerPos.x * spacing - center, -(playerPos.y * spacing) + center);
+                StartCoroutine(WarpMoveSequence(playerIcon, midPos, finalPos));
+            }
+            else
+            {
+                Vector2 targetPos = new Vector2(playerPos.x * spacing - center, -(playerPos.y * spacing) + center);
+                StartCoroutine(SmoothMove(playerIcon, targetPos, 0.15f));
+            }
         }
 
-        if (gp == checkpointPos && !checkpointCollected)
+        if (playerPos == checkpointPos && !checkpointCollected)
         {
             checkpointCollected = true;
             gateOpen = true;
-            if (tiles[gp.y, gp.x] != null) tiles[gp.y, gp.x].SetCheckpoint(false);
+            if (tiles[playerPos.y, playerPos.x] != null) tiles[playerPos.y, playerPos.x].SetCheckpoint(false);
             if (tiles[gatePos.y, gatePos.x] != null) tiles[gatePos.y, gatePos.x].SetGate(true, false);
         }
 
@@ -262,11 +332,49 @@ public class MazeRushPuzzle : BasePuzzle
         float elapsed = 0;
         while (elapsed < duration)
         {
+            if (rt == null) yield break;
             elapsed += Time.deltaTime;
             rt.anchoredPosition = Vector2.Lerp(start, target, elapsed / duration);
             yield return null;
         }
-        rt.anchoredPosition = target;
+        if (rt != null) rt.anchoredPosition = target;
+    }
+
+    private IEnumerator WarpMoveSequence(RectTransform rt, Vector2 midPos, Vector2 finalPos)
+    {
+        if (rt == null) yield break;
+
+        // 1. Smoothly slide onto the first portal
+        yield return StartCoroutine(SmoothMove(rt, midPos, 0.08f));
+        if (rt == null) yield break;
+
+        // 2. Shrink down to simulate warp hole entrance
+        Vector3 originalScale = rt.localScale;
+        float elapsed = 0f;
+        float duration = 0.08f;
+        while (elapsed < duration)
+        {
+            if (rt == null) yield break;
+            elapsed += Time.deltaTime;
+            rt.localScale = Vector3.Lerp(originalScale, Vector3.zero, elapsed / duration);
+            yield return null;
+        }
+        if (rt == null) yield break;
+        rt.localScale = Vector3.zero;
+
+        // 3. Move coordinate position instantly
+        rt.anchoredPosition = finalPos;
+
+        // 4. Grow back up at destination portal
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            if (rt == null) yield break;
+            elapsed += Time.deltaTime;
+            rt.localScale = Vector3.Lerp(Vector3.zero, originalScale, elapsed / duration);
+            yield return null;
+        }
+        if (rt != null) rt.localScale = originalScale;
     }
 
     private static bool IsAdjacent(Vector2Int a, Vector2Int b)
@@ -325,6 +433,11 @@ public class MazeRushPuzzle : BasePuzzle
             {
                 Vector2Int np = p + d;
                 if (!Passable(np)) continue;
+
+                // Portal teleportation traversing inside pathfinding
+                if (np == portalAPos) np = portalBPos;
+                else if (np == portalBPos) np = portalAPos;
+
                 if (came.ContainsKey(np)) continue;
                 came[np] = p;
                 q.Enqueue(np);

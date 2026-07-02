@@ -93,7 +93,7 @@ public static class AnimationGenerator
             importer.alphaIsTransparency = true;
             importer.mipmapEnabled = false;
             importer.filterMode = FilterMode.Bilinear;
-            importer.maxTextureSize = Mathf.Max(importer.maxTextureSize, 1024);
+            importer.maxTextureSize = Math.Max(importer.maxTextureSize, 1024);
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
 
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
@@ -161,7 +161,7 @@ public static class AnimationGenerator
             var animator = go.AddComponent<Animator>();
             animator.runtimeAnimatorController = controller;
             PrefabUtility.SaveAsPrefabAsset(go, prefabPath);
-            Object.DestroyImmediate(go);
+            UnityEngine.Object.DestroyImmediate(go);
 
             Debug.Log($"Generated animation & prefab for: {category}/{baseName}");
         }

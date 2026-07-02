@@ -17,6 +17,7 @@ public class CollapseGridPuzzle : BasePuzzle
     private const int CORE = 1;     // pink weak-spot — collapses if touched
     private const int CRITICAL = 2; // cracked support beneath a core — collapses if removed
     private const int BRACE = 3;    // gold anchor — locked, cannot be removed
+    private const int GOLD_NUGGET = 4; // gold nugget — bonus / reward
 
     [Header("Animated Frames (sliced sheets)")]
     public Sprite[] normalFrames;
@@ -36,6 +37,7 @@ public class CollapseGridPuzzle : BasePuzzle
     private int safeRemoved;
     private bool collapsed;
     private bool resolving;
+    private Dictionary<GridTile, Coroutine> pendingClicks = new Dictionary<GridTile, Coroutine>();
 
     [Header("Layout")]
     public int columns = 6;
@@ -53,6 +55,7 @@ public class CollapseGridPuzzle : BasePuzzle
         collapsed = false;
         resolving = false;
         safeRemoved = 0;
+        pendingClicks.Clear();
 
         // Scale the structure with difficulty.
         columns = Mathf.Clamp(5 + difficulty / 2, 5, 7);
@@ -88,6 +91,21 @@ public class CollapseGridPuzzle : BasePuzzle
             placed++;
         }
 
+        // Place Gold Nuggets inside the building's inner core
+        int nuggetCount = Mathf.Clamp(difficulty, 1, 2);
+        int nuggetsPlaced = 0;
+        guard = 0;
+        while (nuggetsPlaced < nuggetCount && guard++ < 100)
+        {
+            int c = rng.Next(1, columns - 1);
+            int r = rng.Next(1, rows - 1);
+            if (roles[c, r] == NORMAL)
+            {
+                roles[c, r] = GOLD_NUGGET;
+                nuggetsPlaced++;
+            }
+        }
+
         // Count the safe (normal) bricks — clearing them all solves the puzzle.
         safeTotal = 0;
         for (int c = 0; c < columns; c++)
@@ -99,7 +117,7 @@ public class CollapseGridPuzzle : BasePuzzle
                 CreateTile(c, r, roles[c, r]);
 
         if (instructionText != null)
-            instructionText.text = "Remove the cyan bricks. Avoid the pink core and cracked supports!";
+            instructionText.text = "Remove the cyan bricks. Avoid the pink core and cracked supports! Isolate & tap Gold Nuggets!";
         UpdateProgress();
     }
 
@@ -126,6 +144,12 @@ public class CollapseGridPuzzle : BasePuzzle
         anim.playOnEnable = false;
         anim.PlaySet(FramesForRole(role), FpsForRole(role), true);
 
+        if (role == GOLD_NUGGET)
+        {
+            // Amber/Gold glowing tint color
+            tile.SetColor(new Color(1f, 0.7f, 0f, 1f));
+        }
+
         tile.OnClicked += HandleTileClicked;
         grid[col, row] = tile;
         return tile;
@@ -138,6 +162,7 @@ public class CollapseGridPuzzle : BasePuzzle
             case CORE: return coreFrames;
             case CRITICAL: return criticalFrames;
             case BRACE: return braceFrames;
+            case GOLD_NUGGET: return braceFrames; // Reuse brace frames
             default: return normalFrames;
         }
     }
@@ -149,6 +174,7 @@ public class CollapseGridPuzzle : BasePuzzle
             case CORE: return 12f;      // urgent pulse
             case CRITICAL: return 8f;   // stressed flicker
             case BRACE: return 6f;      // slow gold shimmer
+            case GOLD_NUGGET: return 8f; // fast sparkling shimmer
             default: return 6f;         // gentle cyan shimmer
         }
     }

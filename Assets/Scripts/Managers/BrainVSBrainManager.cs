@@ -215,6 +215,11 @@ public class BrainVSBrainManager : MonoBehaviour
         }
     }
 
+    public void GrantRandomDefense(bool isPlayer)
+    {
+        AddRandomDefense(isPlayer);
+    }
+
     private void AddRandomDefense(bool isPlayer)
     {
         DefenseType type = (DefenseType)rng.Next(0, System.Enum.GetValues(typeof(DefenseType)).Length);

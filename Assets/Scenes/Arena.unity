@@ -205,13 +205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArenaManager
   podiumPrefab: {fileID: 3757568283184638244, guid: b80e6c2e29ec7db409f49d9ff4178b1c, type: 3}
   bombPrefab: {fileID: 279501718781431925, guid: c88c1ef28e11a3d4083e785a95e2578c, type: 3}
-  pipePulsePrefab: {fileID: 3571750247298456487, guid: 3eb99c64c0403764a923c700247adb34, type: 3}
-  circuitScramblePrefab: {fileID: 80378342335590145, guid: 21e0214fa40a55d43be8790567521826, type: 3}
-  collapseGridPrefab: {fileID: 656753457440126080, guid: d05e02899ca9aea41acaf0dd9488cb18, type: 3}
-  comboRushPrefab: {fileID: 1654144567320952390, guid: 294704a7178261e4b861b5a2fa8bdb56, type: 3}
-  mazeRushPrefab: {fileID: 7873213699682276096, guid: 3ff1af69f8285e946b44132a17369c9e, type: 3}
-  mirrorBeamPrefab: {fileID: 2143673475855745683, guid: 7a3821c606f76fe4e8ee1035f53fd251, type: 3}
-  scoreAttackPrefab: {fileID: 7682973588599046444, guid: 728bc70c359927f42ba746b8dd3ba218, type: 3}
+  pipePulsePrefab: {fileID: 2624929479046374603, guid: 73bdf1fe4f7218d47a8005ce922cb168, type: 3}
+  circuitScramblePrefab: {fileID: 8628138777348780560, guid: 12794c059e0d8ba469f6596ebcff037c, type: 3}
+  collapseGridPrefab: {fileID: 2917267699336554830, guid: ee7b6b29a7e0a7342ab6031c1058acf0, type: 3}
+  comboRushPrefab: {fileID: 23225454981414458, guid: b2187b1c8b5ba604185917b324e9ab28, type: 3}
+  mazeRushPrefab: {fileID: 2808713012881804035, guid: d2a4a93bc2d67c541a035bd2cb7a0abb, type: 3}
+  mirrorBeamPrefab: {fileID: 9022437816757979526, guid: 43b53af2226e4904894f2309d290381c, type: 3}
+  scoreAttackPrefab: {fileID: 1932583436401390186, guid: 3c5e5873c1495a244a0a957aa8fe3cea, type: 3}
   explosionPrefab: {fileID: 3844803536040744985, guid: a322fa882ffbcb7458b511920b30b582, type: 3}
   uiDocument: {fileID: 635844099}
   puzzleSlot: {fileID: 334881974}

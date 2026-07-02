@@ -13,6 +13,10 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
     public int y;
     public int colorID = -1; // -1 = empty
     public bool isNode;
+    public bool isPortal;
+    public int portalId;
+    public bool isBattery;
+    public bool batteryCharged;
 
     public event Action<LinkLockTile> OnClicked;
 
@@ -21,6 +25,20 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
     public Image wireImage;
 
     private Image _image;
+
+    public void SetPortal(int id)
+    {
+        isPortal = true;
+        portalId = id;
+        RefreshVisual();
+    }
+
+    public void SetBattery()
+    {
+        isBattery = true;
+        batteryCharged = false;
+        RefreshVisual();
+    }
 
     public void SetWire(int colorID, Sprite wireSprite, float rotation)
     {
@@ -38,8 +56,16 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         // If we used a child for wire, hide the root tint. Otherwise root is the wire.
         if (wireImage != null && _image != null)
         {
-            _image.color = EmptyColor;
-            _image.sprite = null;
+            if (isPortal || isBattery)
+            {
+                // Retain portal/battery background colors
+                _image.sprite = null;
+            }
+            else
+            {
+                _image.color = EmptyColor;
+                _image.sprite = null;
+            }
         }
     }
 
@@ -99,13 +125,7 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         CacheImage();
         isNode = true;
         colorID = nodeColorID;
-        if (_image != null)
-        {
-            Color c = ColorForId(nodeColorID);
-            c.a = 1f;
-            _image.color = c; // keep colour: it identifies the pair
-            _image.sprite = nodeSprite; // tinted node icon when art exists
-        }
+        RefreshVisual();
     }
 
     // Tint this cell as a path segment of the given colour.
@@ -127,7 +147,38 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         CacheImage();
         isNode = false;
         colorID = -1;
-        if (_image != null)
+        if (wireImage != null)
+        {
+            wireImage.gameObject.SetActive(false);
+        }
+        RefreshVisual();
+    }
+
+    public void RefreshVisual()
+    {
+        CacheImage();
+        if (_image == null) return;
+
+        if (isNode)
+        {
+            Color c = ColorForId(colorID);
+            c.a = 1f;
+            _image.color = c;
+            _image.sprite = nodeSprite;
+        }
+        else if (isPortal)
+        {
+            // Portal A: Purple, Portal B: Orange
+            _image.color = (portalId == 0) ? new Color(0.7f, 0.1f, 1.0f, 1.0f) : new Color(1.0f, 0.5f, 0.0f, 1.0f);
+            _image.sprite = null;
+        }
+        else if (isBattery)
+        {
+            // Uncharged Battery: Dark gold-yellow, Charged: Glowing bright gold-yellow
+            _image.color = batteryCharged ? new Color(1.0f, 0.85f, 0.1f, 1.0f) : new Color(0.45f, 0.4f, 0.15f, 1.0f);
+            _image.sprite = null;
+        }
+        else
         {
             _image.color = EmptyColor;
             _image.sprite = null;

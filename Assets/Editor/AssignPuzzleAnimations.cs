@@ -8,9 +8,9 @@ using UnityEngine;
 public class AssignPuzzleAnimations
 {
     private const string PrefabFolder = "Assets/Prefabs";
-    private const string AnimFolder = "Assets/Animations/Puzzles";
+    private const string AnimFolder = "Assets/Animations";
 
-    [MenuItem("Tools/Puzzles/Assign Animations To Prefabs")]
+    [MenuItem("Tools/Animations/Assign Animations To Prefabs")]
     public static void Assign()
     {
         var prefabGuids = AssetDatabase.FindAssets("t:Prefab", new[] { PrefabFolder });
@@ -20,42 +20,53 @@ public class AssignPuzzleAnimations
         int assigned = 0;
         foreach (var pg in prefabGuids)
         {
-            var ppath = AssetDatabase.GUIDToAssetPath(pg);
-            var name = Path.GetFileNameWithoutExtension(ppath);
-            // Try to find matching controller by exact or base name
-            string candidate = null;
-            if (animMap.TryGetValue(name, out var ap)) candidate = ap;
-            else
-            {
-                // try variants
-                foreach (var k in animMap.Keys)
-                {
-                    if (k.StartsWith(name) || name.StartsWith(k) || k.Contains(name) || name.Contains(k))
-                    {
-                        candidate = animMap[k];
-                        break;
-                    }
-                }
-            }
-            if (candidate == null) continue;
+            var prefabPath = AssetDatabase.GUIDToAssetPath(pg);
+            var prefabName = Path.GetFileNameWithoutExtension(prefabPath);
+            string candidate = FindBestMatch(prefabName, animMap);
+            if (candidate == null)
+                continue;
 
-            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(ppath);
-            if (prefab == null) continue;
-
-            var instance = PrefabUtility.LoadPrefabContents(ppath);
-            var animator = instance.GetComponent<Animator>();
-            if (animator == null) animator = instance.AddComponent<Animator>();
+            var instance = PrefabUtility.LoadPrefabContents(prefabPath);
+            var animator = instance.GetComponent<Animator>() ?? instance.AddComponent<Animator>();
             var controller = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(candidate);
-            if (controller == null) continue;
+            if (controller == null)
+            {
+                PrefabUtility.UnloadPrefabContents(instance);
+                continue;
+            }
+
             animator.runtimeAnimatorController = controller;
-            PrefabUtility.SaveAsPrefabAsset(instance, ppath);
+            PrefabUtility.SaveAsPrefabAsset(instance, prefabPath);
             PrefabUtility.UnloadPrefabContents(instance);
             assigned++;
-            Debug.Log($"Assigned {candidate} to prefab {ppath}");
+            Debug.Log($"Assigned {Path.GetFileName(candidate)} to prefab {prefabPath}");
         }
 
-        EditorUtility.DisplayDialog("Assign Puzzle Animations", $"Assigned animations to {assigned} prefabs.", "OK");
+        EditorUtility.DisplayDialog("Assign Animations To Prefabs", $"Assigned animations to {assigned} prefabs.", "OK");
         AssetDatabase.Refresh();
+    }
+
+    private static string FindBestMatch(string prefabName, System.Collections.Generic.Dictionary<string, string> animMap)
+    {
+        if (animMap.TryGetValue(prefabName, out var exact))
+            return exact;
+
+        string lowerName = prefabName.ToLowerInvariant();
+        foreach (var kvp in animMap)
+        {
+            var key = kvp.Key.ToLowerInvariant();
+            if (key == lowerName || key == lowerName + "_anim" || key == lowerName + "effect" || key.Contains(lowerName) || lowerName.Contains(key) || key.StartsWith(lowerName) || lowerName.StartsWith(key))
+                return kvp.Value;
+        }
+
+        foreach (var kvp in animMap)
+        {
+            var key = kvp.Key.ToLowerInvariant();
+            if (key.Replace("_sheet", "").Replace("_anim", "").Contains(lowerName) || lowerName.Contains(key.Replace("_sheet", "").Replace("_anim", "")))
+                return kvp.Value;
+        }
+
+        return null;
     }
 }
 #endif

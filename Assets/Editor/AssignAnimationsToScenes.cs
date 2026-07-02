@@ -8,31 +8,29 @@ using UnityEngine;
 
 public class AssignAnimationsToScenes
 {
-    private const string AnimFolder = "Assets/Animations/Puzzles";
+    private const string AnimFolder = "Assets/Animations";
     private const string ScenesFolder = "Assets/Scenes";
 
-    [MenuItem("Tools/Puzzles/Assign Animations To Scenes (Project-wide)")]
+    [MenuItem("Tools/Animations/Assign Animations To Scenes (Project-wide)")]
     public static void Assign()
     {
         var animGuids = AssetDatabase.FindAssets("t:RuntimeAnimatorController", new[] { AnimFolder });
         var animMap = animGuids.Select(g => AssetDatabase.GUIDToAssetPath(g))
             .ToDictionary(p => Path.GetFileNameWithoutExtension(p), p => p);
 
-        // Collect scenes: prefer ScenesFolder, fallback to all scenes in project
         var sceneGuids = AssetDatabase.FindAssets("t:Scene", new[] { ScenesFolder });
         if (sceneGuids == null || sceneGuids.Length == 0)
         {
             sceneGuids = AssetDatabase.FindAssets("t:Scene");
         }
-        var scenePaths = sceneGuids.Select(g => AssetDatabase.GUIDToAssetPath(g)).ToArray();
 
+        var scenePaths = sceneGuids.Select(g => AssetDatabase.GUIDToAssetPath(g)).ToArray();
         int totalAssigned = 0;
-        for (int i = 0; i < scenePaths.Length; i++)
+
+        foreach (var sp in scenePaths)
         {
-            var sp = scenePaths[i];
             var scene = EditorSceneManager.OpenScene(sp, OpenSceneMode.Single);
-            var rootGOs = scene.GetRootGameObjects();
-            foreach (var root in rootGOs)
+            foreach (var root in scene.GetRootGameObjects())
             {
                 totalAssigned += ProcessGameObject(root, animMap);
             }
@@ -52,43 +50,52 @@ public class AssignAnimationsToScenes
         foreach (var t in transforms)
         {
             var obj = t.gameObject;
-            var name = obj.name;
-            string controllerPath = null;
-
-            // Exact match
-            if (animMap.TryGetValue(name, out var p)) controllerPath = p;
-            else
-            {
-                // Best-effort fuzzy match
-                var key = animMap.Keys.FirstOrDefault(k => k.Equals(name) || k.Equals(name + "_anim") || k.Contains(name) || name.Contains(k) || k.StartsWith(name) || name.StartsWith(k));
-                if (key != null) controllerPath = animMap[key];
-            }
-
-            if (controllerPath == null) continue;
+            var controllerPath = FindControllerForName(obj.name, animMap);
+            if (controllerPath == null)
+                continue;
 
             var controller = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(controllerPath);
-            if (controller == null) continue;
+            if (controller == null)
+                continue;
 
-            var animator = obj.GetComponent<Animator>();
-            if (animator == null) animator = obj.AddComponent<Animator>();
+            var animator = obj.GetComponent<Animator>() ?? obj.AddComponent<Animator>();
             animator.runtimeAnimatorController = controller;
 
-            // Normalize transform for sprites
             var sr = obj.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
                 t.localPosition = Vector3.zero;
                 t.localRotation = Quaternion.identity;
                 t.localScale = Vector3.one;
-
-                // Ensure sprite is centered (pivot handled at import)
-                // Set draw mode to simple
                 sr.drawMode = SpriteDrawMode.Simple;
             }
 
             count++;
         }
         return count;
+    }
+
+    private static string FindControllerForName(string objectName, Dictionary<string, string> animMap)
+    {
+        if (animMap.TryGetValue(objectName, out var exact))
+            return exact;
+
+        string normalized = objectName.ToLowerInvariant();
+        foreach (var kvp in animMap)
+        {
+            var key = kvp.Key.ToLowerInvariant();
+            if (key == normalized || key == normalized + "_anim" || key == normalized + "effect" || key.Contains(normalized) || normalized.Contains(key) || key.StartsWith(normalized) || normalized.StartsWith(key))
+                return kvp.Value;
+        }
+
+        foreach (var kvp in animMap)
+        {
+            var key = kvp.Key.ToLowerInvariant().Replace("_sheet", "").Replace("_anim", "").Replace("_effect", "");
+            if (key.Contains(normalized) || normalized.Contains(key))
+                return kvp.Value;
+        }
+
+        return null;
     }
 }
 #endif

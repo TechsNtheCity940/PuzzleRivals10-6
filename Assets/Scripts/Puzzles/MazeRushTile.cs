@@ -17,6 +17,8 @@ public class MazeRushTile : MonoBehaviour, IPointerClickHandler
     public bool isStart;
     public bool isGate;
     public bool gateLocked;
+    public bool isPortal;
+    public int portalId;
 
     public event Action<MazeRushTile> OnClicked;
 
@@ -114,6 +116,13 @@ public class MazeRushTile : MonoBehaviour, IPointerClickHandler
         Refresh();
     }
 
+    public void SetPortal(bool portal, int id)
+    {
+        isPortal = portal;
+        portalId = id;
+        Refresh();
+    }
+
     // Player highlight overlay (not a serialized terrain flag).
     public void SetPlayer(bool value)
     {
@@ -131,6 +140,7 @@ public class MazeRushTile : MonoBehaviour, IPointerClickHandler
         Color col;
         if (isPlayer) { col = PlayerColor; }
         else if (isGate) { col = gateLocked ? GateLockedColor : GateOpenColor; }
+        else if (isPortal) { col = (portalId == 0) ? new Color(0.7f, 0.1f, 1f, 1f) : new Color(1f, 0.5f, 0f, 1f); }
         else if (isWall) { col = WallColor; }
         else if (isExit) { frames = exitFrames; col = ExitColor; }
         else if (isStart) { frames = startFrames; col = StartColor; }

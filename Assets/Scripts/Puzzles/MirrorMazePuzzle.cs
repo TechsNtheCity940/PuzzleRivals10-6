@@ -46,6 +46,8 @@ public class MirrorMazePuzzle : BasePuzzle
     private const int MIRROR = 3;
     private const int PRISM = 4;
     private const int ACTIVATOR = 5;
+    private const int FILTER = 6;
+    private const int ENERGY_NODE = 7;
 
     private static readonly Color FloorColor = new Color(0.20f, 0.23f, 0.32f, 1f);
     private static readonly Color MirrorColor = new Color(0.90f, 0.92f, 1f, 1f);
@@ -62,6 +64,7 @@ public class MirrorMazePuzzle : BasePuzzle
     private int[,] orient;         // [y, x]
     private readonly List<GridTile> interactableTiles = new List<GridTile>();
     private readonly List<GridTile> requiredEndpoints = new List<GridTile>();
+    private readonly HashSet<Vector2Int> claimedEnergyNodes = new HashSet<Vector2Int>();
 
     private Vector2Int emitterPos;
     private Vector2Int emitDir;
@@ -71,7 +74,8 @@ public class MirrorMazePuzzle : BasePuzzle
     {
         public Vector2Int pos;
         public Vector2Int dir;
-        public BeamHead(Vector2Int p, Vector2Int d) { pos = p; dir = d; }
+        public Color color;
+        public BeamHead(Vector2Int p, Vector2Int d, Color col) { pos = p; dir = d; color = col; }
     }
 
     private RectTransform beamContainer;
@@ -106,6 +110,7 @@ public class MirrorMazePuzzle : BasePuzzle
         orient = new int[boardSize, boardSize];
         interactableTiles.Clear();
         requiredEndpoints.Clear();
+        claimedEnergyNodes.Clear();
 
         // Emitter on left, Receiver on right
         int ery = rng.Next(1, boardSize - 1);
@@ -137,6 +142,14 @@ public class MirrorMazePuzzle : BasePuzzle
         for (int y = Mathf.Min(ay, try_y); y <= Mathf.Max(ay, try_y); y++) pathSet.Add(new Vector2Int(mx2, y));
         for (int x = mx2; x < boardSize; x++) pathSet.Add(new Vector2Int(x, try_y));
 
+        // Place a Color Filter on the horizontal path segment between Mirror 1 and Mirror 2
+        int filterX = (mx1 + mx2) / 2;
+        Vector2Int filterPos = new Vector2Int(filterX, ay);
+        if (!plan.ContainsKey(filterPos))
+        {
+            plan[filterPos] = (FILTER, 0);
+        }
+
         int prismCount = difficulty > 2 ? 1 : 0;
         int guard = 0;
         while (prismCount > 0 && guard++ < 100)
@@ -145,6 +158,17 @@ public class MirrorMazePuzzle : BasePuzzle
             if (pathSet.Contains(p) || plan.ContainsKey(p)) continue;
             plan[p] = (PRISM, 0);
             prismCount--;
+        }
+
+        // Place 1-2 optional Energy Nodes (Side Objectives)
+        int energyNodeCount = difficulty > 1 ? 2 : 1;
+        guard = 0;
+        while (energyNodeCount > 0 && guard++ < 100)
+        {
+            Vector2Int p = new Vector2Int(rng.Next(1, boardSize - 1), rng.Next(1, boardSize - 1));
+            if (pathSet.Contains(p) || plan.ContainsKey(p)) continue;
+            plan[p] = (ENERGY_NODE, 0);
+            energyNodeCount--;
         }
 
         float center = (boardSize - 1) * tileSpacing / 2f;
@@ -196,6 +220,16 @@ public class MirrorMazePuzzle : BasePuzzle
                         SetupAnimation(gt, activatorFrames, activatorSprite);
                         requiredEndpoints.Add(gt);
                     }
+                    else if (pInfo.type == FILTER)
+                    {
+                        gt.SetColor(new Color(1f, 0.85f, 0f, 1f)); // Gold/Orange Filter
+                        SetupAnimation(gt, prismFrames, prismSprite); // Use prism frames
+                    }
+                    else if (pInfo.type == ENERGY_NODE)
+                    {
+                        gt.SetColor(new Color(1f, 0.2f, 0.6f, 1f)); // Magenta/Pink Energy Node
+                        SetupAnimation(gt, activatorFrames, activatorSprite);
+                    }
                 }
                 else
                 {
@@ -245,8 +279,8 @@ public class MirrorMazePuzzle : BasePuzzle
     private bool TraceBeamStatic(HashSet<GridTile> triggered)
     {
         triggered.Clear();
-        List<BeamHead> heads = new List<BeamHead> { new BeamHead(emitterPos, emitDir) };
-        HashSet<(Vector2Int, Vector2Int)> visited = new HashSet<(Vector2Int, Vector2Int)>();
+        List<BeamHead> heads = new List<BeamHead> { new BeamHead(emitterPos, emitDir, EmitterColor) };
+        HashSet<(Vector2Int, Vector2Int, Color)> visited = new HashSet<(Vector2Int, Vector2Int, Color)>();
 
         int limit = boardSize * boardSize * 4;
         while (heads.Count > 0 && limit-- > 0)
@@ -256,31 +290,49 @@ public class MirrorMazePuzzle : BasePuzzle
             {
                 Vector2Int nextPos = h.pos + h.dir;
                 if (nextPos.x < 0 || nextPos.y < 0 || nextPos.x >= boardSize || nextPos.y >= boardSize) continue;
-                if (visited.Contains((nextPos, h.dir))) continue;
-                visited.Add((nextPos, h.dir));
+                if (visited.Contains((nextPos, h.dir, h.color))) continue;
+                visited.Add((nextPos, h.dir, h.color));
 
                 GridTile tile = cellTiles[nextPos.y, nextPos.x];
                 if (tile.type == MIRROR)
-                    nextHeads.Add(new BeamHead(nextPos, Reflect(h.dir, orient[nextPos.y, nextPos.x])));
+                    nextHeads.Add(new BeamHead(nextPos, Reflect(h.dir, orient[nextPos.y, nextPos.x]), h.color));
                 else if (tile.type == PRISM)
                 {
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
-                    nextHeads.Add(new BeamHead(nextPos, RotateLeft(h.dir)));
-                    nextHeads.Add(new BeamHead(nextPos, RotateRight(h.dir)));
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
+                    nextHeads.Add(new BeamHead(nextPos, RotateLeft(h.dir), h.color));
+                    nextHeads.Add(new BeamHead(nextPos, RotateRight(h.dir), h.color));
+                }
+                else if (tile.type == FILTER)
+                {
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, ReceiverColor));
                 }
                 else if (tile.type == ACTIVATOR)
                 {
                     triggered.Add(tile);
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
                 }
                 else if (tile.type == RECEIVER)
-                    triggered.Add(tile);
+                {
+                    if (h.color == ReceiverColor)
+                        triggered.Add(tile);
+                }
+                else if (tile.type == ENERGY_NODE)
+                {
+                    triggered.Add(tile); // track triggering, but do not propagate
+                }
                 else
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
+                {
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
+                }
             }
             heads = nextHeads;
         }
-        return triggered.Count >= requiredEndpoints.Count;
+
+        foreach (var req in requiredEndpoints)
+        {
+            if (!triggered.Contains(req)) return false;
+        }
+        return true;
     }
 
     private void Retrace()
@@ -301,9 +353,17 @@ public class MirrorMazePuzzle : BasePuzzle
             if (endpoint.type == ACTIVATOR) endpoint.SetColor(ActivatorOff);
         }
 
-        List<BeamHead> heads = new List<BeamHead> { new BeamHead(emitterPos, emitDir) };
+        foreach (var tile in cellTiles)
+        {
+            if (tile != null && tile.type == ENERGY_NODE)
+            {
+                tile.SetColor(new Color(1f, 0.2f, 0.6f, 1f)); // Reset to off pink
+            }
+        }
+
+        List<BeamHead> heads = new List<BeamHead> { new BeamHead(emitterPos, emitDir, EmitterColor) };
         HashSet<GridTile> triggered = new HashSet<GridTile>();
-        HashSet<(Vector2Int, Vector2Int)> visited = new HashSet<(Vector2Int, Vector2Int)>();
+        HashSet<(Vector2Int, Vector2Int, Color)> visited = new HashSet<(Vector2Int, Vector2Int, Color)>();
 
         float center = (boardSize - 1) * tileSpacing / 2f;
         int limit = boardSize * boardSize * 4;
@@ -315,8 +375,8 @@ public class MirrorMazePuzzle : BasePuzzle
             {
                 Vector2Int nextPos = h.pos + h.dir;
                 if (nextPos.x < 0 || nextPos.y < 0 || nextPos.x >= boardSize || nextPos.y >= boardSize) continue;
-                if (visited.Contains((nextPos, h.dir))) continue;
-                visited.Add((nextPos, h.dir));
+                if (visited.Contains((nextPos, h.dir, h.color))) continue;
+                visited.Add((nextPos, h.dir, h.color));
 
                 if (beamPrefab != null)
                 {
@@ -328,7 +388,7 @@ public class MirrorMazePuzzle : BasePuzzle
                     if (bt != null)
                     {
                         bt.Init(nextPos.x, nextPos.y, 9);
-                        bt.SetColor(BeamOn);
+                        bt.SetColor(h.color);
                         SetupAnimation(bt, beamFrames, beamSprite);
                         bt.Image.raycastTarget = false;
                     }
@@ -336,28 +396,61 @@ public class MirrorMazePuzzle : BasePuzzle
 
                 GridTile tile = cellTiles[nextPos.y, nextPos.x];
                 if (tile.type == MIRROR)
-                    nextHeads.Add(new BeamHead(nextPos, Reflect(h.dir, orient[nextPos.y, nextPos.x])));
+                    nextHeads.Add(new BeamHead(nextPos, Reflect(h.dir, orient[nextPos.y, nextPos.x]), h.color));
                 else if (tile.type == PRISM)
                 {
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
-                    nextHeads.Add(new BeamHead(nextPos, RotateLeft(h.dir)));
-                    nextHeads.Add(new BeamHead(nextPos, RotateRight(h.dir)));
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
+                    nextHeads.Add(new BeamHead(nextPos, RotateLeft(h.dir), h.color));
+                    nextHeads.Add(new BeamHead(nextPos, RotateRight(h.dir), h.color));
+                }
+                else if (tile.type == FILTER)
+                {
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, ReceiverColor));
                 }
                 else if (tile.type == ACTIVATOR)
                 {
                     triggered.Add(tile);
                     tile.SetColor(ActivatorOn);
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
                 }
                 else if (tile.type == RECEIVER)
+                {
+                    if (h.color == ReceiverColor)
+                        triggered.Add(tile);
+                }
+                else if (tile.type == ENERGY_NODE)
+                {
                     triggered.Add(tile);
+                    tile.SetColor(new Color(1f, 0.5f, 0.8f, 1f)); // Glowing active magenta
+                    
+                    Vector2Int pos = new Vector2Int(tile.x, tile.y);
+                    if (!claimedEnergyNodes.Contains(pos))
+                    {
+                        claimedEnergyNodes.Add(pos);
+                        timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
+                        Debug.Log("Energy Node Charged! +5 Seconds Bonus!");
+                        StartCoroutine(PulseMarker(tile.transform as RectTransform));
+                    }
+                }
                 else
-                    nextHeads.Add(new BeamHead(nextPos, h.dir));
+                {
+                    nextHeads.Add(new BeamHead(nextPos, h.dir, h.color));
+                }
             }
             heads = nextHeads;
         }
 
-        if (triggered.Count >= requiredEndpoints.Count)
+        bool allRequiredTriggered = true;
+        foreach (var req in requiredEndpoints)
+        {
+            if (!triggered.Contains(req))
+            {
+                allRequiredTriggered = false;
+                break;
+            }
+        }
+
+        if (allRequiredTriggered)
         {
             foreach (Transform child in beamContainer)
             {
@@ -379,6 +472,34 @@ public class MirrorMazePuzzle : BasePuzzle
         orient[t.y, t.x] ^= 1;
         t.SetRotation(orient[t.y, t.x] == BACKSLASH ? 90f : 0f);
         Retrace();
+    }
+
+    private IEnumerator PulseMarker(RectTransform marker)
+    {
+        if (marker == null) yield break;
+        Vector3 originalScale = marker.localScale;
+        Vector3 peakScale = originalScale * 1.3f;
+        float duration = 0.3f;
+        float half = duration * 0.5f;
+
+        float elapsed = 0f;
+        while (elapsed < half)
+        {
+            if (marker == null) yield break;
+            elapsed += Time.deltaTime;
+            marker.localScale = Vector3.Lerp(originalScale, peakScale, elapsed / half);
+            yield return null;
+        }
+
+        elapsed = 0f;
+        while (elapsed < half)
+        {
+            if (marker == null) yield break;
+            elapsed += Time.deltaTime;
+            marker.localScale = Vector3.Lerp(peakScale, originalScale, elapsed / half);
+            yield return null;
+        }
+        if (marker != null) marker.localScale = originalScale;
     }
 
     public override void AutoSolveChunk()

@@ -102,7 +102,7 @@ def should_write_sheet(src, out):
 def process_folder(base_path):
     written = 0
     skipped = 0
-    for root, dirs, files in os.walk(base_path):
+    for root, _, files in os.walk(base_path):
         for f in files:
             if not f.lower().endswith('.png'):
                 continue

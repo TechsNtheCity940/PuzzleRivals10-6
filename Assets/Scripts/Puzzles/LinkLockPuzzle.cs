@@ -27,6 +27,12 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
     private int _numColors;
     private int _activeColor = -1;
 
+    private Vector2Int portalAPos = new Vector2Int(-1, -1);
+    private Vector2Int portalBPos = new Vector2Int(-1, -1);
+    private Vector2Int batteryPos = new Vector2Int(-1, -1);
+    private bool justTeleported = false;
+    private bool batteryClaimed = false;
+
     private const int MaxPaletteColors = 8;
 
     protected override void BuildBoard()
@@ -101,6 +107,37 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
             _tiles[b.x, b.y].SetNode(c);
         }
 
+        // Place Warp Sockets (Quantum Bridge Portals) & Battery Cell from remaining empty cells
+        portalAPos = new Vector2Int(-1, -1);
+        portalBPos = new Vector2Int(-1, -1);
+        batteryPos = new Vector2Int(-1, -1);
+        justTeleported = false;
+        batteryClaimed = false;
+
+        List<Vector2Int> emptyCells = new List<Vector2Int>();
+        for (int yy = 0; yy < n; yy++)
+        {
+            for (int xx = 0; xx < n; xx++)
+            {
+                if (_nodeColor[xx, yy] == -1)
+                {
+                    emptyCells.Add(new Vector2Int(xx, yy));
+                }
+            }
+        }
+        Shuffle(emptyCells);
+
+        if (emptyCells.Count >= 3)
+        {
+            portalAPos = emptyCells[0];
+            portalBPos = emptyCells[1];
+            batteryPos = emptyCells[2];
+
+            _tiles[portalAPos.x, portalAPos.y].SetPortal(0);
+            _tiles[portalBPos.x, portalBPos.y].SetPortal(1);
+            _tiles[batteryPos.x, batteryPos.y].SetBattery();
+        }
+
         UpdateStatus();
     }
 
@@ -173,6 +210,27 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
 
         _pathColor[cell.x, cell.y] = _activeColor;
         path.Add(cell);
+
+        // Quantum Bridge Sockets Warp teleport logic
+        if (cell == portalAPos && portalBPos.x != -1)
+        {
+            if (_pathColor[portalBPos.x, portalBPos.y] == -1)
+            {
+                _pathColor[portalBPos.x, portalBPos.y] = _activeColor;
+                path.Add(portalBPos);
+                _tiles[portalBPos.x, portalBPos.y].GetComponent<GridTile>()?.Pulse(1.2f, 0.15f);
+            }
+        }
+        else if (cell == portalBPos && portalAPos.x != -1)
+        {
+            if (_pathColor[portalAPos.x, portalAPos.y] == -1)
+            {
+                _pathColor[portalAPos.x, portalAPos.y] = _activeColor;
+                path.Add(portalAPos);
+                _tiles[portalAPos.x, portalAPos.y].GetComponent<GridTile>()?.Pulse(1.2f, 0.15f);
+            }
+        }
+
         UpdatePathWires(_activeColor);
     }
 
@@ -198,6 +256,30 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         rotation = 0;
 
         if (wireSprites == null || wireSprites.Length < 2) return;
+
+        bool prevIsWarp = prev.HasValue && !IsAdjacent(curr, prev.Value);
+        bool nextIsWarp = next.HasValue && !IsAdjacent(curr, next.Value);
+
+        if (prevIsWarp || nextIsWarp)
+        {
+            // If it's a warp jump, treat the warp connection as a straight end-line
+            sprite = wireSprites[0];
+            Vector2Int d;
+            if (prevIsWarp && next.HasValue)
+            {
+                d = next.Value - curr;
+            }
+            else if (nextIsWarp && prev.HasValue)
+            {
+                d = curr - prev.Value;
+            }
+            else
+            {
+                d = new Vector2Int(1, 0); // fallback
+            }
+            rotation = (d.x != 0) ? 90f : 0f;
+            return;
+        }
 
         if (prev.HasValue && next.HasValue)
         {
@@ -243,6 +325,22 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         // Pulse the endpoints
         _tiles[_nodeA[color].x, _nodeA[color].y].GetComponent<GridTile>()?.Pulse(1.4f, 0.3f);
         _tiles[_nodeB[color].x, _nodeB[color].y].GetComponent<GridTile>()?.Pulse(1.4f, 0.3f);
+
+        // Check if the path contains the batteryPos and claim the reward
+        if (batteryPos.x != -1 && !batteryClaimed)
+        {
+            List<Vector2Int> path = _paths[color];
+            if (path != null && path.Contains(batteryPos))
+            {
+                batteryClaimed = true;
+                _tiles[batteryPos.x, batteryPos.y].batteryCharged = true;
+                _tiles[batteryPos.x, batteryPos.y].RefreshVisual();
+                _tiles[batteryPos.x, batteryPos.y].GetComponent<GridTile>()?.Pulse(1.5f, 0.3f);
+
+                timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
+                Debug.Log("LinkLock Battery Charged! +5 Seconds Bonus!");
+            }
+        }
 
         UpdateStatus();
         CheckSolved();
@@ -359,9 +457,37 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
                 bool passable = isGoal || (_nodeColor[nb.x, nb.y] == -1 && _pathColor[nb.x, nb.y] == -1);
                 if (!passable) continue;
 
-                visited[nb.x, nb.y] = true;
-                cameFrom[nb.x, nb.y] = cur;
-                queue.Enqueue(nb);
+                // Portal teleportation traversing inside pathfinding
+                if (nb == portalAPos && portalBPos.x != -1)
+                {
+                    if (!visited[portalBPos.x, portalBPos.y])
+                    {
+                        visited[nb.x, nb.y] = true;
+                        cameFrom[nb.x, nb.y] = cur;
+
+                        visited[portalBPos.x, portalBPos.y] = true;
+                        cameFrom[portalBPos.x, portalBPos.y] = nb; // Portal B came from Portal A
+                        queue.Enqueue(portalBPos);
+                    }
+                }
+                else if (nb == portalBPos && portalAPos.x != -1)
+                {
+                    if (!visited[portalAPos.x, portalAPos.y])
+                    {
+                        visited[nb.x, nb.y] = true;
+                        cameFrom[nb.x, nb.y] = cur;
+
+                        visited[portalAPos.x, portalAPos.y] = true;
+                        cameFrom[portalAPos.x, portalAPos.y] = nb; // Portal A came from Portal B
+                        queue.Enqueue(portalAPos);
+                    }
+                }
+                else
+                {
+                    visited[nb.x, nb.y] = true;
+                    cameFrom[nb.x, nb.y] = cur;
+                    queue.Enqueue(nb);
+                }
             }
         }
 

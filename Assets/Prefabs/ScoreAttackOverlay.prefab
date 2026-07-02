@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1932583436401390186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8047723592951993735}
+  - component: {fileID: 1006649269963269274}
+  m_Layer: 0
+  m_Name: ScoreAttackOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8047723592951993735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932583436401390186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006649269963269274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932583436401390186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2077db14d821e5a429e2cfa294d92a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreAttack
+  inputEnabled: 0
+  isSolved: 0
+  scoreTargetSprite: {fileID: 21300000, guid: 18c59b99d4e08064bbe119ad35fa68d8, type: 3}
+  floorSprite: {fileID: 21300000, guid: a510c70ecb2cb184aaaa16c2a2736fb9, type: 3}
+  shatterRedFrames:
+  - {fileID: 7835258085757042726, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: 4699357625521162666, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: 8992718661643047664, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: 7231037792118455351, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: -2325050212758800222, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: -8330034937622756152, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: -8062200360750184143, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  - {fileID: -5372519390826978355, guid: 80b4dfa4c1136ca45ae647e722f04e4c, type: 3}
+  shatterBlueFrames:
+  - {fileID: -4221336079930026845, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: 233034821893433487, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: 733487217611674184, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: -4597576363572602237, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: -1381908219105661554, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: -6476485294075236332, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: 7427124481048086442, guid: f824916810168674d861331e89c3d21a, type: 3}
+  - {fileID: -2119955982700230181, guid: f824916810168674d861331e89c3d21a, type: 3}
+  shatterGreenFrames:
+  - {fileID: -4114433974829682070, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: 8098942065421733660, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: -1153279636563109626, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: -1443696697287431965, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: 4895859554098785735, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: -5400700588676967125, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: 4397203362873161928, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  - {fileID: -1803174792199847786, guid: 2b4faf7c6684df445ad98b4bae6b96c5, type: 3}
+  shatterPurpleFrames:
+  - {fileID: -9182347620491638010, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: 9074700813524377421, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: 8720635833361483101, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: 5652297975695850719, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: -741249549504148289, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: -1141265377725009761, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: 1754737134374942995, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  - {fileID: 360002013351116570, guid: fb5201b571b5b4448bb88c76159f860a, type: 3}
+  shatterFps: 18
