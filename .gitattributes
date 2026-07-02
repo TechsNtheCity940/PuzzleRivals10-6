@@ -152,6 +152,5 @@ WebGL[[:space:]]Builds/Build/WebGL[[:space:]]Builds.wasm filter=lfs diff=lfs mer
 WebGL[[:space:]]Builds/Build/WebGL[[:space:]]Builds.data filter=lfs diff=lfs merge=lfs -text
 Puzzle[[:space:]]Rivals.pck filter=lfs diff=lfs merge=lfs -text
 connectwebgl.zip filter=lfs diff=lfs merge=lfs -text
-WebGL[[:space:]]Builds/*.wasm filter=lfs diff=lfs merge=lfs -text
 WebGL[[:space:]]Builds/ filter=lfs diff=lfs merge=lfs -text
 *.data filter=lfs diff=lfs merge=lfs -text
