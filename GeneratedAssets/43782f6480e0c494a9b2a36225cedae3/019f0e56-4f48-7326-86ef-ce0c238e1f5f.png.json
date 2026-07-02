@@ -1,0 +1,31 @@
+{
+    "asset": "43782f6480e0c494a9b2a36225cedae3",
+    "fileName": "019f0e56-4f48-7326-86ef-ce0c238e1f5f.png",
+    "prompt": "A single top-down 2D game tile of a rotatable MIRROR for a sci-fi circuit/laser puzzle, centered and filling the square frame. A dark octagonal brushed-metal frame (matching a futuristic neon aesthetic) containing one bright glossy silver-blue polished diagonal mirror bar running corner to corner from the BOTTOM-LEFT to the TOP-RIGHT (a \"/\" diagonal). Clean reflective glass surface. ABSOLUTELY NO light beams or rays — just the mirror and its frame. Solid pure black background. Crisp, clean, symmetrical, high detail, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -33,7 +33,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -200}
+  m_SizeDelta: {x: -80, y: -120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9022437816757979526
 GameObject:
@@ -136,15 +136,9 @@ MonoBehaviour:
   gridContainer: {fileID: 324967662535813487}
   tileSpacing: 84
   floorFrames:
-  - {fileID: 4782831941444758146, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
-  - {fileID: -637747193867663511, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
-  - {fileID: 221536855026110153, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
-  - {fileID: -8723229057925353710, guid: ac97c1bd3061cf34d83b8aa4a4f0b0c9, type: 3}
+  - {fileID: 21300000, guid: e6d5dfa40ec03c74885d527462187882, type: 3}
   mirrorFrames:
-  - {fileID: -5859924749441980320, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
-  - {fileID: 9127293865635285405, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
-  - {fileID: 8697633946174401186, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
-  - {fileID: -7888221358593944325, guid: 7e20050fdee2d4444b15ab3484a874a9, type: 3}
+  - {fileID: 21300000, guid: e82d99e886d2d1f43a42b6896d139366, type: 3}
   emitterFrames:
   - {fileID: 8699378065767593572, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
   - {fileID: -2311178662700079571, guid: 364d7217e18c8614f91a2b44f4de2a39, type: 3}
@@ -168,15 +162,15 @@ MonoBehaviour:
   - {fileID: -8595867798336337349, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
   - {fileID: 2709499972426096358, guid: 5813164b1df8c52409913f15c82a4802, type: 3}
   beamFrames:
-  - {fileID: 9110993038474415374, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
-  - {fileID: -1851820676766581191, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
-  - {fileID: 8292020794403056428, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
-  - {fileID: 501733578931142392, guid: 09667e71be6300a44a1f31f6335f4088, type: 3}
-  floorSprite: {fileID: -1597271601891495331, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  - {fileID: 21300000, guid: aee3e2a924fa61a458bd8c9e9050c0a8, type: 3}
+  cleanMirrorSprite: {fileID: 21300000, guid: e82d99e886d2d1f43a42b6896d139366, type: 3}
+  cleanPrismSprite: {fileID: 0}
+  floorSprite: {fileID: 21300000, guid: e6d5dfa40ec03c74885d527462187882, type: 3}
   mirrorSprite: {fileID: -7173022553347797208, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
   emitterSprite: {fileID: 5972313705596275511, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
   receiverSprite: {fileID: -4728004157261287187, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
-  prismSprite: {fileID: 0}
+  prismSprite: {fileID: -5369536004719057759, guid: 0c15d34ce775f004a982747aeb551532, type: 3}
   activatorSprite: {fileID: 0}
-  beamSprite: {fileID: -6132122435961555908, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  beamSprite: {fileID: 21300000, guid: aee3e2a924fa61a458bd8c9e9050c0a8, type: 3}
   beamStepDelay: 0.05
+  beamThickness: 24

@@ -1,0 +1,31 @@
+{
+    "asset": "a061985aafb4bbb4aa858ec1bd6c8738",
+    "fileName": "019f0d23-991c-7eff-a221-cb4eb11b1cb5.png",
+    "prompt": "Top-down view of a single square sci-fi maze WALL tile. Dark slate-grey brushed metal block with raised beveled paneling, rivets, and glowing cyan neon edge trim running along all four borders. Fills the entire square frame edge-to-edge so adjacent tiles connect into continuous solid walls. Clean orthographic top-down perspective, no shadows cast outside the tile, dark futuristic neon aesthetic, high detail, crisp. Centered, fills frame completely.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

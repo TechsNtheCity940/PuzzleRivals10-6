@@ -33,6 +33,14 @@ public class PipePulsePuzzle : BasePuzzle
     public Color flowColor = new Color(0.3f, 0.6f, 1f);
     public Color winColor = Color.cyan;
 
+    [Header("Source / Receiver Animation")]
+    public Sprite[] sourceFrames;   // looping inflow animation at the StartMarker
+    public Sprite[] receiverFrames; // empty(0) -> full(last) at the EndMarker
+    public float sourceFps = 10f;
+    public float receiverFps = 12f;
+    private UISpriteSheetAnimator receiverAnim;
+    private bool receiverActive;
+
     private GridTile[,] grid;
     private int startRow;
     private int endRow;
@@ -60,40 +68,95 @@ public class PipePulsePuzzle : BasePuzzle
         UISpriteSheetAnimator anim = targetImg.GetComponent<UISpriteSheetAnimator>();
         if (anim == null) anim = targetImg.gameObject.AddComponent<UISpriteSheetAnimator>();
 
-        // Clean up secondary overlay if it's not a Cross-Junction anymore (e.g. from pooling/rebuilding)
+        // Only the Cross-Junction (type 3) still needs a second overlay arm. The
+        // elbow (type 1) now uses dedicated curved art (pipeAnimations[1]) whose
+        // openings are pre-centred on the top/right edges, so it connects cleanly
+        // with the straight pieces under any tile rotation.
+        // The Cross-Junction (type 3) and the Elbow (type 1) both need a second
+        // overlay arm. Every other shape uses a single overlay.
         Transform t2 = tile.transform.Find("PipeOverlay2");
-        if (t2 != null && tile.type != 3)
+        bool needsSecondArm = (tile.type == 3 || tile.type == 1);
+        if (t2 != null && !needsSecondArm)
         {
             Destroy(t2.gameObject);
+            t2 = null;
         }
 
-        if (tile.type == 3) // Cross-Junction
+        if (tile.type == 3) // Cross-Junction: two FULL straight pipes crossed.
         {
-            // First, animate the main targetImg with straight pipe animations (type 0)
+            targetImg.type = UnityEngine.UI.Image.Type.Simple;
+            targetImg.fillAmount = 1f;
+            targetImg.rectTransform.localRotation = Quaternion.identity;
             SetupAnimatorForType(anim, targetImg, 0, isFilled);
 
-            // Ensure we have a second overlay for the vertical crossing pipe
-            UnityEngine.UI.Image targetImg2 = null;
-            if (t2 == null && tile.OverlayImage != null)
+            UnityEngine.UI.Image targetImg2 = EnsureSecondArm(tile, ref t2, 90f);
+            if (targetImg2 != null)
             {
-                GameObject go2 = Instantiate(tile.OverlayImage.gameObject, tile.transform);
-                go2.name = "PipeOverlay2";
-                t2 = go2.transform;
-                t2.localRotation = Quaternion.Euler(0f, 0f, 90f);
-            }
-            if (t2 != null)
-            {
-                targetImg2 = t2.GetComponent<UnityEngine.UI.Image>();
+                targetImg2.type = UnityEngine.UI.Image.Type.Simple;
+                targetImg2.fillAmount = 1f;
                 UISpriteSheetAnimator anim2 = targetImg2.GetComponent<UISpriteSheetAnimator>();
                 if (anim2 == null) anim2 = targetImg2.gameObject.AddComponent<UISpriteSheetAnimator>();
                 SetupAnimatorForType(anim2, targetImg2, 0, isFilled);
             }
         }
+        else if (tile.type == 1) // Elbow: two STRAIGHT half-arms forming Top + Right.
+        {
+            // Reuse the straight pipe art so the elbow's openings, brass flanges,
+            // glass style and water animation are pixel-identical to the straight
+            // pieces it connects to. Each arm is the straight sprite clipped to its
+            // right half; one stays horizontal (Right opening) and the cloned arm is
+            // rotated +90 degrees (Top opening). At tile rotation 0 this is Top|Right,
+            // matching GetRotatedPorts(1, 0).
+            ConfigureHalfArm(targetImg, anim, isFilled);
+
+            UnityEngine.UI.Image arm2 = EnsureSecondArm(tile, ref t2, 90f);
+            if (arm2 != null)
+            {
+                UISpriteSheetAnimator anim2 = arm2.GetComponent<UISpriteSheetAnimator>();
+                if (anim2 == null) anim2 = arm2.gameObject.AddComponent<UISpriteSheetAnimator>();
+                ConfigureHalfArm(arm2, anim2, isFilled);
+            }
+        }
         else
         {
-            // Standard shape animation (0, 1, 2)
+            // Straight (0) and T-Junction (2) render as a single full-size sprite.
+            // Tile rotation orients the piece; the overlay stays at identity local
+            // rotation so it follows the tile.
+            targetImg.type = UnityEngine.UI.Image.Type.Simple;
+            targetImg.fillAmount = 1f;
+            targetImg.rectTransform.localRotation = Quaternion.identity;
             SetupAnimatorForType(anim, targetImg, tile.type, isFilled);
         }
+    }
+
+    // Configures an Image as a half-length straight-pipe arm: the straight sprite
+    // clipped to its right half (slightly past centre so the bend corner fills).
+    // The second arm is rotated +90 degrees by EnsureSecondArm to make the bend.
+    private void ConfigureHalfArm(UnityEngine.UI.Image img, UISpriteSheetAnimator anim, bool isFilled)
+    {
+        img.type = UnityEngine.UI.Image.Type.Filled;
+        img.fillMethod = UnityEngine.UI.Image.FillMethod.Horizontal;
+        img.fillOrigin = (int)UnityEngine.UI.Image.OriginHorizontal.Right;
+        img.fillAmount = 0.55f;
+        // NOTE: do not touch localRotation here. The main arm keeps the tile's
+        // identity rotation; the cloned second arm is rotated +90 by EnsureSecondArm.
+        SetupAnimatorForType(anim, img, 0, isFilled); // always straight art (type 0)
+    }
+
+    // Ensures a "PipeOverlay2" arm exists (cloned from the main overlay) and gives
+    // it the supplied local Z rotation. Returns its Image (or null if unavailable).
+    private UnityEngine.UI.Image EnsureSecondArm(GridTile tile, ref Transform t2, float localZ)
+    {
+        if (t2 == null && tile.OverlayImage != null)
+        {
+            GameObject go2 = Instantiate(tile.OverlayImage.gameObject, tile.transform);
+            go2.name = "PipeOverlay2";
+            t2 = go2.transform;
+        }
+        if (t2 == null) return null;
+        t2.localPosition = Vector3.zero;
+        t2.localRotation = Quaternion.Euler(0f, 0f, localZ);
+        return t2.GetComponent<UnityEngine.UI.Image>();
     }
 
     private void SetupAnimatorForType(UISpriteSheetAnimator anim, UnityEngine.UI.Image targetImg, int shapeType, bool isFilled)
@@ -129,6 +192,59 @@ public class PipePulsePuzzle : BasePuzzle
             targetImg.color = isFilled ? flowColor : emptyColor;
         }
     }
+    // Sets the always-on looping flow at the source (StartMarker) and resets the
+    // receiver (EndMarker) to its empty state.
+    private void SetupSourceReceiver()
+    {
+        if (startMarker != null && sourceFrames != null && sourceFrames.Length > 0)
+        {
+            var img = startMarker.GetComponent<UnityEngine.UI.Image>();
+            if (img != null)
+            {
+                img.color = Color.white;
+                var anim = img.GetComponent<UISpriteSheetAnimator>();
+                if (anim == null) anim = img.gameObject.AddComponent<UISpriteSheetAnimator>();
+                anim.PlaySet(sourceFrames, sourceFps, true); // always flowing
+            }
+        }
+
+        receiverActive = false;
+        if (endMarker != null && receiverFrames != null && receiverFrames.Length > 0)
+        {
+            var img = endMarker.GetComponent<UnityEngine.UI.Image>();
+            if (img != null)
+            {
+                img.color = Color.white;
+                receiverAnim = img.GetComponent<UISpriteSheetAnimator>();
+                if (receiverAnim == null) receiverAnim = img.gameObject.AddComponent<UISpriteSheetAnimator>();
+                receiverAnim.Stop();
+                img.sprite = receiverFrames[0]; // empty drain
+            }
+        }
+    }
+
+    // Drives the receiver: when flow first reaches the end, play the fill animation
+    // once and hold on the full (last) frame.
+    private void UpdateReceiver(bool reachedEnd)
+    {
+        if (receiverFrames == null || receiverFrames.Length == 0 || endMarker == null) return;
+        var img = endMarker.GetComponent<UnityEngine.UI.Image>();
+        if (img == null) return;
+
+        if (reachedEnd && !receiverActive)
+        {
+            receiverActive = true;
+            if (receiverAnim != null) receiverAnim.PlaySet(receiverFrames, receiverFps, false); // one-shot fill
+            else img.sprite = receiverFrames[receiverFrames.Length - 1];
+        }
+        else if (!reachedEnd && receiverActive)
+        {
+            receiverActive = false;
+            if (receiverAnim != null) receiverAnim.Stop();
+            img.sprite = receiverFrames[0]; // back to empty
+        }
+    }
+
     public RectTransform startMarker;
     public RectTransform endMarker;
 
@@ -145,21 +261,10 @@ public class PipePulsePuzzle : BasePuzzle
         topReservoirBonusClaimed = false;
         bottomReservoirBonusClaimed = false;
 
-        // Choose columns for reservoirs (avoiding the left/rightmost columns where emitter/receiver are)
-        if (columns > 2)
-        {
-            topReservoirCol = rng.Next(1, columns - 1);
-            bottomReservoirCol = rng.Next(1, columns - 1);
-            if (topReservoirCol == bottomReservoirCol && columns > 3)
-            {
-                bottomReservoirCol = (topReservoirCol + 1) % (columns - 2) + 1;
-            }
-        }
-        else
-        {
-            topReservoirCol = 0;
-            bottomReservoirCol = columns - 1;
-        }
+        // Reservoirs disabled: single-pipe (straight/elbow) tiles cannot form the
+        // 3-way junction a reservoir tap requires. -1 disables all reservoir logic.
+        topReservoirCol = -1;
+        bottomReservoirCol = -1;
 
         if (reservoirSlider != null)
         {
@@ -171,46 +276,28 @@ public class PipePulsePuzzle : BasePuzzle
         float originX = (columns - 1) * tileSpacing * 0.5f;
         float originY = (rows - 1) * tileSpacing * 0.5f;
 
-        // Position markers
+        // Position markers. The source/receiver art is ~2:1, so size the markers
+        // wider than tall to avoid squashing.
+        Vector2 markerSize = new Vector2(tileSpacing * 1.0f, tileSpacing * 0.55f);
         if (startMarker != null)
         {
-            startMarker.anchoredPosition = new Vector2(-originX - tileSpacing * 0.7f, originY - startRow * tileSpacing);
-            startMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+            startMarker.anchoredPosition = new Vector2(-originX - tileSpacing * 0.75f, originY - startRow * tileSpacing);
+            startMarker.sizeDelta = markerSize;
         }
         if (endMarker != null)
         {
-            endMarker.anchoredPosition = new Vector2(originX + tileSpacing * 0.7f, originY - endRow * tileSpacing);
-            endMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
+            endMarker.anchoredPosition = new Vector2(originX + tileSpacing * 0.75f, originY - endRow * tileSpacing);
+            endMarker.sizeDelta = markerSize;
         }
 
-        // Spawn Reservoir Markers dynamically using endMarker as a template
-        if (endMarker != null && gridContainer != null)
-        {
-            topReservoirMarker = Instantiate(endMarker, gridContainer.parent);
-            topReservoirMarker.name = "TopReservoirMarker";
-            topReservoirMarker.anchoredPosition = new Vector2(topReservoirCol * tileSpacing - originX, originY + tileSpacing * 0.8f);
-            topReservoirMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
-            topReservoirMarker.localRotation = Quaternion.Euler(0f, 0f, -90f); // Rotate pointing down/into the reservoir
+        SetupSourceReceiver();
 
-            UnityEngine.UI.Image topImg = topReservoirMarker.GetComponent<UnityEngine.UI.Image>();
-            if (topImg != null) topImg.color = emptyColor;
-
-            bottomReservoirMarker = Instantiate(endMarker, gridContainer.parent);
-            bottomReservoirMarker.name = "BottomReservoirMarker";
-            bottomReservoirMarker.anchoredPosition = new Vector2(bottomReservoirCol * tileSpacing - originX, -originY - tileSpacing * 0.8f);
-            bottomReservoirMarker.sizeDelta = new Vector2(tileSpacing * 0.6f, tileSpacing * 0.6f);
-            bottomReservoirMarker.localRotation = Quaternion.Euler(0f, 0f, 90f); // Rotate pointing up/into the reservoir
-
-            UnityEngine.UI.Image bottomImg = bottomReservoirMarker.GetComponent<UnityEngine.UI.Image>();
-            if (bottomImg != null) bottomImg.color = emptyColor;
-        }
-
-        // 1. Generate 2 solvable paths from left to right
+        // 1. Generate ONE solvable path from left to right. A single, non-self-
+        // intersecting path means every path tile needs exactly two ports
+        // (entry + exit) -> only straights and elbows are ever required.
         List<Vector2Int> path1 = GeneratePath(startRow, endRow);
-        List<Vector2Int> path2 = GeneratePath(startRow, endRow); 
-        
+
         HashSet<Vector2Int> pathSet = new HashSet<Vector2Int>(path1);
-        pathSet.UnionWith(path2);
 
         // 2. Instantiate and configure tiles
         if (pipePrefab != null && gridContainer != null)
@@ -244,32 +331,12 @@ public class PipePulsePuzzle : BasePuzzle
                             requiredPorts |= GetDirectionPort(next.x - x, next.y - y);
                         }
 
-                        if (path2.Contains(new Vector2Int(x, y)))
-                        {
-                            int idx = path2.FindIndex(p => p.x == x && p.y == y);
-                            Vector2Int prev = (idx == 0) ? new Vector2Int(-1, startRow) : path2[idx - 1];
-                            Vector2Int next = (idx == path2.Count - 1) ? new Vector2Int(columns, endRow) : path2[idx + 1];
-
-                            requiredPorts |= GetDirectionPort(prev.x - x, prev.y - y);
-                            requiredPorts |= GetDirectionPort(next.x - x, next.y - y);
-                        }
-
-                        // Add connections to the reservoirs if path tiles are on the reservoir columns at the borders
-                        if (x == topReservoirCol && y == 0)
-                        {
-                            requiredPorts |= Port.Top;
-                        }
-                        if (x == bottomReservoirCol && y == rows - 1)
-                        {
-                            requiredPorts |= Port.Bottom;
-                        }
-
                         shape = GetShapeForPorts(requiredPorts, out targetRot);
                     }
                     else
                     {
-                        // Random decoration tile including T-Junctions and Cross-Junctions
-                        shape = rng.Next(0, 4);
+                        // Decoration tiles are single-pipe only: straight (0) or elbow (1).
+                        shape = rng.Next(0, 2);
                         targetRot = rng.Next(0, 4) * 90;
                     }
 
@@ -317,6 +384,8 @@ public class PipePulsePuzzle : BasePuzzle
             if (tile == null) continue;
             SetupTileAnimation(tile, filled.Contains(tile));
         }
+
+        UpdateReceiver(flowData.reachedEnd);
 
         if (reservoirSlider != null) reservoirSlider.value = filled.Count;
 

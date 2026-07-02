@@ -1,0 +1,41 @@
+{
+    "asset": "622743a15b94c8840852a69516a41a10",
+    "fileName": "019f1087-4568-7ccc-8c89-c98c350cdaeb.png",
+    "prompt": "A sprite sheet laid out as a strict grid of 4 columns and 2 rows (8 equal cells), wide 2:1 aspect ratio. Every cell is the SAME steampunk 90-degree corner pipe (L-bend) shown at the exact same position and size; only the amount of glowing blue water inside changes across the 8 cells, going from empty (top-left) to completely full (bottom-right), like an animation of water rising and flowing through the bend.\n\nEach cell contains: a dark riveted square metal backplate with a screw in each corner (filling the whole cell, edge to edge), and a glass pipe forming a clean 90-degree elbow that connects the TOP edge to the RIGHT edge. The pipe opening at the top is a brass flange centered exactly on the horizontal middle of the top edge and reaching the top edge; the pipe opening at the right is a brass flange centered exactly on the vertical middle of the right edge and reaching the right edge. The two arms meet in a smooth rounded brass-banded elbow bend. The bottom-left region of each cell is just the empty metal backplate.\n\nMatch the art style, colors, brass flanges, glass tube and glowing blue bubbly water of the provided reference straight-pipe sheet. Keep the pipe and metal plate perfectly identical and aligned in every cell. Clean industrial game UI art, crisp, high detail.",
+    "negativePrompt": "",
+    "model": "flux-2-dev",
+    "modelName": "Flux 2 (Dev)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "b99176110c6da6b48b671fd618c78f53",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

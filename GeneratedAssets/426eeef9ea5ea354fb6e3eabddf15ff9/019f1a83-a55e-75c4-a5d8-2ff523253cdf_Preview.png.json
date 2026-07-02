@@ -1,0 +1,12 @@
+{
+    "asset": "426eeef9ea5ea354fb6e3eabddf15ff9",
+    "fileName": "019f1a83-a55e-75c4-a5d8-2ff523253cdf_Preview.png",
+    "prompt": "A dark charcoal industrial floor tile, matte finish, very faint recessed neon cyan circuitry patterns, high contrast, top-down view, seamless texture, sci-fi aesthetic.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash-texture",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": 1757638501,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

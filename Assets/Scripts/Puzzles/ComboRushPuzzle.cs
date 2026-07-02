@@ -67,6 +67,20 @@ public class ComboRushPuzzle : BasePuzzle
             }
         }
 
+        // Procedurally spawn Star Geodes
+        int geodesToSpawn = Mathf.Clamp(difficulty, 1, 2);
+        int guard = 0;
+        while (geodesToSpawn > 0 && guard++ < 100)
+        {
+            int gc = rng.Next(0, columns);
+            int gr = rng.Next(0, rows - 1); // Avoid spawning on bottom row initially
+            if (tiles[gc, gr] != null && !tiles[gc, gr].isGeode)
+            {
+                tiles[gc, gr].SetGeode();
+                geodesToSpawn--;
+            }
+        }
+
         UpdateHud();
         if (comboTimerSlider != null) comboTimerSlider.value = 0f;
     }
@@ -80,13 +94,27 @@ public class ComboRushPuzzle : BasePuzzle
         }
     }
 
-    private ComboRushTile CreateTile(int col, int row, bool animate = false)
+    private ComboRushTile CreateTile(int col, int row, bool animate = false, int forcedType = 0)
     {
         GameObject go = Instantiate(tilePrefab, gridContainer);
         var tile = go.GetComponent<ComboRushTile>();
         int colorID = rng.Next(palette.Length);
         tile.Init(col, row, colorID);
-        tile.SetColor(palette[colorID]);
+
+        if (forcedType == 1) // Bomb
+        {
+            tile.SetBomb();
+            tile.SetColor(palette[colorID]);
+        }
+        else if (forcedType == 2) // Geode
+        {
+            tile.SetGeode();
+        }
+        else
+        {
+            tile.SetColor(palette[colorID]);
+        }
+
         if (gemSprite != null) tile.SetSprite(gemSprite);
         
         if (animate)
@@ -126,21 +154,46 @@ public class ComboRushPuzzle : BasePuzzle
         if (!CanAcceptInput() || tile == null) return;
         if (tiles[tile.x, tile.y] != tile) return;
 
+        if (tile.isGeode) return; // Geodes cannot be matched or clicked directly
+
+        if (tile.isBomb)
+        {
+            ResolveBombClear(tile);
+            return;
+        }
+
         List<ComboRushTile> group = GetGroup(tile);
         if (group.Count < 2) return;
 
-        ResolveClear(group);
+        bool spawnBomb = group.Count >= 5;
+        ResolveClear(group, tile.x, tile.y, spawnBomb);
     }
 
-    private void ResolveClear(List<ComboRushTile> group)
+    private void ResolveClear(List<ComboRushTile> group, int clickX, int clickY, bool spawnBomb)
     {
         int groupSize = group.Count;
         score += groupSize * multiplier;
+
+        int bombColorID = -1;
+        if (spawnBomb && group.Count > 0)
+        {
+            bombColorID = group[0].colorID;
+        }
 
         foreach (var t in group)
         {
             tiles[t.x, t.y] = null;
             t.PopAndDestroy(0.15f); // Animated clear
+        }
+
+        if (spawnBomb)
+        {
+            ComboRushTile bombTile = CreateTile(clickX, clickY, true, 1);
+            if (bombColorID != -1)
+            {
+                bombTile.colorID = bombColorID;
+                bombTile.SetColor(palette[bombColorID]);
+            }
         }
 
         // Combo window: refill and raise multiplier on each successful clear.
@@ -153,6 +206,87 @@ public class ComboRushPuzzle : BasePuzzle
         UpdateHud();
 
         if (score >= Target) Solve();
+    }
+
+    private void ResolveBombClear(ComboRushTile bomb)
+    {
+        List<ComboRushTile> toClear = new List<ComboRushTile>();
+        Queue<ComboRushTile> bombsToProcess = new Queue<ComboRushTile>();
+        HashSet<ComboRushTile> processed = new HashSet<ComboRushTile>();
+
+        bombsToProcess.Enqueue(bomb);
+        processed.Add(bomb);
+
+        while (bombsToProcess.Count > 0)
+        {
+            ComboRushTile currentBomb = bombsToProcess.Dequeue();
+            toClear.Add(currentBomb);
+
+            int bx = currentBomb.x;
+            int by = currentBomb.y;
+
+            for (int dx = -1; dx <= 1; dx++)
+            {
+                for (int dy = -1; dy <= 1; dy++)
+                {
+                    int nx = bx + dx;
+                    int ny = by + dy;
+
+                    if (nx >= 0 && nx < columns && ny >= 0 && ny < rows)
+                    {
+                        ComboRushTile neighbor = tiles[nx, ny];
+                        if (neighbor != null && !processed.Contains(neighbor))
+                        {
+                           processed.Add(neighbor);
+                           if (neighbor.isBomb)
+                           {
+                               bombsToProcess.Enqueue(neighbor); // Chain reaction
+                           }
+                           else
+                           {
+                               toClear.Add(neighbor);
+                           }
+                        }
+                    }
+                }
+            }
+        }
+
+        score += toClear.Count * 2 * multiplier; // Double score for explosions!
+
+        foreach (var t in toClear)
+        {
+            tiles[t.x, t.y] = null;
+            t.PopAndDestroy(0.15f);
+        }
+
+        comboCount++;
+        comboActive = true;
+        comboTimeRemaining = ComboWindow;
+        multiplier++;
+
+        StartCoroutine(ShakeContainer(0.2f, 8f));
+
+        ApplyGravityAndRefill();
+        UpdateHud();
+
+        if (score >= Target) Solve();
+    }
+
+    private System.Collections.IEnumerator ShakeContainer(float duration, float magnitude)
+    {
+        if (gridContainer == null) yield break;
+        Vector3 origin = gridContainer.localPosition;
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float dx = Random.Range(-1f, 1f) * magnitude;
+            float dy = Random.Range(-1f, 1f) * magnitude;
+            gridContainer.localPosition = origin + new Vector3(dx, dy, 0f);
+            yield return null;
+        }
+        gridContainer.localPosition = origin;
     }
 
     private void ApplyGravityAndRefill()
@@ -171,6 +305,19 @@ public class ComboRushPuzzle : BasePuzzle
                         tiles[c, write] = moved;
                         SetTilePosition(moved, c, write, true);
                     }
+
+                    if (write == rows - 1 && tiles[c, write] != null && tiles[c, write].isGeode)
+                    {
+                        ComboRushTile geode = tiles[c, write];
+                        tiles[c, write] = null; // Extract it!
+                        
+                        geode.PopAndDestroy(0.2f);
+                        timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
+                        Debug.Log("Star Geode Extracted! +5 Seconds Bonus!");
+                        
+                        write++; 
+                    }
+
                     write--;
                 }
             }
@@ -253,9 +400,9 @@ public class ComboRushPuzzle : BasePuzzle
         if (isSolved || isTimedOut) return;
 
         List<ComboRushTile> group = FindAnyGroup();
-        if (group != null)
+        if (group != null && group.Count > 0)
         {
-            ResolveClear(group);
+            ResolveClear(group, group[0].x, group[0].y, false);
         }
         else
         {

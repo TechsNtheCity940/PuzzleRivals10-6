@@ -1,0 +1,41 @@
+{
+    "asset": "ed7aa294cae55d249bb49179f996b571",
+    "fileName": "019f2038-c9ec-7c65-a523-541397cb1277.mp4",
+    "prompt": "Animation of a central reactor core charging up, intense neon cyan energy accumulating in the center, pulsing with white light, sci-fi industrial housing. 4x4 grid of 16 frames. Style matching provided reference.",
+    "negativePrompt": "",
+    "model": "video-kling-v3-i2v-pro",
+    "modelName": "Kling V3 I2V Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "ada0927d3741a75469bf229284a4fc4b",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

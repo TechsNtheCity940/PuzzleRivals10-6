@@ -1,0 +1,41 @@
+{
+    "asset": "944b008ef3f14a34093578d932b2e83f",
+    "fileName": "019f1191-542c-7b16-97b7-e70fce4e858b.png",
+    "prompt": "A single square steampunk metal mounting plate tile for a pipe puzzle grid, filling the entire square frame edge to edge. A dark riveted brushed-steel square plate with a bolt/screw in each of the four corners and a subtly recessed darker panel in the center. \n\nCRITICAL: There must be NO pipe of any kind — NO glass tube, NO brass ring flanges, NO water, NO horizontal or vertical pipe segment. Just the bare empty metal mounting plate. The central recessed area is plain dark metal where a separate pipe sprite will be layered on top later.\n\nMatch the metal material, color, rivet and bolt style of the provided reference image (same industrial steampunk brushed steel look), but remove the pipe entirely. Opaque, fills the whole square frame, seamless dark industrial steampunk game UI background tile.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "91fa6d8ab3b047647aa138d3862da90f",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

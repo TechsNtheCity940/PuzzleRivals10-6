@@ -1,0 +1,41 @@
+{
+    "asset": "be8205df665252849ae985957004744b",
+    "fileName": "019f10ee-56b1-7f65-addd-b6931594cf7a.png",
+    "prompt": "A sprite sheet laid out as a strict grid of 4 columns and 2 rows (8 equal square cells), reading left-to-right then top-to-bottom as an animation. Wide 2:1 aspect ratio overall. This is a CURVED 90-degree elbow pipe segment (an L-bend) with glowing blue water; the 8 frames are an animation loop of the water flowing around the bend (frame 1 = just starting to fill at one opening, last frame = fully flowing around the curve and out the other opening, designed to loop seamlessly).\n\nIn EVERY cell, the pipe and its openings are in the EXACT same position and size; ONLY the glowing water flow inside changes between frames. Each cell contains: a glass pipe that makes a smooth rounded 90-degree curve connecting the TOP edge to the RIGHT edge. The TOP opening is a brass flange centered exactly on the horizontal middle of the top edge and reaching the top edge; the RIGHT opening is a brass flange centered exactly on the vertical middle of the right edge and reaching the right edge. CRITICAL: both openings must be centered on their edges at the exact same offset as a straight pipe so this elbow connects perfectly to straight pipe tiles. The pipe smoothly curves between these two openings; the bottom-left area of the cell is empty (transparent). Bright glowing cyan-blue bubbly water flows around the curve. Transparent background (just the pipe on transparency, no metal backplate).\n\nSteampunk industrial art style with brass fittings and glass tubing, matching the provided reference image's colors, brass flange style, glowing blue water and overall look. Crisp clean game UI art, high detail. Keep all 8 frames perfectly consistent in pipe placement.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "b99176110c6da6b48b671fd618c78f53",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 1152
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

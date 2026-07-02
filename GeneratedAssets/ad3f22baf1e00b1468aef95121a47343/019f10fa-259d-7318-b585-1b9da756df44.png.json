@@ -1,0 +1,41 @@
+{
+    "asset": "ad3f22baf1e00b1468aef95121a47343",
+    "fileName": "019f10fa-259d-7318-b585-1b9da756df44.png",
+    "prompt": "A horizontal sprite sheet animation strip laid out as a strict grid of 4 columns and 2 rows (8 equal square cells), read left-to-right then top-to-bottom. A seamless looping animation of a steampunk water SOURCE / inflow valve pumping out glowing blue water.\n\nEvery cell shows the SAME brass steampunk pump/valve head positioned on the LEFT side of the cell, with a short pipe spout opening on the RIGHT edge of the cell (the spout flange centered exactly on the vertical middle of the right edge, matching the straight pipe flange style in the reference image). Glowing electric-blue bubbly water churns and gushes out of the spout toward the right. Across the 8 frames the water churn/bubbles animate in a continuous seamless loop (the source is always actively flowing — every frame shows water, the bubbles just move). \n\nBrass valve body with rivets, a round pressure gauge or wheel valve detail, glossy metal, glowing blue water with bubbles and highlights. Fully TRANSPARENT background (no square tile, no backplate). Clean industrial steampunk game UI art matching the reference. Keep the valve body perfectly identical and in the same position in all 8 cells; ONLY the churning water animates.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "3968d3cd4293c31499f497b93494ba87",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

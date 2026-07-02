@@ -1,0 +1,31 @@
+{
+    "asset": "ada0927d3741a75469bf229284a4fc4b",
+    "fileName": "019f2035-416e-7e43-b86a-29870745a867.png",
+    "prompt": "A futuristic central reactor core, large multi-layered circular structure, massive energy accumulation inside, neon cyan and white glowing effects, sci-fi industrial housing. Top-down view, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

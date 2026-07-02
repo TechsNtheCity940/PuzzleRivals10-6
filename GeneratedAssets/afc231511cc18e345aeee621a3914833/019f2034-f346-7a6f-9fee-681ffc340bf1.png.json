@@ -1,0 +1,31 @@
+{
+    "asset": "afc231511cc18e345aeee621a3914833",
+    "fileName": "019f2034-f346-7a6f-9fee-681ffc340bf1.png",
+    "prompt": "A futuristic logic 'XOR' gate for a circuit puzzle, hexagonal metal base with neon magenta circuitry, glowing 'XOR' symbol in the center, input ports on left and top, output ports on right and bottom. Top-down view, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

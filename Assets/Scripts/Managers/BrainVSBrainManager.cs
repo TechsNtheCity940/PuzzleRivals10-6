@@ -26,12 +26,13 @@ public class BrainVSBrainManager : MonoBehaviour
     [Header("Scene")]
     public Canvas canvas;
     public List<GameObject> overlayPrefabs = new List<GameObject>();
-    // Larger, wider-spread side overlays so the two puzzles are legible without
-    // overlapping. At 0.8 scale a 600-wide overlay is 480px (240 half-width);
-    // anchored at +/-300 they fit a 1080-wide canvas edge-to-edge with a gap.
+    // Side overlays auto-fit into each half of the canvas (see SpawnSide). Only
+    // the Y of these anchors is used now (vertical placement); X is computed so
+    // the two puzzles sit edge-to-edge with overlayCenterGap between them.
     public Vector2 playerAnchor = new Vector2(-300f, -40f);
     public Vector2 opponentAnchor = new Vector2(300f, -40f);
-    public float overlayScale = 0.8f;
+    // Horizontal gap (px, canvas reference space) kept between the two overlays.
+    public float overlayCenterGap = 40f;
 
     [Header("Matchmaking")]
     public bool opponentIsBot = true;   // false when a real opponent was matched
@@ -113,11 +114,23 @@ public class BrainVSBrainManager : MonoBehaviour
         if (prefab == null) { Debug.LogWarning("BvB: no overlay prefab."); return; }
 
         GameObject overlay = Instantiate(prefab, canvas.transform);
+        overlay.transform.SetSiblingIndex(1);
         var rt = overlay.GetComponent<RectTransform>();
         if (rt != null)
         {
-            rt.anchoredPosition = isPlayer ? playerAnchor : opponentAnchor;
-            rt.localScale = Vector3.one * overlayScale;
+            // Two overlays share the screen: each auto-fits into its own half
+            // (minus a center gap) and is then pushed to its side so the pair
+            // sits edge-to-edge without overlapping, as large as possible.
+            Vector2 res = OverlayFitter.GetReferenceResolution(canvas);
+            float halfW = (res.x - overlayCenterGap) * 0.5f;
+            float scale = OverlayFitter.Fit(rt, canvas, halfW / res.x, 0.80f);
+
+            float scaledHalfW = (rt.sizeDelta.x > 1f)
+                ? rt.sizeDelta.x * scale * 0.5f
+                : res.x * 0.24f; // fallback for stretch-anchored roots
+            float centerX = scaledHalfW + overlayCenterGap * 0.5f;
+            float y = isPlayer ? playerAnchor.y : opponentAnchor.y;
+            rt.anchoredPosition = new Vector2(isPlayer ? -centerX : centerX, y);
         }
 
         var puzzle = overlay.GetComponentInChildren<BasePuzzle>(true);

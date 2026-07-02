@@ -1,0 +1,31 @@
+{
+    "asset": "75537cc1d986d774e9b21e591ff3faad",
+    "fileName": "019f0d8f-9d42-73fc-ab2f-df37668ad720.png",
+    "prompt": "A glowing sci-fi teleport PORTAL / warp vortex icon for a circuit puzzle, top-down flat 2D game UI icon, centered in frame with even margin. A circular swirling vortex ring with concentric energy swirls spiraling into a bright glowing center. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, symmetrical, high detail, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

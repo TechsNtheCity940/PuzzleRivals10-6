@@ -1,12 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-// Clickable circuit tile used by CircuitScramblePuzzle. Lives on
-// CircuitScrambleTile.prefab whose root carries an Image (raycast target).
-// Holds a grid coordinate, a generic "type" (visual variety) and the current
-// rotation in degrees. Raises OnClicked when tapped.
+// Clickable circuit tile used by CircuitScramblePuzzle.
 [RequireComponent(typeof(Image))]
 public class CircuitScrambleTile : MonoBehaviour, IPointerClickHandler
 {
@@ -18,11 +16,7 @@ public class CircuitScrambleTile : MonoBehaviour, IPointerClickHandler
     public event Action<CircuitScrambleTile> OnClicked;
 
     private Image image;
-
-    private void Awake()
-    {
-        if (image == null) image = GetComponent<Image>();
-    }
+    private Image overlayImage;
 
     public Image Image
     {
@@ -33,25 +27,42 @@ public class CircuitScrambleTile : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public Image OverlayImage
+    {
+        get
+        {
+            if (overlayImage == null)
+            {
+                Transform t = transform.Find("FlowOverlay");
+                if (t != null) overlayImage = t.GetComponent<Image>();
+            }
+            return overlayImage;
+        }
+    }
+
     public void Init(int t, int gx, int gy, int rot)
     {
         type = t;
         x = gx;
         y = gy;
         rotation = ((rot % 360) + 360) % 360;
-        SetType(type);
         ApplyRotation();
-    }
-
-    public void SetType(int t)
-    {
-        type = t;
-        Image.color = TypeColor(t);
     }
 
     public void SetSprite(Sprite sprite)
     {
         Image.sprite = sprite;
+    }
+
+    public void SetColor(Color color)
+    {
+        Image.color = color;
+    }
+
+    public void SetRotation(int deg)
+    {
+        rotation = ((deg % 360) + 360) % 360;
+        ApplyRotation();
     }
 
     public void Rotate()
@@ -65,19 +76,36 @@ public class CircuitScrambleTile : MonoBehaviour, IPointerClickHandler
         transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
     }
 
-    private Color TypeColor(int t)
-    {
-        switch (((t % 4) + 4) % 4)
-        {
-            case 0: return new Color(0.30f, 0.90f, 1.00f);
-            case 1: return new Color(1.00f, 0.60f, 0.40f);
-            case 2: return new Color(0.70f, 1.00f, 0.50f);
-            default: return new Color(0.90f, 0.60f, 1.00f);
-        }
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         OnClicked?.Invoke(this);
+    }
+
+    public void Pulse(float scale = 1.2f, float duration = 0.15f)
+    {
+        StartCoroutine(PulseRoutine(scale, duration));
+    }
+
+    private IEnumerator PulseRoutine(float scale, float duration)
+    {
+        Vector3 startScale = transform.localScale;
+        Vector3 peakScale = startScale * scale;
+        float half = duration * 0.5f;
+
+        float elapsed = 0;
+        while (elapsed < half)
+        {
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(startScale, peakScale, elapsed / half);
+            yield return null;
+        }
+        elapsed = 0;
+        while (elapsed < half)
+        {
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(peakScale, startScale, elapsed / half);
+            yield return null;
+        }
+        transform.localScale = startScale;
     }
 }

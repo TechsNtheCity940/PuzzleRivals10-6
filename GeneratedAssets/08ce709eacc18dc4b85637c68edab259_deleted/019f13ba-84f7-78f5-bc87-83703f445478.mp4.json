@@ -1,0 +1,41 @@
+{
+    "asset": "08ce709eacc18dc4b85637c68edab259",
+    "fileName": "019f13ba-84f7-78f5-bc87-83703f445478.mp4",
+    "prompt": "A slow motion WALK CYCLE of the SAME neon-cyberpunk hooded character shown in the reference image. Full body, head to toe, three-quarter view, walking forward in a single smooth coherent walk cycle: legs stride clearly, arms swing naturally, body bobs slightly. The character's hands are EMPTY and open — it is not holding anything. Keep the exact same character identity: same magenta/pink glowing color scheme, hooded outfit, materials and proportions as the reference. Consistent character size and vertical position across all frames, centered. Plain solid background. Clean high-detail game character art matching the reference style.",
+    "negativePrompt": "",
+    "model": "video-seedance-1-pro",
+    "modelName": "Seedance 1 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "71c8799c7b6309c4686aa1a26d1c7ead",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

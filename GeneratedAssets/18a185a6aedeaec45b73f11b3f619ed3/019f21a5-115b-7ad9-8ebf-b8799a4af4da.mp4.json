@@ -1,0 +1,41 @@
+{
+    "asset": "18a185a6aedeaec45b73f11b3f619ed3",
+    "fileName": "019f21a5-115b-7ad9-8ebf-b8799a4af4da.mp4",
+    "prompt": "Animation of a glowing neon cyan orb with trailing electrical sparks, constant rotation and intense energy flicker. 4x4 grid of 16 frames. Style matching the orb reference.",
+    "negativePrompt": "",
+    "model": "video-kling-v3-i2v-pro",
+    "modelName": "Kling V3 I2V Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "5935559c9178f6a44a9358f6b11a0427",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

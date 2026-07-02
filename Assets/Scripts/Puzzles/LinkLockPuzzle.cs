@@ -15,7 +15,12 @@ public class LinkLockPuzzle : BasePuzzle
 
     [Header("Art")]
     public Sprite nodeSprite; // icon drawn on node endpoints, tinted by colour
-    public Sprite[] wireSprites; // 0: Straight, 1: Corner
+    public Sprite portalSprite; // neon vortex icon for warp sockets
+    public Sprite batterySprite; // neon battery icon for the bonus cell
+    public Sprite[] wireSprites; // fallback static sprites: 0 Straight, 1 Corner
+    public Sprite[] straightFlowFrames; // animated electrical-flow straight segment
+    public Sprite[] cornerFlowFrames;   // animated electrical-flow corner segment
+    public float wireFlowFps = 14f;
 
     private LinkLockTile[,] _tiles;
 private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
@@ -151,6 +156,8 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         LinkLockTile tile = go.GetComponent<LinkLockTile>();
         tile.Init(col, row);
         tile.SetNodeSprite(nodeSprite);
+        tile.portalSprite = portalSprite;
+        tile.batterySprite = batterySprite;
         tile.OnClicked += OnTileClicked;
         return tile;
     }
@@ -242,79 +249,76 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         for (int i = 0; i < path.Count; i++)
         {
             Vector2Int curr = path[i];
+
+            // Never draw a wire stub over a node endpoint: keep its glowing hex
+            // icon visible. The adjacent wire cell overshoots its bounds and laps
+            // into the node cell, so the connection still reads as continuous.
+            if (_nodeColor[curr.x, curr.y] != -1) continue;
+
             Vector2Int? prev = (i > 0) ? (Vector2Int?)path[i - 1] : null;
             Vector2Int? next = (i < path.Count - 1) ? (Vector2Int?)path[i + 1] : null;
 
-            DetermineWire(prev, curr, next, out Sprite sprite, out float rotation);
-            _tiles[curr.x, curr.y].SetWire(color, sprite, rotation);
+            DetermineWire(prev, curr, next, out bool isCorner, out float rotation);
+            Sprite[] frames = isCorner ? cornerFlowFrames : straightFlowFrames;
+            Sprite fallback = (wireSprites != null && wireSprites.Length >= 2)
+                ? (isCorner ? wireSprites[1] : wireSprites[0]) : null;
+            _tiles[curr.x, curr.y].SetWire(color, frames, fallback, wireFlowFps, rotation);
         }
     }
 
-    private void DetermineWire(Vector2Int? prev, Vector2Int curr, Vector2Int? next, out Sprite sprite, out float rotation)
+    // Computes which wire sprite + rotation to render for a cell, working entirely
+    // in SCREEN space so it matches the generated art exactly:
+    //   wireSprites[0] (straight) at 0deg = horizontal bar (connects LEFT & RIGHT)
+    //   wireSprites[1] (corner)   at 0deg = elbow connecting LEFT & DOWN(screen)
+    // Grid y grows downward on screen (tiles use -(row*spacing)), so a grid delta
+    // (0,+1) points DOWN and (0,-1) points UP on screen.
+    private void DetermineWire(Vector2Int? prev, Vector2Int curr, Vector2Int? next, out bool isCorner, out float rotation)
     {
-        sprite = null;
+        isCorner = false;
         rotation = 0;
 
-        if (wireSprites == null || wireSprites.Length < 2) return;
+        // Collect the screen-space connection directions for this cell. Warp
+        // (non-adjacent) neighbours are skipped so a warp endpoint renders as a
+        // straight stub toward its real adjacent neighbour.
+        bool left = false, right = false, up = false, down = false;
+        AddDir(prev, curr, ref left, ref right, ref up, ref down);
+        AddDir(next, curr, ref left, ref right, ref up, ref down);
 
-        bool prevIsWarp = prev.HasValue && !IsAdjacent(curr, prev.Value);
-        bool nextIsWarp = next.HasValue && !IsAdjacent(curr, next.Value);
+        int count = (left ? 1 : 0) + (right ? 1 : 0) + (up ? 1 : 0) + (down ? 1 : 0);
 
-        if (prevIsWarp || nextIsWarp)
+        // Endpoint / stub: render a straight aligned to the single connection.
+        if (count <= 1)
         {
-            // If it's a warp jump, treat the warp connection as a straight end-line
-            sprite = wireSprites[0];
-            Vector2Int d;
-            if (prevIsWarp && next.HasValue)
-            {
-                d = next.Value - curr;
-            }
-            else if (nextIsWarp && prev.HasValue)
-            {
-                d = curr - prev.Value;
-            }
-            else
-            {
-                d = new Vector2Int(1, 0); // fallback
-            }
-            rotation = (d.x != 0) ? 90f : 0f;
+            rotation = (left || right) ? 0f : 90f;
             return;
         }
 
-        if (prev.HasValue && next.HasValue)
+        // Two opposite directions -> straight.
+        if ((left && right) || (up && down))
         {
-            Vector2Int d1 = curr - prev.Value;
-            Vector2Int d2 = next.Value - curr;
-
-            if (d1 == d2)
-            {
-                // Straight
-                sprite = wireSprites[0];
-                rotation = (d1.x != 0) ? 90f : 0f;
-            }
-            else
-            {
-                // Corner
-                sprite = wireSprites[1];
-                // Directions relative to curr:
-                Vector2Int inDir = prev.Value - curr;
-                Vector2Int outDir = next.Value - curr;
-
-                // Sum of dirs tells us which quadrant the corner is in
-                Vector2Int sum = inDir + outDir;
-                if (sum == new Vector2Int(1, 1)) rotation = 180f;      // Right + Top
-                else if (sum == new Vector2Int(1, -1)) rotation = 90f; // Right + Bottom
-                else if (sum == new Vector2Int(-1, -1)) rotation = 0f; // Left + Bottom
-                else if (sum == new Vector2Int(-1, 1)) rotation = 270f; // Left + Top
-            }
+            rotation = (left && right) ? 0f : 90f;
+            return;
         }
-        else if (prev.HasValue || next.HasValue)
-        {
-            // Endpoints
-            sprite = wireSprites[0];
-            Vector2Int d = prev.HasValue ? (curr - prev.Value) : (next.Value - curr);
-            rotation = (d.x != 0) ? 90f : 0f;
-        }
+
+        // Two perpendicular directions -> corner. Base (0deg) = LEFT+DOWN.
+        // Each +90deg CCW rotates LEFT->DOWN->RIGHT->UP.
+        isCorner = true;
+        if (left && down) rotation = 0f;
+        else if (down && right) rotation = 90f;
+        else if (right && up) rotation = 180f;
+        else /* up && left */ rotation = 270f;
+    }
+
+    // Adds the screen-space direction from curr toward an adjacent neighbour.
+    private void AddDir(Vector2Int? neighbor, Vector2Int curr, ref bool left, ref bool right, ref bool up, ref bool down)
+    {
+        if (!neighbor.HasValue) return;
+        if (!IsAdjacent(curr, neighbor.Value)) return; // skip warp jumps
+        Vector2Int d = neighbor.Value - curr;          // grid delta
+        if (d.x == 1) right = true;
+        else if (d.x == -1) left = true;
+        else if (d.y == 1) down = true;                // grid +y is screen-down
+        else if (d.y == -1) up = true;
     }
 
     private void CompleteColor(int color)

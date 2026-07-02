@@ -1,0 +1,41 @@
+{
+    "asset": "6f8cfb234ae9bdf4fbd80c3eb40ca4cd",
+    "fileName": "019f13ae-953a-776b-8601-5dde2bc66ecd.png",
+    "prompt": "Remove the floating glowing puzzle-piece icon from the character's hand. The hand should be empty, open and relaxed at the side. Keep the character EXACTLY the same in every other way — same hooded outfit, same cyan/teal neon color scheme, same standing pose, same proportions, same lighting and materials. Same plain/transparent background as the source. Do not change anything except removing the puzzle piece.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "6f8cfb234ae9bdf4fbd80c3eb40ca4cd",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

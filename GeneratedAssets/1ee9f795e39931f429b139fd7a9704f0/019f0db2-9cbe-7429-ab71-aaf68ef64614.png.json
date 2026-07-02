@@ -1,0 +1,31 @@
+{
+    "asset": "1ee9f795e39931f429b139fd7a9704f0",
+    "fileName": "019f0db2-9cbe-7429-ab71-aaf68ef64614.png",
+    "prompt": "A sci-fi AND logic gate tile for a circuit puzzle, top-down flat 2D game UI tile, centered. The classic AND gate D-shape symbol glowing in neon GREEN with the bold label text \"AND\" clearly readable on it, two input connector stubs on the left and top edges and two output connector stubs on the right and bottom edges. Dark metallic tile background, futuristic neon aesthetic. Crisp, clean, high detail.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

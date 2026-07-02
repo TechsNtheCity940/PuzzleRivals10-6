@@ -1,0 +1,41 @@
+{
+    "asset": "4226d7610fb52ee4ba5ed41349aeabb8",
+    "fileName": "019f10f9-f60d-70ce-ad7a-49e0196d4bdc.png",
+    "prompt": "A horizontal sprite sheet animation strip laid out as a strict grid of 4 columns and 2 rows (8 equal square cells), read left-to-right then top-to-bottom. An animation of a steampunk water RECEIVER / outflow drain filling up with glowing blue water.\n\nEvery cell shows the SAME brass steampunk drain/collector tank positioned on the RIGHT side of the cell, with a short pipe opening on the LEFT edge of the cell (the opening flange centered exactly on the vertical middle of the left edge, matching the straight pipe flange style in the reference image). Frame 1 (top-left) = empty drain, no water. Across the 8 frames glowing electric-blue bubbly water flows in from the left opening and progressively fills the collector tank, frame 8 (bottom-right) = tank completely full of glowing water with an overflow/success glow. \n\nBrass tank body with rivets, a round window or gauge showing the water level, glossy metal, glowing blue water with bubbles and highlights. Fully TRANSPARENT background (no square tile, no backplate). Clean industrial steampunk game UI art matching the reference. Keep the tank body perfectly identical and in the same position in all 8 cells; ONLY the water level changes.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "3968d3cd4293c31499f497b93494ba87",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

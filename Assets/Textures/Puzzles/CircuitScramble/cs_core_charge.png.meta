@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,183 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cs_core_charge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e9ed42b7db3b64d8c2591c9cae6468
+      internalID: -599736875218323973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_1
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0d77c31638698419a3f4d6360c1556
+      internalID: 850846100203775204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_2
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6909c26a0b228a44e92c34404e9578c2
+      internalID: -7309164227138781438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_3
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d0d0acdc20afc43a9b9212b23a7e40
+      internalID: 449295624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_4
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e855369f47fce42937c35214653ae0
+      internalID: -1813740523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_5
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd7ab4817c84ed49b22cd12cfd8e705
+      internalID: 806764065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_6
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e23aa766f840654189143f65d903cc0
+      internalID: -202272039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cs_core_charge_7
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 0
+        width: 271.5
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a95ad2e9d344f469de41d1b839665e
+      internalID: 779090588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -135,7 +311,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cs_core_charge_0: -599736875218323973
+      cs_core_charge_1: 850846100203775204
+      cs_core_charge_2: -7309164227138781438
+      cs_core_charge_3: 449295624
+      cs_core_charge_4: -1813740523
+      cs_core_charge_5: 806764065
+      cs_core_charge_6: -202272039
+      cs_core_charge_7: 779090588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

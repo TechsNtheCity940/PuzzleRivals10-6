@@ -1,0 +1,41 @@
+{
+    "asset": "722b9d91d7f91ca43b9814c131b17d08",
+    "fileName": "019f10ee-46c9-7248-ac23-9970c635d801.png",
+    "prompt": "A sprite sheet laid out as a strict grid of 4 columns and 2 rows (8 equal square cells), reading left-to-right then top-to-bottom as a seamless animation loop. Wide 2:1 aspect ratio overall. This is a WATER SOURCE / inflow pump machine that continuously churns and pumps out glowing blue water; the 8 frames show the pump's water churning and a pulse of glowing water being pushed out to the RIGHT, looping seamlessly.\n\nIn EVERY cell the pump machine body is in the EXACT same position and size; ONLY the churning water and glow pulse change between frames. Each cell contains: a chunky steampunk brass-and-iron pump/reservoir machine with a glass window showing bubbling glowing cyan-blue water inside, and a pipe outlet with a brass flange on the RIGHT edge centered on the vertical middle, emitting a pulse of glowing blue water toward the right. Transparent background.\n\nSteampunk industrial art style with brass fittings, rivets, gauges and glass, matching the provided reference image's colors, brass style and glowing blue water. Crisp clean game UI art, high detail. Keep the machine body perfectly consistent across all 8 frames.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "de3c0fe7c2a15504fb71a51d4e4a3a9e",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 1152
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

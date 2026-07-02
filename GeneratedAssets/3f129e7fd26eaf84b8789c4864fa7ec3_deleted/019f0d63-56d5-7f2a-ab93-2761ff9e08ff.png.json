@@ -1,0 +1,31 @@
+{
+    "asset": "3f129e7fd26eaf84b8789c4864fa7ec3",
+    "fileName": "019f0d63-56d5-7f2a-ab93-2761ff9e08ff.png",
+    "prompt": "A single CORNER / elbow glowing energy conduit circuit wire segment for a sci-fi puzzle, top-down flat 2D game UI tile. A thick glowing bar that enters from the LEFT edge at the vertical center, curves smoothly through the exact center of the square, and exits through the BOTTOM edge at the horizontal center, forming a 90-degree elbow (an L shape). Both ends touch their respective edges. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

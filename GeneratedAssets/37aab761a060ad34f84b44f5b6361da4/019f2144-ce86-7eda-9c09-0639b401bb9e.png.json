@@ -1,0 +1,41 @@
+{
+    "asset": "37aab761a060ad34f84b44f5b6361da4",
+    "fileName": "019f2144-ce86-7eda-9c09-0639b401bb9e.png",
+    "prompt": "A futuristic 90-degree corner power conduit for a puzzle game, neon cyan glow. The conduit must enter the tile at the EXACT VERTICAL CENTER of the left edge and exit at the EXACT HORIZONTAL CENTER of the bottom edge. The curve should be symmetrical and centered in the frame. Sci-fi glass and metal design. Top-down view, square tile format, isolated on white background. Match the style of the horizontal conduit in the provided reference.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "95205181f8d11ba42b6299a205d77bde",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "asset": "1265aba9220b8f04f9ec7279223de50e",
+    "fileName": "019f0d23-9f38-79ff-a752-edfb30990893.png",
+    "prompt": "Top-down view of a single small sci-fi hover DRONE seen from directly above, centered in frame. Sleek rounded metallic chassis with a bright glowing cyan energy core in the center, small glowing thruster vents, subtle neon cyan accent lights. Reads clearly from a top-down angle in any direction (radially symmetric silhouette). Dark futuristic neon aesthetic matching a sci-fi maze game. Clean simple plain dark background, subject sharply centered with margin around it, crisp high detail.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

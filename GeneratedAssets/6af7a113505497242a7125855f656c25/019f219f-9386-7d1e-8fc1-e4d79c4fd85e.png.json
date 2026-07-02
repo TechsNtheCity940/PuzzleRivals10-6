@@ -1,0 +1,31 @@
+{
+    "asset": "6af7a113505497242a7125855f656c25",
+    "fileName": "019f219f-9386-7d1e-8fc1-e4d79c4fd85e.png",
+    "prompt": "A neon cyan energy conduit path running across a hexagonal tile from one edge to the exact opposite edge, glowing blue plasma effect inside a glass channel. Top-down view, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

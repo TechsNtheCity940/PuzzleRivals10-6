@@ -1,0 +1,41 @@
+{
+    "asset": "dfe2be9fc7e694048a1b49848957bf3f",
+    "fileName": "019f13eb-17f9-747e-8071-1f29667beaa1.png",
+    "prompt": "Use the reference image ONLY for the character's identity, outfit and colors (neon magenta/pink cyberpunk hooded jacket, mask, gloves, boots). Redraw this character as a TRUE SIDE PROFILE sprite, exactly like a 2D side-scrolling platformer character (think Mario or Sonic side view). CRITICAL POSE REQUIREMENTS: the body is rotated 90 degrees so we view the character from the side; we see ONLY ONE eye; the face, nose and hood point toward the RIGHT edge of the image; the near arm hangs at the side, the far arm is hidden behind the torso; both feet point to the right in profile. This is NOT a front view and NOT a 3/4 view — it is a flat lateral side silhouette. Full body head to toe, standing neutral, empty hands. Flat-color cartoon/anime game sprite style, crisp clean outlines, plain solid white background, single character centered.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "71c8799c7b6309c4686aa1a26d1c7ead",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

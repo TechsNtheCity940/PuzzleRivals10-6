@@ -1,0 +1,41 @@
+{
+    "asset": "6a484517bdb41224483b0900d3da417c",
+    "fileName": "019f2038-276a-78e0-828c-018a2ba70308.mp4",
+    "prompt": "Animation of electricity flowing through a futuristic horizontal conduit, neon blue pulses moving from left to right, sci-fi energy effect, glowing core. 4x4 grid of 16 frames. Style matching provided reference.",
+    "negativePrompt": "",
+    "model": "video-kling-v3-i2v-pro",
+    "modelName": "Kling V3 I2V Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "95205181f8d11ba42b6299a205d77bde",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "asset": "9e4bfaef4c38d24449c9d564b7860bbd",
+    "fileName": "019f21a5-4f99-765e-a836-49dd21e5b047.mp4",
+    "prompt": "Animation of a glowing cyber-rune lighting up progressively as if being traced by a laser, shimmering with cyan energy. 4x4 grid of 16 frames. Style matching the rune reference.",
+    "negativePrompt": "",
+    "model": "video-kling-v3-i2v-pro",
+    "modelName": "Kling V3 I2V Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "f72b4213f3bc9f343abcb0b721e33700",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "asset": "3018faea1699eb54f9bf2df96b7844c8",
+    "fileName": "019f0d23-e2a0-7e26-960e-f18d81f074b6.png",
+    "prompt": "Top-down view of a single square sci-fi maze FLOOR tile. Very dark charcoal tech-deck panel with subtle thin cyan grid lines and faint hexagonal circuitry detail, low contrast and dark so it recedes into the background. Fills the entire square frame edge-to-edge so adjacent floor tiles tile seamlessly. Clean orthographic top-down perspective, flat even lighting, dark futuristic neon aesthetic, understated and subtle. Centered, fills frame completely.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

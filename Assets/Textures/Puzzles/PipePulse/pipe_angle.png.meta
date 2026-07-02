@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 0b950c8d452c8c9479623dc0d872c265
+labels:
+- UnityAI
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 443
+        y: 419
         width: 443
         height: 443
       alignment: 0
@@ -149,7 +151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 443
-        y: 443
+        y: 419
         width: 443
         height: 443
       alignment: 0
@@ -171,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 886
-        y: 443
+        y: 419
         width: 443
         height: 443
       alignment: 0
@@ -193,7 +195,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1329
-        y: 443
+        y: 420
         width: 443
         height: 443
       alignment: 0
@@ -215,7 +217,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 17.5
         width: 443
         height: 443
       alignment: 0
@@ -237,7 +239,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 443
-        y: 0
+        y: 16.5
         width: 443
         height: 443
       alignment: 0
@@ -259,7 +261,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 886
-        y: 0
+        y: 17.5
         width: 443
         height: 443
       alignment: 0
@@ -281,7 +283,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1329
-        y: 0
+        y: 16.5
         width: 443
         height: 443
       alignment: 0

@@ -1,0 +1,31 @@
+{
+    "asset": "bd4ef166d05692444ba22f2ad79174a7",
+    "fileName": "019f0d62-f1b4-7455-8bdb-2eee50c545f6.png",
+    "prompt": "A single glowing energy NODE endpoint icon for a sci-fi circuit puzzle, top-down flat 2D game UI icon, centered in frame with even margin around it. A rounded hexagonal energy port with a bright glowing core and a clean ring. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, high detail, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

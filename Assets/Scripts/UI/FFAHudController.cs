@@ -30,7 +30,8 @@ public class FFAHudController : MonoBehaviour
     public Sprite explosionSprite;  // explosion.png
 
     [Header("Card Corners")]
-    public float cornerInset = 40f; // margin from the screen edges
+    public float cornerInset = 60f;  // margin (in canvas ref units) from the screen edges
+    public float cardScale = 1.8f;   // enlarge the small prefab so name/rank are readable
 
     [Header("Leaderboard / Restart")]
     public MatchLeaderboard leaderboardPrefab;
@@ -113,7 +114,10 @@ public class FFAHudController : MonoBehaviour
             }
 
             card.Bind(player, loadout);
-            PositionCardInCorner(card, i);
+            // Anchor each card to the corner that matches its player's platform
+            // character (driven by playerId), NOT its order in the list. This puts
+            // the local player's card in the corner next to their own character.
+            PositionCardInCorner(card, player.playerId);
             cards.Add(card);
 
             if (player.isEliminated)
@@ -124,20 +128,24 @@ public class FFAHudController : MonoBehaviour
         built = true;
     }
 
-    // Anchors a card into one of the 4 screen corners with an inset margin:
-    // 0 = top-left, 1 = top-right, 2 = bottom-left, 3 = bottom-right.
-    private void PositionCardInCorner(PlayerCard card, int index)
+    // Anchors a card into the screen corner matching its player's slot, mirroring
+    // the platform-character layout (Character_0..3):
+    //   id 0 = top-left, id 1 = top-right, id 2 = bottom-left, id 3 = bottom-right.
+    // CardContainer is a full-screen stretch rect, so these corners are the actual
+    // screen corners. cornerInset keeps the card off the very edge.
+    private void PositionCardInCorner(PlayerCard card, int playerId)
     {
         RectTransform rt = card.GetComponent<RectTransform>();
         if (rt == null) return;
 
-        bool left = (index % 2) == 0;
-        bool top = index < 2;
+        bool left = (playerId % 2) == 0;
+        bool top = playerId < 2;
 
         Vector2 corner = new Vector2(left ? 0f : 1f, top ? 1f : 0f);
         rt.anchorMin = corner;
         rt.anchorMax = corner;
         rt.pivot = corner;
+        rt.localScale = Vector3.one * cardScale;
         rt.anchoredPosition = new Vector2(left ? cornerInset : -cornerInset,
                                           top ? -cornerInset : cornerInset);
     }

@@ -1,0 +1,31 @@
+{
+    "asset": "5732d3eb901dc924f981c3ea337bc0fa",
+    "fileName": "019f0db2-dbb6-75d5-ace7-a13a3a136d36.png",
+    "prompt": "A sci-fi XOR logic gate tile for a circuit puzzle, top-down flat 2D game UI tile, centered. The classic XOR gate curved-back shape symbol glowing in neon PURPLE with the bold label text \"XOR\" clearly readable on it, two input connector stubs on the left and top edges and two output connector stubs on the right and bottom edges. Dark metallic tile background, futuristic neon aesthetic. Crisp, clean, high detail.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

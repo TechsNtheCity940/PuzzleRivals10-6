@@ -167,10 +167,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5336449047183493156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 540, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3494587974130863914
 GameObject:
@@ -406,12 +406,49 @@ MonoBehaviour:
   isTimedOut: 0
   inputEnabled: 1
   difficulty: 1
-  gridSize: 8
-  tilePrefab: {fileID: 4477935393527699783, guid: e16431ae0eaaee446a93d3c6d32cf284, type: 3}
+  gridSize: 6
+  tilePrefab: {fileID: 7674824498283879518, guid: e16431ae0eaaee446a93d3c6d32cf284, type: 3}
   gridContainer: {fileID: 6641916927071016012}
-  tileSpacing: 105
+  tileSpacing: 84
   statusText: {fileID: 2509650893321173730}
-  nodeSprite: {fileID: -878188610423434942, guid: 1a4685c2ed1ea0140bc4b218233be8c9, type: 3}
+  nodeSprite: {fileID: 21300000, guid: bd4ef166d05692444ba22f2ad79174a7, type: 3}
+  portalSprite: {fileID: 21300000, guid: 75537cc1d986d774e9b21e591ff3faad, type: 3}
+  batterySprite: {fileID: 21300000, guid: 3d3336d94948b4648a689afdbb5ef8d1, type: 3}
   wireSprites:
-  - {fileID: 1186148976239046032, guid: 5545227bbe821834194c0069ed59134b, type: 3}
-  - {fileID: -2362834714468744328, guid: 5545227bbe821834194c0069ed59134b, type: 3}
+  - {fileID: 6642045015580650164, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 6642045015580650164, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  straightFlowFrames:
+  - {fileID: 6642045015580650164, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 2253077505119111825, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -2264752010665275931, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -4064707319376454692, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -5669752990720426119, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -7042168226544442684, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 6733542980818623696, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -5169285653135510680, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 1796643482376633905, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -1747286977705435824, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 3670398372912769619, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 3444106995467225063, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 2849588159262482907, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: 2843159510487817153, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -8190253144977941831, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  - {fileID: -3896115117631618534, guid: 476f00075491d084d97b09ce5d55e536, type: 3}
+  cornerFlowFrames:
+  - {fileID: 6642045015580650164, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 2253077505119111825, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -2264752010665275931, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -4064707319376454692, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -5669752990720426119, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -7042168226544442684, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 6733542980818623696, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -5169285653135510680, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 1796643482376633905, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -1747286977705435824, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 3670398372912769619, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 3444106995467225063, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 2849588159262482907, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: 2843159510487817153, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -8190253144977941831, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  - {fileID: -3896115117631618534, guid: f64e0f5b796bc0d43b0430401799b316, type: 3}
+  wireFlowFps: 14

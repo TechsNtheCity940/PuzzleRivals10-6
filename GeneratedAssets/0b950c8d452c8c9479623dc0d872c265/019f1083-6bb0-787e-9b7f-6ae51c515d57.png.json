@@ -1,0 +1,41 @@
+{
+    "asset": "0b950c8d452c8c9479623dc0d872c265",
+    "fileName": "019f1083-6bb0-787e-9b7f-6ae51c515d57.png",
+    "prompt": "This image is a 4-column by 2-row sprite sheet (8 frames) of an animated steampunk L-bend / 90-degree CORNER pipe with glowing blue water. The SECOND attached image is the matching STRAIGHT pipe sheet — use it as the exact reference for opening (brass flange) placement and art style.\n\nReposition the corner pipe inside EVERY frame so its two openings are perfectly centered on the tile edges, matching the straight pipe's flanges:\n- The TOP opening's brass flange must be centered on the HORIZONTAL midline of the top edge and reach the top edge.\n- The RIGHT opening's brass flange must be centered on the VERTICAL midline of the right edge and reach the right edge, at the exact same height as the straight pipe's right flange.\n- The two pipe arms meet at a clean 90-degree bend in the middle; the bottom-left area of each tile is just the empty metal backplate.\n\nKeep identical: the dark riveted square metal backplate filling each frame, the corner screws, the brass flange style and size, the blue glowing water with bubbles, and the overall art style. Keep all 8 frames perfectly consistent with one another — the metal plate and pipe must be in the EXACT same position in every frame; ONLY the water fill level changes from frame to frame. Do not change the 4x2 grid layout, the frame count, or the image dimensions.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "b99176110c6da6b48b671fd618c78f53",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "asset": "1ea7ecc1397ac3f4f9f2512da8e9e337",
+    "fileName": "019f13e9-7412-7a14-a02e-5cea5d71fcbf.png",
+    "prompt": "The exact same character as shown in the reference image, preserving identical outfit, colors, neon lime green cyberpunk hooded jacket, mask, gloves and boots. Render the character in a STRICT SIDE PROFILE view: a perfect 90-degree lateral side view, body facing to the RIGHT, head in profile looking right. Full body visible head to toe, standing in a neutral relaxed pose, both arms down at sides, EMPTY HANDS (nothing held). Flat-color cartoon/anime game sprite style, crisp clean lines, plain solid white background. Single character centered.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "4080679eca4b7ab4ab65f88416823aff",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

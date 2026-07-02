@@ -61,6 +61,10 @@ public class UISpriteSheetAnimator : MonoBehaviour
 
     public void Stop() => playing = false;
 
+    // True while a frame set is actively cycling. Lets callers gate animations
+    // (start only when needed, avoid restarting an already-running loop).
+    public bool IsPlaying => playing;
+
     private void Update()
     {
         if (!playing || frames == null || frames.Length == 0 || fps <= 0f) return;

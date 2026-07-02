@@ -1,0 +1,31 @@
+{
+    "asset": "3d3336d94948b4648a689afdbb5ef8d1",
+    "fileName": "019f0d8f-7bd1-7c9f-9533-dcce1c98fc06.png",
+    "prompt": "A glowing sci-fi energy BATTERY cell icon for a circuit puzzle, top-down flat 2D game UI icon, centered in frame with even margin. A rounded battery capsule with a lightning-bolt energy symbol on its face and glowing charge bars. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, symmetrical, high detail, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

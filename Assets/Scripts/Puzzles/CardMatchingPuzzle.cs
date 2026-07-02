@@ -6,11 +6,16 @@ using System.Collections.Generic;
 public class CardMatchingPuzzle : BasePuzzle
 {
     [Header("Card Matching")]
-    public int columns = 4;
+    public int columns = 4;             // 4 x 3 = 12 cards = 6 pairs
     public int rows = 3;
     public GameObject cardPrefab;
     public RectTransform gridContainer;
-    public float tileSpacing = 110f;
+    public float tileSpacing = 245f;
+    public float cardSize = 220f;       // per-card size; larger & easier to read
+
+    [Header("Start Preview")]
+    [Tooltip("Seconds the cards are shown face-up before they flip down and the clock starts.")]
+    public float previewDuration = 2.5f;
 
     [Header("Art")]
     public Sprite cardBack;
@@ -68,6 +73,7 @@ public class CardMatchingPuzzle : BasePuzzle
 
                 GameObject go = Instantiate(cardPrefab, gridContainer);
                 RectTransform rt = (RectTransform)go.transform;
+                rt.sizeDelta = new Vector2(cardSize, cardSize);
                 rt.anchoredPosition = new Vector2(x * tileSpacing - centerW, -(y * tileSpacing) + centerH);
 
                 GridTile gt = go.GetComponent<GridTile>();
@@ -77,6 +83,55 @@ public class CardMatchingPuzzle : BasePuzzle
                 _grid[x, y] = gt;
             }
         }
+    }
+
+    // Show every card face-up first so the player can memorise the layout, then
+    // flip them all face-down and ONLY THEN start the fuse clock / accept input.
+    public override void StartPuzzle()
+    {
+        StartCoroutine(PreviewThenStart());
+    }
+
+    private IEnumerator PreviewThenStart()
+    {
+        // Block input (CanAcceptInput is false while !isRunning) and bots during preview.
+        _busy = true;
+
+        // 1. Reveal all faces.
+        foreach (var t in _grid)
+        {
+            if (t == null) continue;
+            if (t.type >= 0 && t.type < cardFaces.Length)
+                t.SetSprite(cardFaces[t.type]);
+        }
+
+        // 2. Let the player study the board.
+        yield return new WaitForSeconds(Mathf.Max(0f, previewDuration));
+
+        // 3. Flip every card face-down (with the flip animation when available).
+        if (flipAnimation != null && flipAnimation.Length > 0)
+        {
+            foreach (var t in _grid)
+            {
+                if (t == null) continue;
+                var anim = t.GetComponent<UISpriteSheetAnimator>();
+                if (anim != null) anim.PlaySet(flipAnimation, 30f, false);
+            }
+            yield return new WaitForSeconds(0.35f);
+        }
+
+        foreach (var t in _grid)
+        {
+            if (t == null) continue;
+            var anim = t.GetComponent<UISpriteSheetAnimator>();
+            if (anim != null) anim.Stop();
+            t.SetSprite(cardBack);
+        }
+
+        _busy = false;
+
+        // 4. Now start the fuse timer and accept input.
+        base.StartPuzzle();
     }
 
     private void OnCardClicked(GridTile tile)

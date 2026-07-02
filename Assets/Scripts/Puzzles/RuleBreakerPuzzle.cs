@@ -42,13 +42,26 @@ public class RuleBreakerPuzzle : BasePuzzle
         {
             for (int i = gridContainer.childCount - 1; i >= 0; i--)
             {
-                UnityEngine.Object.Destroy(gridContainer.GetChild(i).gameObject);
+                GameObject child = gridContainer.GetChild(i).gameObject;
+                if (Application.isPlaying) UnityEngine.Object.Destroy(child);
+                else UnityEngine.Object.DestroyImmediate(child);
             }
         }
         _tiles.Clear();
 
         int cols = Mathf.Max(1, columns);
         int rws = Mathf.Max(1, rows);
+
+        // Fit the grid to the container so tiles never overflow or overlap. Each
+        // tile is also sized to the spacing (the prefab default was a fixed 100px).
+        if (gridContainer != null)
+        {
+            float availW = gridContainer.rect.width;
+            float availH = gridContainer.rect.height;
+            if (availW > 1f && availH > 1f)
+                tileSpacing = Mathf.Min(availW / cols, availH / rws) * 0.96f;
+        }
+        float tileSize = tileSpacing * 0.92f;
 
         int colorCount = (tileColors != null) ? tileColors.Length : 0;
         int shapeCount = (shapeSprites != null) ? shapeSprites.Length : 0;
@@ -63,6 +76,7 @@ public class RuleBreakerPuzzle : BasePuzzle
                 GameObject go = UnityEngine.Object.Instantiate(tilePrefab, gridContainer);
                 RectTransform rt = (RectTransform)go.transform;
                 rt.anchoredPosition = new Vector2(col * tileSpacing - centerX, -(row * tileSpacing) + centerY);
+                rt.sizeDelta = new Vector2(tileSize, tileSize);
 
                 RuleBreakerTile tile = go.GetComponent<RuleBreakerTile>();
                 int number = rng.Next(1, 10); // 1..9
@@ -246,7 +260,7 @@ public class RuleBreakerPuzzle : BasePuzzle
 
     private void UpdateRuleTimerText()
     {
-        if (ruleTimerText != null) ruleTimerText.text = Mathf.CeilToInt(_ruleTimer).ToString();
+        if (ruleTimerText != null) ruleTimerText.text = "TIME " + Mathf.CeilToInt(_ruleTimer);
     }
 
     private void FlashWrong()
@@ -302,7 +316,11 @@ public class RuleBreakerPuzzle : BasePuzzle
     {
         if (shapeSprites != null && shapeID >= 0 && shapeID < shapeSprites.Length && shapeSprites[shapeID] != null)
         {
-            return shapeSprites[shapeID].name.ToUpperInvariant();
+            // Sprites are named like "rb_shape_circle" -> show just "CIRCLE".
+            string raw = shapeSprites[shapeID].name;
+            int us = raw.LastIndexOf('_');
+            string clean = (us >= 0 && us < raw.Length - 1) ? raw.Substring(us + 1) : raw;
+            return clean.ToUpperInvariant();
         }
         return "SHAPE " + shapeID;
     }

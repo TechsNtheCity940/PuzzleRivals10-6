@@ -1,0 +1,41 @@
+{
+    "asset": "8fcb1c38a7e319943a0b9145ce6cd9ce",
+    "fileName": "019f119c-27ae-71ef-94c3-fcd0b5467530.png",
+    "prompt": "A sprite sheet on a fully TRANSPARENT background, strict uniform grid of 4 columns and 2 rows = 8 identical frames, read left-to-right then top-to-bottom.\n\nSHAPE (most important): each frame shows ONE pipe corner shaped like a rounded top-right bracket, i.e. the capital Greek letter Gamma 'Γ'. The glass tube ENTERS from the TOP edge of the square (a short vertical segment at the horizontal center coming down), makes a SINGLE smooth 90-degree quarter-circle turn at the middle of the square, then EXITS the RIGHT edge (a short horizontal segment at the vertical center going right). There are EXACTLY TWO openings: ONE on the TOP edge (centered left-to-right) and ONE on the RIGHT edge (centered top-to-bottom). The entire BOTTOM-LEFT half of the square is EMPTY transparent space.\nIt is a single 90-degree corner ONLY. It is NOT a C shape, NOT a U shape, NOT a horseshoe, NOT an S shape, NOT a semicircle. There is NO opening on the left edge and NO opening on the bottom edge.\n\nSTYLE (match the provided reference straight pipe exactly): glossy transparent GLASS tube with bright highlights; polished GOLD / BRASS ring coupling flanges (with rivets and dark banding) at BOTH openings, same flange diameter and style as the reference; light sky-blue water with white foam highlights and small bubbles.\n\nANIMATION: frame 1 (top-left) the pipe is empty (no water); across the 8 frames the light-blue water progressively fills until frame 8 (bottom-right) is completely full. Keep the pipe, flanges and bend in the EXACT same position and size in all 8 frames; ONLY the water level changes. Clean steampunk game UI art, crisp, high detail.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "caf36c1560dfb1041b4144fee598cdfb",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

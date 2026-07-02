@@ -1,0 +1,31 @@
+{
+    "asset": "dd036bf8aaf334f4e9e23ab879585951",
+    "fileName": "019f0db2-44d8-7cad-8bda-a55cf0087130.png",
+    "prompt": "A single STRAIGHT horizontal circuit conduit wire segment, top-down flat 2D game UI tile. A thick glowing bar running perfectly horizontally through the exact vertical center, spanning the FULL width from the left edge to the right edge (touching both side edges), with subtle circuit-board detailing. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, symmetrical, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

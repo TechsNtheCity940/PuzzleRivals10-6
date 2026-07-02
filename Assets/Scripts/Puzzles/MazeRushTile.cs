@@ -132,24 +132,33 @@ public class MazeRushTile : MonoBehaviour, IPointerClickHandler
 
     private void Refresh()
     {
-        // Wall and floor share the same spritesheet, so animating them makes the
-        // maze unreadable. Render structural cells (wall/floor/gate) and the
-        // player marker as solid, high-contrast colours. Only the unique start/
-        // exit/checkpoint markers use their themed frames (with colour fallback).
-        Sprite[] frames = null;
+        // Walls and floors now use dedicated, distinct sprite art so the grid
+        // actually reads as a maze (textured wall blocks vs. dark floor panels).
+        // Structural tiles are STATIC (single frame) to keep the maze readable;
+        // only the unique start/exit/checkpoint markers animate. The player is a
+        // separate animated drone icon (CreatePlayerIcon), so isPlayer no longer
+        // tints the tile underneath — the floor shows through beneath the drone.
+        Sprite[] animFrames = null;   // animated marker frames
+        Sprite staticSprite = null;   // single static sprite (wall / floor)
         Color col;
-        if (isPlayer) { col = PlayerColor; }
-        else if (isGate) { col = gateLocked ? GateLockedColor : GateOpenColor; }
-        else if (isPortal) { col = (portalId == 0) ? new Color(0.7f, 0.1f, 1f, 1f) : new Color(1f, 0.5f, 0f, 1f); }
-        else if (isWall) { col = WallColor; }
-        else if (isExit) { frames = exitFrames; col = ExitColor; }
-        else if (isStart) { frames = startFrames; col = StartColor; }
-        else if (isCheckpoint) { frames = checkpointFrames; col = CheckpointColor; }
-        else { col = FloorColor; }
 
-        if (frames != null && frames.Length > 0)
+        if (isGate) { col = gateLocked ? GateLockedColor : GateOpenColor; }
+        else if (isPortal) { col = (portalId == 0) ? new Color(0.7f, 0.1f, 1f, 1f) : new Color(1f, 0.5f, 0f, 1f); }
+        else if (isWall) { staticSprite = FirstFrame(wallFrames); col = WallColor; }
+        else if (isExit) { animFrames = exitFrames; col = ExitColor; }
+        else if (isStart) { animFrames = startFrames; col = StartColor; }
+        else if (isCheckpoint) { animFrames = checkpointFrames; col = CheckpointColor; }
+        else { staticSprite = FirstFrame(floorFrames); col = FloorColor; }
+
+        if (animFrames != null && animFrames.Length > 0)
         {
-            Animator.PlaySet(frames, 10f, true);
+            Animator.PlaySet(animFrames, 10f, true);
+            Image.color = Color.white;
+        }
+        else if (staticSprite != null)
+        {
+            Animator.Stop();
+            Image.sprite = staticSprite;
             Image.color = Color.white;
         }
         else
@@ -158,6 +167,11 @@ public class MazeRushTile : MonoBehaviour, IPointerClickHandler
             Image.sprite = null;
             Image.color = col;
         }
+    }
+
+    private static Sprite FirstFrame(Sprite[] arr)
+    {
+        return (arr != null && arr.Length > 0) ? arr[0] : null;
     }
 
     public void OnPointerClick(PointerEventData eventData)

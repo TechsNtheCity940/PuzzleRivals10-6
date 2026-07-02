@@ -22,6 +22,8 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
 
     [Header("Art (optional, null = flat colour)")]
     public Sprite nodeSprite; // icon drawn on node endpoints, tinted by colour
+    public Sprite portalSprite; // neon vortex icon, tinted purple/orange by portalId
+    public Sprite batterySprite; // neon battery icon, tinted gold (dim/bright by charge)
     public Image wireImage;
 
     private Image _image;
@@ -40,17 +42,31 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         RefreshVisual();
     }
 
-    public void SetWire(int colorID, Sprite wireSprite, float rotation)
+    public void SetWire(int colorID, Sprite[] flowFrames, Sprite fallback, float fps, float rotation)
     {
         CacheImage();
-        
+
         Image target = wireImage != null ? wireImage : _image;
         if (target != null)
         {
             target.gameObject.SetActive(true);
-            target.sprite = wireSprite;
-            target.color = ColorForId(colorID);
             target.rectTransform.localRotation = Quaternion.Euler(0, 0, rotation);
+
+            var anim = target.GetComponent<UISpriteSheetAnimator>();
+            if (flowFrames != null && flowFrames.Length > 0)
+            {
+                if (anim == null) anim = target.gameObject.AddComponent<UISpriteSheetAnimator>();
+                anim.PlaySet(flowFrames, fps, true); // PlaySet forces colour to white...
+            }
+            else
+            {
+                if (anim != null) anim.Stop();
+                target.sprite = fallback;
+            }
+
+            // ...so apply the per-colour tint AFTER PlaySet. Update() only swaps
+            // the sprite, never the colour, so this tint persists every frame.
+            target.color = ColorForId(colorID);
         }
 
         // If we used a child for wire, hide the root tint. Otherwise root is the wire.
@@ -58,8 +74,8 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         {
             if (isPortal || isBattery)
             {
-                // Retain portal/battery background colors
-                _image.sprite = null;
+                // Keep the portal/battery icon + colour visible beneath the wire.
+                RefreshVisual();
             }
             else
             {
@@ -168,15 +184,15 @@ public class LinkLockTile : MonoBehaviour, IPointerClickHandler
         }
         else if (isPortal)
         {
-            // Portal A: Purple, Portal B: Orange
+            // Portal A: Purple, Portal B: Orange. White icon takes the tint.
             _image.color = (portalId == 0) ? new Color(0.7f, 0.1f, 1.0f, 1.0f) : new Color(1.0f, 0.5f, 0.0f, 1.0f);
-            _image.sprite = null;
+            _image.sprite = portalSprite;
         }
         else if (isBattery)
         {
-            // Uncharged Battery: Dark gold-yellow, Charged: Glowing bright gold-yellow
+            // Uncharged Battery: Dark gold-yellow, Charged: Glowing bright gold-yellow.
             _image.color = batteryCharged ? new Color(1.0f, 0.85f, 0.1f, 1.0f) : new Color(0.45f, 0.4f, 0.15f, 1.0f);
-            _image.sprite = null;
+            _image.sprite = batterySprite;
         }
         else
         {

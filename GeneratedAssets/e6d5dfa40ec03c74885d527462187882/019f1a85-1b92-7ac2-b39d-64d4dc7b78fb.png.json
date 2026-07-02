@@ -1,0 +1,31 @@
+{
+    "asset": "e6d5dfa40ec03c74885d527462187882",
+    "fileName": "019f1a85-1b92-7ac2-b39d-64d4dc7b78fb.png",
+    "prompt": "A dark charcoal industrial floor tile, matte finish, very faint recessed neon cyan circuitry patterns, high contrast, top-down view, seamless texture, sci-fi cyber-industrial aesthetic.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

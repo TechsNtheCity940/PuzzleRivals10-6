@@ -13,6 +13,8 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
     public int y;
     public int colorID;
     public bool isSelected;
+    public bool isBomb;
+    public bool isGeode;
 
     public event Action<ComboRushTile> OnClicked;
 
@@ -43,12 +45,31 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
         x = gx;
         y = gy;
         colorID = cid;
+        isBomb = false;
+        isGeode = false;
         SetSelected(false);
+    }
+
+    public void SetBomb()
+    {
+        isBomb = true;
+        isGeode = false;
+        transform.localScale = Vector3.one * 1.15f; // Sized slightly larger
+    }
+
+    public void SetGeode()
+    {
+        isGeode = true;
+        isBomb = false;
+        colorID = -1; // No matching color
+        CacheImage();
+        image.color = new Color(0.85f, 0.85f, 0.85f, 1f); // Metallic silver look
     }
 
     public void SetColor(Color color)
     {
         CacheImage();
+        if (isGeode) return; // Geodes keep their silver color
         image.color = color;
     }
 

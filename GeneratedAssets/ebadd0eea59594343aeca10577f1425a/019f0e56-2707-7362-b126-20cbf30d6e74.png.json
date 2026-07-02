@@ -1,0 +1,31 @@
+{
+    "asset": "ebadd0eea59594343aeca10577f1425a",
+    "fileName": "019f0e56-2707-7362-b126-20cbf30d6e74.png",
+    "prompt": "A single top-down 2D game tile of a PRISM crystal for a sci-fi laser puzzle, centered and filling the square frame. A dark octagonal brushed-metal frame (matching a futuristic neon aesthetic) containing a faceted translucent rainbow-iridescent crystal prism (diamond/triangular cut) glowing softly in the center. ABSOLUTELY NO light beams or rays coming out — just the crystal and its frame. Solid pure black background. Crisp, clean, symmetrical, high detail, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

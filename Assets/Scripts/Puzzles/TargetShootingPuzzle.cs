@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TargetShootingPuzzle : BasePuzzle
 {
@@ -10,6 +11,7 @@ public class TargetShootingPuzzle : BasePuzzle
     public int minTargets = 3;
     public int maxTargets = 8;
     public float targetScale = 1.0f;
+    public float targetDuration = 3.5f; // Target stays for 3.5 seconds
 
     [Header("Art")]
     public Sprite[] blueShatterFrames;
@@ -17,15 +19,31 @@ public class TargetShootingPuzzle : BasePuzzle
     public Sprite[] purpleShatterFrames;
     public Sprite[] redShatterFrames;
 
-    private List<GridTile> _activeTargets = new List<GridTile>();
-    private int _targetsRemaining;
+    private class ActiveTarget
+    {
+        public GridTile tile;
+        public float spawnTime;
+        public float duration;
+        public float scale;
+        public int colorType;
+        public bool isHit;
+    }
+
+    private List<ActiveTarget> _activeTargets = new List<ActiveTarget>();
+    private int _totalRequiredHits;
+    private int _successfulHits;
 
     protected override void BuildBoard()
     {
         ClearBoard();
-        _targetsRemaining = rng.Next(minTargets + difficulty, maxTargets + difficulty);
         
-        for (int i = 0; i < _targetsRemaining; i++)
+        _successfulHits = 0;
+        _totalRequiredHits = rng.Next(minTargets + difficulty, maxTargets + difficulty);
+        if (_totalRequiredHits < 3) _totalRequiredHits = 3; // Ensure at least 3
+
+        // Spawn initial targets (up to 3)
+        int initialCount = Mathf.Min(3, _totalRequiredHits);
+        for (int i = 0; i < initialCount; i++)
         {
             SpawnTarget();
         }
@@ -38,14 +56,38 @@ public class TargetShootingPuzzle : BasePuzzle
         GameObject go = Instantiate(targetPrefab, spawnArea);
         RectTransform rt = (RectTransform)go.transform;
         
-        // Ensure we have a valid rect. If it's zero, use the massive puzzle size as fallback.
         float width = spawnArea.rect.width > 100 ? spawnArea.rect.width : 2200f;
         float height = spawnArea.rect.height > 100 ? spawnArea.rect.height : 1300f;
         
-        // Random position within calculated area, avoiding the very edges
-        float x = (float)(rng.NextDouble() - 0.5) * (width * 0.9f);
-        float y = (float)(rng.NextDouble() - 0.5) * (height * 0.8f);
-        rt.anchoredPosition = new Vector2(x, y);
+        // Random position within calculated area, ensuring no overlapping
+        float minDistance = 260f; // Minimum distance in pixels to prevent overlaps
+        Vector2 pos = Vector2.zero;
+        bool posValid = false;
+        int retries = 0;
+
+        while (!posValid && retries < 60)
+        {
+            float rx = (float)(rng.NextDouble() - 0.5f) * (width * 0.85f);
+            float ry = (float)(rng.NextDouble() - 0.5f) * (height * 0.75f);
+            pos = new Vector2(rx, ry);
+            
+            posValid = true;
+            foreach (var active in _activeTargets)
+            {
+                if (active != null && active.tile != null)
+                {
+                    float dist = Vector2.Distance(((RectTransform)active.tile.transform).anchoredPosition, pos);
+                    if (dist < minDistance)
+                    {
+                        posValid = false;
+                        break;
+                    }
+                }
+            }
+            retries++;
+        }
+
+        rt.anchoredPosition = pos;
         rt.localScale = Vector3.one * targetScale;
 
         GridTile tile = go.GetComponent<GridTile>();
@@ -61,7 +103,21 @@ public class TargetShootingPuzzle : BasePuzzle
             }
 
             tile.OnClicked += OnTargetClicked;
-            _activeTargets.Add(tile);
+            
+            ActiveTarget active = new ActiveTarget
+            {
+                tile = tile,
+                spawnTime = Time.time,
+                duration = targetDuration - (difficulty * 0.2f), // scales down with higher difficulty
+                scale = targetScale,
+                colorType = type,
+                isHit = false
+            };
+
+            // Set minimum duration cap
+            if (active.duration < 1.8f) active.duration = 1.8f;
+
+            _activeTargets.Add(active);
         }
     }
 
@@ -69,18 +125,32 @@ public class TargetShootingPuzzle : BasePuzzle
     {
         if (!CanAcceptInput()) return;
 
-        _activeTargets.Remove(tile);
-        _targetsRemaining--;
+        // Find the active target info
+        ActiveTarget target = _activeTargets.Find(t => t.tile == tile);
+        if (target == null || target.isHit) return;
+
+        target.isHit = true;
+        _activeTargets.Remove(target); // Remove from active list immediately to make space for replenishment
+        _successfulHits++;
+
+        // Play shoot audio
+        if (AudioManager.Instance != null && GameState.Instance != null)
+        {
+            AudioManager.Instance.PlaySfx(GameState.Instance.sfxPuzzleRotate, 0.6f);
+        }
 
         // Play shatter animation
         UISpriteSheetAnimator anim = tile.GetComponent<UISpriteSheetAnimator>();
         if (anim == null) anim = tile.gameObject.AddComponent<UISpriteSheetAnimator>();
         
-        Sprite[] frames = GetFramesForType(tile.type);
-        if (frames != null)
+        Sprite[] frames = GetFramesForType(target.colorType);
+        if (frames != null && frames.Length > 0)
         {
             tile.Image.raycastTarget = false; // Prevent multi-clicks
-            anim.PlaySet(frames, 20f, false, () => {
+            tile.transform.localScale = Vector3.one * targetScale; // Reset to full scale for slam shatter
+            tile.Image.color = Color.white; // Reset color to full white
+            
+            anim.PlaySet(frames, 24f, false, () => {
                 Destroy(tile.gameObject);
             });
         }
@@ -89,9 +159,84 @@ public class TargetShootingPuzzle : BasePuzzle
             Destroy(tile.gameObject);
         }
 
-        if (_targetsRemaining <= 0)
+        if (_successfulHits >= _totalRequiredHits)
         {
             Solve();
+        }
+        else
+        {
+            // Replenish target immediately
+            ReplenishTargets();
+        }
+    }
+
+    private void ReplenishTargets()
+    {
+        // Maintain up to 3 active, non-hit targets on the board
+        int targetActiveCount = Mathf.Min(3, _totalRequiredHits - _successfulHits);
+        while (_activeTargets.Count < targetActiveCount)
+        {
+            SpawnTarget();
+        }
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        if (!isRunning || isSolved || isTimedOut) return;
+
+        // Tick down timers for active targets
+        for (int i = _activeTargets.Count - 1; i >= 0; i--)
+        {
+            ActiveTarget target = _activeTargets[i];
+            if (target == null || target.tile == null || target.isHit) continue;
+
+            float age = Time.time - target.spawnTime;
+            float ratio = 1f - (age / target.duration);
+
+            if (ratio <= 0f)
+            {
+                // Target expired! Remove and despawn gracefully
+                _activeTargets.RemoveAt(i);
+                StartCoroutine(DespawnTargetRoutine(target.tile));
+                
+                // Replenish target
+                ReplenishTargets();
+            }
+            else
+            {
+                // Visual scale shrink feedback
+                target.tile.transform.localScale = Vector3.one * (target.scale * Mathf.Lerp(0.3f, 1f, ratio));
+                // Color flashing feedback (more red/warning as it decays)
+                target.tile.Image.color = Color.Lerp(new Color(1f, 0.4f, 0.4f, 0.8f), Color.white, ratio);
+            }
+        }
+    }
+
+    private IEnumerator DespawnTargetRoutine(GridTile tile)
+    {
+        if (tile == null) yield break;
+
+        tile.Image.raycastTarget = false;
+        
+        // Play a rapid shrink and fade out
+        float t = 0f;
+        float duration = 0.25f;
+        Vector3 startScale = tile.transform.localScale;
+        Color startColor = tile.Image.color;
+
+        while (t < duration && tile != null)
+        {
+            t += Time.deltaTime;
+            float ratio = t / duration;
+            tile.transform.localScale = Vector3.Lerp(startScale, Vector3.zero, ratio);
+            tile.Image.color = Color.Lerp(startColor, new Color(startColor.r, startColor.g, startColor.b, 0f), ratio);
+            yield return null;
+        }
+
+        if (tile != null)
+        {
+            Destroy(tile.gameObject);
         }
     }
 
@@ -109,9 +254,11 @@ public class TargetShootingPuzzle : BasePuzzle
 
     private void ClearBoard()
     {
+        StopAllCoroutines();
+
         foreach (var t in _activeTargets)
         {
-            if (t != null) Destroy(t.gameObject);
+            if (t != null && t.tile != null) Destroy(t.tile.gameObject);
         }
         _activeTargets.Clear();
         
@@ -126,9 +273,17 @@ public class TargetShootingPuzzle : BasePuzzle
 
     public override void AutoSolveChunk()
     {
-        if (_activeTargets.Count > 0)
+        if (isSolved || isTimedOut || _activeTargets.Count == 0) return;
+
+        // AutoSolve click one of the currently active non-hit targets
+        for (int i = 0; i < _activeTargets.Count; i++)
         {
-            OnTargetClicked(_activeTargets[0]);
+            var target = _activeTargets[i];
+            if (target != null && target.tile != null && !target.isHit)
+            {
+                OnTargetClicked(target.tile);
+                return;
+            }
         }
     }
 }

@@ -153,8 +153,15 @@ public class RankedMatchManager : MonoBehaviour
 
         Canvas canvas = EnsureCanvas();
         currentOverlay = Instantiate(prefab, canvas.transform);
+        currentOverlay.transform.SetSiblingIndex(1);
         RectTransform rt = currentOverlay.GetComponent<RectTransform>();
-        if (rt != null) rt.anchoredPosition = Vector2.zero;
+        if (rt != null)
+        {
+            // Single centered overlay: scale it up to fill ~80% of the screen
+            // (capped so it never exceeds ~80% of the height, leaving room for HUD).
+            OverlayFitter.Fit(rt, canvas, 0.80f, 0.80f);
+            rt.anchoredPosition = Vector2.zero;
+        }
 
         currentPuzzle = currentOverlay.GetComponentInChildren<BasePuzzle>();
         if (currentPuzzle == null)

@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 280}
+  m_AnchoredPosition: {x: -463, y: 537}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5311842384717101617
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -171,7 +171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 320}
+  m_AnchoredPosition: {x: 13, y: 625}
   m_SizeDelta: {x: 400, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262764742136701433
@@ -266,8 +266,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 850}
+  m_AnchoredPosition: {x: -9, y: 27}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4140776663821276987
 CanvasRenderer:
@@ -329,25 +329,35 @@ MonoBehaviour:
   rows: 3
   cardPrefab: {fileID: 5078969085130178101, guid: 8a4f63c3630c41f4eab619a8b376f833, type: 3}
   gridContainer: {fileID: 3452255609007027366}
-  tileSpacing: 138
+  tileSpacing: 245
+  cardSize: 220
+  previewDuration: 2.5
   cardBack: {fileID: 3515862143787331312, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
   cardFaces:
-  - {fileID: -8926812789194562489, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -1230058271125778291, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -6424453033755506957, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: 8360635119642780287, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -3549183655791077019, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -9045106932375989965, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -2448720861003968602, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -8594553220374489896, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -8173896237718373605, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: 8222312501011326440, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: 823602317711962847, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -6450818445089508958, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -4751237850441158137, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: -8786424851514104498, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: 6344336192378408995, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
-  - {fileID: 3511699189621677415, guid: 7ebe0b073c786c04c984b020cd27891e, type: 3}
+  - {fileID: 21300000, guid: b00ac577c4807514d91d4460962c01b3, type: 3}
+  - {fileID: 21300000, guid: ce3e6425d79562845bdac022ffb2f84d, type: 3}
+  - {fileID: 21300000, guid: 46ae5f2acb7872048898b91553e19cc3, type: 3}
+  - {fileID: 21300000, guid: 8a102135a00631b44862391475fce4de, type: 3}
+  - {fileID: 21300000, guid: 0104efd21bbfc7944baa4dbdd50ce173, type: 3}
+  - {fileID: 21300000, guid: 11a03f7471618b845a06f67d49d7dae8, type: 3}
+  - {fileID: 21300000, guid: bc46fed2d6380ee4582e5b9b4ccb9fcf, type: 3}
+  - {fileID: 21300000, guid: e6b396c9f27c0bd458425402c683c12e, type: 3}
+  - {fileID: 21300000, guid: 5600ac574d491144a8b3168dbac8231d, type: 3}
+  - {fileID: 21300000, guid: 2a38c5a79d7be5a459ae5619c2a0d936, type: 3}
+  - {fileID: 21300000, guid: a31140da6fa867e47b073a2a731d6af1, type: 3}
+  - {fileID: 21300000, guid: 48ff833b90280624bb3e6fe49a565864, type: 3}
+  - {fileID: 21300000, guid: aa34658bee4e23347b5ae83aed2016a2, type: 3}
+  - {fileID: 21300000, guid: 6449e1c2cd674d7439bb84eae9935847, type: 3}
+  - {fileID: 21300000, guid: 4f6312b128bd55e48bbdf6fd7337f492, type: 3}
+  - {fileID: 21300000, guid: a62cb12dff0ed45488fb0da9ac97cbc8, type: 3}
+  - {fileID: 21300000, guid: 63faad0718353604d81785bd7515c10c, type: 3}
+  - {fileID: 21300000, guid: 0fb29ddb892d81044977be5a1c52a0c0, type: 3}
+  - {fileID: 21300000, guid: 8b235767ec3672845a85d29745560fe4, type: 3}
+  - {fileID: 21300000, guid: 6e7e9b8b9db776442acc144685bee390, type: 3}
+  - {fileID: 21300000, guid: e35128861e136ed4f84bdf4d5e757fc5, type: 3}
+  - {fileID: 21300000, guid: 24d557500d675c243b3323ebd55fa063, type: 3}
+  - {fileID: 21300000, guid: d8d8d0c4e0b06c648bf2d88e34b199e6, type: 3}
+  - {fileID: 21300000, guid: 2c547b408a612fa418b95ae2bea09eb2, type: 3}
   flipAnimation:
   - {fileID: 3515862143787331312, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
   - {fileID: 401850385637658900, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
@@ -356,7 +366,7 @@ MonoBehaviour:
   - {fileID: -85378507506940065, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
   - {fileID: 6994901079695655656, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
   - {fileID: 2849023153983521895, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
-  - {fileID: 3066339325650647809, guid: b8fb9393339e39e4eac49a9f1b76cc14, type: 3}
+  - {fileID: 6013194174599391579, guid: 8abe677741fbf5c4a8232b420f9bfc68, type: 3}
 --- !u!1 &7159563673963646733
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8, y: -8}
   m_SizeDelta: {x: -200, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7845090446745991080
@@ -501,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
+  m_AnchoredPosition: {x: 366, y: 533}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3764125866833074704
@@ -554,7 +564,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -637,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 63, y: 142}
   m_SizeDelta: {x: 400, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9180775392981957629
@@ -674,7 +684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 280}
+  m_AnchoredPosition: {x: -335, y: 537}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3459035120328354355
@@ -727,7 +737,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -804,14 +814,14 @@ RectTransform:
   m_GameObject: {fileID: 9197498040942699300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.12, y: 1.12, z: 1.12}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1384647155775538094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 380}
+  m_AnchoredPosition: {x: 15, y: 572}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1376490734168011459
@@ -842,7 +852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COMBO RUSH
+  m_text: CARD MATCH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -864,7 +874,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2

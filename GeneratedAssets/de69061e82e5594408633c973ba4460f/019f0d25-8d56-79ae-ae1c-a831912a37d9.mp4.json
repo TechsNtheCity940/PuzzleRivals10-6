@@ -1,0 +1,41 @@
+{
+    "asset": "de69061e82e5594408633c973ba4460f",
+    "fileName": "019f0d25-8d56-79ae-ae1c-a831912a37d9.mp4",
+    "prompt": "Top-down hovering idle animation of the sci-fi hover drone from the reference image, seen from directly above. The drone gently bobs/hovers in place while its central cyan energy core pulses brighter and dimmer and its thruster vents flicker with cyan light. Subtle continuous loop, drone stays centered, no movement across the frame. Same drone design, dark futuristic neon aesthetic, clean simple dark background.",
+    "negativePrompt": "",
+    "model": "video-seedance-1-pro",
+    "modelName": "Seedance 1 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "1265aba9220b8f04f9ec7279223de50e",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

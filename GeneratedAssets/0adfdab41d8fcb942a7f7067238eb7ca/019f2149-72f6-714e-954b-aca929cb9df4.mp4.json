@@ -1,0 +1,41 @@
+{
+    "asset": "0adfdab41d8fcb942a7f7067238eb7ca",
+    "fileName": "019f2149-72f6-714e-954b-aca929cb9df4.mp4",
+    "prompt": "Animation of electricity flowing through a 90-degree corner conduit, neon blue pulses moving from the bottom edge to the left edge, sci-fi energy effect. 4x4 grid of 16 frames. The conduit is perfectly centered in each frame, matching the entry and exit points of the reference image.",
+    "negativePrompt": "",
+    "model": "video-kling-v3-i2v-pro",
+    "modelName": "Kling V3 I2V Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Spritesheet",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 9,
+                "doodle": [],
+                "label": "First",
+                "strength": 1.0,
+                "invertStrength": false,
+                "assetReferenceGuid": "37aab761a060ad34f84b44f5b6361da4",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 0,
+        "height": 0
+    },
+    "spriteSheet": true,
+    "duration": 5.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

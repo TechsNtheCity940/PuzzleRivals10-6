@@ -1,0 +1,41 @@
+{
+    "asset": "7b2558dffe9cd29439b329d61309541c",
+    "fileName": "019f10ee-37ab-7615-b27c-ecbfdcb335af.png",
+    "prompt": "A sprite sheet laid out as a strict grid of 4 columns and 2 rows (8 equal square cells), reading left-to-right then top-to-bottom as an animation. Wide 2:1 aspect ratio overall. This is a STRAIGHT horizontal pipe segment with glowing blue water flowing through it; the 8 frames are an animation loop of the water flowing/pulsing through the pipe (frame 1 = just starting to fill, last frame = fully flowing, designed to loop seamlessly).\n\nIn EVERY cell, the pipe and metal plate are in the EXACT same position and size; ONLY the glowing water flow inside changes between frames. Each cell contains: a horizontal glass pipe tube crossing the cell from the LEFT edge to the RIGHT edge, with a brass flange opening centered exactly on the vertical middle of the left edge and another centered exactly on the vertical middle of the right edge, both reaching the cell edges so it can connect to neighboring pipe tiles. Bright glowing cyan-blue bubbly water flows horizontally through the glass tube. Transparent background (no metal backplate, just the pipe on transparency).\n\nSteampunk industrial art style with brass fittings and glass tubing, matching the provided reference image's colors, brass flange style, glowing blue water and overall look. Crisp clean game UI art, high detail. Keep all 8 frames perfectly consistent in pipe placement.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "b99176110c6da6b48b671fd618c78f53",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 1152
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

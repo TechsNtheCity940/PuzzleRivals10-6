@@ -1,0 +1,31 @@
+{
+    "asset": "e82d99e886d2d1f43a42b6896d139366",
+    "fileName": "019f1a83-fc11-7887-9e41-79fcb838ff62.png",
+    "prompt": "A futuristic 2D mirror for a puzzle game, semi-transparent blue glass surface with a hint of reflection, sleek gunmetal grey frame with a thin neon cyan glowing rim, top-down view, sci-fi cyber-industrial aesthetic, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

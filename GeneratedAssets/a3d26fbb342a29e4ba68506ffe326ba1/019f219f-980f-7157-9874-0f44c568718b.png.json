@@ -1,0 +1,31 @@
+{
+    "asset": "a3d26fbb342a29e4ba68506ffe326ba1",
+    "fileName": "019f219f-980f-7157-9874-0f44c568718b.png",
+    "prompt": "A futuristic cyber-oscilloscope screen frame, rectangular with rounded corners, dark carbon fiber texture with glowing cyan neon status indicators and labels, diagnostic tech aesthetic. Isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

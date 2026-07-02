@@ -105,9 +105,9 @@ MonoBehaviour:
   beaconArrow: {fileID: 4308699943115673060}
   checkpointText: {fileID: 6120570499542591431}
   wallFrames:
-  - {fileID: 111167965728392150, guid: 539cd0bcdb690534691f8cd14bd46b61, type: 3}
+  - {fileID: 21300000, guid: a061985aafb4bbb4aa858ec1bd6c8738, type: 3}
   floorFrames:
-  - {fileID: 3387565647714837830, guid: 539cd0bcdb690534691f8cd14bd46b61, type: 3}
+  - {fileID: 21300000, guid: 3018faea1699eb54f9bf2df96b7844c8, type: 3}
   startFrames:
   - {fileID: -1920065286759284071, guid: c77ebbd69fadea346a3cfa49b678faa2, type: 3}
   exitFrames:
@@ -115,7 +115,22 @@ MonoBehaviour:
   checkpointFrames:
   - {fileID: 8801901090656789288, guid: c77ebbd69fadea346a3cfa49b678faa2, type: 3}
   playerFrames:
-  - {fileID: -6531295137271138243, guid: c77ebbd69fadea346a3cfa49b678faa2, type: 3}
+  - {fileID: -1505040021, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: -129729380, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 2134078773, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1810335298, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: -700721824, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: -1072098147, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1245876139, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 912235508, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1081886462, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: -37523531, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 977526596, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 690822503, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1976651392, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 857406522, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1965249912, guid: de69061e82e5594408633c973ba4460f, type: 3}
+  - {fileID: 1353391098, guid: de69061e82e5594408633c973ba4460f, type: 3}
 --- !u!1 &3234966990246208608
 GameObject:
   m_ObjectHideFlags: 0

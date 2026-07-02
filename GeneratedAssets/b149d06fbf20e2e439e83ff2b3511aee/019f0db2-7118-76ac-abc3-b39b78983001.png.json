@@ -1,0 +1,31 @@
+{
+    "asset": "b149d06fbf20e2e439e83ff2b3511aee",
+    "fileName": "019f0db2-7118-76ac-abc3-b39b78983001.png",
+    "prompt": "A glowing sci-fi POWER SOURCE node icon for a circuit puzzle, top-down flat 2D game UI tile, centered with even margin. A battery/generator emblem with a radiant glowing core and short connector stubs reaching toward the tile edges. Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, symmetrical, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

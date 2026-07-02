@@ -1,0 +1,41 @@
+{
+    "asset": "854feb0f4318615419df7959de91dfe2",
+    "fileName": "019f1198-6554-716e-9c09-2eabdaed7ea0.png",
+    "prompt": "A sprite sheet animation laid out as a strict grid of 4 columns by 2 rows (8 equal square cells), read left-to-right then top-to-bottom. Each cell shows the SAME steampunk 90-degree CURVED elbow pipe in the exact same position and size; only the water inside changes from cell to cell, animating the pipe filling from empty (frame 1, top-left) to completely full of flowing water (frame 8, bottom-right). Seamless loop.\n\nThe elbow is a smooth quarter-circle glass tube that connects the TOP edge to the RIGHT edge of the cell. It MUST visually match the art style of the provided reference straight pipe EXACTLY:\n- Glossy transparent GLASS tube body with bright specular highlights (same glass look as the reference).\n- Polished GOLD / BRASS ring coupling flanges at BOTH openings, identical in style, width and thickness to the brass coupling rings on the reference straight pipe (chunky gold rings with rivets and dark banding). The TOP opening has a brass flange centered exactly on the middle of the top edge, reaching the top edge. The RIGHT opening has a brass flange centered exactly on the middle of the right edge, reaching the right edge. The flange diameter must equal the reference straight pipe's flange diameter so the openings line up when connected.\n- The water is the SAME light sky-blue color as the reference (not teal, not turquoise) with white foamy highlights and small bubbles.\n\nFully TRANSPARENT background (no metal plate, no square tile, alpha around the pipe). The bottom-left region of each cell is empty transparent space. Keep the pipe and flanges perfectly identical and aligned in all 8 cells; ONLY the water level changes. Clean industrial steampunk game UI art, crisp high detail.",
+    "negativePrompt": "",
+    "model": "gemini-3.0-pro",
+    "modelName": "Gemini 3.0 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "caf36c1560dfb1041b4144fee598cdfb",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

@@ -662,7 +662,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Purchasing: 1
+    Purchasing: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -685,11 +685,11 @@ PlayerSettings:
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: e1e519ab-a16c-4ba1-b707-d5af29b9a85a
+  cloudProjectId: 6db4e10e-ebac-4652-9536-fb59c3d6ed24
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: PuzzleRivals
-  organizationId: techsinthecity940
+  organizationId: judgemrogan
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

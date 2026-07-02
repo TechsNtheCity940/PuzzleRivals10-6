@@ -1,0 +1,31 @@
+{
+    "asset": "4d6857559ee188a4ea4c96f3862ec52b",
+    "fileName": "019f0d63-0eba-7ebd-b73b-c7f823e468e6.png",
+    "prompt": "A single STRAIGHT horizontal glowing energy conduit / circuit wire segment for a sci-fi puzzle, top-down flat 2D game UI tile. A thick glowing bar running perfectly horizontally through the exact vertical center, spanning the FULL width from the left edge to the right edge of the square frame (touching both side edges). Rendered in PURE WHITE and light grey ONLY (monochrome, no color hues) so it can be color-tinted in engine. Solid pure black background. Crisp, clean, symmetrical, no text.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

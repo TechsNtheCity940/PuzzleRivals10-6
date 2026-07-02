@@ -51,6 +51,9 @@ public class GridShiftPuzzle : BasePuzzle
                 GameObject go = Instantiate(tilePrefab, gridContainer);
                 RectTransform rt = (RectTransform)go.transform;
                 rt.anchoredPosition = new Vector2(x * tileSpacing - center, -(y * tileSpacing) + center);
+                // Tiles must fill their cell; without this they render at the
+                // GridTile prefab's default size and the picture won't line up.
+                rt.sizeDelta = new Vector2(tileSpacing, tileSpacing);
 
                 GridTile gt = go.GetComponent<GridTile>();
                 gt.Init(x, y, val);
@@ -84,6 +87,7 @@ public class GridShiftPuzzle : BasePuzzle
                     int val = (x + y * n == n * n - 1) ? -1 : (x + y * n);
                     GameObject go = Instantiate(tilePrefab, targetGridContainer);
                     RectTransform rt = (RectTransform)go.transform;
+                    rt.sizeDelta = new Vector2(tileSpacing, tileSpacing);
                     rt.localScale = Vector3.one * targetScale;
                     rt.anchoredPosition = new Vector2(x * tSpacing - tCenter, -(y * tSpacing) + tCenter);
 

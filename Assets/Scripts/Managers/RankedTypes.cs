@@ -17,7 +17,12 @@ public enum RankedArenaPuzzleType
     ButtonMash,       // ButtonMashOverlay
     TargetShoot,      // TargetShootOverlay
     GridShift,        // GridShiftOverlay
-    CardMatch         // CardMatchOverlay
+    CardMatch,        // CardMatchOverlay
+    BinaryBurst,      // BinaryBurstOverlay
+    SignalSync,       // SignalSyncOverlay
+    HexPulse,         // HexPulseOverlay
+    NeonNudge,        // NeonNudgeOverlay
+    RuneTrace         // RuneTraceOverlay
 }
 
 // Static catalogue describing the available puzzle types and how each maps to
@@ -37,7 +42,12 @@ public static class RankedArena
         RankedArenaPuzzleType.ButtonMash,
         RankedArenaPuzzleType.TargetShoot,
         RankedArenaPuzzleType.GridShift,
-        RankedArenaPuzzleType.CardMatch
+        RankedArenaPuzzleType.CardMatch,
+        RankedArenaPuzzleType.BinaryBurst,
+        RankedArenaPuzzleType.SignalSync,
+        RankedArenaPuzzleType.HexPulse,
+        RankedArenaPuzzleType.NeonNudge,
+        RankedArenaPuzzleType.RuneTrace
     };
 
     // Fragment found in the overlay prefab name for each type.
@@ -57,6 +67,11 @@ public static class RankedArena
             case RankedArenaPuzzleType.TargetShoot: return "Target";
             case RankedArenaPuzzleType.GridShift: return "GridShift";
             case RankedArenaPuzzleType.CardMatch: return "Card";
+            case RankedArenaPuzzleType.BinaryBurst: return "Binary";
+            case RankedArenaPuzzleType.SignalSync: return "Signal";
+            case RankedArenaPuzzleType.HexPulse: return "Hex";
+            case RankedArenaPuzzleType.NeonNudge: return "Nudge";
+            case RankedArenaPuzzleType.RuneTrace: return "Rune";
             default: return "";
         }
     }
