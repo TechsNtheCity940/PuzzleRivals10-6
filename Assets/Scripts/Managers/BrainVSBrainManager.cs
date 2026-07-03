@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,74 +6,30 @@ using System.Linq;
 public enum AttackType { Scramble, Freeze, InvertControls, Blur }
 public enum DefenseType { Block, Rebound, Absorb, AutoSolve }
 
-// Brain VS Brain (1v1) score-meter race.
-//
-// Both sides solve their OWN puzzle of the SAME type (different variations).
-// Each solve fills that side's score meter and immediately spawns a fresh
-// variation. Crossing an attack threshold (while in the lead) fires an attack
-// on the opponent's live puzzle (Freeze blocks their input, Scramble rebuilds
-// their board); when behind, a side also banks a defense that auto-consumes
-// against the next incoming attack. First to fill the meter (targetScore) wins.
-//
-// This manager owns puzzle spawning/respawning for both sides. The opponent is
-// driven by a bot that calls AutoSolveChunk on an interval.
 public class BrainVSBrainManager : MonoBehaviour
 {
     public static BrainVSBrainManager Instance;
 
-    [Header("Scene")]
-    public Canvas canvas;
-    public List<GameObject> overlayPrefabs = new List<GameObject>();
-    // Side overlays auto-fit into each half of the canvas (see SpawnSide). Only
-    // the Y of these anchors is used now (vertical placement); X is computed so
-    // the two puzzles sit edge-to-edge with overlayCenterGap between them.
-    public Vector2 playerAnchor = new Vector2(-300f, -40f);
-    public Vector2 opponentAnchor = new Vector2(300f, -40f);
-    // Horizontal gap (px, canvas reference space) kept between the two overlays.
-    public float overlayCenterGap = 40f;
-
-    [Header("Matchmaking")]
-    public bool opponentIsBot = true;   // false when a real opponent was matched
-    public int realPlayers = 1;
-
-    [Header("Match Settings")]
-    public int targetScore = 1000;
-    public int pointsPerSolve = 100;
-    public int attackPointThreshold = 200;
-    public float botSolveInterval = 1.1f;
-    public float respawnDelay = 0.5f;
-    public float puzzleFuseTime = 9999f; // BvB has no bomb fuse; race is by solve speed
-
     [Header("Match State")]
     public int playerPoints = 0;
     public int opponentPoints = 0;
+    public int attackPointThreshold = 100;
     public int lastPlayerAttackCheckpoint = 0;
     public int lastOpponentAttackCheckpoint = 0;
-    public bool isMatchActive = false;
 
     public List<DefenseType> playerDefenseInventory = new List<DefenseType>();
     public List<DefenseType> opponentDefenseInventory = new List<DefenseType>();
 
-    [Header("Puzzles (live)")]
-    public BasePuzzle playerPuzzle;
-    public BasePuzzle opponentPuzzle;
-
-    // ---- HUD-facing events ----
-    public event Action OnScoreChanged;                 // refresh both meters
-    public event Action<string, Color> OnNotification;  // attack/defense banners
-    public event Action<bool> OnMatchEnded;             // playerWon
-
+    [Header("Match Settings")]
     public int matchSeed;
     private System.Random rng;
-    private RankedArenaPuzzleType currentType;
-    private GameObject playerOverlay;
-    private GameObject opponentOverlay;
-    private Coroutine opponentBotRoutine;
+
+    public bool isMatchActive = false;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        else { Destroy(gameObject); return; }
+        else Destroy(gameObject);
     }
 
     public void InitializeMatch(int seed)
@@ -90,109 +44,32 @@ public class BrainVSBrainManager : MonoBehaviour
         opponentDefenseInventory.Clear();
         isMatchActive = true;
 
-        // Same puzzle type for both sides this match.
-        currentType = RankedArena.PuzzleTypes[rng.Next(RankedArena.PuzzleTypes.Count)];
-
-        if (AudioManager.Instance != null) AudioManager.Instance.PlayArenaMusic();
-
-        SpawnSide(true);
-        SpawnSide(false);
-        OnScoreChanged?.Invoke();
-
-        Debug.Log($"[BvB] Lobby: {realPlayers} real player(s), opponent is {(opponentIsBot ? "AI bot" : "real player")}.");
-        Debug.Log($"Brain VS Brain started: type={currentType}, target={targetScore}.");
-    }
-
-    // ---- Per-side puzzle spawning ----
-
-    private void SpawnSide(bool isPlayer)
-    {
-        ClearSide(isPlayer);
-        if (canvas == null) { Debug.LogWarning("BvB: no canvas."); return; }
-
-        GameObject prefab = ResolveOverlayPrefab(currentType);
-        if (prefab == null) { Debug.LogWarning("BvB: no overlay prefab."); return; }
-
-        GameObject overlay = Instantiate(prefab, canvas.transform);
-        overlay.transform.SetSiblingIndex(1);
-        var rt = overlay.GetComponent<RectTransform>();
-        if (rt != null)
+        if (UIManager.Instance != null)
         {
-            // Two overlays share the screen: each auto-fits into its own half
-            // (minus a center gap) and is then pushed to its side so the pair
-            // sits edge-to-edge without overlapping, as large as possible.
-            Vector2 res = OverlayFitter.GetReferenceResolution(canvas);
-            float halfW = (res.x - overlayCenterGap) * 0.5f;
-            float scale = OverlayFitter.Fit(rt, canvas, halfW / res.x, 0.80f);
-
-            float scaledHalfW = (rt.sizeDelta.x > 1f)
-                ? rt.sizeDelta.x * scale * 0.5f
-                : res.x * 0.24f; // fallback for stretch-anchored roots
-            float centerX = scaledHalfW + overlayCenterGap * 0.5f;
-            float y = isPlayer ? playerAnchor.y : opponentAnchor.y;
-            rt.anchoredPosition = new Vector2(isPlayer ? -centerX : centerX, y);
+            // We'll need a specific UI for BrainVSBrain
+            // UIManager.Instance.ShowBrainVSBrainUI();
         }
-
-        var puzzle = overlay.GetComponentInChildren<BasePuzzle>(true);
-        if (puzzle == null) { Destroy(overlay); return; }
-
-        int points = isPlayer ? playerPoints : opponentPoints;
-        int difficulty = 1 + points / 300;
-        puzzle.puzzleTime = puzzleFuseTime;
-        puzzle.InitializePuzzle(difficulty, rng.Next());
-        puzzle.inputEnabled = isPlayer;
-        if (isPlayer) puzzle.OnSolved += HandlePlayerSolved;
-        else puzzle.OnSolved += HandleOpponentSolved;
-        puzzle.StartPuzzle();
-
-        if (isPlayer) { playerPuzzle = puzzle; playerOverlay = overlay; }
-        else
-        {
-            opponentPuzzle = puzzle;
-            opponentOverlay = overlay;
-            if (opponentIsBot) opponentBotRoutine = StartCoroutine(OpponentBot(puzzle));
-        }
+        
+        Debug.Log("Brain VS Brain Match Initialized.");
     }
-
-    private IEnumerator OpponentBot(BasePuzzle puzzle)
-    {
-        while (isMatchActive && puzzle != null && !puzzle.isSolved && !puzzle.isTimedOut)
-        {
-            yield return new WaitForSeconds(botSolveInterval);
-            if (isMatchActive && puzzle != null) puzzle.AutoSolveChunk();
-        }
-    }
-
-    private void HandlePlayerSolved(BasePuzzle p) { OnSideSolved(true); }
-    private void HandleOpponentSolved(BasePuzzle p) { OnSideSolved(false); }
-
-    private void OnSideSolved(bool isPlayer)
-    {
-        if (!isMatchActive) return;
-        AddPoints(pointsPerSolve, isPlayer);
-        if (!isMatchActive) return; // a win may have ended the match in AddPoints
-        StartCoroutine(RespawnAfterDelay(isPlayer));
-    }
-
-    private IEnumerator RespawnAfterDelay(bool isPlayer)
-    {
-        yield return new WaitForSeconds(respawnDelay);
-        if (isMatchActive) SpawnSide(isPlayer);
-    }
-
-    // ---- Scoring + attacks ----
 
     public void AddPoints(int points, bool isPlayer)
     {
         if (!isMatchActive) return;
 
-        if (isPlayer) { playerPoints += points; CheckAttackCheckpoints(true); }
-        else { opponentPoints += points; CheckAttackCheckpoints(false); }
+        if (isPlayer)
+        {
+            playerPoints += points;
+            CheckAttackCheckpoints(true);
+        }
+        else
+        {
+            opponentPoints += points;
+            CheckAttackCheckpoints(false);
+        }
 
-        OnScoreChanged?.Invoke();
-
-        if (playerPoints >= targetScore) { EndMatch(true); return; }
-        if (opponentPoints >= targetScore) { EndMatch(false); return; }
+        // Update UI Live Meter
+        if (BrainVSBrainUI.Instance != null) BrainVSBrainUI.Instance.UpdateScores(playerPoints, opponentPoints);
     }
 
     private void CheckAttackCheckpoints(bool isPlayer)
@@ -206,15 +83,26 @@ public class BrainVSBrainManager : MonoBehaviour
             else lastOpponentAttackCheckpoint += attackPointThreshold;
 
             bool inLead = isPlayer ? (playerPoints >= opponentPoints) : (opponentPoints >= playerPoints);
-            if (!inLead) AddRandomDefense(isPlayer);
-            TriggerAttack(!isPlayer);
+
+            if (inLead)
+            {
+                // Leading player only produces attacks
+                TriggerAttack(!isPlayer); // Attack the other player
+            }
+            else
+            {
+                // Losing player produces defense AND attack
+                AddRandomDefense(isPlayer);
+                TriggerAttack(!isPlayer);
+            }
         }
     }
 
     private void TriggerAttack(bool targetIsPlayer)
     {
         AttackType type = (AttackType)rng.Next(0, System.Enum.GetValues(typeof(AttackType)).Length);
-
+        
+        // Check for defense
         List<DefenseType> inventory = targetIsPlayer ? playerDefenseInventory : opponentDefenseInventory;
         if (inventory.Count > 0)
         {
@@ -228,72 +116,31 @@ public class BrainVSBrainManager : MonoBehaviour
         }
     }
 
-    public void GrantRandomDefense(bool isPlayer)
-    {
-        AddRandomDefense(isPlayer);
-    }
-
     private void AddRandomDefense(bool isPlayer)
     {
         DefenseType type = (DefenseType)rng.Next(0, System.Enum.GetValues(typeof(DefenseType)).Length);
         if (isPlayer) playerDefenseInventory.Add(type);
         else opponentDefenseInventory.Add(type);
-
-        string who = isPlayer ? "YOU" : "OPPONENT";
-        Color col = isPlayer ? new Color(0.4f, 1f, 0.5f) : new Color(1f, 0.6f, 0.2f);
-        OnNotification?.Invoke($"{who} GAINED {type} DEFENSE", col);
+        
+        Debug.Log($"{(isPlayer ? "Player" : "Opponent")} earned defense: {type}");
     }
 
-    private void ProcessDefense(DefenseType defense, bool isPlayerDefending, AttackType incomingAttack)
+    public BasePuzzle playerPuzzle;
+    public BasePuzzle opponentPuzzle;
+
+    public void OnPuzzleSolved(bool isPlayer)
     {
-        BasePuzzle defPuzzle = isPlayerDefending ? playerPuzzle : opponentPuzzle;
-        if (VFXManager.Instance != null && defPuzzle != null)
-            VFXManager.Instance.PlayDefenseEffect(defPuzzle.transform.position);
-
-        string who = isPlayerDefending ? "YOU" : "OPPONENT";
-        Color col = isPlayerDefending ? new Color(0.4f, 1f, 0.6f) : new Color(1f, 0.6f, 0.2f);
-        OnNotification?.Invoke($"{who} DEFENDED ({defense})", col);
-
-        switch (defense)
-        {
-            case DefenseType.Block:
-                break; // attack cancelled
-            case DefenseType.Rebound:
-                ExecuteAttack(incomingAttack, !isPlayerDefending);
-                break;
-            case DefenseType.Absorb:
-                AddPoints(25, isPlayerDefending);
-                break;
-            case DefenseType.AutoSolve:
-                if (defPuzzle != null) defPuzzle.AutoSolveChunk();
-                break;
-        }
+        if (!isMatchActive) return;
+        
+        Debug.Log($"{(isPlayer ? "Player" : "Opponent")} solved the puzzle!");
+        EndMatch(isPlayer);
     }
-
-    private void ExecuteAttack(AttackType type, bool targetIsPlayer)
-    {
-        BasePuzzle targetPuzzle = targetIsPlayer ? playerPuzzle : opponentPuzzle;
-        if (targetPuzzle != null) targetPuzzle.ApplyAttack(type);
-        if (VFXManager.Instance != null && targetPuzzle != null)
-            VFXManager.Instance.PlayAttackEffect(targetPuzzle.transform.position);
-
-        // Banner is framed from the local player's perspective.
-        string msg = targetIsPlayer ? $"OPPONENT HIT YOU: {type}!" : $"YOU HIT OPPONENT: {type}!";
-        Color col = targetIsPlayer ? new Color(1f, 0.3f, 0.3f) : new Color(0.3f, 0.9f, 1f);
-        OnNotification?.Invoke(msg, col);
-    }
-
-    // Back-compat shim (older callers used OnPuzzleSolved(bool)).
-    public void OnPuzzleSolved(bool isPlayer) => OnSideSolved(isPlayer);
 
     private void EndMatch(bool playerWon)
     {
-        if (!isMatchActive) return;
         isMatchActive = false;
-        StopBot();
-
-        Debug.Log($"BvB Over! Winner: {(playerWon ? "YOU" : "OPPONENT")} ({playerPoints} vs {opponentPoints})");
-
+        Debug.Log($"Match Over! Winner: {(playerWon ? "Player" : "Opponent")}");
+        
         int baseXP = 50;
         int winXP = playerWon ? 100 : 20;
         int coins = playerWon ? 25 : 5;
@@ -302,41 +149,71 @@ public class BrainVSBrainManager : MonoBehaviour
         if (ProfileManager.Instance != null)
         {
             ProfileManager.Instance.currentProfile.coins += coins;
-            ProfileManager.Instance.AwardRp(playerWon ? 100 : 25, playerWon);
+            if (playerWon) ProfileManager.Instance.currentProfile.totalWins++;
+            else ProfileManager.Instance.currentProfile.totalLosses++;
+            ProfileManager.Instance.SaveProfile();
         }
 
-        OnScoreChanged?.Invoke();
-        OnMatchEnded?.Invoke(playerWon);
-    }
-
-    // ---- Helpers ----
-
-    private GameObject ResolveOverlayPrefab(RankedArenaPuzzleType type)
-    {
-        string fragment = RankedArena.PrefabNameFragment(type);
-        GameObject match = overlayPrefabs.FirstOrDefault(p => p != null && p.name.Contains(fragment));
-        return match != null ? match : overlayPrefabs.FirstOrDefault(p => p != null);
-    }
-
-    private void ClearSide(bool isPlayer)
-    {
-        if (isPlayer)
+        List<MatchResult> results = new List<MatchResult>
         {
-            if (playerPuzzle != null) playerPuzzle.OnSolved -= HandlePlayerSolved;
-            if (playerOverlay != null) Destroy(playerOverlay);
-            playerOverlay = null; playerPuzzle = null;
-        }
-        else
-        {
-            StopBot();
-            if (opponentPuzzle != null) opponentPuzzle.OnSolved -= HandleOpponentSolved;
-            if (opponentOverlay != null) Destroy(opponentOverlay);
-            opponentOverlay = null; opponentPuzzle = null;
-        }
+            new MatchResult { playerName = ProfileManager.Instance.currentProfile.playerName, score = playerPoints, isWinner = playerWon, xpGained = baseXP + winXP, coinsGained = coins },
+            new MatchResult { playerName = "Opponent", score = opponentPoints, isWinner = !playerWon, xpGained = 0, coinsGained = 0 }
+        };
+
+        if (MatchScoreboardUI.Instance != null) MatchScoreboardUI.Instance.Show(results);
     }
 
-    private void StopBot()
+    private void ProcessDefense(DefenseType defense, bool isPlayerDefending, AttackType incomingAttack)
     {
-        if (opponentBotRoutine != null) { StopCoroutine(opponentBotRoutine); opponentBotRoutine = null; }
+        Debug.Log($"{(isPlayerDefending ? "Player" : "Opponent")} used defense: {defense} against {incomingAttack}");
+        
+        if (VFXManager.Instance != null)
+        {
+            BasePuzzle defPuzzle = isPlayerDefending ? playerPuzzle : opponentPuzzle;
+            if (defPuzzle != null) VFXManager.Instance.PlayDefenseEffect(defPuzzle.transform.position);
+        }
+
+        if (BrainVSBrainUI.Instance != null)
+{
+            string msg = isPlayerDefending ? $"Player Defense: {defense}!" : $"Opponent Defense: {defense}!";
+            Color color = isPlayerDefending ? Color.green : new Color(1, 0.5f, 0); // Orange
+            BrainVSBrainUI.Instance.ShowNotification(msg, color);
+        }
+
+        switch (defense)
+        {
+            case DefenseType.Block:
+                // Attack cancelled
+                break;
+            case DefenseType.Rebound:
+                // Send same attack back to attacker
+                ExecuteAttack(incomingAttack, !isPlayerDefending);
+                break;
+            case DefenseType.Absorb:
+                // Convert to points
+                AddPoints(25, isPlayerDefending);
+                break;
+            case DefenseType.AutoSolve:
+                BasePuzzle puzzle = isPlayerDefending ? playerPuzzle : opponentPuzzle;
+                if (puzzle != null) puzzle.AutoSolveChunk();
+                break;
+        }
     }
+private void ExecuteAttack(AttackType type, bool targetIsPlayer)
+{
+    Debug.Log($"Executing Attack: {type} on {(targetIsPlayer ? "Player" : "Opponent")}");
+        
+    BasePuzzle targetPuzzle = targetIsPlayer ? playerPuzzle : opponentPuzzle;
+    if (targetPuzzle != null)
+    {
+        targetPuzzle.ApplyAttack(type);
+    }
+
+    if (BrainVSBrainUI.Instance != null)
+    {
+        string msg = targetIsPlayer ? $"Opponent Attack: {type}!" : $"Player Attack: {type}!";
+        Color color = targetIsPlayer ? Color.red : Color.cyan;
+        BrainVSBrainUI.Instance.ShowNotification(msg, color);
+    }
+}
 }

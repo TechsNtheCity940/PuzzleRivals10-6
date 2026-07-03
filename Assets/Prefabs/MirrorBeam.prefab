@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2143673475855745683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4776085608750422500}
+  - component: {fileID: 1003586942876788149}
+  m_Layer: 0
+  m_Name: MirrorBeam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4776085608750422500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143673475855745683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1003586942876788149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143673475855745683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba001d8b4a02be40a395bf5d7e52ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MirrorBeam
+  inputEnabled: 0
+  isSolved: 0
+  boardTiles:
+  - {fileID: -1597271601891495331, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  - {fileID: -5824125235194689030, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  - {fileID: 5711098007471847553, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  - {fileID: -895978459010620448, guid: 4d44903742ac0fe42b8c7a8a36b8e28b, type: 3}
+  mirrorSprites:
+  - {fileID: -7173022553347797208, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
+  - {fileID: 6633962230969859268, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
+  - {fileID: -3839525653549926234, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
+  - {fileID: -4507772195306465745, guid: 0c1ad37eca0df9d47ae2ee66b152d65b, type: 3}
+  emitterFrames:
+  - {fileID: 5972313705596275511, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
+  - {fileID: -2274228930377500225, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
+  - {fileID: 3711922325197690821, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
+  - {fileID: 5868571933743294599, guid: 660ae2ed07baca544be6254b4d0dd519, type: 3}
+  emitterFps: 10
+  receiverFrames:
+  - {fileID: -4728004157261287187, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
+  - {fileID: 353752823813360822, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
+  - {fileID: -438539838766162995, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
+  - {fileID: -1075965854022790338, guid: 85746cacd038b404fa48e739d0ebe8d9, type: 3}
+  receiverFps: 10
+  beamFrames:
+  - {fileID: -6132122435961555908, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  - {fileID: -4639496660882895612, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  - {fileID: -2860149833462565573, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  - {fileID: -5708716693870545744, guid: 79219b811db5352459ac4f203562130f, type: 3}
+  beamFps: 14
