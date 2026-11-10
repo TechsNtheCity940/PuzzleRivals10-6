@@ -7,15 +7,16 @@ public class PuzzleSelectionLogger : MonoBehaviour
     {
         if (RankedMatchManager.Instance != null)
         {
-            RankedMatchManager.Instance.OnTurnChanged += HandleTurnChanged;
+            RankedMatchManager.Instance.OnMatchStateChanged += HandleTurnChanged;
         }
     }
 
-    private void HandleTurnChanged(Player holder)
+    private void HandleTurnChanged()
     {
-        if (RankedMatchManager.Instance.CurrentPuzzle != null)
+        var holder = RankedMatchManager.Instance.currentBombHolder;
+        if (holder != null)
         {
-            Debug.Log($"[LOG] Selected Puzzle: {RankedMatchManager.Instance.CurrentPuzzle.GetType().Name} for {holder.playerName}");
+            Debug.Log($"[LOG] Turn changed for {holder.playerName}");
         }
     }
 
@@ -23,7 +24,7 @@ public class PuzzleSelectionLogger : MonoBehaviour
     {
         if (RankedMatchManager.Instance != null)
         {
-            RankedMatchManager.Instance.OnTurnChanged -= HandleTurnChanged;
+            RankedMatchManager.Instance.OnMatchStateChanged -= HandleTurnChanged;
         }
     }
 }

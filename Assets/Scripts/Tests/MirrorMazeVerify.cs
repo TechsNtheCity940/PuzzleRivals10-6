@@ -31,20 +31,20 @@ public class MirrorMazeVerify : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         var rmm = FindObjectOfType<RankedMatchManager>();
-        if (rmm != null)
-        {
-            GameObject mirrorPrefab = null;
-            foreach(var p in rmm.puzzleOverlayPrefabs)
-            {
-                if (p != null && p.name.Contains("MirrorMaze")) { mirrorPrefab = p; break; }
-            }
-            
-            if (mirrorPrefab != null)
-            {
-                Debug.Log("Forcing Mirror Maze in RankedMatchManager...");
-                rmm.puzzleOverlayPrefabs = new List<GameObject> { mirrorPrefab };
-            }
-        }
+                if (rmm != null)
+                {
+                    GameObject mirrorPrefab = null;
+                    foreach(var p in rmm.puzzlePrefabs)
+                    {
+                        if (p != null && p.name.Contains("MirrorMaze")) { mirrorPrefab = p; break; }
+                    }
+
+                    if (mirrorPrefab != null)
+                    {
+                        Debug.Log("Forcing Mirror Maze in RankedMatchManager...");
+                        rmm.puzzlePrefabs = new List<GameObject> { mirrorPrefab };
+                    }
+                }
 
         MirrorMazePuzzle puzzle = null;
         float timeout = 15f;

@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: fb5201b571b5b4448bb88c76159f860a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7365765507727298874
+    second: targets_purple_shatter_00
+  - first:
+      213: -4978869771291371477
+    second: targets_purple_shatter_01
+  - first:
+      213: -5331689857412695735
+    second: targets_purple_shatter_02
+  - first:
+      213: -4952680309126976789
+    second: targets_purple_shatter_03
+  - first:
+      213: 8070034066300034896
+    second: targets_purple_shatter_04
+  - first:
+      213: -7130021813121752373
+    second: targets_purple_shatter_05
+  - first:
+      213: 8596927340756151803
+    second: targets_purple_shatter_06
+  - first:
+      213: -853303438182069608
+    second: targets_purple_shatter_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: targets_purple_shatter_0
+      name: targets_purple_shatter_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c95f6817331dd394e9404c6845bdc736
-      internalID: -9182347620491638010
+      spriteID: 6cee615db4b87c990800000000000000
+      internalID: -7365765507727298874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_1
+      name: targets_purple_shatter_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f0acc3eb46e18f741be4904ba184b352
-      internalID: 9074700813524377421
+      spriteID: b285f3b725087eab0800000000000000
+      internalID: -4978869771291371477
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_2
+      name: targets_purple_shatter_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c5be3a314a4e5304787b3d775cddba03
-      internalID: 8720635833361483101
+      spriteID: 949fc5cb2580206b0800000000000000
+      internalID: -5331689857412695735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_3
+      name: targets_purple_shatter_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 47d8701861f662042b09b795c683bd89
-      internalID: 5652297975695850719
+      spriteID: bea2a60df7b844bb0800000000000000
+      internalID: -4952680309126976789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_4
+      name: targets_purple_shatter_04
       rect:
         serializedVersion: 2
         x: 1024
@@ -224,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 533eed3a82e4c3e48b93a025f9b4fbf9
-      internalID: -741249549504148289
+      spriteID: 05f5d17f9358eff60800000000000000
+      internalID: 8070034066300034896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_5
+      name: targets_purple_shatter_05
       rect:
         serializedVersion: 2
         x: 1280
@@ -246,16 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 17e5cfda1b350b049b83d25ca948ff67
-      internalID: -1141265377725009761
+      spriteID: bc2671cffe21d0d90800000000000000
+      internalID: -7130021813121752373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_6
+      name: targets_purple_shatter_06
       rect:
         serializedVersion: 2
         x: 1536
@@ -268,16 +292,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fdffc2bbe6daeeb46bdd989946a7a3ad
-      internalID: 1754737134374942995
+      spriteID: bfd2d913edb6e4770800000000000000
+      internalID: 8596927340756151803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_purple_shatter_7
+      name: targets_purple_shatter_07
       rect:
         serializedVersion: 2
         x: 1792
@@ -290,10 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 615053664d8cc9843b902d7230fc0a13
-      internalID: 360002013351116570
+      spriteID: 89ac9814b057824f0800000000000000
+      internalID: -853303438182069608
       vertices: []
       indices: 
       edges: []
@@ -313,6 +337,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       targets_purple_shatter_0: -9182347620491638010
+      targets_purple_shatter_00: -7365765507727298874
+      targets_purple_shatter_01: -4978869771291371477
+      targets_purple_shatter_02: -5331689857412695735
+      targets_purple_shatter_03: -4952680309126976789
+      targets_purple_shatter_04: 8070034066300034896
+      targets_purple_shatter_05: -7130021813121752373
+      targets_purple_shatter_06: 8596927340756151803
+      targets_purple_shatter_07: -853303438182069608
       targets_purple_shatter_1: 9074700813524377421
       targets_purple_shatter_2: 8720635833361483101
       targets_purple_shatter_3: 5652297975695850719

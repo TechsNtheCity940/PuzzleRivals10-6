@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// Structure-support demolition puzzle. The player is shown a brick building and
-// must safely remove as many normal (cyan) bricks as possible. Pink "!" CORE
-// bricks and the cracked CRITICAL supports directly beneath them are
-// load-bearing — tapping any of those collapses the whole structure (fail).
-// Gold BRACE bricks are fixed anchors and cannot be removed. Clearing every safe
-// brick solves the puzzle; the fuse running out (BasePuzzle) is the timeout.
+/// <summary>
+/// Structure-support demolition puzzle. The player is shown a brick building and
+/// must safely remove as many normal (cyan) bricks as possible. Pink "!\" CORE
+/// bricks and the cracked CRITICAL supports directly beneath them are
+/// load-bearing — tapping any of those collapses the whole structure (fail).
+/// Gold BRACE bricks are fixed anchors and cannot be removed, doesn't fall.
+/// Clearing every safe brick solves the puzzle; the fuse running out (BasePuzzle) is the timeout.
+/// </summary>
 public class CollapseGridPuzzle : BasePuzzle
 {
     private const int NORMAL = 0;   // cyan support — safe to remove
@@ -134,12 +136,11 @@ public class CollapseGridPuzzle : BasePuzzle
                 if (roles[c, r] == NORMAL || roles[c, r] == CRITICAL)
                 {
                     bool isSupportingCore = false;
-                    // Check if there's a CORE directly above
                     if (r > 0 && roles[c, r - 1] == CORE) isSupportingCore = true;
-                    
+
                     int oldRole = roles[c, r];
                     roles[c, r] = isSupportingCore ? CRITICAL : NORMAL;
-                    
+
                     if (grid[c, r] != null && oldRole != roles[c, r])
                     {
                         var anim = grid[c, r].GetComponent<UISpriteSheetAnimator>();
@@ -202,26 +203,28 @@ public class CollapseGridPuzzle : BasePuzzle
         }
     }
 
-    private void HandleTileClicked(GridTile tile)
+    private void HandleTileClicked(UITile tile)
     {
-        if (!CanAcceptInput() || collapsed || resolving || isGravityRunning || tile == null) return;
-        
-        int role = roles[tile.x, tile.y];
+        GridTile gt = tile as GridTile;
+        if (gt == null) return;
+        if (!CanAcceptInput() || collapsed || resolving || isGravityRunning || gt == null) return;
+
+        int role = roles[gt.x, gt.y];
         if (role == NORMAL || role == CRITICAL)
         {
-            RemoveSafe(tile);
+            RemoveSafe(gt);
         }
         else if (role == GOLD_NUGGET)
         {
-            CollectNugget(tile);
+            CollectNugget(gt);
         }
         else if (role == BRACE)
         {
-            StartCoroutine(Shake(tile.transform, 0.15f, 4f));
+            StartCoroutine(Shake(gt.transform, 0.15f, 4f));
         }
         else if (role == CORE)
         {
-            StartCoroutine(Shake(tile.transform, 0.2f, 8f));
+            StartCoroutine(Shake(gt.transform, 0.2f, 8f));
         }
     }
 
@@ -236,60 +239,48 @@ public class CollapseGridPuzzle : BasePuzzle
         tile.OnClicked -= HandleTileClicked;
         var anim = tile.GetComponent<UISpriteSheetAnimator>();
         GameObject go = tile.gameObject;
-        
+
         if (anim != null && removeFrames != null && removeFrames.Length > 0)
             anim.PlaySet(removeFrames, 20f, false, () => { if (go != null) Destroy(go); });
         else
             Destroy(go);
 
-        StartCoroutine(ApplyGravity());
+        StartCoroutine(ApplyGravityRoutine());
     }
 
     private void CollectNugget(GridTile tile)
     {
-        // Bonus reward: +3 seconds
         timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 3f);
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySfx(GameState.Instance.sfxUiConfirm, 0.7f);
-        
+
         int c = tile.x, r = tile.y;
         grid[c, r] = null;
         roles[c, r] = -1;
-        
+
         tile.OnClicked -= HandleTileClicked;
         tile.Pulse(1.4f, 0.2f);
         Destroy(tile.gameObject, 0.25f);
-        StartCoroutine(ApplyGravity());
+
+        StartCoroutine(ApplyGravityRoutine());
     }
 
-    private IEnumerator ApplyGravity()
+    private IEnumerator ApplyGravityRoutine()
     {
         isGravityRunning = true;
         bool moved = true;
-        
+
+        int[] excludeRoles = { BRACE, CORE };
+
         while (moved)
         {
             moved = false;
-            for (int c = 0; c < columns; c++)
+
+            if (ApplyGravityStep(excludeRoles))
             {
-                for (int r = rows - 2; r >= 0; r--)
-                {
-                    if (grid[c, r] != null && roles[c, r] != BRACE)
-                    {
-                        if (roles[c, r + 1] == -1)
-                        {
-                            grid[c, r + 1] = grid[c, r];
-                            roles[c, r + 1] = roles[c, r];
-                            grid[c, r] = null;
-                            roles[c, r] = -1;
-                            
-                            grid[c, r + 1].Init(c, r + 1, roles[c, r + 1]);
-                            grid[c, r + 1].MoveTo(GetAnchoredPos(c, r + 1), 0.12f);
-                            moved = true;
-                        }
-                    }
-                }
+                moved = true;
+                UpdateCriticalStates();
+                yield return new WaitForSeconds(0.13f);
             }
-            if (moved) yield return new WaitForSeconds(0.13f);
         }
 
         UpdateCriticalStates();
@@ -297,11 +288,60 @@ public class CollapseGridPuzzle : BasePuzzle
         isGravityRunning = false;
     }
 
+    private bool ApplyGravityStep(int[] excludeRoles)
+    {
+        bool anyMoved = false;
+
+        for (int c = 0; c < columns; c++)
+        {
+            for (int r = rows - 2; r >= 0; r--)
+            {
+                if (IsInBounds(c, r) && grid[c, r] != null)
+                {
+                    int role = roles[c, r];
+                    bool isExcluded = false;
+
+                    if (excludeRoles != null)
+                    {
+                        foreach (int excludedRole in excludeRoles)
+                        {
+                            if (role == excludedRole)
+                            {
+                                isExcluded = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (!isExcluded && IsInBounds(c, r + 1) && grid[c, r + 1] == null && roles[c, r + 1] == -1)
+                    {
+                        grid[c, r + 1] = grid[c, r];
+                        roles[c, r + 1] = roles[c, r];
+                        grid[c, r] = null;
+                        roles[c, r] = -1;
+
+                        grid[c, r + 1].Init(c, r + 1, roles[c, r + 1]);
+                        grid[c, r + 1].MoveTo(GetAnchoredPos(c, r + 1), 0.12f);
+
+                        anyMoved = true;
+                    }
+                }
+            }
+        }
+
+        return anyMoved;
+    }
+
+    private bool IsInBounds(int c, int r)
+    {
+        return c >= 0 && c < columns && r >= 0 && r < rows;
+    }
+
     private void CheckBoardState()
     {
         for (int c = 0; c < columns; c++)
         {
-            if (roles[c, rows - 1] == CORE)
+            if (IsInBounds(c, rows - 1) && roles[c, rows - 1] == CORE)
             {
                 TriggerCollapse();
                 return;
@@ -336,7 +376,9 @@ public class CollapseGridPuzzle : BasePuzzle
             var img = burstGo.AddComponent<Image>();
             img.raycastTarget = false;
             var a = burstGo.AddComponent<UISpriteSheetAnimator>();
-            a.PlaySet(collapseFrames, 12f, false);
+                        a.PlaySet(collapseFrames, 12f, false, () => {
+                            if (burstGo != null) Object.Destroy(burstGo);
+                        });
         }
 
         yield return Shake(gridContainer, 0.8f, 20f);

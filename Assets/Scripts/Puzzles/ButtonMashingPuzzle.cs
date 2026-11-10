@@ -52,7 +52,11 @@ public class ButtonMashingPuzzle : BasePuzzle
         UISpriteSheetAnimator anim = mainButton.image.GetComponent<UISpriteSheetAnimator>();
         if (anim != null && buttonFrames != null && buttonFrames.Length > 1)
         {
-            anim.PlaySet(buttonFrames, 20f, false);
+            anim.PlaySet(buttonFrames, 20f, false, () => {
+                // Reset to idle frame after animation completes
+                if (buttonFrames.Length > 0)
+                    mainButton.image.sprite = buttonFrames[0];
+            });
         }
 
         if (_currentClicks >= _targetClicks)

@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: b10b1d7c041c9324fa8aacc11c9e20bc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6164740620348771960
+    second: bomb_held_08f_v01_00
+  - first:
+      213: -6717137975016131602
+    second: bomb_held_08f_v01_01
+  - first:
+      213: -5674285479870348287
+    second: bomb_held_08f_v01_02
+  - first:
+      213: -6194948746234540959
+    second: bomb_held_08f_v01_03
+  - first:
+      213: 3708285424457895514
+    second: bomb_held_08f_v01_04
+  - first:
+      213: 7634010425405770871
+    second: bomb_held_08f_v01_05
+  - first:
+      213: -6138900140587338702
+    second: bomb_held_08f_v01_06
+  - first:
+      213: -4646031404519669338
+    second: bomb_held_08f_v01_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomb_held_08f_v01_0
+      name: bomb_held_08f_v01_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 701691d3ec4756845bd582dbe74c230e
-      internalID: 467003587753130761
+      spriteID: 881b0b76111727aa0800000000000000
+      internalID: -6164740620348771960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_1
+      name: bomb_held_08f_v01_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ea2670e894f1d71478ca8b791e75c5c7
-      internalID: 4114800461994099874
+      spriteID: ee370e3c99ee7c2a0800000000000000
+      internalID: -6717137975016131602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_2
+      name: bomb_held_08f_v01_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5991b54a30a40aa47bde65f15b7ab44f
-      internalID: 7920092044024853012
+      spriteID: 104cb227b63e041b0800000000000000
+      internalID: -5674285479870348287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_3
+      name: bomb_held_08f_v01_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a60cd3b94d9336a4eabed46f4b40fc5e
-      internalID: -6127468675289425494
+      spriteID: 16c40f200fe170aa0800000000000000
+      internalID: -6194948746234540959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_4
+      name: bomb_held_08f_v01_04
       rect:
         serializedVersion: 2
         x: 1024
@@ -224,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4fe7cd274e35d994b81a6b18c7cc6f93
-      internalID: 8970823257723986824
+      spriteID: a5e429a32f9767330800000000000000
+      internalID: 3708285424457895514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_5
+      name: bomb_held_08f_v01_05
       rect:
         serializedVersion: 2
         x: 1280
@@ -246,16 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 654e48444d9d24d468facac40d0de5d9
-      internalID: -8270635094931442546
+      spriteID: 77c80f1090471f960800000000000000
+      internalID: 7634010425405770871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_6
+      name: bomb_held_08f_v01_06
       rect:
         serializedVersion: 2
         x: 1536
@@ -268,16 +292,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 401e3ba55c600f340aa1ecd461d9979f
-      internalID: -1288662470249615091
+      spriteID: 23432b0f8de3ecaa0800000000000000
+      internalID: -6138900140587338702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_held_08f_v01_7
+      name: bomb_held_08f_v01_07
       rect:
         serializedVersion: 2
         x: 1792
@@ -290,10 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 47eb7e9e16329be45a09e9f8c7db5dba
-      internalID: 4637065369993673372
+      spriteID: 6a1cb46ad0bf58fb0800000000000000
+      internalID: -4646031404519669338
       vertices: []
       indices: 
       edges: []
@@ -313,6 +337,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       bomb_held_08f_v01_0: 467003587753130761
+      bomb_held_08f_v01_00: -6164740620348771960
+      bomb_held_08f_v01_01: -6717137975016131602
+      bomb_held_08f_v01_02: -5674285479870348287
+      bomb_held_08f_v01_03: -6194948746234540959
+      bomb_held_08f_v01_04: 3708285424457895514
+      bomb_held_08f_v01_05: 7634010425405770871
+      bomb_held_08f_v01_06: -6138900140587338702
+      bomb_held_08f_v01_07: -4646031404519669338
       bomb_held_08f_v01_1: 4114800461994099874
       bomb_held_08f_v01_2: 7920092044024853012
       bomb_held_08f_v01_3: -6127468675289425494

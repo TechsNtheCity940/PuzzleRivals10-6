@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// The 8 puzzle categories used by the ranked arena. These map 1:1 to the
-// overlay prefabs authored in the project.
+// The 17 puzzle categories used by the ranked arena. Score Attack remains a
+// separate arena mode and is intentionally not part of this ranked rotation.
 public enum RankedArenaPuzzleType
 {
     GridLogic,        // CollapseGridOverlay
@@ -61,7 +61,7 @@ public static class RankedArena
             case RankedArenaPuzzleType.ComboRush: return "Combo";
             case RankedArenaPuzzleType.RuleBreaker: return "Rule";
             case RankedArenaPuzzleType.LinkLock: return "Link";
-            case RankedArenaPuzzleType.MazeRush: return "Maze";
+            case RankedArenaPuzzleType.MazeRush: return "MazeRush";
             case RankedArenaPuzzleType.CircuitScramble: return "Circuit";
             case RankedArenaPuzzleType.ButtonMash: return "Button";
             case RankedArenaPuzzleType.TargetShoot: return "Target";

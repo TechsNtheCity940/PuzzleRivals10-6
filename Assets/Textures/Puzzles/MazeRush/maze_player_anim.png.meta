@@ -3,7 +3,55 @@ guid: de69061e82e5594408633c973ba4460f
 labels:
 - UnityAI
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5033132079509564526
+    second: maze_player_anim_00
+  - first:
+      213: 7073431903106507140
+    second: maze_player_anim_01
+  - first:
+      213: -3392410651526285080
+    second: maze_player_anim_02
+  - first:
+      213: 7987804831955068453
+    second: maze_player_anim_03
+  - first:
+      213: -227222015197797911
+    second: maze_player_anim_04
+  - first:
+      213: -6178606819167284800
+    second: maze_player_anim_05
+  - first:
+      213: 3635165978741052823
+    second: maze_player_anim_06
+  - first:
+      213: 6185090519040438373
+    second: maze_player_anim_07
+  - first:
+      213: -7147865454298717848
+    second: maze_player_anim_08
+  - first:
+      213: -1376595179015512293
+    second: maze_player_anim_09
+  - first:
+      213: -3707860524236204657
+    second: maze_player_anim_10
+  - first:
+      213: 2791230552640590236
+    second: maze_player_anim_11
+  - first:
+      213: -6639158556241384561
+    second: maze_player_anim_12
+  - first:
+      213: -7920623923458235006
+    second: maze_player_anim_13
+  - first:
+      213: 8381039841867929023
+    second: maze_player_anim_14
+  - first:
+      213: 5942432137494829513
+    second: maze_player_anim_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -71,7 +119,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -125,7 +173,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frame_0
+      name: maze_player_anim_00
       rect:
         serializedVersion: 2
         x: 0
@@ -138,16 +186,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bb0a28c9e2c33e046950b69d4e6e410b
-      internalID: -1505040021
+      spriteID: 29395355a09b62ab0800000000000000
+      internalID: -5033132079509564526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_1
+      name: maze_player_anim_01
       rect:
         serializedVersion: 2
         x: 256
@@ -160,16 +208,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 793ac3fa19e007440a7686e06359bf02
-      internalID: -129729380
+      spriteID: 4812497d6d0e92260800000000000000
+      internalID: 7073431903106507140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_2
+      name: maze_player_anim_02
       rect:
         serializedVersion: 2
         x: 512
@@ -182,16 +230,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a6c3aeb25eeb5c64882a8e9020dd9e06
-      internalID: 2134078773
+      spriteID: 8e836877c7cbbe0d0800000000000000
+      internalID: -3392410651526285080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_3
+      name: maze_player_anim_03
       rect:
         serializedVersion: 2
         x: 768
@@ -204,16 +252,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f17d649df80b53a40bd2e2e3ee1b18fa
-      internalID: 1810335298
+      spriteID: 526a4d76c226ade60800000000000000
+      internalID: 7987804831955068453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_4
+      name: maze_player_anim_04
       rect:
         serializedVersion: 2
         x: 0
@@ -226,16 +274,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c9be2008b4902c842901488a5b8eee38
-      internalID: -700721824
+      spriteID: 9e1acf2f7ceb8dcf0800000000000000
+      internalID: -227222015197797911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_5
+      name: maze_player_anim_05
       rect:
         serializedVersion: 2
         x: 256
@@ -248,16 +296,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 99ccfa4a7f5ed2648860e35d703b757d
-      internalID: -1072098147
+      spriteID: 0c15ab865dd214aa0800000000000000
+      internalID: -6178606819167284800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_6
+      name: maze_player_anim_06
       rect:
         serializedVersion: 2
         x: 512
@@ -270,16 +318,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b12561b0c52a04148ab149a286b51a69
-      internalID: 1245876139
+      spriteID: 795127e9234b27230800000000000000
+      internalID: 3635165978741052823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_7
+      name: maze_player_anim_07
       rect:
         serializedVersion: 2
         x: 768
@@ -292,16 +340,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3369b9cb1670a174e986b14041f58f2b
-      internalID: 912235508
+      spriteID: 560ba0b9e0bd5d550800000000000000
+      internalID: 6185090519040438373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_8
+      name: maze_player_anim_08
       rect:
         serializedVersion: 2
         x: 0
@@ -314,16 +362,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b3fd42df39b33d54aa5db0e90a27cf8f
-      internalID: 1081886462
+      spriteID: 8612d368d3eadcc90800000000000000
+      internalID: -7147865454298717848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_9
+      name: maze_player_anim_09
       rect:
         serializedVersion: 2
         x: 256
@@ -336,16 +384,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a853201a474ef6b44ab6e4d7726033a8
-      internalID: -37523531
+      spriteID: b1fd34b6af955ece0800000000000000
+      internalID: -1376595179015512293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_10
+      name: maze_player_anim_10
       rect:
         serializedVersion: 2
         x: 512
@@ -358,16 +406,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a545973cb0a949b4d82c981cc6d586c4
-      internalID: 977526596
+      spriteID: f8515309f780b8cc0800000000000000
+      internalID: -3707860524236204657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_11
+      name: maze_player_anim_11
       rect:
         serializedVersion: 2
         x: 768
@@ -380,16 +428,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 30399e06083aae048855f87b0b87a503
-      internalID: 690822503
+      spriteID: c911c5826617cb620800000000000000
+      internalID: 2791230552640590236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_12
+      name: maze_player_anim_12
       rect:
         serializedVersion: 2
         x: 0
@@ -402,16 +450,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 28d30ca64811fc144a348ec1a3c040d0
-      internalID: 1976651392
+      spriteID: f8bacb70878fcd3a0800000000000000
+      internalID: -6639158556241384561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_13
+      name: maze_player_anim_13
       rect:
         serializedVersion: 2
         x: 256
@@ -424,16 +472,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6eeb09ca395ce8348bc4b89271003fb5
-      internalID: 857406522
+      spriteID: 285afc2c18a441290800000000000000
+      internalID: -7920623923458235006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_14
+      name: maze_player_anim_14
       rect:
         serializedVersion: 2
         x: 512
@@ -446,16 +494,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9fe20e4c37aee2747a81431bd587e06c
-      internalID: 1965249912
+      spriteID: fb51feed45f6f4470800000000000000
+      internalID: 8381039841867929023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frame_15
+      name: maze_player_anim_15
       rect:
         serializedVersion: 2
         x: 768
@@ -468,10 +516,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8ab03f204931bf54e8a4cd77080def14
-      internalID: 1353391098
+      spriteID: 9c99e317b82c77250800000000000000
+      internalID: 5942432137494829513
       vertices: []
       indices: 
       edges: []
@@ -506,6 +554,22 @@ TextureImporter:
       frame_7: 912235508
       frame_8: 1081886462
       frame_9: -37523531
+      maze_player_anim_00: -5033132079509564526
+      maze_player_anim_01: 7073431903106507140
+      maze_player_anim_02: -3392410651526285080
+      maze_player_anim_03: 7987804831955068453
+      maze_player_anim_04: -227222015197797911
+      maze_player_anim_05: -6178606819167284800
+      maze_player_anim_06: 3635165978741052823
+      maze_player_anim_07: 6185090519040438373
+      maze_player_anim_08: -7147865454298717848
+      maze_player_anim_09: -1376595179015512293
+      maze_player_anim_10: -3707860524236204657
+      maze_player_anim_11: 2791230552640590236
+      maze_player_anim_12: -6639158556241384561
+      maze_player_anim_13: -7920623923458235006
+      maze_player_anim_14: 8381039841867929023
+      maze_player_anim_15: 5942432137494829513
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

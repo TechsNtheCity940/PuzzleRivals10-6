@@ -41,6 +41,11 @@ public class FFAArenaCharacterController : MonoBehaviour
     public Image exitPortalImage;
     public Image explosionImage;
 
+    [Header("FX Animation Frames")]
+    public Sprite[] explosionFrames;
+    public float explosionFps = 48f;
+    private UISpriteSheetAnimator explosionAnimator;
+
     [Header("Idle / Pacing (waiting players)")]
     public float paceRange = 115f;      // max horizontal wander from base (px)
     public float paceSpeed = 78f;       // walking speed (px/sec)
@@ -150,7 +155,15 @@ public class FFAArenaCharacterController : MonoBehaviour
         // Initialize FX states
         if (feetBombIcon != null) feetBombIcon.gameObject.SetActive(false);
         if (exitPortalImage != null) exitPortalImage.gameObject.SetActive(false);
-        if (explosionImage != null) explosionImage.gameObject.SetActive(false);
+        if (explosionImage != null)
+        {
+            explosionAnimator = explosionImage.GetComponent<UISpriteSheetAnimator>();
+            if (explosionAnimator == null)
+                explosionAnimator = explosionImage.gameObject.AddComponent<UISpriteSheetAnimator>();
+            explosionAnimator.playOnEnable = false;
+            explosionAnimator.Stop();
+            explosionImage.gameObject.SetActive(false);
+        }
     }
 
     private Color PlayerTint(int i)
@@ -456,8 +469,10 @@ public class FFAArenaCharacterController : MonoBehaviour
             explosionImage.rectTransform.anchoredPosition = pos + new Vector2(0f, 100f); // center of character
             explosionImage.rectTransform.localScale = Vector3.one * 0.1f;
             explosionImage.color = Color.white;
-            
-            // Fast scale up and fade out
+            if (explosionAnimator != null && explosionFrames != null && explosionFrames.Length > 0)
+                explosionAnimator.PlaySet(explosionFrames, explosionFps, false);
+
+            // Fast scale up and fade out while the sprite-sheet frames play.
             float elapsed = 0f;
             float duration = 0.5f;
             while (elapsed < duration)

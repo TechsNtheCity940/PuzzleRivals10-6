@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 29e1fd32b0dcf2642b94a5299952d3c9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5953027891418773149
+    second: bomb_idle_08f_v01_00
+  - first:
+      213: 3927994900622297471
+    second: bomb_idle_08f_v01_01
+  - first:
+      213: -7399353263881432487
+    second: bomb_idle_08f_v01_02
+  - first:
+      213: 3106815568887036088
+    second: bomb_idle_08f_v01_03
+  - first:
+      213: -5544782964922062300
+    second: bomb_idle_08f_v01_04
+  - first:
+      213: -4791172737383810026
+    second: bomb_idle_08f_v01_05
+  - first:
+      213: 9126047979248711508
+    second: bomb_idle_08f_v01_06
+  - first:
+      213: 1817677480856466773
+    second: bomb_idle_08f_v01_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_0
+      name: bomb_idle_08f_v01_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bd4ccd786977a6e429fec7a0e63fd6a4
-      internalID: -917334957961848529
+      spriteID: d963206a3576d9250800000000000000
+      internalID: 5953027891418773149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_1
+      name: bomb_idle_08f_v01_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 874d8564e9968f042a7ddc5946406b04
-      internalID: -4346449521159770893
+      spriteID: f79432bfc8a038630800000000000000
+      internalID: 3927994900622297471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_2
+      name: bomb_idle_08f_v01_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8ec9dd2afeb8a254d98b4bb1d46760e9
-      internalID: 4053874580270827046
+      spriteID: 95258b2f867305990800000000000000
+      internalID: -7399353263881432487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_3
+      name: bomb_idle_08f_v01_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d1f630d5ede7b524fbd38aee6c15efd5
-      internalID: 1420195345950723517
+      spriteID: 8b83a2e9c40ad1b20800000000000000
+      internalID: 3106815568887036088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_4
+      name: bomb_idle_08f_v01_04
       rect:
         serializedVersion: 2
         x: 1024
@@ -224,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9818ce60bd172f84ab619b3a3f0b7027
-      internalID: -1852996079174528179
+      spriteID: 42aee2b5549fc03b0800000000000000
+      internalID: -5544782964922062300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_5
+      name: bomb_idle_08f_v01_05
       rect:
         serializedVersion: 2
         x: 1280
@@ -246,16 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 01fb55508d43a0d47989c957693806c2
-      internalID: -3154840389280052757
+      spriteID: 61cb3b2b7c5528db0800000000000000
+      internalID: -4791172737383810026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_6
+      name: bomb_idle_08f_v01_06
       rect:
         serializedVersion: 2
         x: 1536
@@ -268,16 +292,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5e0447b54d33e74439bcf0984f28fb7c
-      internalID: -1896676115779273620
+      spriteID: 4577a46094c36ae70800000000000000
+      internalID: 9126047979248711508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_idle_08f_v01_7
+      name: bomb_idle_08f_v01_07
       rect:
         serializedVersion: 2
         x: 1792
@@ -290,10 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2004ffe62517d8c4e862b1f894296c71
-      internalID: 288179603277036063
+      spriteID: 5553da2d900b93910800000000000000
+      internalID: 1817677480856466773
       vertices: []
       indices: 
       edges: []
@@ -313,6 +337,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       bomb_idle_08f_v01_0: -917334957961848529
+      bomb_idle_08f_v01_00: 5953027891418773149
+      bomb_idle_08f_v01_01: 3927994900622297471
+      bomb_idle_08f_v01_02: -7399353263881432487
+      bomb_idle_08f_v01_03: 3106815568887036088
+      bomb_idle_08f_v01_04: -5544782964922062300
+      bomb_idle_08f_v01_05: -4791172737383810026
+      bomb_idle_08f_v01_06: 9126047979248711508
+      bomb_idle_08f_v01_07: 1817677480856466773
       bomb_idle_08f_v01_1: -4346449521159770893
       bomb_idle_08f_v01_2: 4053874580270827046
       bomb_idle_08f_v01_3: 1420195345950723517

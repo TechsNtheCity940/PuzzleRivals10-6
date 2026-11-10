@@ -77,11 +77,11 @@ namespace Unity.AI.Assistant.Tests
                     var rmm = Object.FindObjectOfType<RankedMatchManager>();
                     if (rmm != null)
                     {
-                        var prefab = rmm.puzzleOverlayPrefabs.Find(p => p != null && p.name.Contains("CircuitScramble"));
+                        var prefab = rmm.puzzlePrefabs.Find(p => p != null && p.name.Contains("CircuitScramble"));
                         if (prefab != null)
                         {
                             Debug.Log("[Test] Forcing CircuitScramble in MatchManager");
-                            rmm.puzzleOverlayPrefabs = new List<GameObject> { prefab };
+                            rmm.puzzlePrefabs = new List<GameObject> { prefab };
                             
                             var puzzleObj = Object.FindObjectOfType<CircuitScramblePuzzle>();
                             if (puzzleObj == null) {

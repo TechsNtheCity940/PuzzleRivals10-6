@@ -420,34 +420,74 @@ public class MazeRushPuzzle : BasePuzzle
 
     private Vector2Int? BfsNextStep(Vector2Int from, Vector2Int target)
     {
-        Queue<Vector2Int> q = new Queue<Vector2Int>();
-        Dictionary<Vector2Int, Vector2Int> came = new Dictionary<Vector2Int, Vector2Int>();
-        q.Enqueue(from);
-        came[from] = from;
-        bool found = false;
-        while (q.Count > 0)
+        if (from == target) return null;
+
+        // Search the same portal state transitions that MoveTo performs. The
+        // returned value is always the adjacent tile the player physically enters,
+        // not the remote portal destination.
+        Queue<MazePathNode> queue = new Queue<MazePathNode>();
+        HashSet<int> visited = new HashSet<int>();
+        queue.Enqueue(new MazePathNode(from, justTeleported, new Vector2Int(-1, -1)));
+        visited.Add(PathStateKey(from, justTeleported));
+
+        while (queue.Count > 0)
         {
-            Vector2Int p = q.Dequeue();
-            if (p == target) { found = true; break; }
-            foreach (var d in Dirs)
+            MazePathNode node = queue.Dequeue();
+            foreach (var direction in Dirs)
             {
-                Vector2Int np = p + d;
-                if (!Passable(np)) continue;
+                Vector2Int entered = node.position + direction;
+                if (!Passable(entered)) continue;
 
-                // Portal teleportation traversing inside pathfinding
-                if (np == portalAPos) np = portalBPos;
-                else if (np == portalBPos) np = portalAPos;
+                Vector2Int nextPosition = entered;
+                bool nextJustTeleported = node.justTeleported;
 
-                if (came.ContainsKey(np)) continue;
-                came[np] = p;
-                q.Enqueue(np);
+                if (!node.justTeleported)
+                {
+                    if (entered == portalAPos)
+                    {
+                        nextPosition = portalBPos;
+                        nextJustTeleported = true;
+                    }
+                    else if (entered == portalBPos)
+                    {
+                        nextPosition = portalAPos;
+                        nextJustTeleported = true;
+                    }
+                }
+                else if (entered != portalAPos && entered != portalBPos)
+                {
+                    nextJustTeleported = false;
+                }
+
+                int nextKey = PathStateKey(nextPosition, nextJustTeleported);
+                if (!visited.Add(nextKey)) continue;
+
+                Vector2Int firstStep = node.firstStep.x < 0 ? entered : node.firstStep;
+                if (nextPosition == target) return firstStep;
+
+                queue.Enqueue(new MazePathNode(nextPosition, nextJustTeleported, firstStep));
             }
         }
-        if (!found) return null;
-        Vector2Int step = target;
-        while (came[step] != from && came[step] != step)
-            step = came[step];
-        if (step == from) return null;
-        return step;
+
+        return null;
+    }
+
+    private int PathStateKey(Vector2Int position, bool teleported)
+    {
+        return ((position.y * boardSize) + position.x) * 2 + (teleported ? 1 : 0);
+    }
+
+    private struct MazePathNode
+    {
+        public Vector2Int position;
+        public bool justTeleported;
+        public Vector2Int firstStep;
+
+        public MazePathNode(Vector2Int position, bool justTeleported, Vector2Int firstStep)
+        {
+            this.position = position;
+            this.justTeleported = justTeleported;
+            this.firstStep = firstStep;
+        }
     }
 }

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -62,3 +63,4 @@ public class MirrorMazeRuntimeTest : MonoBehaviour
         EditorApplication.isPlaying = false;
     }
 }
+#endif // UNITY_EDITOR

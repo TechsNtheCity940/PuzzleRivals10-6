@@ -234,7 +234,9 @@ public class PipePulsePuzzle : BasePuzzle
         if (reachedEnd && !receiverActive)
         {
             receiverActive = true;
-            if (receiverAnim != null) receiverAnim.PlaySet(receiverFrames, receiverFps, false); // one-shot fill
+            if (receiverAnim != null) receiverAnim.PlaySet(receiverFrames, receiverFps, false, () => {
+                // Animation complete - sprite is already at last frame
+            });
             else img.sprite = receiverFrames[receiverFrames.Length - 1];
         }
         else if (!reachedEnd && receiverActive)
@@ -350,7 +352,7 @@ public class PipePulsePuzzle : BasePuzzle
                     tile.SetRotation(currentRot);
                     grid[x, y] = tile;
                     targetRotations[x + y * columns] = targetRot;
-                    tile.OnClicked += OnTileClicked;
+                    tile.OnClicked += (UITile t) => OnTileClicked((GridTile)t);
 
                     SetupTileAnimation(tile, false);
                 }
@@ -370,7 +372,9 @@ public class PipePulsePuzzle : BasePuzzle
 
     private void RotateTile(GridTile tile)
     {
-        int currentRot = (int)Mathf.Round(tile.transform.localEulerAngles.z);
+        float angle = tile.transform.localEulerAngles.z;
+        int currentRot = Mathf.RoundToInt(angle) % 360;
+        if (currentRot < 0) currentRot += 360;
         tile.SetRotation((currentRot + 90) % 360);
     }
 
@@ -533,7 +537,9 @@ public class PipePulsePuzzle : BasePuzzle
 
     private Port GetRotatedPorts(GridTile tile)
     {
-        int rotation = (int)Mathf.Round(tile.transform.localEulerAngles.z);
+        float angle = tile.transform.localEulerAngles.z;
+        int rotation = Mathf.RoundToInt(angle) % 360;
+        if (rotation < 0) rotation += 360;
         return GetRotatedPorts(tile.type, rotation);
     }
 
@@ -671,7 +677,8 @@ public class PipePulsePuzzle : BasePuzzle
             {
                 GridTile tile = grid[x, y];
                 int target = targetRotations[x + y * columns];
-                int current = (int)Mathf.Round(tile.transform.localEulerAngles.z);
+                int current = Mathf.RoundToInt(tile.transform.localEulerAngles.z) % 360;
+                if (current < 0) current += 360;
                 
                 if (((current % 360 + 360) % 360) != ((target % 360 + 360) % 360))
                 {
@@ -690,12 +697,12 @@ public class PipePulsePuzzle : BasePuzzle
         return new Vector2(x * tileSpacing - originX, originY - y * tileSpacing);
     }
 
-    private void ClearBoard()
+    protected override void ClearBoard()
     {
         if (grid != null)
         {
             foreach (var tile in grid)
-                if (tile != null) tile.OnClicked -= OnTileClicked;
+                if (tile != null) tile.OnClicked -= (UITile t) => OnTileClicked((GridTile)t);
         }
 
         if (gridContainer != null)

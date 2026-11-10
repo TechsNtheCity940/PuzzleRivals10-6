@@ -1,35 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-
 // CircuitScramblePuzzle (Complete Overhaul):
 // Generates a fully dynamic, random layout each time it loads!
 // Features multiple gates (Correct Gate matching the Core's demand, and Wrong Gates).
 // Incorporates hidden traps (Overcharge, Backdraft, Relay) attached to wrong gates.
 // Includes a completely fixed and highly responsive central core charging animation
 // with glitch, alert, and progressive charge dimming/pulsing feedback.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 public class CircuitScramblePuzzle : BasePuzzle
 {
-    [Header("Circuit Scramble")]
-    public int columns = 6;
-    public int rows = 6;
-    public GameObject tilePrefab;
-    public RectTransform gridContainer;
-    public float tileSpacing = 110f;
+   [Header("Circuit Scramble")]
+   public int columns = 6;
+   public int rows = 6;
+   public GameObject tilePrefab;
+   public RectTransform gridContainer;
+   public float tileSpacing = 110f;
 
     [Header("Art")]
-    public Sprite straightSprite;       // horizontal
-    public Sprite cornerSprite;         // left-bottom
+    public Sprite straightSprite;
+    public Sprite cornerSprite;
     public Sprite sourceSprite;
     public Sprite andGateSprite;
     public Sprite xorGateSprite;
     public Sprite coreSprite;
 
     [Header("Animations")]
-    public Sprite[] straightFlowFrames; // 16 frames of flow
-    public Sprite[] cornerFlowFrames;   // 16 frames of flow
+    public Sprite[] straightFlowFrames;
+    public Sprite[] cornerFlowFrames;
     public Sprite[] coreChargeFrames;
     public Sprite[] sourcePulseFrames;
 
@@ -42,7 +42,6 @@ public class CircuitScramblePuzzle : BasePuzzle
     private static readonly Color ColorTrap = new Color(1f, 0.15f, 0.15f, 1f);
     private static readonly Color ColorSolved = new Color(0.2f, 1f, 0.45f, 1f);
 
-    // Tile type ids stored in CircuitScrambleTile.type
     private const int WIRE_STRAIGHT = 0;
     private const int WIRE_CORNER = 1;
     private const int GATE = 2;
@@ -51,9 +50,12 @@ public class CircuitScramblePuzzle : BasePuzzle
 
     private readonly List<CircuitScrambleTile> tiles = new List<CircuitScrambleTile>();
     private CircuitScrambleTile[,] grid;
-    private int[,] targetRot;            // bot solution rotation per cell
-    private bool[,] rotatable;           // wire cells the player can rotate
-    private bool[,] isSolutionTile;      // wire cells belonging to the winning correct gate paths
+    private int[,] targetRot;
+    private bool[,] rotatable;
+    private bool[,] isSolutionTile;
+
+    // Internal access for CircuitScrambleTraps
+    internal List<CircuitScrambleTile> tilesInternal => tiles;
 
     private Vector2Int corePos = new Vector2Int(3, 4);
     private Vector2Int srcAPos = new Vector2Int(1, 0);
@@ -65,29 +67,52 @@ public class CircuitScramblePuzzle : BasePuzzle
     private Vector2Int backdraftGatePos;
     private Vector2Int relayGatePos;
 
-    private bool gateIsAnd;              // true = AND gate correct, false = XOR gate correct
-    private float currentCharge = 0f;
+    private bool gateIsAnd;
+    private bool xorUsesSourceA;
+    private int correctOutputDirection = 1;
     private CircuitScrambleTile coreTile;
 
-    // Traps runtime state
-    private float overchargeTimer = 0f;
-    private float backdraftTimer = 0f;
-    private bool relayActive = false;
-    private bool isExploding = false;
+    private CircuitScrambleTraps traps;
+    private float currentCharge;
+    private float flowRefreshTimer;
+    private bool relayActive;
 
-    // Port definitions matching directions
     [System.Flags]
     private enum Port { None = 0, Top = 1, Right = 2, Bottom = 4, Left = 8 }
 
     private static readonly Vector2Int[] DIRS = {
-        new Vector2Int(0, -1), // Top (0)
-        new Vector2Int(1, 0),  // Right (1)
-        new Vector2Int(0, 1),  // Bottom (2)
-        new Vector2Int(-1, 0)  // Left (3)
+        new Vector2Int(0, -1),
+        new Vector2Int(1, 0),
+        new Vector2Int(0, 1),
+        new Vector2Int(-1, 0)
     };
 
     public bool IsCurrentlySatisfied { get; private set; }
     public bool GateIsAnd => gateIsAnd;
+    public bool IsRelayActive => relayActive;
+
+    protected override void Update()
+    {
+        base.Update();
+        if (!isRunning || isSolved || isTimedOut || traps == null) return;
+
+        flowRefreshTimer += Time.deltaTime;
+        if (flowRefreshTimer >= 0.1f)
+        {
+            flowRefreshTimer = 0f;
+            UpdatePowerFlow();
+        }
+    }
+
+    // Internal access for CircuitScrambleTraps
+    internal Vector2Int srcAPosInternal => srcAPos;
+    internal Vector2Int srcBPosInternal => srcBPos;
+    internal Vector2Int corePosInternal => corePos;
+    internal Vector2Int correctGatePosInternal => correctGatePos;
+    internal Vector2Int overchargeGatePosInternal => overchargeGatePos;
+    internal Vector2Int backdraftGatePosInternal => backdraftGatePos;
+    internal Vector2Int relayGatePosInternal => relayGatePos;
+    internal bool gateIsAndInternal => gateIsAnd;
 
     protected override void BuildBoard()
     {
@@ -95,21 +120,19 @@ public class CircuitScramblePuzzle : BasePuzzle
 
         columns = 6;
         rows = 6;
-        currentCharge = 0f;
-        overchargeTimer = 0f;
-        backdraftTimer = 0f;
-        relayActive = false;
-        isExploding = false;
 
-        // Choose required gate type
         gateIsAnd = rng.Next(0, 2) == 0;
+        xorUsesSourceA = rng.Next(0, 2) == 0;
 
         grid = new CircuitScrambleTile[columns, rows];
         targetRot = new int[columns, rows];
         rotatable = new bool[columns, rows];
         isSolutionTile = new bool[columns, rows];
+        currentCharge = 0f;
+        flowRefreshTimer = 0f;
+        relayActive = false;
+        IsCurrentlySatisfied = false;
 
-        // Core and sources coordinates
         corePos = new Vector2Int(3, 4);
         srcAPos = new Vector2Int(1, 0);
         srcBPos = new Vector2Int(4, 0);
@@ -120,14 +143,16 @@ public class CircuitScramblePuzzle : BasePuzzle
             calibrationSlider.maxValue = 1f;
             calibrationSlider.value = 0f;
         }
+        if (requirementText != null)
+            requirementText.text = gateIsAnd ? "AND GATE: BOTH INPUTS REQUIRED" : "XOR GATE: ONE INPUT ONLY";
+        if (calibrationText != null)
+            calibrationText.text = "POWER 0%";
 
-        // Layout gate positions strictly in bounds of [1, 4] so their ports fit
         gatePositions.Clear();
-        gatePositions.Add(new Vector2Int(2, 2)); // Correct or wrong
-        gatePositions.Add(new Vector2Int(1, 3)); // Overcharge/Backdraft trap
-        gatePositions.Add(new Vector2Int(4, 3)); // Relay trap
+        gatePositions.Add(new Vector2Int(2, 2));
+        gatePositions.Add(new Vector2Int(1, 3));
+        gatePositions.Add(new Vector2Int(4, 3));
 
-        // Shuffle gate assignments
         List<Vector2Int> pool = new List<Vector2Int>(gatePositions);
         correctGatePos = pool[rng.Next(pool.Count)];
         pool.Remove(correctGatePos);
@@ -135,13 +160,15 @@ public class CircuitScramblePuzzle : BasePuzzle
         overchargeGatePos = pool[rng.Next(pool.Count)];
         pool.Remove(overchargeGatePos);
 
-        backdraftGatePos = overchargeGatePos; // backdraft shares or splits
+        backdraftGatePos = overchargeGatePos;
         relayGatePos = pool[0];
+
+        traps = new CircuitScrambleTraps(this, rng);
+        traps.Initialize(overchargeGatePos, backdraftGatePos, relayGatePos, corePos, srcAPos, srcBPos, correctGatePos, gateIsAnd);
 
         int[,] type = new int[columns, rows];
         int[,] solRot = new int[columns, rows];
 
-        // Default all to straight wires
         for (int y = 0; y < rows; y++)
             for (int x = 0; x < columns; x++)
             {
@@ -149,7 +176,6 @@ public class CircuitScramblePuzzle : BasePuzzle
                 solRot[x, y] = 0;
             }
 
-        // Set terminals
         type[corePos.x, corePos.y] = CORE;
         type[srcAPos.x, srcAPos.y] = SOURCE;
         type[srcBPos.x, srcBPos.y] = SOURCE;
@@ -159,94 +185,90 @@ public class CircuitScramblePuzzle : BasePuzzle
             type[gp.x, gp.y] = GATE;
         }
 
-        // Block lists to build clean individual non-overlapping path structures
-        HashSet<Vector2Int> blocked = new HashSet<Vector2Int> { corePos, srcAPos, srcBPos };
-        foreach (var gp in gatePositions) blocked.Add(gp);
+        var baseBlocked = new HashSet<Vector2Int> { corePos, srcAPos, srcBPos };
+        foreach (var gp in gatePositions) baseBlocked.Add(gp);
 
-        // Find paths for Correct Gate
-        blocked.Remove(correctGatePos);
-        blocked.Remove(corePos);
+        // Route the two inputs on separate cells. Try both routing orders because
+        // some gate placements need the second source to take the shorter corridor.
+        var correctInputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        List<Vector2Int> cA;
+        List<Vector2Int> cB;
+        FindDisjointPaths(
+            srcAPos, correctGatePos + new Vector2Int(-1, 0),
+            srcBPos, correctGatePos + new Vector2Int(0, -1),
+            correctInputBlocked, out cA, out cB);
 
-        List<Vector2Int> p1 = FindPath(srcAPos, correctGatePos, blocked);
-        List<Vector2Int> p2 = FindPath(srcBPos, correctGatePos, blocked);
-        List<Vector2Int> p3 = FindPath(correctGatePos, corePos, blocked);
+        // Only one output route is needed. Reserving the input wires prevents
+        // the output from creating accidental junctions that a 2-port tile
+        // cannot represent.
+        var correctOutputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        correctOutputBlocked.Remove(corePos);
+        ReservePath(cA, correctOutputBlocked);
+        ReservePath(cB, correctOutputBlocked);
+        var cOut1 = FindPath(correctGatePos + new Vector2Int(1, 0), corePos, correctOutputBlocked);
+        var cOut2 = FindPath(correctGatePos + new Vector2Int(0, 1), corePos, correctOutputBlocked);
+        List<Vector2Int> correctOutputPath = null;
+        if (cOut1 != null && cOut2 != null)
+            correctOutputPath = rng.Next(0, 2) == 0 ? cOut1 : cOut2;
+        else
+            correctOutputPath = cOut1 ?? cOut2;
+        correctOutputDirection = correctOutputPath == cOut1 ? 1 : 2;
 
-        if (p3 != null)
-        {
-            for (int i = 1; i < p3.Count - 1; i++) blocked.Add(p3[i]);
-        }
-        List<Vector2Int> p4 = FindPath(correctGatePos, corePos, blocked);
-        if (p3 != null)
-        {
-            for (int i = 1; i < p3.Count - 1; i++) blocked.Remove(p3[i]);
-        }
+        var ocInputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        List<Vector2Int> ocA;
+        List<Vector2Int> ocB;
+        FindDisjointPaths(
+            srcAPos, overchargeGatePos + new Vector2Int(-1, 0),
+            srcBPos, overchargeGatePos + new Vector2Int(0, -1),
+            ocInputBlocked, out ocA, out ocB);
+        var ocOutputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        ocOutputBlocked.Remove(corePos);
+        ReservePath(ocA, ocOutputBlocked);
+        ReservePath(ocB, ocOutputBlocked);
+        var ocOut1 = FindPath(overchargeGatePos + new Vector2Int(1, 0), corePos, ocOutputBlocked);
+        var ocOut2 = FindPath(overchargeGatePos + new Vector2Int(0, 1), corePos, ocOutputBlocked);
+        List<Vector2Int> ocOutputPath = ocOut1 ?? ocOut2;
 
-        // Find paths for Overcharge Trap Gate
-        blocked.Clear();
-        blocked.Add(corePos);
-        blocked.Add(srcAPos);
-        blocked.Add(srcBPos);
-        foreach (var gp in gatePositions) blocked.Add(gp);
+        var relayInputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        List<Vector2Int> rA;
+        List<Vector2Int> rB;
+        FindDisjointPaths(
+            srcAPos, relayGatePos + new Vector2Int(-1, 0),
+            srcBPos, relayGatePos + new Vector2Int(0, -1),
+            relayInputBlocked, out rA, out rB);
+        var relayOutputBlocked = new HashSet<Vector2Int>(baseBlocked);
+        relayOutputBlocked.Remove(corePos);
+        ReservePath(rA, relayOutputBlocked);
+        ReservePath(rB, relayOutputBlocked);
+        var rOut = FindPath(relayGatePos + new Vector2Int(1, 0), corePos, relayOutputBlocked) ??
+                   FindPath(relayGatePos + new Vector2Int(0, 1), corePos, relayOutputBlocked);
 
-        blocked.Remove(overchargeGatePos);
-        blocked.Remove(corePos);
+        // Include the gate cells as path endpoints so the adjacent wire tiles
+        // receive the correct corner/straight orientation.
+        AppendEnd(cA, correctGatePos);
+        AppendEnd(cB, correctGatePos);
+        PrependStart(correctOutputPath, correctGatePos);
+        AppendEnd(ocA, overchargeGatePos);
+        AppendEnd(ocB, overchargeGatePos);
+        PrependStart(ocOutputPath, overchargeGatePos);
+        AppendEnd(rA, relayGatePos);
+        AppendEnd(rB, relayGatePos);
+        PrependStart(rOut, relayGatePos);
 
-        List<Vector2Int> p5 = FindPath(srcAPos, overchargeGatePos, blocked);
-        List<Vector2Int> p6 = FindPath(srcBPos, overchargeGatePos, blocked);
-        List<Vector2Int> p7 = FindPath(overchargeGatePos, corePos, blocked);
-        if (p7 != null)
-        {
-            for (int i = 1; i < p7.Count - 1; i++) blocked.Add(p7[i]);
-        }
-        List<Vector2Int> p8 = FindPath(overchargeGatePos, corePos, blocked);
-        if (p7 != null)
-        {
-            for (int i = 1; i < p7.Count - 1; i++) blocked.Remove(p7[i]);
-        }
+        if (gateIsAnd || xorUsesSourceA) BuildPathWires(cA, type, solRot, true);
+        if (gateIsAnd || !xorUsesSourceA) BuildPathWires(cB, type, solRot, true);
+        BuildPathWires(correctOutputPath, type, solRot, true);
 
-        // Find paths for Relay Trap Gate
-        blocked.Clear();
-        blocked.Add(corePos);
-        blocked.Add(srcAPos);
-        blocked.Add(srcBPos);
-        foreach (var gp in gatePositions) blocked.Add(gp);
+        BuildPathWires(ocA, type, solRot, false);
+        BuildPathWires(ocB, type, solRot, false);
+        BuildPathWires(ocOutputPath, type, solRot, false);
 
-        blocked.Remove(relayGatePos);
-        blocked.Remove(corePos);
+        BuildPathWires(rA, type, solRot, false);
+        BuildPathWires(rB, type, solRot, false);
+        BuildPathWires(rOut, type, solRot, false);
 
-        List<Vector2Int> p9 = FindPath(srcAPos, relayGatePos, blocked);
-        List<Vector2Int> p10 = FindPath(srcBPos, relayGatePos, blocked);
-        List<Vector2Int> p11 = FindPath(relayGatePos, corePos, blocked);
-        if (p11 != null)
-        {
-            for (int i = 1; i < p11.Count - 1; i++) blocked.Add(p11[i]);
-        }
-        List<Vector2Int> p12 = FindPath(relayGatePos, corePos, blocked);
-        if (p11 != null)
-        {
-            for (int i = 1; i < p11.Count - 1; i++) blocked.Remove(p11[i]);
-        }
-
-        // Build path wires
-        BuildPathWires(p1, type, solRot, true);
-        BuildPathWires(p2, type, solRot, true);
-        BuildPathWires(p3, type, solRot, true);
-        BuildPathWires(p4, type, solRot, true);
-
-        BuildPathWires(p5, type, solRot, false);
-        BuildPathWires(p6, type, solRot, false);
-        BuildPathWires(p7, type, solRot, false);
-        BuildPathWires(p8, type, solRot, false);
-
-        BuildPathWires(p9, type, solRot, false);
-        BuildPathWires(p10, type, solRot, false);
-        BuildPathWires(p11, type, solRot, false);
-        BuildPathWires(p12, type, solRot, false);
-
-        // Set solution target rotations for the bot solver
         ComputeTargetRotations(solRot);
 
-        // Instantiate grid container children
         if (gridContainer == null) return;
 
         float originX = (columns - 1) * tileSpacing / 2f;
@@ -282,7 +304,6 @@ public class CircuitScramblePuzzle : BasePuzzle
 
         ScrambleWires();
 
-        // Re-scramble if solved on start state
         int guard = 0;
         UpdatePowerFlow();
         while (IsCurrentlySatisfied && guard++ < 30)
@@ -290,8 +311,64 @@ public class CircuitScramblePuzzle : BasePuzzle
             ScrambleWires();
             UpdatePowerFlow();
         }
-        currentCharge = 0f;
         UpdatePowerFlow();
+    }
+
+    private void FindDisjointPaths(
+        Vector2Int startA, Vector2Int endA,
+        Vector2Int startB, Vector2Int endB,
+        HashSet<Vector2Int> blocked,
+        out List<Vector2Int> pathA, out List<Vector2Int> pathB)
+    {
+        pathA = null;
+        pathB = null;
+        int bestLength = int.MaxValue;
+
+        List<Vector2Int> firstA = FindPath(startA, endA, blocked);
+        if (firstA != null)
+        {
+            var reserved = new HashSet<Vector2Int>(blocked);
+            ReservePath(firstA, reserved);
+            List<Vector2Int> secondB = FindPath(startB, endB, reserved);
+            if (secondB != null && firstA.Count + secondB.Count < bestLength)
+            {
+                pathA = firstA;
+                pathB = secondB;
+                bestLength = firstA.Count + secondB.Count;
+            }
+        }
+
+        List<Vector2Int> firstB = FindPath(startB, endB, blocked);
+        if (firstB != null)
+        {
+            var reserved = new HashSet<Vector2Int>(blocked);
+            ReservePath(firstB, reserved);
+            List<Vector2Int> secondA = FindPath(startA, endA, reserved);
+            if (secondA != null && firstB.Count + secondA.Count < bestLength)
+            {
+                pathA = secondA;
+                pathB = firstB;
+            }
+        }
+    }
+
+    private static void ReservePath(List<Vector2Int> path, HashSet<Vector2Int> blocked)
+    {
+        if (path == null) return;
+        for (int i = 1; i < path.Count; i++)
+            blocked.Add(path[i]);
+    }
+
+    private static void AppendEnd(List<Vector2Int> path, Vector2Int endpoint)
+    {
+        if (path != null && (path.Count == 0 || path[path.Count - 1] != endpoint))
+            path.Add(endpoint);
+    }
+
+    private static void PrependStart(List<Vector2Int> path, Vector2Int endpoint)
+    {
+        if (path != null && (path.Count == 0 || path[0] != endpoint))
+            path.Insert(0, endpoint);
     }
 
     private List<Vector2Int> FindPath(Vector2Int start, Vector2Int end, HashSet<Vector2Int> blocked)
@@ -325,476 +402,363 @@ public class CircuitScramblePuzzle : BasePuzzle
 
     private void BuildPathWires(List<Vector2Int> path, int[,] type, int[,] solRot, bool isSolution)
     {
-        if (path == null || path.Count < 3) return; // need at least start, intermediate, end
+        if (path == null || path.Count < 3) return;
 
         for (int i = 1; i < path.Count - 1; i++)
         {
             Vector2Int curr = path[i];
-
-            // If we are building wrong paths, do NOT overwrite correct solution tiles!
             if (!isSolution && isSolutionTile[curr.x, curr.y]) continue;
 
             Vector2Int prev = path[i - 1];
             Vector2Int next = path[i + 1];
 
-            Vector2Int inDir = curr - prev;
-            Vector2Int outDir = next - curr;
+            Vector2Int dirPrev = prev - curr;
+            Vector2Int dirNext = next - curr;
 
-            int pIn = GetPortForDelta(-inDir);
-            int pOut = GetPortForDelta(outDir);
-
-            int wireType = (inDir == outDir) ? WIRE_STRAIGHT : WIRE_CORNER;
-            type[curr.x, curr.y] = wireType;
-            solRot[curr.x, curr.y] = RotationForPorts(wireType, pIn | pOut);
-
-            if (isSolution)
+            if (dirPrev.x == 0 && dirNext.x == 0)
             {
-                isSolutionTile[curr.x, curr.y] = true;
+                // The straight sprite is authored horizontally; 90 degrees is vertical.
+                type[curr.x, curr.y] = WIRE_STRAIGHT;
+                solRot[curr.x, curr.y] = 90;
             }
+            else if (dirPrev.y == 0 && dirNext.y == 0)
+            {
+                type[curr.x, curr.y] = WIRE_STRAIGHT;
+                solRot[curr.x, curr.y] = 0;
+            }
+            else
+            {
+                type[curr.x, curr.y] = WIRE_CORNER;
+                // The corner sprite is authored with left + bottom ports at 0 degrees.
+                if (dirPrev.x == -1 && dirNext.y == -1) solRot[curr.x, curr.y] = 270; // Top-left
+                else if (dirPrev.x == 1 && dirNext.y == -1) solRot[curr.x, curr.y] = 180; // Top-right
+                else if (dirPrev.x == 1 && dirNext.y == 1) solRot[curr.x, curr.y] = 90; // Bottom-right
+                else if (dirPrev.x == -1 && dirNext.y == 1) solRot[curr.x, curr.y] = 0; // Bottom-left
+                else if (dirPrev.y == -1 && dirNext.x == 1) solRot[curr.x, curr.y] = 180; // Top-right (alt)
+                else if (dirPrev.y == 1 && dirNext.x == 1) solRot[curr.x, curr.y] = 90; // Bottom-right (alt)
+                else if (dirPrev.y == 1 && dirNext.x == -1) solRot[curr.x, curr.y] = 0; // Bottom-left (alt)
+                else if (dirPrev.y == -1 && dirNext.x == -1) solRot[curr.x, curr.y] = 270; // Top-left (alt)
+            }
+            if (isSolution) isSolutionTile[curr.x, curr.y] = true;
         }
-    }
-
-    private int GetPortForDelta(Vector2Int d)
-    {
-        if (d == new Vector2Int(0, -1)) return (int)Port.Top;
-        if (d == new Vector2Int(1, 0)) return (int)Port.Right;
-        if (d == new Vector2Int(0, 1)) return (int)Port.Bottom;
-        if (d == new Vector2Int(-1, 0)) return (int)Port.Left;
-        return 0;
     }
 
     private void ComputeTargetRotations(int[,] solRot)
     {
+        targetRot = new int[columns, rows];
         for (int y = 0; y < rows; y++)
             for (int x = 0; x < columns; x++)
                 targetRot[x, y] = solRot[x, y];
-    }
-
-    private void ScrambleWires()
-    {
-        for (int y = 0; y < rows; y++)
-            for (int x = 0; x < columns; x++)
-            {
-                if (!rotatable[x, y]) continue;
-                int r;
-                do { r = rng.Next(0, 4) * 90; } while (isSolutionTile[x, y] && r == targetRot[x, y]);
-                grid[x, y].SetRotation(r);
-            }
-    }
-
-    private UISpriteSheetAnimator EnsureAnimator(CircuitScrambleTile tile)
-    {
-        var anim = tile.GetComponent<UISpriteSheetAnimator>();
-        if (anim == null) anim = tile.gameObject.AddComponent<UISpriteSheetAnimator>();
-        anim.playOnEnable = false;
-        return anim;
-    }
-
-    private void PlayFlow(CircuitScrambleTile tile, Sprite[] frames, bool active, Color color)
-    {
-        if (tile == null || frames == null || frames.Length == 0) return;
-        var anim = EnsureAnimator(tile);
-        if (active)
-        {
-            if (!anim.IsPlaying || anim.frames != frames)
-                anim.PlaySet(frames, 16f, true);
-        }
-        else
-        {
-            anim.Stop();
-            tile.Image.sprite = (tile.type == WIRE_STRAIGHT) ? straightSprite : cornerSprite;
-        }
-        tile.SetColor(color);
-    }
-
-    private void UpdatePowerFlow()
-    {
-        if (grid == null) return;
-
-        HashSet<Vector2Int> powered = new HashSet<Vector2Int>();
-
-        // 1. Evaluate Logic Gates
-        bool correctInA = IsConnected(srcAPos, correctGatePos + new Vector2Int(-1, 0), powered);
-        bool correctInB = IsConnected(srcBPos, correctGatePos + new Vector2Int(0, -1), powered);
-        bool correctOutA = IsConnected(correctGatePos + new Vector2Int(1, 0), corePos, powered);
-        bool correctOutB = IsConnected(correctGatePos + new Vector2Int(0, 1), corePos, powered);
-
-        bool correctInputsPair = correctInA && correctInB;
-        bool correctOutputsPair = correctOutA && correctOutB;
-
-        bool satisfied = gateIsAnd
-            ? (correctInputsPair && correctOutputsPair)
-            : (correctInputsPair ^ correctOutputsPair);
-
-        IsCurrentlySatisfied = satisfied;
-
-        // 2. Evaluate Traps
-        bool ocInA = IsConnected(srcAPos, overchargeGatePos + new Vector2Int(-1, 0), powered);
-        bool ocInB = IsConnected(srcBPos, overchargeGatePos + new Vector2Int(0, -1), powered);
-        bool ocOutA = IsConnected(overchargeGatePos + new Vector2Int(1, 0), corePos, powered);
-        bool ocOutB = IsConnected(overchargeGatePos + new Vector2Int(0, 1), corePos, powered);
-        
-        // Trap gate uses XOR condition
-        bool ocSatisfied = ocInA && ocInB && (ocOutA || ocOutB);
-
-        bool relayInA = IsConnected(srcAPos, relayGatePos + new Vector2Int(-1, 0), powered);
-        bool relayInB = IsConnected(srcBPos, relayGatePos + new Vector2Int(0, -1), powered);
-        bool relayOutA = IsConnected(relayGatePos + new Vector2Int(1, 0), corePos, powered);
-        bool relaySatisfied = relayInA && relayInB && relayOutA;
-
-        relayActive = relaySatisfied;
-
-        // 3. Update Visuals
-        foreach (var t in tiles)
-        {
-            if (t == null) continue;
-            bool isPowered = powered.Contains(new Vector2Int(t.x, t.y));
-            Color c = isPowered ? ColorPowered : ColorInactive;
-
-            if (t.type == WIRE_STRAIGHT)
-                PlayFlow(t, straightFlowFrames, isPowered, c);
-            else if (t.type == WIRE_CORNER)
-                PlayFlow(t, cornerFlowFrames, isPowered, c);
-            else if (t.type == GATE)
-            {
-                t.SetColor(isPowered ? ColorPowered : Color.white);
-                if (new Vector2Int(t.x, t.y) == overchargeGatePos && ocSatisfied) t.SetColor(ColorTrap);
-            }
-            else if (t.type == SOURCE)
-            {
-                var anim = EnsureAnimator(t);
-                if (!anim.IsPlaying) anim.PlaySet(sourcePulseFrames, 10f, true);
-                t.SetColor(ColorPowered);
-            }
-        }
-
-        // Handle Overcharge
-        if (ocSatisfied && !isExploding)
-        {
-            overchargeTimer += Time.deltaTime;
-            if (overchargeTimer >= 3f) StartCoroutine(TriggerOverchargeSurge());
-        }
-        else overchargeTimer = 0f;
-
-        // Core Dynamics
-        if (satisfied)
-        {
-            float cap = relayActive ? 0.4f : 1f;
-            currentCharge = Mathf.MoveTowards(currentCharge, cap, Time.deltaTime * 0.5f);
-        }
-        else currentCharge = Mathf.MoveTowards(currentCharge, 0f, Time.deltaTime * 0.3f);
-
-        UpdateCoreVisuals(satisfied);
-
-        if (calibrationSlider != null) calibrationSlider.value = currentCharge;
-        if (calibrationText != null) calibrationText.text = $"REACTOR STABILITY: {Mathf.RoundToInt(currentCharge * 100f)}%";
-        
-        UpdateTextOverlays();
-
-        if (currentCharge >= 1f && !isSolved) Solve();
-    }
-
-    private IEnumerator TriggerOverchargeSurge()
-    {
-        isExploding = true;
-        overchargeTimer = 0f;
-        currentCharge = 0f;
-
-        if (AudioManager.Instance != null && GameState.Instance != null)
-        {
-            AudioManager.Instance.PlaySfx(GameState.Instance.sfxPuzzleRotate, 1f);
-        }
-
-        // Flash entire board red/white
-        for (int i = 0; i < 4; i++)
-        {
-            foreach (var t in tiles)
-            {
-                if (t != null) t.Image.color = (i % 2 == 0) ? Color.red : Color.white;
-            }
-            yield return new WaitForSeconds(0.12f);
-        }
-
-        isExploding = false;
-        UpdatePowerFlow();
-    }
-
-    private void TriggerBackdraftShortCircuit()
-    {
-        backdraftTimer = 0f;
-        currentCharge = 0f;
-
-        if (AudioManager.Instance != null && GameState.Instance != null)
-        {
-            AudioManager.Instance.PlaySfx(GameState.Instance.sfxPuzzleRotate, 0.9f);
-        }
-
-        // Scramble wire tiles instantly!
-        ScrambleWires();
-        UpdatePowerFlow();
-    }
-
-    private void OnTileClicked(CircuitScrambleTile tile)
-    {
-        if (!CanAcceptInput() || isExploding) return;
-        tile.Rotate();
-        if (AudioManager.Instance != null && GameState.Instance != null)
-            AudioManager.Instance.PlaySfx(GameState.Instance.sfxPuzzleRotate, 0.5f);
-        UpdatePowerFlow();
-    }
-
-    private void UpdateCoreVisuals(bool satisfied)
-    {
-        if (coreTile == null) return;
-        var anim = EnsureAnimator(coreTile);
-        
-        if (relayActive)
-        {
-            float j = 5f;
-            coreTile.transform.localPosition = GridPosition(corePos.x, corePos.y) + new Vector2(Random.Range(-j, j), Random.Range(-j, j));
-            coreTile.SetColor(new Color(1f, 0.2f, 1f)); // Magenta glitch
-        }
-        else
-        {
-            coreTile.transform.localPosition = GridPosition(corePos.x, corePos.y);
-            coreTile.SetColor(satisfied ? ColorSolved : Color.white);
-        }
-
-        if (overchargeTimer > 0f)
-        {
-            float p = Mathf.PingPong(Time.time * 20f, 1f);
-            coreTile.SetColor(Color.Lerp(ColorTrap, Color.white, p));
-        }
-
-        if (currentCharge > 0.01f)
-        {
-            if (!anim.IsPlaying || anim.frames != coreChargeFrames) anim.PlaySet(coreChargeFrames, 12f, true);
-            float alpha = 0.4f + currentCharge * 0.6f;
-            coreTile.SetColor(new Color(coreTile.Image.color.r, coreTile.Image.color.g, coreTile.Image.color.b, alpha));
-        }
-        else
-        {
-            anim.Stop();
-            coreTile.SetSprite(coreSprite);
-        }
-    }
-
-    private void UpdateTextOverlays()
-    {
-        if (requirementText == null) return;
-        if (overchargeTimer > 0f) requirementText.text = $"<color=red><b>OVERCHARGE CRITICAL: {3f - overchargeTimer:0.0}s</b></color>";
-        else if (relayActive) requirementText.text = "<color=#FF33CC><b>RELAY GLITCH: POWER CAPPED</b></color>";
-        else requirementText.text = gateIsAnd ? "<color=#00F2FF>AND GATE REQUIRED</color>" : "<color=#FF00FF>XOR GATE REQUIRED</color>";
-    }
-
-
-    private bool IsConnected(Vector2Int start, Vector2Int end, HashSet<Vector2Int> poweredPath)
-    {
-        if (!InBounds(start) || !InBounds(end)) return false;
-
-        // If start is the target terminal itself, return true
-        if (start == end) return true;
-
-        // Start search at the first wire tile 'start'
-        var ntStart = grid[start.x, start.y];
-        if (ntStart == null || (ntStart.type != WIRE_STRAIGHT && ntStart.type != WIRE_CORNER)) return false;
-
-        Queue<Vector2Int> queue = new Queue<Vector2Int>();
-        HashSet<Vector2Int> seen = new HashSet<Vector2Int>();
-
-        queue.Enqueue(start);
-        seen.Add(start);
-
-        bool reached = false;
-
-        while (queue.Count > 0)
-        {
-            Vector2Int c = queue.Dequeue();
-
-            int ports = WirePorts(grid[c.x, c.y].type, grid[c.x, c.y].rotation);
-            foreach (Port p in new[] { Port.Top, Port.Right, Port.Bottom, Port.Left })
-            {
-                if ((ports & (int)p) == 0) continue;
-                Vector2Int nb = c + Delta((int)p);
-                if (!InBounds(nb)) continue;
-
-                if (nb == end)
-                {
-                    reached = true;
-                    continue;
-                }
-
-                var nt = grid[nb.x, nb.y];
-                if (nt == null) continue;
-                if (seen.Contains(nb)) continue;
-
-                // Only traverse through wire tiles
-                if (nt.type == WIRE_STRAIGHT || nt.type == WIRE_CORNER)
-                {
-                    if ((WirePorts(nt.type, nt.rotation) & Opposite((int)p)) != 0)
-                    {
-                        seen.Add(nb);
-                        queue.Enqueue(nb);
-                    }
-                }
-            }
-        }
-
-        if (reached)
-        {
-            foreach (var v in seen)
-            {
-                poweredPath.Add(v);
-            }
-            return true;
-        }
-        return false;
     }
 
     private void ApplyTileSprite(CircuitScrambleTile tile, int type, int x, int y)
     {
         switch (type)
         {
-            case WIRE_STRAIGHT: if (straightSprite != null) tile.SetSprite(straightSprite); break;
-            case WIRE_CORNER: if (cornerSprite != null) tile.SetSprite(cornerSprite); break;
-            case SOURCE: if (sourceSprite != null) tile.SetSprite(sourceSprite); break;
-            case CORE: if (coreSprite != null) tile.SetSprite(coreSprite); break;
+            case WIRE_STRAIGHT:
+                tile.SetSprite(straightSprite);
+                break;
+            case WIRE_CORNER:
+                tile.SetSprite(cornerSprite);
+                break;
+            case SOURCE:
+                tile.SetSprite(sourceSprite);
+                break;
             case GATE:
-                if (new Vector2Int(x, y) == correctGatePos)
-                {
-                    Sprite g = gateIsAnd ? andGateSprite : xorGateSprite;
-                    if (g != null) tile.SetSprite(g);
-                }
-                else if (new Vector2Int(x, y) == overchargeGatePos)
-                {
-                    // Trap gate uses XOR style visually
-                    if (xorGateSprite != null) tile.SetSprite(xorGateSprite);
-                }
-                else
-                {
-                    // Relay gate uses AND style visually
-                    if (andGateSprite != null) tile.SetSprite(andGateSprite);
-                }
+                tile.SetSprite(gateIsAnd ? andGateSprite : xorGateSprite);
+                break;
+            case CORE:
+                tile.SetSprite(coreSprite);
+                break;
+            default:
+                tile.SetSprite(straightSprite);
                 break;
         }
     }
 
-    private int WirePorts(int type, int rotation)
+    private int GetPortMask(CircuitScrambleTile tile)
     {
-        int basePorts;
-        if (type == WIRE_STRAIGHT) basePorts = (int)(Port.Left | Port.Right);
-        else if (type == WIRE_CORNER) basePorts = (int)(Port.Left | Port.Bottom);
-        else basePorts = 0;
-        return RotatePortsCCW(basePorts, rotation);
-    }
+        if (tile == null) return 0;
 
-    private int RotatePortsCCW(int ports, int rotation)
-    {
-        int steps = (((rotation % 360) + 360) % 360) / 90;
-        for (int i = 0; i < steps; i++)
+        // Sources, gates and the core expose all four sides. Wire tiles expose
+        // only the two sides represented by their current rotated sprite.
+        if (tile.type == SOURCE || tile.type == GATE || tile.type == CORE)
+            return (int)(Port.Top | Port.Right | Port.Bottom | Port.Left);
+
+        int rotation = ((tile.rotation / 90) % 4 + 4) % 4;
+        if (tile.type == WIRE_STRAIGHT)
+            return rotation % 2 == 0
+                ? (int)(Port.Left | Port.Right)
+                : (int)(Port.Top | Port.Bottom);
+
+        if (tile.type == WIRE_CORNER)
         {
-            int n = 0;
-            if ((ports & (int)Port.Top) != 0) n |= (int)Port.Left;
-            if ((ports & (int)Port.Left) != 0) n |= (int)Port.Bottom;
-            if ((ports & (int)Port.Bottom) != 0) n |= (int)Port.Right;
-            if ((ports & (int)Port.Right) != 0) n |= (int)Port.Top;
-            ports = n;
+            // The authored corner sprite starts with left + bottom ports.
+            // Positive Unity Z rotation advances clockwise on the UI grid.
+            switch (rotation)
+            {
+                case 0: return (int)(Port.Bottom | Port.Left);
+                case 1: return (int)(Port.Right | Port.Bottom);
+                case 2: return (int)(Port.Top | Port.Right);
+                default: return (int)(Port.Top | Port.Left);
+            }
         }
-        return ports;
-    }
 
-    private int RotationForPorts(int wireType, int requiredPorts)
-    {
-        for (int r = 0; r < 360; r += 90)
-            if (WirePorts(wireType, r) == requiredPorts) return r;
         return 0;
     }
 
-    private int Opposite(int port)
+    private bool HasPort(Vector2Int position, int direction)
     {
-        switch ((Port)port)
+        if (position.x < 0 || position.x >= columns || position.y < 0 || position.y >= rows)
+            return false;
+        CircuitScrambleTile tile = grid[position.x, position.y];
+        return tile != null && (GetPortMask(tile) & (1 << direction)) != 0;
+    }
+
+    private bool CanConnect(Vector2Int position, int direction)
+    {
+        Vector2Int next = position + DIRS[direction];
+        return HasPort(position, direction) && HasPort(next, (direction + 2) % 4);
+    }
+
+    private HashSet<Vector2Int> FloodConnected(Vector2Int start, bool stopAtGates = true)
+    {
+        HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
+        if (start.x < 0 || start.x >= columns || start.y < 0 || start.y >= rows ||
+            grid[start.x, start.y] == null)
+            return visited;
+
+        Queue<Vector2Int> queue = new Queue<Vector2Int>();
+        queue.Enqueue(start);
+        visited.Add(start);
+
+        while (queue.Count > 0)
         {
-            case Port.Top: return (int)Port.Bottom;
-            case Port.Bottom: return (int)Port.Top;
-            case Port.Left: return (int)Port.Right;
-            default: return (int)Port.Left;
+            Vector2Int current = queue.Dequeue();
+            CircuitScrambleTile currentTile = grid[current.x, current.y];
+            if (currentTile == null || currentTile.type == CORE ||
+                (stopAtGates && currentTile.type == GATE))
+                continue;
+
+            for (int direction = 0; direction < DIRS.Length; direction++)
+            {
+                if (!CanConnect(current, direction)) continue;
+
+                Vector2Int next = current + DIRS[direction];
+                if (!visited.Add(next)) continue;
+
+                CircuitScrambleTile nextTile = grid[next.x, next.y];
+                if (nextTile != null && nextTile.type != CORE &&
+                    (!stopAtGates || nextTile.type != GATE))
+                    queue.Enqueue(next);
+            }
         }
+
+        return visited;
     }
 
-    private Vector2Int Delta(int port)
+    private bool IsInputConnected(HashSet<Vector2Int> powered, Vector2Int gate, int gateToInputDirection)
     {
-        switch ((Port)port)
+        Vector2Int input = gate + DIRS[gateToInputDirection];
+        return powered.Contains(input) && CanConnect(gate, gateToInputDirection);
+    }
+
+    private bool GateOutputReachesCore(Vector2Int gate, int outputDirection)
+    {
+        if (!CanConnect(gate, outputDirection)) return false;
+        Vector2Int firstWire = gate + DIRS[outputDirection];
+        return FloodConnected(firstWire).Contains(corePos);
+    }
+
+    internal void UpdatePowerFlow()
+    {
+        foreach (var tile in tiles)
         {
-            case Port.Top: return new Vector2Int(0, -1);
-            case Port.Right: return new Vector2Int(1, 0);
-            case Port.Bottom: return new Vector2Int(0, 1);
-            default: return new Vector2Int(-1, 0);
+            if (tile == null) continue;
+            tile.SetColor(ColorInactive);
+            if (tile.OverlayImage != null)
+                tile.OverlayImage.color = new Color(1f, 1f, 1f, 0f);
         }
-    }
 
-    private bool InBounds(Vector2Int c) => c.x >= 0 && c.x < columns && c.y >= 0 && c.y < rows;
+        // Keep the two sources independent. This matters for XOR: one live
+        // input must not be mistaken for two merely because the networks merge.
+        HashSet<Vector2Int> poweredA = FloodConnected(srcAPos);
+        HashSet<Vector2Int> poweredB = FloodConnected(srcBPos);
+        HashSet<Vector2Int> powered = new HashSet<Vector2Int>(poweredA);
+        powered.UnionWith(poweredB);
 
-    private Color GetTileColor(int type, bool isPowered)
-    {
-        switch (type)
+        // Include connected output lanes from all gates so the trap evaluator
+        // can distinguish a fully wired decoy gate from an incomplete one.
+        foreach (Vector2Int gate in gatePositions)
         {
-            case SOURCE: return new Color(0.2f, 0.85f, 1f);
-            case CORE: return Color.white;
-            case GATE: return Color.white;
-            default:
-                return isPowered ? new Color(0.2f, 0.95f, 1f) : new Color(0.32f, 0.36f, 0.45f);
+            for (int direction = 1; direction <= 2; direction++)
+            {
+                if (CanConnect(gate, direction))
+                    powered.UnionWith(FloodConnected(gate + DIRS[direction]));
+            }
         }
-    }
 
-    protected override void Update()
-    {
-        base.Update();
-        if (!isRunning || isSolved || isTimedOut || isExploding) return;
-        UpdatePowerFlow();
-    }
-
-    public override void AutoSolveChunk()
-    {
-        if (isSolved || isTimedOut || grid == null || isExploding) return;
-
+        int solutionTileCount = 0;
+        int poweredSolutionTileCount = 0;
         for (int y = 0; y < rows; y++)
         {
             for (int x = 0; x < columns; x++)
             {
-                if (!rotatable[x, y] || grid[x, y] == null || !isSolutionTile[x, y]) continue;
-                if (grid[x, y].rotation != targetRot[x, y])
-                {
-                    grid[x, y].Rotate();
-                    UpdatePowerFlow();
-                    return;
-                }
+                if (!isSolutionTile[x, y]) continue;
+                solutionTileCount++;
+                if (powered.Contains(new Vector2Int(x, y)))
+                    poweredSolutionTileCount++;
             }
         }
+
+        float targetCharge = solutionTileCount > 0
+            ? (float)poweredSolutionTileCount / solutionTileCount
+            : 0f;
+        currentCharge = Mathf.MoveTowards(currentCharge, targetCharge, Time.deltaTime * 3f);
+
+        foreach (Vector2Int position in powered)
+        {
+            CircuitScrambleTile tile = grid[position.x, position.y];
+            if (tile == null) continue;
+            tile.SetColor(ColorPowered);
+            if (tile.OverlayImage != null)
+                tile.OverlayImage.color = new Color(1f, 1f, 1f, 0.8f);
+        }
+
+        bool inputA = IsInputConnected(poweredA, correctGatePos, 3); // left input
+        bool inputB = IsInputConnected(poweredB, correctGatePos, 0); // top input
+        bool inputsSatisfied = gateIsAnd ? (inputA && inputB) : (inputA ^ inputB);
+        bool outputConnected = GateOutputReachesCore(correctGatePos, correctOutputDirection);
+
+        IsCurrentlySatisfied = inputsSatisfied && outputConnected;
+
+        float charge = currentCharge;
+        bool trapSolved = IsCurrentlySatisfied;
+        bool relay = false;
+        if (traps != null)
+            traps.UpdateTraps(powered, ref charge, ref trapSolved, ref relay);
+        currentCharge = charge;
+        relayActive = relay;
+        IsCurrentlySatisfied = trapSolved;
+        if (calibrationSlider != null)
+            calibrationSlider.value = Mathf.Clamp01(currentCharge);
+        if (calibrationText != null)
+        {
+            int percent = Mathf.RoundToInt(currentCharge * 100f);
+            calibrationText.text = relayActive ? $"RELAY ACTIVE / POWER {percent}%" : $"POWER {percent}%";
+        }
+
+        if (IsCurrentlySatisfied)
+        {
+            if (CanConnect(correctGatePos, correctOutputDirection))
+            {
+                foreach (Vector2Int position in FloodConnected(correctGatePos + DIRS[correctOutputDirection]))
+                {
+                    CircuitScrambleTile tile = grid[position.x, position.y];
+                    if (tile == null) continue;
+                    tile.SetColor(ColorPowered);
+                    if (tile.OverlayImage != null)
+                        tile.OverlayImage.color = new Color(1f, 1f, 1f, 0.8f);
+                }
+            }
+
+            if (!isSolved && CanAcceptInput())
+                Solve();
+        }
+
+        if (coreTile != null)
+            coreTile.SetColor(IsCurrentlySatisfied ? ColorSolved : Color.white);
+    }
+
+    private void ScrambleWires()
+    {
+        // Randomly rotate all rotatable wires
+        foreach (var tile in tiles)
+        {
+            if (rotatable[tile.x, tile.y])
+            {
+                int randomRotation = rng.Next(0, 4) * 90; // 0, 90, 180, or 270 degrees
+                tile.SetRotation(randomRotation);
+            }
+        }
+    }
+
+    public override void AutoSolveChunk()
+    {
+        if (isSolved || isTimedOut || !CanAcceptInput()) return;
+
+        // Bots align only the guaranteed solution route. Decoy routes stay
+        // scrambled so the automated solver does not deliberately activate traps.
+        foreach (var tile in tiles)
+        {
+            if (tile == null || !rotatable[tile.x, tile.y] ||
+                !isSolutionTile[tile.x, tile.y])
+                continue;
+
+            int target = targetRot[tile.x, tile.y];
+            if (tile.rotation == target) continue;
+
+            tile.SetRotation(target);
+            UpdatePowerFlow();
+            return;
+        }
+
         UpdatePowerFlow();
     }
 
-    private Vector2 GridPosition(int x, int y)
+    private void OnTileClicked(UITile tile)
     {
-        float originX = (columns - 1) * tileSpacing / 2f;
-        float originY = (rows - 1) * tileSpacing / 2f;
-        return new Vector2(x * tileSpacing - originX, originY - y * tileSpacing);
+        var circuitTile = tile as CircuitScrambleTile;
+        if (circuitTile == null) return;
+
+        if (!CanAcceptInput() || traps.IsExploding) return;
+        circuitTile.Rotate();
+        if (AudioManager.Instance != null && GameState.Instance != null)
+            AudioManager.Instance.PlaySfx(GameState.Instance.sfxPuzzleRotate, 0.5f);
+        UpdatePowerFlow();
     }
 
-    private void ClearBoard()
+    /// <summary>
+    /// Public wrapper for IsConnected used by CircuitScrambleTraps.
+    /// Checks if a path exists between two positions through powered tiles.
+    /// </summary>
+    public bool IsConnectedPublic(Vector2Int start, Vector2Int end, HashSet<Vector2Int> powered)
     {
-        for (int i = 0; i < tiles.Count; i++)
-        {
-            if (tiles[i] != null) tiles[i].OnClicked -= OnTileClicked;
-        }
+        return IsConnected(start, end, powered);
+    }
 
-        if (gridContainer != null)
+    /// <summary>
+    /// Checks if a path exists between start and end through powered tiles using BFS.
+    /// </summary>
+    private bool IsConnected(Vector2Int start, Vector2Int end, HashSet<Vector2Int> powered)
+    {
+        if (start == end) return true;
+        if (!powered.Contains(start) || !powered.Contains(end)) return false;
+
+        Queue<Vector2Int> queue = new Queue<Vector2Int>();
+        HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
+        queue.Enqueue(start);
+        visited.Add(start);
+
+        while (queue.Count > 0)
         {
-            for (int i = gridContainer.childCount - 1; i >= 0; i--)
+            Vector2Int current = queue.Dequeue();
+            if (current == end) return true;
+
+            for (int direction = 0; direction < DIRS.Length; direction++)
             {
-                Destroy(gridContainer.GetChild(i).gameObject);
+                if (!CanConnect(current, direction)) continue;
+                Vector2Int next = current + DIRS[direction];
+                if (!powered.Contains(next) || !visited.Add(next)) continue;
+                queue.Enqueue(next);
             }
         }
 
-        tiles.Clear();
+        return false;
+    }
+
+    internal void ScrambleWiresInternal()
+    {
+        ScrambleWires();
     }
 }

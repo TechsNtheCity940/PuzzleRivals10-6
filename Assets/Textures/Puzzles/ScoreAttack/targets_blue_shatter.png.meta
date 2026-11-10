@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: f824916810168674d861331e89c3d21a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1260104256688074362
+    second: targets_blue_shatter_00
+  - first:
+      213: -7721741736574050354
+    second: targets_blue_shatter_01
+  - first:
+      213: 3736634610470929785
+    second: targets_blue_shatter_02
+  - first:
+      213: -864741299779339653
+    second: targets_blue_shatter_03
+  - first:
+      213: -7973842402711736403
+    second: targets_blue_shatter_04
+  - first:
+      213: -7831182296145911873
+    second: targets_blue_shatter_05
+  - first:
+      213: -7461271296067935189
+    second: targets_blue_shatter_06
+  - first:
+      213: -2081031670597064298
+    second: targets_blue_shatter_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: targets_blue_shatter_0
+      name: targets_blue_shatter_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6eefb9beeb377f0458254fedb82628f9
-      internalID: -4221336079930026845
+      spriteID: a7ea9d7252acc7110800000000000000
+      internalID: 1260104256688074362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_1
+      name: targets_blue_shatter_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 91addf0bcedf16745b2c4f020c527fff
-      internalID: 233034821893433487
+      spriteID: ecf12385dccd6d490800000000000000
+      internalID: -7721741736574050354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_2
+      name: targets_blue_shatter_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b5c80e560cd86ed4ca2b3d0733b6e4f3
-      internalID: 733487217611674184
+      spriteID: 975cc8471613bd330800000000000000
+      internalID: 3736634610470929785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_3
+      name: targets_blue_shatter_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d34d007422b2609438aa352660b17958
-      internalID: -4597576363572602237
+      spriteID: b7afa049e52dff3f0800000000000000
+      internalID: -864741299779339653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_4
+      name: targets_blue_shatter_04
       rect:
         serializedVersion: 2
         x: 1024
@@ -224,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 148b856a648d3b945bdad35d0d57c5de
-      internalID: -1381908219105661554
+      spriteID: daf6b6bf498375190800000000000000
+      internalID: -7973842402711736403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_5
+      name: targets_blue_shatter_05
       rect:
         serializedVersion: 2
         x: 1280
@@ -246,16 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 68b5f6e04b2d110479895622939a4ea9
-      internalID: -6476485294075236332
+      spriteID: fbf15ea613d025390800000000000000
+      internalID: -7831182296145911873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_6
+      name: targets_blue_shatter_06
       rect:
         serializedVersion: 2
         x: 1536
@@ -268,16 +292,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5f0a7dc081ccb5645bde9889dc6ef109
-      internalID: 7427124481048086442
+      spriteID: b246d09a94d347890800000000000000
+      internalID: -7461271296067935189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: targets_blue_shatter_7
+      name: targets_blue_shatter_07
       rect:
         serializedVersion: 2
         x: 1792
@@ -290,10 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 90505748196b44447ba2d5b540c404d7
-      internalID: -2119955982700230181
+      spriteID: 69969bba8b0be13e0800000000000000
+      internalID: -2081031670597064298
       vertices: []
       indices: 
       edges: []
@@ -313,6 +337,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       targets_blue_shatter_0: -4221336079930026845
+      targets_blue_shatter_00: 1260104256688074362
+      targets_blue_shatter_01: -7721741736574050354
+      targets_blue_shatter_02: 3736634610470929785
+      targets_blue_shatter_03: -864741299779339653
+      targets_blue_shatter_04: -7973842402711736403
+      targets_blue_shatter_05: -7831182296145911873
+      targets_blue_shatter_06: -7461271296067935189
+      targets_blue_shatter_07: -2081031670597064298
       targets_blue_shatter_1: 233034821893433487
       targets_blue_shatter_2: 733487217611674184
       targets_blue_shatter_3: -4597576363572602237

@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: e51108f73e2a99f43804070532bd4172
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8906310534400801200
+    second: bomb_pass_12f_v01_00
+  - first:
+      213: -8143118535380840562
+    second: bomb_pass_12f_v01_01
+  - first:
+      213: -3557417552379928205
+    second: bomb_pass_12f_v01_02
+  - first:
+      213: -6208890697067275430
+    second: bomb_pass_12f_v01_03
+  - first:
+      213: 8540819776016627356
+    second: bomb_pass_12f_v01_04
+  - first:
+      213: 2618793614505757588
+    second: bomb_pass_12f_v01_05
+  - first:
+      213: -718676870486916793
+    second: bomb_pass_12f_v01_06
+  - first:
+      213: -8980850600020613907
+    second: bomb_pass_12f_v01_07
+  - first:
+      213: -8003802414678102517
+    second: bomb_pass_12f_v01_08
+  - first:
+      213: 5054570056791197619
+    second: bomb_pass_12f_v01_09
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_0
+      name: bomb_pass_12f_v01_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +166,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 59f1a42ca6fb6c64681806c620a81306
-      internalID: -8812805533041420347
+      spriteID: 0b9774e4e32999b70800000000000000
+      internalID: 8906310534400801200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_1
+      name: bomb_pass_12f_v01_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +188,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 95664876ceefe2744813d4743372f8a7
-      internalID: 4644655181432943223
+      spriteID: e8fc9be06d4ddfe80800000000000000
+      internalID: -8143118535380840562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_2
+      name: bomb_pass_12f_v01_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +210,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: de6295cf01c96e74881c462419f7a23d
-      internalID: -388640906765836140
+      spriteID: 371a7a8859381aec0800000000000000
+      internalID: -3557417552379928205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_3
+      name: bomb_pass_12f_v01_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +232,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0b33a385362d433489dc7eea98e738f2
-      internalID: 4610068628896727650
+      spriteID: a5bd310aec695d9a0800000000000000
+      internalID: -6208890697067275430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_4
+      name: bomb_pass_12f_v01_04
       rect:
         serializedVersion: 2
         x: 1024
@@ -224,16 +254,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1ec2fa441a8192c4689771ab3c9c6af6
-      internalID: 1024304067651218335
+      spriteID: c963a18c556178670800000000000000
+      internalID: 8540819776016627356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_5
+      name: bomb_pass_12f_v01_05
       rect:
         serializedVersion: 2
         x: 1280
@@ -246,16 +276,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1cf12cf22aca69f42ae9a837b90f5fb6
-      internalID: -4746192038146917931
+      spriteID: 49b4dacdae2d75420800000000000000
+      internalID: 2618793614505757588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_6
+      name: bomb_pass_12f_v01_06
       rect:
         serializedVersion: 2
         x: 1536
@@ -268,16 +298,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 658b143494fd72e489d0d32bdfc08e13
-      internalID: -2921540743026622334
+      spriteID: 741865aa13fb606f0800000000000000
+      internalID: -718676870486916793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_7
+      name: bomb_pass_12f_v01_07
       rect:
         serializedVersion: 2
         x: 1792
@@ -290,16 +320,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f2f0c604f9f6863459b7029f33679c7d
-      internalID: -7006981820353613897
+      spriteID: de4eaec36fb9d5380800000000000000
+      internalID: -8980850600020613907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_8
+      name: bomb_pass_12f_v01_08
       rect:
         serializedVersion: 2
         x: 2048
@@ -312,16 +342,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f6120f5db5752f64da193ee628f9d17e
-      internalID: 3127773662896714442
+      spriteID: b0ea2bc1c18cce090800000000000000
+      internalID: -8003802414678102517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomb_pass_12f_v01_9
+      name: bomb_pass_12f_v01_09
       rect:
         serializedVersion: 2
         x: 2304
@@ -334,10 +364,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 50192a42b4cef474391ffe1f235a0c11
-      internalID: -6044076051156674037
+      spriteID: 3b78d57bfa0752640800000000000000
+      internalID: 5054570056791197619
       vertices: []
       indices: 
       edges: []
@@ -356,9 +386,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fef3c76d6b2e5eb4f9018972bd00dbd1
+      spriteID: bc5390c666ebdab00800000000000000
       internalID: 841538052496635339
       vertices: []
       indices: 
@@ -378,9 +408,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 95709d3037743a7439c83ec8b440a11f
+      spriteID: 12613532aa38ee6b0800000000000000
       internalID: -5265126147589204447
       vertices: []
       indices: 
@@ -401,6 +431,16 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       bomb_pass_12f_v01_0: -8812805533041420347
+      bomb_pass_12f_v01_00: 8906310534400801200
+      bomb_pass_12f_v01_01: -8143118535380840562
+      bomb_pass_12f_v01_02: -3557417552379928205
+      bomb_pass_12f_v01_03: -6208890697067275430
+      bomb_pass_12f_v01_04: 8540819776016627356
+      bomb_pass_12f_v01_05: 2618793614505757588
+      bomb_pass_12f_v01_06: -718676870486916793
+      bomb_pass_12f_v01_07: -8980850600020613907
+      bomb_pass_12f_v01_08: -8003802414678102517
+      bomb_pass_12f_v01_09: 5054570056791197619
       bomb_pass_12f_v01_1: 4644655181432943223
       bomb_pass_12f_v01_10: 841538052496635339
       bomb_pass_12f_v01_11: -5265126147589204447

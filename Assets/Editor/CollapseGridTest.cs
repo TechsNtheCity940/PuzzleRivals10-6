@@ -86,11 +86,11 @@ namespace Unity.AI.Assistant.Tests
                     var rmm = GameObject.FindObjectOfType<RankedMatchManager>();
                     if (rmm != null)
                     {
-                        var prefab = rmm.puzzleOverlayPrefabs.Find(p => p != null && p.name.Contains("CollapseGrid"));
+                        var prefab = rmm.puzzlePrefabs.Find(p => p != null && p.name.Contains("CollapseGrid"));
                         if (prefab != null)
                         {
                             Debug.Log("[Test] Forcing CollapseGrid in RankedMatchManager");
-                            rmm.puzzleOverlayPrefabs = new List<GameObject> { prefab };
+                            rmm.puzzlePrefabs = new List<GameObject> { prefab };
                             
                             // Force immediate turn change if not solving CollapseGrid
                             var currentPuzzle = rmm.GetType().GetProperty("CurrentPuzzle")?.GetValue(rmm) as BasePuzzle;

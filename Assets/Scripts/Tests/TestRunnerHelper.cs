@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -55,3 +56,4 @@ public class TestRunnerHelper : MonoBehaviour
         Destroy(gameObject);
     }
 }
+#endif // UNITY_EDITOR

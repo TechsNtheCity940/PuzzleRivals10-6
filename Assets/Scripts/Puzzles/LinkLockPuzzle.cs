@@ -23,7 +23,7 @@ public class LinkLockPuzzle : BasePuzzle
     public float wireFlowFps = 14f;
 
     private LinkLockTile[,] _tiles;
-private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
+    private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
     private int[,] _pathColor; // -1 empty, else colorID of a path segment at this cell
     private Vector2Int[] _nodeA;
     private Vector2Int[] _nodeB;
@@ -35,7 +35,6 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
     private Vector2Int portalAPos = new Vector2Int(-1, -1);
     private Vector2Int portalBPos = new Vector2Int(-1, -1);
     private Vector2Int batteryPos = new Vector2Int(-1, -1);
-    private bool justTeleported = false;
     private bool batteryClaimed = false;
 
     private const int MaxPaletteColors = 8;
@@ -116,7 +115,6 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         portalAPos = new Vector2Int(-1, -1);
         portalBPos = new Vector2Int(-1, -1);
         batteryPos = new Vector2Int(-1, -1);
-        justTeleported = false;
         batteryClaimed = false;
 
         List<Vector2Int> emptyCells = new List<Vector2Int>();
@@ -151,14 +149,14 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         GameObject go = Object.Instantiate(tilePrefab, gridContainer);
         RectTransform rt = (RectTransform)go.transform;
         rt.anchoredPosition = new Vector2(col * tileSpacing - center, -(row * tileSpacing) + center);
-        rt.sizeDelta = new Vector2(tileSpacing, tileSpacing); // Explicit size to prevent sprite bleed
+        rt.sizeDelta = new Vector2(tileSpacing, tileSpacing);
 
         LinkLockTile tile = go.GetComponent<LinkLockTile>();
         tile.Init(col, row);
         tile.SetNodeSprite(nodeSprite);
         tile.portalSprite = portalSprite;
         tile.batterySprite = batterySprite;
-        tile.OnClicked += OnTileClicked;
+        tile.OnClicked += (UITile t) => OnTileClicked((LinkLockTile)t);
         return tile;
     }
 
@@ -225,7 +223,7 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
             {
                 _pathColor[portalBPos.x, portalBPos.y] = _activeColor;
                 path.Add(portalBPos);
-                _tiles[portalBPos.x, portalBPos.y].GetComponent<GridTile>()?.Pulse(1.2f, 0.15f);
+                _tiles[portalBPos.x, portalBPos.y].Pulse(1.2f, 0.15f);
             }
         }
         else if (cell == portalBPos && portalAPos.x != -1)
@@ -234,7 +232,7 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
             {
                 _pathColor[portalAPos.x, portalAPos.y] = _activeColor;
                 path.Add(portalAPos);
-                _tiles[portalAPos.x, portalAPos.y].GetComponent<GridTile>()?.Pulse(1.2f, 0.15f);
+                _tiles[portalAPos.x, portalAPos.y].Pulse(1.2f, 0.15f);
             }
         }
 
@@ -327,8 +325,8 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
         _activeColor = -1;
         
         // Pulse the endpoints
-        _tiles[_nodeA[color].x, _nodeA[color].y].GetComponent<GridTile>()?.Pulse(1.4f, 0.3f);
-        _tiles[_nodeB[color].x, _nodeB[color].y].GetComponent<GridTile>()?.Pulse(1.4f, 0.3f);
+        _tiles[_nodeA[color].x, _nodeA[color].y].Pulse(1.4f, 0.3f);
+        _tiles[_nodeB[color].x, _nodeB[color].y].Pulse(1.4f, 0.3f);
 
         // Check if the path contains the batteryPos and claim the reward
         if (batteryPos.x != -1 && !batteryClaimed)
@@ -339,7 +337,7 @@ private int[,] _nodeColor; // -1 empty, else colorID of a node at this cell
                 batteryClaimed = true;
                 _tiles[batteryPos.x, batteryPos.y].batteryCharged = true;
                 _tiles[batteryPos.x, batteryPos.y].RefreshVisual();
-                _tiles[batteryPos.x, batteryPos.y].GetComponent<GridTile>()?.Pulse(1.5f, 0.3f);
+                _tiles[batteryPos.x, batteryPos.y].Pulse(1.5f, 0.3f);
 
                 timeRemaining = Mathf.Min(puzzleTime, timeRemaining + 5f);
                 Debug.Log("LinkLock Battery Charged! +5 Seconds Bonus!");

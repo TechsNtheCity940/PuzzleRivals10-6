@@ -9,6 +9,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>Puzzle Rivals</title>
+		<!-- Configuration for multiplayer and backend services -->
+		<meta name="supabase-url" content="https://mp.tesana.ai">
+		<meta name="supabase-key" content="">
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -97,7 +100,26 @@ body {
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
-<script>(function(){
+		<!-- Game configuration script for Supabase and multiplayer integration -->
+		<script>
+		// Puzzle Rivals client configuration
+		window.PuzzleRivalsConfig = {
+			backend: {
+				url: (document.querySelector('meta[name="supabase-url"]')?.content || 'https://mp.tesana.ai'),
+				apiKey: (document.querySelector('meta[name="supabase-key"]')?.content || '')
+			},
+			game: {
+				name: 'Puzzle Rivals',
+				version: '1.0.0',
+				minWebGLVersion: 2
+			},
+			matchmaking: {
+				timeout: 60000,
+				maxRetries: 3
+			}
+		};
+		</script>
+		<script>(function(){
 var PARENT='*';
 var consoleBuf=[];
 var MAX_LOG=100;

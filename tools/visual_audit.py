@@ -1,10 +1,12 @@
 from PIL import Image
+from pathlib import Path
 import os
 import hashlib
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 BASE_FOLDERS = [
-    r"D:\PuzzleRivals\Assets\Textures\Puzzles",
-    r"D:\PuzzleRivals\Assets\Textures\Effects",
+    PROJECT_ROOT / "Assets" / "Textures" / "Puzzles",
+    PROJECT_ROOT / "Assets" / "Textures" / "Effects",
 ]
 FRAME_SIZE = 256
 COLS = 4
@@ -25,7 +27,9 @@ for base in BASE_FOLDERS:
 
             path = os.path.join(root, f)
             try:
-                img = Image.open(path).convert('RGBA')
+                source = Image.open(path)
+                has_alpha = 'A' in source.getbands()
+                img = source.convert('RGBA')
             except Exception as e:
                 print(f"ERROR: cannot open {path}: {e}")
                 continue
@@ -34,6 +38,8 @@ for base in BASE_FOLDERS:
             issues = []
             if (w, h) != (EXPECTED_W, EXPECTED_H):
                 issues.append(f"size={w}x{h}")
+            if not has_alpha:
+                issues.append('no-alpha-channel')
 
             frames = []
             tw = w // COLS
@@ -50,7 +56,7 @@ for base in BASE_FOLDERS:
                 data = fr.tobytes()
                 hsh = hashlib.md5(data).hexdigest()
                 hashes.append(hsh)
-                bbox = fr.getbbox()
+                bbox = fr.getchannel('A').getbbox()
                 if bbox:
                     bw = bbox[2] - bbox[0]
                     bh = bbox[3] - bbox[1]
@@ -60,7 +66,7 @@ for base in BASE_FOLDERS:
 
             unique = len(set(hashes))
             avg_bbox = sum(bbox_areas) / len(bbox_areas)
-            bbox_ratio = avg_bbox / (FRAME_SIZE * FRAME_SIZE)
+            bbox_ratio = avg_bbox / max(1, tw * th)
 
             if unique <= 1:
                 issues.append('single-frame')

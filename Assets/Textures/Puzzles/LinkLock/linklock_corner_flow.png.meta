@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: f64e0f5b796bc0d43b0430401799b316
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7288172506454453976
+    second: linklock_corner_flow_00
+  - first:
+      213: -1267727492285230849
+    second: linklock_corner_flow_01
+  - first:
+      213: -3882643239210820344
+    second: linklock_corner_flow_02
+  - first:
+      213: 5686943152936809386
+    second: linklock_corner_flow_03
+  - first:
+      213: 8600217524222501544
+    second: linklock_corner_flow_04
+  - first:
+      213: 1520761998285388843
+    second: linklock_corner_flow_05
+  - first:
+      213: -4101992798213792022
+    second: linklock_corner_flow_06
+  - first:
+      213: 5423264477522317919
+    second: linklock_corner_flow_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flow_0
+      name: linklock_corner_flow_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6a09c1f13b2749d4c936a2c4f452c763
-      internalID: 6642045015580650164
+      spriteID: 821930348b53bda90800000000000000
+      internalID: -7288172506454453976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_1
+      name: linklock_corner_flow_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 12039977cfe46ae4e909be5f70a5123a
-      internalID: 2253077505119111825
+      spriteID: ff0975eff80286ee0800000000000000
+      internalID: -1267727492285230849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_2
+      name: linklock_corner_flow_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 64f2823190003e34598f3c16dbe1f321
-      internalID: -2264752010665275931
+      spriteID: 80d54498b841e1ac0800000000000000
+      internalID: -3882643239210820344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_3
+      name: linklock_corner_flow_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1f38a1f2f035e6a4793548d6a4c6b06b
-      internalID: -4064707319376454692
+      spriteID: aa373a8baa41cee40800000000000000
+      internalID: 5686943152936809386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_4
+      name: linklock_corner_flow_04
       rect:
         serializedVersion: 2
         x: 0
@@ -224,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 84d7b6e6c6c2da54cb9d22c7c46eecdf
-      internalID: -5669752990720426119
+      spriteID: 8a22f5ab54c1a5770800000000000000
+      internalID: 8600217524222501544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_5
+      name: linklock_corner_flow_05
       rect:
         serializedVersion: 2
         x: 256
@@ -246,16 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6e36669090e110047bf43c3c2f4f7396
-      internalID: -7042168226544442684
+      spriteID: b2cb6b7eaf4da1510800000000000000
+      internalID: 1520761998285388843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_6
+      name: linklock_corner_flow_06
       rect:
         serializedVersion: 2
         x: 512
@@ -268,16 +292,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f1e038d0d2b18fe41a9f683c91303a73
-      internalID: 6733542980818623696
+      spriteID: aee9147884bc217c0800000000000000
+      internalID: -4101992798213792022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flow_7
+      name: linklock_corner_flow_07
       rect:
         serializedVersion: 2
         x: 768
@@ -290,186 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 974c8ca834a282c48b7b597bf2ecdf8b
-      internalID: -5169285653135510680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb6b399337c0b994fa98439edf8b1cfa
-      internalID: 1796643482376633905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db401509e5d17824d8e13b7e176c3f38
-      internalID: -1747286977705435824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_10
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c622313ee1439b41a5af8a25b83008a
-      internalID: 3670398372912769619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_11
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e779925f999d5ab4eaf5b19ccaf64ec1
-      internalID: 3444106995467225063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ae0c99e99722f549bdb3e906394d992
-      internalID: 2849588159262482907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_13
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd2aa8ab4824f3145b6da9b9aa4e64dc
-      internalID: 2843159510487817153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_14
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56c6c20d819c36540ab87037f47f4833
-      internalID: -8190253144977941831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flow_15
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dde114d13d3b0794ea6085caa538a2e9
-      internalID: -3896115117631618534
+      spriteID: f5256b10f4e434b40800000000000000
+      internalID: 5423264477522317919
       vertices: []
       indices: 
       edges: []
@@ -504,6 +352,14 @@ TextureImporter:
       flow_7: -5169285653135510680
       flow_8: 1796643482376633905
       flow_9: -1747286977705435824
+      linklock_corner_flow_00: -7288172506454453976
+      linklock_corner_flow_01: -1267727492285230849
+      linklock_corner_flow_02: -3882643239210820344
+      linklock_corner_flow_03: 5686943152936809386
+      linklock_corner_flow_04: 8600217524222501544
+      linklock_corner_flow_05: 1520761998285388843
+      linklock_corner_flow_06: -4101992798213792022
+      linklock_corner_flow_07: 5423264477522317919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -49,3 +50,4 @@ public class WalkAnimRuntimeTest : MonoBehaviour
         EditorApplication.isPlaying = false;
     }
 }
+#endif // UNITY_EDITOR

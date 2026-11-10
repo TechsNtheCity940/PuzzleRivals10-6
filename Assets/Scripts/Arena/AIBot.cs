@@ -4,10 +4,10 @@ using System.Collections;
 public class AIBot : MonoBehaviour
 {
     public float skill = 0.7f;
-    private PuzzleBase currentPuzzle;
+    private BasePuzzle currentPuzzle;
     private Coroutine solveRoutine;
 
-    public void BindPuzzle(PuzzleBase puzzle, float delayMultiplier = 1.0f)
+    public void BindPuzzle(BasePuzzle puzzle, float delayMultiplier = 1.0f)
     {
         Stop();
         currentPuzzle = puzzle;
@@ -26,14 +26,17 @@ public class AIBot : MonoBehaviour
             StopCoroutine(solveRoutine);
             solveRoutine = null;
         }
+        currentPuzzle = null;
     }
 
     private IEnumerator SolveAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (currentPuzzle != null)
+        while (currentPuzzle != null && !currentPuzzle.isSolved && !currentPuzzle.isTimedOut)
         {
-            currentPuzzle.SendMessage("BotSolve", SendMessageOptions.DontRequireReceiver);
+            currentPuzzle.AutoSolveChunk();
+            yield return new WaitForSeconds(0.35f);
         }
+        solveRoutine = null;
     }
 }

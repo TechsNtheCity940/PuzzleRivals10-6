@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Binary burst puzzle: players toggle nodes (powers of two) to match a target sum.
+/// Refactored to use BinarySolver for core logic.
+/// </summary>
 public class BinaryBurstPuzzle : BasePuzzle
 {
     [Header("Assets")]
@@ -17,33 +21,38 @@ public class BinaryBurstPuzzle : BasePuzzle
     public TMP_Text currentText;
     public RectTransform nodeContainer;
 
-    private int targetValue;
-    private int currentValue;
-    private List<BinaryNode> nodes = new List<BinaryNode>();
-    private int nodeCount = 6; // Default to 2^0 to 2^5 (1 to 32)
+    private List<BinaryNode> _nodes = new List<BinaryNode>();
+    private BinarySolver _solver;
+    private int _nodeCount = 6; // default, will be overridden by difficulty
 
     protected override void BuildBoard()
     {
-        currentValue = 0;
-        nodeCount = Mathf.Clamp(4 + difficulty / 2, 4, 8);
-        int maxValue = (int)Mathf.Pow(2, nodeCount) - 1;
-        targetValue = rng.Next(1, maxValue + 1);
+        // Determine node count based on difficulty (4-8 nodes)
+        _nodeCount = Mathf.Clamp(4 + difficulty / 2, 4, 8);
+        int maxValue = (int)Mathf.Pow(2, _nodeCount) - 1;
+        int targetValue = Random.Range(1, maxValue + 1);
 
+        // UI
         if (targetText != null) targetText.text = "TARGET: " + targetValue;
-        UpdateCurrentText();
 
+        // Clear existing nodes
         ClearContainer();
-        nodes.Clear();
+        _nodes.Clear();
 
-        for (int i = 0; i < nodeCount; i++)
+        // Create nodes for each power of two up to _nodeCount
+        for (int i = 0; i < _nodeCount; i++)
         {
             int val = (int)Mathf.Pow(2, i);
             GameObject go = Instantiate(nodePrefab, nodeContainer);
             BinaryNode node = go.GetComponent<BinaryNode>();
             node.Init(val, nodeOffSprite, nodeOnSprite);
             node.OnToggled += HandleNodeToggled;
-            nodes.Add(node);
+            _nodes.Add(node);
         }
+
+        // Initialize the solver before reading its current sum.
+        _solver = new BinarySolver(_nodes, targetValue);
+        UpdateCurrentText();
     }
 
     private void ClearContainer()
@@ -57,22 +66,21 @@ public class BinaryBurstPuzzle : BasePuzzle
     private void HandleNodeToggled(BinaryNode node)
     {
         if (!CanAcceptInput()) return;
-
-        if (node.IsOn) currentValue += node.Value;
-        else currentValue -= node.Value;
-
+        // No need to manually track currentValue; solver knows the state.
+        PlayRotateSound();
         UpdateCurrentText();
         CheckWin();
     }
 
     private void UpdateCurrentText()
     {
-        if (currentText != null) currentText.text = "SUM: " + currentValue;
+        if (currentText != null && _solver != null)
+            currentText.text = "SUM: " + _solver.CurrentSum();
     }
 
     private void CheckWin()
     {
-        if (currentValue == targetValue)
+        if (_solver.IsSolved && !isSolved)
         {
             StartCoroutine(WinRoutine());
         }
@@ -80,12 +88,15 @@ public class BinaryBurstPuzzle : BasePuzzle
 
     private IEnumerator WinRoutine()
     {
-        foreach (var node in nodes)
+        foreach (var node in _nodes)
         {
             if (node.IsOn)
             {
                 var anim = node.gameObject.AddComponent<UISpriteSheetAnimator>();
-                anim.PlaySet(nodeSolveFrames, 12f, false);
+                anim.PlaySet(nodeSolveFrames, 12f, false, () => 
+                {
+                    // Animation complete - sprite stays on last frame (solve frames)
+                });
             }
         }
         yield return new WaitForSeconds(0.5f);
@@ -96,59 +107,14 @@ public class BinaryBurstPuzzle : BasePuzzle
     {
         if (isSolved || isTimedOut) return;
 
-        // Determine which bit to toggle to get closer to target
-        for (int i = nodeCount - 1; i >= 0; i--)
+        var nodeToToggle = _solver.GetNextNodeToToggle();
+        if (nodeToToggle != null && CanAcceptInput())
         {
-            int val = (int)Mathf.Pow(2, i);
-            bool bitInTarget = (targetValue & val) != 0;
-            if (nodes[i].IsOn != bitInTarget)
-            {
-                nodes[i].ToggleManual();
-                return;
-            }
+            // Fixed: Use Toggle() instead of ToggleManual(bool) to flip the state
+            nodeToToggle.Toggle();
+            UpdateCurrentText();
+            // No need to call UpdatePowerFlow; BinaryBurstPuzzle doesn't have power flow.
+            // If there is a generic update needed, you could call base.Update() or similar.
         }
-    }
-}
-
-public class BinaryNode : MonoBehaviour
-{
-    public int Value;
-    public bool IsOn;
-    public event System.Action<BinaryNode> OnToggled;
-
-    private Image image;
-    private Sprite offSprite;
-    private Sprite onSprite;
-    private TMP_Text valText;
-
-    private void Awake()
-    {
-        image = GetComponent<Image>();
-        var btn = GetComponent<Button>();
-        if (btn != null) btn.onClick.AddListener(OnClick);
-    }
-
-    public void Init(int val, Sprite off, Sprite on)
-    {
-        Value = val;
-        offSprite = off;
-        onSprite = on;
-        IsOn = false;
-        if (image == null) image = GetComponent<Image>();
-        image.sprite = offSprite;
-        valText = GetComponentInChildren<TMP_Text>();
-        if (valText != null) valText.text = val.ToString();
-    }
-
-    public void ToggleManual()
-    {
-        IsOn = !IsOn;
-        image.sprite = IsOn ? onSprite : offSprite;
-        OnToggled?.Invoke(this);
-    }
-
-    public void OnClick()
-    {
-        ToggleManual();
     }
 }

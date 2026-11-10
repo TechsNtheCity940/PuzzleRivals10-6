@@ -585,7 +585,25 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    WebGL: SENTIS_ANALYTICS_ENABLED;LEVELPLAY_DEPENDENCIES_INSTALLED;APP_UI_EDITOR_ONLY
+    Android: UNITY_MCP_READY
+    EmbeddedLinux: UNITY_MCP_READY
+    GameCoreScarlett: UNITY_MCP_READY
+    GameCoreXboxOne: UNITY_MCP_READY
+    Kepler: UNITY_MCP_READY
+    LinuxHeadlessSimulation: UNITY_MCP_READY
+    Nintendo Switch: UNITY_MCP_READY
+    Nintendo Switch 2: UNITY_MCP_READY
+    PS4: UNITY_MCP_READY
+    PS5: UNITY_MCP_READY
+    QNX: UNITY_MCP_READY
+    Server: UNITY_MCP_READY
+    Standalone: UNITY_MCP_READY
+    VisionOS: UNITY_MCP_READY
+    WebGL: SENTIS_ANALYTICS_ENABLED;LEVELPLAY_DEPENDENCIES_INSTALLED;APP_UI_EDITOR_ONLY;UNITY_MCP_READY
+    Windows Store Apps: UNITY_MCP_READY
+    XboxOne: UNITY_MCP_READY
+    iPhone: UNITY_MCP_READY
+    tvOS: UNITY_MCP_READY
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -682,7 +700,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
   cloudProjectId: 6db4e10e-ebac-4652-9536-fb59c3d6ed24

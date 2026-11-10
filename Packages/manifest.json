@@ -3,6 +3,7 @@
     "com.unity.ai.assistant": "2.13.0-pre.2",
     "com.unity.ai.inference": "2.6.1",
     "com.unity.ai.navigation": "2.0.13",
+    "com.unity.inputsystem": "1.19.0",
     "com.unity.animation.rigging": "1.4.1",
     "com.unity.asset-manager-for-unity": "1.11.0",
     "com.unity.connect.share": "4.2.4",
@@ -66,5 +67,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.ivanmurzak",
+        "extensions.unity"
+      ]
+    }
+  ]
 }

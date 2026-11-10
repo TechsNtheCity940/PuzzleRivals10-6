@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -76,3 +77,4 @@ public class CardPreviewRuntimeTest : MonoBehaviour
         return up;
     }
 }
+#endif // UNITY_EDITOR

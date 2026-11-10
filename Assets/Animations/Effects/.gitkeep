@@ -1,0 +1,11 @@
+# Animation Effect Templates
+# These placeholders track the Effects/Animations folder structure
+# Actual animation sprites are generated from Assets/Textures/Effects/Anim/*_sheet.png
+# Run the animation setup from: PuzzleRivals -> Setup Verified Animation Sheets
+
+# Expected animation files:
+# - bomb_passage.effectanim
+# - explosion.exphanim  
+# - score_pop.effectanim
+# - combo_counter.effectanim
+# - player_eliminated.effectanim

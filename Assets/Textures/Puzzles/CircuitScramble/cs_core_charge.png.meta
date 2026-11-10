@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 06cc256a722db9842a0ada510bd962c6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8917975526584151909
+    second: cs_core_charge_00
+  - first:
+      213: -2288367741877731136
+    second: cs_core_charge_01
+  - first:
+      213: 2771327264216709836
+    second: cs_core_charge_02
+  - first:
+      213: -4072216877789184638
+    second: cs_core_charge_03
+  - first:
+      213: -7752688860414334840
+    second: cs_core_charge_04
+  - first:
+      213: 4759822751484784607
+    second: cs_core_charge_05
+  - first:
+      213: -2551274763401751712
+    second: cs_core_charge_06
+  - first:
+      213: 5459014908603906697
+    second: cs_core_charge_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,12 +147,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cs_core_charge_0
+      name: cs_core_charge_00
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 271.5
+        width: 272
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -136,21 +160,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 31e9ed42b7db3b64d8c2591c9cae6468
-      internalID: -599736875218323973
+      spriteID: 56feca1fd7303cb70800000000000000
+      internalID: 8917975526584151909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_1
+      name: cs_core_charge_01
       rect:
         serializedVersion: 2
-        x: 271
+        x: 272
         y: 0
-        width: 271.5
+        width: 271
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -158,21 +182,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: df0d77c31638698419a3f4d6360c1556
-      internalID: 850846100203775204
+      spriteID: 0c04aedb9a51e30e0800000000000000
+      internalID: -2288367741877731136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_2
+      name: cs_core_charge_02
       rect:
         serializedVersion: 2
-        x: 542
+        x: 543
         y: 0
-        width: 271.5
+        width: 271
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -180,21 +204,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6909c26a0b228a44e92c34404e9578c2
-      internalID: -7309164227138781438
+      spriteID: ccafdf3b67bb57620800000000000000
+      internalID: 2771327264216709836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_3
+      name: cs_core_charge_03
       rect:
         serializedVersion: 2
-        x: 813
+        x: 814
         y: 0
-        width: 271.5
+        width: 272
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -202,21 +226,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 53d0d0acdc20afc43a9b9212b23a7e40
-      internalID: 449295624
+      spriteID: 28d760f33549c77c0800000000000000
+      internalID: -4072216877789184638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_4
+      name: cs_core_charge_04
       rect:
         serializedVersion: 2
-        x: 1084
+        x: 1086
         y: 0
-        width: 271.5
+        width: 272
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -224,21 +248,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 31e855369f47fce42937c35214653ae0
-      internalID: -1813740523
+      spriteID: 88820e49e8ae86490800000000000000
+      internalID: -7752688860414334840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_5
+      name: cs_core_charge_05
       rect:
         serializedVersion: 2
-        x: 1355
+        x: 1358
         y: 0
-        width: 271.5
+        width: 271
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -246,21 +270,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ddd7ab4817c84ed49b22cd12cfd8e705
-      internalID: 806764065
+      spriteID: fdfa218e2994e0240800000000000000
+      internalID: 4759822751484784607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_6
+      name: cs_core_charge_06
       rect:
         serializedVersion: 2
-        x: 1626
+        x: 1629
         y: 0
-        width: 271.5
+        width: 271
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -268,21 +292,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e23aa766f840654189143f65d903cc0
-      internalID: -202272039
+      spriteID: 0631503be1d089cd0800000000000000
+      internalID: -2551274763401751712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cs_core_charge_7
+      name: cs_core_charge_07
       rect:
         serializedVersion: 2
-        x: 1897
+        x: 1900
         y: 0
-        width: 271.5
+        width: 272
         height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -290,10 +314,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 34a95ad2e9d344f469de41d1b839665e
-      internalID: 779090588
+      spriteID: 98ab5e2e22152cb40800000000000000
+      internalID: 5459014908603906697
       vertices: []
       indices: 
       edges: []
@@ -313,6 +337,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       cs_core_charge_0: -599736875218323973
+      cs_core_charge_00: 8917975526584151909
+      cs_core_charge_01: -2288367741877731136
+      cs_core_charge_02: 2771327264216709836
+      cs_core_charge_03: -4072216877789184638
+      cs_core_charge_04: -7752688860414334840
+      cs_core_charge_05: 4759822751484784607
+      cs_core_charge_06: -2551274763401751712
+      cs_core_charge_07: 5459014908603906697
       cs_core_charge_1: 850846100203775204
       cs_core_charge_2: -7309164227138781438
       cs_core_charge_3: 449295624

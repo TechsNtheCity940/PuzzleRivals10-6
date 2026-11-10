@@ -619,7 +619,12 @@ MonoBehaviour:
   isSolved: 0
   isTimedOut: 0
   inputEnabled: 1
+  allowAutomatedInput: 0
   difficulty: 1
+  shakeDuration: 0.2
+  shakeMagnitude: 5
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
   columns: 11
   rows: 11
   tilePrefab: {fileID: 788204209843888385, guid: 3912820519373a243b81999610c1c3bc, type: 3}
@@ -666,22 +671,14 @@ MonoBehaviour:
   - {fileID: -81341322, guid: 0adfdab41d8fcb942a7f7067238eb7ca, type: 3}
   - {fileID: -1164657362, guid: 0adfdab41d8fcb942a7f7067238eb7ca, type: 3}
   coreChargeFrames:
-  - {fileID: -1524430525, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -2114072013, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 1105903632, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 815822450, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -1182553074, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -910837671, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 1252146035, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 337359446, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 3440693, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 2018649186, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -1256027031, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 15481646, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -1305398254, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: 75317765, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -1703466518, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
-  - {fileID: -1997593437, guid: ed7aa294cae55d249bb49179f996b571, type: 3}
+  - {fileID: 8917975526584151909, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: -2288367741877731136, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: 2771327264216709836, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: -4072216877789184638, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: -7752688860414334840, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: 4759822751484784607, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: -2551274763401751712, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
+  - {fileID: 5459014908603906697, guid: 06cc256a722db9842a0ada510bd962c6, type: 3}
   sourcePulseFrames:
   - {fileID: 21300000, guid: 6246374e86ef72142a105b2b73fed4e6, type: 3}
   requirementText: {fileID: 6136133123224905438}

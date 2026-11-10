@@ -6,44 +6,23 @@ using UnityEngine.EventSystems;
 
 // Clickable UI tile used by the ComboRush overlay. Holds a grid coordinate and
 // a colour id; raises OnClicked when tapped.
-[RequireComponent(typeof(Image))]
-public class ComboRushTile : MonoBehaviour, IPointerClickHandler
+public class ComboRushTile : UITile
 {
-    public int x;
-    public int y;
     public int colorID;
     public bool isSelected;
     public bool isBomb;
     public bool isGeode;
 
-    public event Action<ComboRushTile> OnClicked;
+    private Coroutine _pulseRoutine;
 
-    private Image image;
-    private Coroutine _moveRoutine;
-
-    private void Awake()
+    public override void Init(int gx, int gy)
     {
-        CacheImage();
-    }
-
-    private void CacheImage()
-    {
-        if (image == null) image = GetComponent<Image>();
-    }
-
-    public Image Image
-    {
-        get
-        {
-            CacheImage();
-            return image;
-        }
+        base.Init(gx, gy);
     }
 
     public void Init(int gx, int gy, int cid)
     {
-        x = gx;
-        y = gy;
+        base.Init(gx, gy);
         colorID = cid;
         isBomb = false;
         isGeode = false;
@@ -54,47 +33,31 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
     {
         isBomb = true;
         isGeode = false;
-        transform.localScale = Vector3.one * 1.15f; // Sized slightly larger
+        transform.localScale = Vector3.one * 1.15f;
     }
 
     public void SetGeode()
     {
         isGeode = true;
         isBomb = false;
-        colorID = -1; // No matching color
-        CacheImage();
-        image.color = new Color(0.85f, 0.85f, 0.85f, 1f); // Metallic silver look
-    }
-
-    public void SetColor(Color color)
-    {
-        CacheImage();
-        if (isGeode) return; // Geodes keep their silver color
-        image.color = color;
-    }
-
-    public void SetSprite(Sprite sprite)
-    {
-        CacheImage();
-        image.sprite = sprite;
+        colorID = -1;
+        Image.color = new Color(0.85f, 0.85f, 0.85f, 1f);
     }
 
     public void SetSelected(bool selected)
     {
         isSelected = selected;
-        CacheImage();
-        // Brighten and scale up slightly while selected.
         transform.localScale = selected ? Vector3.one * 1.1f : Vector3.one;
-        Color c = image.color;
+        Color c = Image.color;
         float boost = selected ? 1.25f : 1f;
-        image.color = new Color(
+        Image.color = new Color(
             Mathf.Clamp01(c.r * boost),
             Mathf.Clamp01(c.g * boost),
             Mathf.Clamp01(c.b * boost),
             c.a);
     }
 
-    public void MoveTo(Vector2 anchoredPos, float duration = 0.3f)
+    public override void MoveTo(Vector2 anchoredPos, float duration = 0.3f)
     {
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         _moveRoutine = StartCoroutine(MoveRoutine(anchoredPos, duration));
@@ -105,8 +68,6 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
         RectTransform rt = (RectTransform)transform;
         Vector2 start = rt.anchoredPosition;
         float elapsed = 0;
-        
-        // Add a slight scale-up at the start for "juice"
         Vector3 startScale = Vector3.one;
         Vector3 peakScale = Vector3.one * 1.15f;
 
@@ -114,14 +75,12 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-            float easeT = t * t * (3f - 2f * t); // Smoothstep
-            
+            float easeT = t * t * (3f - 2f * t);
             rt.anchoredPosition = Vector2.Lerp(start, target, easeT);
-            
-            // Pop effect
+
             if (t < 0.5f) transform.localScale = Vector3.Lerp(startScale, peakScale, t * 2f);
             else transform.localScale = Vector3.Lerp(peakScale, startScale, (t - 0.5f) * 2f);
-            
+
             yield return null;
         }
         rt.anchoredPosition = target;
@@ -149,8 +108,5 @@ public class ComboRushTile : MonoBehaviour, IPointerClickHandler
         Destroy(gameObject);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        OnClicked?.Invoke(this);
-    }
+    
 }

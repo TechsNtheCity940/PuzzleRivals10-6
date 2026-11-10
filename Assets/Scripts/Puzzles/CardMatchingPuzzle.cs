@@ -30,12 +30,16 @@ public class CardMatchingPuzzle : BasePuzzle
     private int _matchesFound;
     private int _totalPairs;
 
+    // Track which cards are face-down (for AutoSolveChunk)
+    private HashSet<GridTile> faceDownCards = new HashSet<GridTile>();
+
     protected override void BuildBoard()
     {
         _busy = false;
         _firstSelected = null;
         _secondSelected = null;
         _matchesFound = 0;
+        faceDownCards.Clear();
 
         int n = columns * rows;
         if (n % 2 != 0) n--; // Ensure even number for pairs
@@ -81,6 +85,7 @@ public class CardMatchingPuzzle : BasePuzzle
                 gt.SetSprite(cardBack);
                 gt.OnClicked += OnCardClicked;
                 _grid[x, y] = gt;
+                faceDownCards.Add(gt);
             }
         }
     }
@@ -115,17 +120,33 @@ public class CardMatchingPuzzle : BasePuzzle
             {
                 if (t == null) continue;
                 var anim = t.GetComponent<UISpriteSheetAnimator>();
-                if (anim != null) anim.PlaySet(flipAnimation, 30f, false);
+                if (anim != null)
+                {
+                    anim.PlaySet(flipAnimation, 30f, false, () => {
+                        if (t != null) t.SetSprite(cardBack);
+                    });
+                }
+                else
+                {
+                    t.SetSprite(cardBack);
+                }
             }
             yield return new WaitForSeconds(0.35f);
         }
+        else
+        {
+            foreach (var t in _grid)
+            {
+                if (t == null) continue;
+                t.SetSprite(cardBack);
+            }
+        }
 
+        // Rebuild faceDownCards after animation completes
+        faceDownCards.Clear();
         foreach (var t in _grid)
         {
-            if (t == null) continue;
-            var anim = t.GetComponent<UISpriteSheetAnimator>();
-            if (anim != null) anim.Stop();
-            t.SetSprite(cardBack);
+            if (t != null) faceDownCards.Add(t);
         }
 
         _busy = false;
@@ -134,12 +155,13 @@ public class CardMatchingPuzzle : BasePuzzle
         base.StartPuzzle();
     }
 
-    private void OnCardClicked(GridTile tile)
+    private void OnCardClicked(UITile tile)
     {
+        if (!(tile is GridTile gt)) return;
         if (!CanAcceptInput() || _busy) return;
-        if (tile == _firstSelected) return;
+        if (gt == _firstSelected) return;
 
-        StartCoroutine(FlipCard(tile));
+        StartCoroutine(FlipCard(gt));
     }
 
     private IEnumerator FlipCard(GridTile tile)
@@ -147,24 +169,30 @@ public class CardMatchingPuzzle : BasePuzzle
         if (_busy) yield break;
         _busy = true;
 
-        // Animation
-        UISpriteSheetAnimator anim = tile.GetComponent<UISpriteSheetAnimator>();
-        if (anim != null && flipAnimation != null && flipAnimation.Length > 0)
+        // Remove from face-down set
+        faceDownCards.Remove(tile);
+
+        // Animation - play the flip animation once
+        if (flipAnimation != null && flipAnimation.Length > 0)
         {
-            bool done = false;
-            // Play flip animation faster for production feel
-            anim.PlaySet(flipAnimation, 50f, false, () => done = true);
-            
-            float timeout = 0.5f; // Short timeout
-            while (!done && timeout > 0)
+            UISpriteSheetAnimator anim = tile.GetComponent<UISpriteSheetAnimator>();
+            if (anim != null)
             {
-                timeout -= Time.deltaTime;
-                yield return null;
+                // Play flip animation, when complete set to cardBack (face down)
+                anim.PlaySet(flipAnimation, 50f, false, () => {
+                    if (flipAnimation.Length > 0) tile.Image.sprite = flipAnimation[0];
+                });
             }
-            anim.Stop(); 
+            else
+            {
+                tile.Image.sprite = flipAnimation[0];
+            }
+            
+            // Wait for animation to complete (flipAnimation at 50 FPS with 2 frames = 0.04s)
+            yield return new WaitForSeconds(0.05f);
         }
 
-        // Guaranteed reveal of the face after animation attempt
+        // Reveal the face after animation complete/reset
         if (tile.type >= 0 && tile.type < cardFaces.Length)
         {
             tile.SetSprite(cardFaces[tile.type]);
@@ -210,26 +238,38 @@ public class CardMatchingPuzzle : BasePuzzle
     {
         yield return new WaitForSeconds(0.6f);
 
+        // Play flip animation on both cards, then reset to cardBack
         UISpriteSheetAnimator anim1 = t1.GetComponent<UISpriteSheetAnimator>();
-        UISpriteSheetAnimator anim2 = t2.GetComponent<UISpriteSheetAnimator>();
-
         if (anim1 != null && flipAnimation != null && flipAnimation.Length > 0)
         {
-            bool d1 = false, d2 = false;
-            anim1.PlaySet(flipAnimation, 30f, false, () => d1 = true);
-            anim2.PlaySet(flipAnimation, 30f, false, () => d2 = true);
-            
-            float timeout = 1.0f;
-            while ((!d1 || !d2) && timeout > 0)
-            {
-                timeout -= Time.deltaTime;
-                yield return null;
-            }
+            anim1.PlaySet(flipAnimation, 30f, false, () => {
+                t1.SetSprite(cardBack);
+            });
         }
-
-        t1.SetSprite(cardBack);
-        t2.SetSprite(cardBack);
+        else
+        {
+            t1.SetSprite(cardBack);
+        }
         
+        UISpriteSheetAnimator anim2 = t2.GetComponent<UISpriteSheetAnimator>();
+        if (anim2 != null && flipAnimation != null && flipAnimation.Length > 0)
+        {
+            anim2.PlaySet(flipAnimation, 30f, false, () => {
+                t2.SetSprite(cardBack);
+            });
+        }
+        else
+        {
+            t2.SetSprite(cardBack);
+        }
+        
+        // Wait for animation to complete (30 FPS with 2 frames = ~0.067s)
+        yield return new WaitForSeconds(0.3f);
+
+        // Re-add to face-down set
+        if (t1 != null) faceDownCards.Add(t1);
+        if (t2 != null) faceDownCards.Add(t2);
+
         _firstSelected = null;
         _secondSelected = null;
         _busy = false;
@@ -251,20 +291,33 @@ public class CardMatchingPuzzle : BasePuzzle
         // Bot just finds a pair
         if (_busy) return;
         
-        List<GridTile> remaining = new List<GridTile>();
-        foreach (var t in _grid)
+        // Find a face-down card that hasn't been matched
+        GridTile t1 = null;
+        foreach (var t in faceDownCards)
         {
-            if (t != null && t.Image.sprite == cardBack) remaining.Add(t);
-        }
-
-        if (remaining.Count >= 2)
-        {
-            GridTile t1 = remaining[0];
-            GridTile t2 = remaining.Find(x => x != t1 && x.type == t1.type);
-            if (t2 != null)
+            if (t != null && t.Image.color.a > 0) // Not yet dimmed (matched)
             {
-                StartCoroutine(AutoMatch(t1, t2));
+                t1 = t;
+                break;
             }
+        }
+        
+        if (t1 == null) return;
+
+        GridTile t2 = null;
+        int targetType = t1.type;
+        foreach (var t in faceDownCards)
+        {
+            if (t != null && t != t1 && t.type == targetType && t.Image.color.a > 0)
+            {
+                t2 = t;
+                break;
+            }
+        }
+        
+        if (t2 != null)
+        {
+            StartCoroutine(AutoMatch(t1, t2));
         }
     }
 

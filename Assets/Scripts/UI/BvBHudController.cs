@@ -54,14 +54,14 @@ public class BvBHudController : MonoBehaviour
         }
 
         if (playerNameText != null)
-            playerNameText.text = ProfileManager.Instance != null
+            playerNameText.text = ProfileManager.Instance != null && ProfileManager.Instance.currentProfile != null
                 ? ProfileManager.Instance.currentProfile.playerName + " (YOU)"
                 : "YOU";
         if (opponentNameText != null) opponentNameText.text = "OPPONENT";
 
-        match.OnScoreChanged += RefreshMeters;
-        match.OnNotification += ShowNotification;
-        match.OnMatchEnded += ShowResult;
+        match.OnScoreChanged += HandleScoreChanged;
+        match.OnNotification += HandleNotification;
+        match.OnMatchEnded += HandleMatchEnded;
 
         RefreshMeters();
     }
@@ -70,18 +70,33 @@ public class BvBHudController : MonoBehaviour
     {
         if (match != null)
         {
-            match.OnScoreChanged -= RefreshMeters;
-            match.OnNotification -= ShowNotification;
-            match.OnMatchEnded -= ShowResult;
+            match.OnScoreChanged -= HandleScoreChanged;
+            match.OnNotification -= HandleNotification;
+            match.OnMatchEnded -= HandleMatchEnded;
         }
+    }
+    
+    private void HandleScoreChanged()
+    {
+        RefreshMeters();
+    }
+    
+    private void HandleNotification(string message, Color color)
+    {
+        ShowNotification(message, color);
+    }
+    
+    private void HandleMatchEnded(bool playerWon)
+    {
+        ShowResult(playerWon);
     }
 
     private void RefreshMeters()
     {
         if (match == null) return;
         float target = Mathf.Max(1, match.targetScore);
-        float pNorm = Mathf.Clamp01(match.playerPoints / target);
-        float oNorm = Mathf.Clamp01(match.opponentPoints / target);
+        float pNorm = Mathf.Clamp01((float)match.playerPoints / target);
+        float oNorm = Mathf.Clamp01((float)match.opponentPoints / target);
 
         if (playerMeterFill != null) playerMeterFill.fillAmount = pNorm;
         if (opponentMeterFill != null) opponentMeterFill.fillAmount = oNorm;
@@ -130,7 +145,7 @@ public class BvBHudController : MonoBehaviour
         if (leaderboardPrefab == null || match == null) return;
 
         var lib = CosmeticLibrary.Instance;
-        string localName = ProfileManager.Instance != null
+        string localName = ProfileManager.Instance != null && ProfileManager.Instance.currentProfile != null
             ? ProfileManager.Instance.currentProfile.playerName + " (YOU)"
             : "YOU";
 
@@ -159,7 +174,7 @@ public class BvBHudController : MonoBehaviour
 
         if (leaderboard == null)
         {
-            Canvas canvas = match.canvas != null ? match.canvas : FindAnyObjectByType<Canvas>();
+            Canvas canvas = FindAnyObjectByType<Canvas>();
             Transform parent = canvas != null ? canvas.transform : null;
             leaderboard = Instantiate(leaderboardPrefab, parent);
             RectTransform rt = leaderboard.GetComponent<RectTransform>();

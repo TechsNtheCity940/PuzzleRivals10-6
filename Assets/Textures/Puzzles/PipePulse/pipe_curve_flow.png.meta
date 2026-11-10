@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: 78add353d459e52468cef716564b2dbd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6036885365033748993
+    second: pipe_curve_flow_00
+  - first:
+      213: 6942343783649576793
+    second: pipe_curve_flow_01
+  - first:
+      213: 1959457538649852882
+    second: pipe_curve_flow_02
+  - first:
+      213: -1900598050449951628
+    second: pipe_curve_flow_03
+  - first:
+      213: 3098507440690850864
+    second: pipe_curve_flow_04
+  - first:
+      213: -4786754138835881222
+    second: pipe_curve_flow_05
+  - first:
+      213: -7890930855204298936
+    second: pipe_curve_flow_06
+  - first:
+      213: 2934828892120485821
+    second: pipe_curve_flow_07
+  - first:
+      213: 3794774371650442690
+    second: pipe_curve_flow_08
+  - first:
+      213: 6103162325693673123
+    second: pipe_curve_flow_09
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +99,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -123,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipe_curve_flow_0
+      name: pipe_curve_flow_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +166,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: aa40a4f319522954f94683328f8a223f
-      internalID: 5506960168226565865
+      spriteID: ff5b86bcebca83ca0800000000000000
+      internalID: -6036885365033748993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_1
+      name: pipe_curve_flow_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +188,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cf253e6ff252841438491c3c8c1c61d8
-      internalID: 8206373823323147758
+      spriteID: 957031d93e8285060800000000000000
+      internalID: 6942343783649576793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_2
+      name: pipe_curve_flow_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +210,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0c498baa4d587ba4b883dd5b5dc307c0
-      internalID: 1067094087337627214
+      spriteID: 2db8fafef34613b10800000000000000
+      internalID: 1959457538649852882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_3
+      name: pipe_curve_flow_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,16 +232,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3b1a0fa65d9e062408865f5588ed8e4c
-      internalID: -1299068244292377847
+      spriteID: 47471269428bf95e0800000000000000
+      internalID: -1900598050449951628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_4
+      name: pipe_curve_flow_04
       rect:
         serializedVersion: 2
         x: 0
@@ -224,16 +254,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7f23825fab74d4c4b9032c2ba351d802
-      internalID: 7491572794866127785
+      spriteID: 03c6848c91c100b20800000000000000
+      internalID: 3098507440690850864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_5
+      name: pipe_curve_flow_05
       rect:
         serializedVersion: 2
         x: 256
@@ -246,16 +276,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0b7389496de7a304485051312e6b3b09
-      internalID: 2084569348067413713
+      spriteID: af27e87d878029db0800000000000000
+      internalID: -4786754138835881222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_6
+      name: pipe_curve_flow_06
       rect:
         serializedVersion: 2
         x: 512
@@ -268,16 +298,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e12a21bde7743d849b3ac22565c243f1
-      internalID: 5124657393569146580
+      spriteID: 84fd064f138cd7290800000000000000
+      internalID: -7890930855204298936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_7
+      name: pipe_curve_flow_07
       rect:
         serializedVersion: 2
         x: 768
@@ -290,16 +320,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b8ec709ea05677d48b82ea671be589af
-      internalID: 8519064312611000422
+      spriteID: dbf0567f35b9ab820800000000000000
+      internalID: 2934828892120485821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_8
+      name: pipe_curve_flow_08
       rect:
         serializedVersion: 2
         x: 0
@@ -312,16 +342,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 69b10257379f22c449a418f2e02e19ea
-      internalID: 3261491881558949786
+      spriteID: 2c51bf87f2fb9a430800000000000000
+      internalID: 3794774371650442690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_curve_flow_9
+      name: pipe_curve_flow_09
       rect:
         serializedVersion: 2
         x: 256
@@ -334,10 +364,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 40f28533eb72c8649ae8cc7386373028
-      internalID: -5390662048162678786
+      spriteID: 3aea48d9cc9c2b450800000000000000
+      internalID: 6103162325693673123
       vertices: []
       indices: 
       edges: []
@@ -356,9 +386,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1cfba559755dd134488842a1319c16a6
+      spriteID: 35f54fc52f86cffa0800000000000000
       internalID: -5765618032790184109
       vertices: []
       indices: 
@@ -378,9 +408,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c8894d5bde263df4ead06345456fe446
+      spriteID: 769fef8d457ed2aa0800000000000000
       internalID: -6184032361705965209
       vertices: []
       indices: 
@@ -400,9 +430,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 90cacfe7b18d2d647a9039d787e399ed
+      spriteID: 02bb441c5e54d00e0800000000000000
       internalID: -2302106981424121056
       vertices: []
       indices: 
@@ -422,9 +452,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 87533c7e570c85d4aa833aef9a140dfd
+      spriteID: 8442a33d41158fe20800000000000000
       internalID: 3384544269853926472
       vertices: []
       indices: 
@@ -444,9 +474,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 104bba918c307c645ab9c00025b39d3c
+      spriteID: 92abad26546bcb7a0800000000000000
       internalID: -6360008164626482647
       vertices: []
       indices: 
@@ -466,9 +496,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7c3a03166abf04147b7036fd6ed19c96
+      spriteID: 1b8492c3a90947e90800000000000000
       internalID: -7028834126309799759
       vertices: []
       indices: 
@@ -489,6 +519,16 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       pipe_curve_flow_0: 5506960168226565865
+      pipe_curve_flow_00: -6036885365033748993
+      pipe_curve_flow_01: 6942343783649576793
+      pipe_curve_flow_02: 1959457538649852882
+      pipe_curve_flow_03: -1900598050449951628
+      pipe_curve_flow_04: 3098507440690850864
+      pipe_curve_flow_05: -4786754138835881222
+      pipe_curve_flow_06: -7890930855204298936
+      pipe_curve_flow_07: 2934828892120485821
+      pipe_curve_flow_08: 3794774371650442690
+      pipe_curve_flow_09: 6103162325693673123
       pipe_curve_flow_1: 8206373823323147758
       pipe_curve_flow_10: -5765618032790184109
       pipe_curve_flow_11: -6184032361705965209

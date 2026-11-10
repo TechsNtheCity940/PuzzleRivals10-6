@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class ArenaManager : MonoBehaviour
 {
-public static ArenaManager Instance { get; private set; }
+    public static ArenaManager Instance { get; private set; }
 
     [Header("Prefabs & References")]
     public GameObject podiumPrefab;
@@ -23,7 +23,9 @@ public static ArenaManager Instance { get; private set; }
 
     private List<Podium> podiums = new List<Podium>();
     private Bomb bomb;
-    private PuzzleBase currentPuzzle;
+    private BasePuzzle currentPuzzle;
+    private System.Action<BasePuzzle> _puzzleSolvedHandler;
+    private string _currentPuzzleKey;
     private bool[] playersAlive = { true, true, true, true };
     private int currentHolder = -1;
     private int roundNumber = 0;
@@ -126,26 +128,51 @@ public static ArenaManager Instance { get; private set; }
 
     private void SpawnPuzzle(int difficulty)
     {
-        if (currentPuzzle != null) Destroy(currentPuzzle.gameObject);
-        
-        GameObject[] pool = { pipePulsePrefab, circuitScramblePrefab, collapseGridPrefab, comboRushPrefab, mazeRushPrefab, mirrorBeamPrefab, scoreAttackPrefab };
+        ReturnCurrentPuzzle();
+
+        GameObject[] prefabs = { pipePulsePrefab, circuitScramblePrefab, collapseGridPrefab, comboRushPrefab, mazeRushPrefab, mirrorBeamPrefab, scoreAttackPrefab };
         List<GameObject> activePool = new List<GameObject>();
-        foreach(var p in pool) if(p != null) activePool.Add(p);
-        
-        if(activePool.Count == 0) return;
+        foreach (var candidatePrefab in prefabs)
+            if (candidatePrefab != null) activePool.Add(candidatePrefab);
+
+        if (activePool.Count == 0)
+        {
+            Debug.LogError("ArenaManager: no puzzle prefabs are assigned.");
+            return;
+        }
 
         GameObject prefab = activePool[Random.Range(0, activePool.Count)];
-        GameObject go = Instantiate(prefab, puzzleSlot);
-        currentPuzzle = go.GetComponent<PuzzleBase>();
-        currentPuzzle.Setup(difficulty);
-        currentPuzzle.OnSolved += (score) => OnPuzzleSolved();
-        
-        currentPuzzle.inputEnabled = (currentHolder == GameState.Instance.localPlayerIndex);
-        
-        if (!currentPuzzle.inputEnabled)
+        _currentPuzzleKey = prefab.name;
+        GameObject go = PuzzlePool.EnsureInstance().Get(_currentPuzzleKey, prefab, puzzleSlot);
+        currentPuzzle = go.GetComponent<BasePuzzle>();
+        if (currentPuzzle == null)
         {
-            bots[currentHolder].BindPuzzle(currentPuzzle, 0.8f);
+            Debug.LogError($"ArenaManager: puzzle prefab '{prefab.name}' has no BasePuzzle component.");
+            PuzzlePool.EnsureInstance().Return(go);
+            _currentPuzzleKey = null;
+            return;
         }
+
+        currentPuzzle.inputEnabled = currentHolder == (GameState.Instance != null ? GameState.Instance.localPlayerIndex : 0);
+        currentPuzzle.allowAutomatedInput = !currentPuzzle.inputEnabled;
+        _puzzleSolvedHandler = _ => OnPuzzleSolved();
+        currentPuzzle.OnSolved += _puzzleSolvedHandler;
+        currentPuzzle.Setup(difficulty);
+        currentPuzzle.StartPuzzle();
+
+        if (!currentPuzzle.inputEnabled && currentHolder >= 0 && currentHolder < bots.Count)
+            bots[currentHolder].BindPuzzle(currentPuzzle, 0.8f);
+    }
+
+    private void ReturnCurrentPuzzle()
+    {
+        if (currentPuzzle == null) return;
+        if (_puzzleSolvedHandler != null) currentPuzzle.OnSolved -= _puzzleSolvedHandler;
+        currentPuzzle.StopPuzzle();
+        PuzzlePool.EnsureInstance().Return(currentPuzzle.gameObject);
+        currentPuzzle = null;
+        _puzzleSolvedHandler = null;
+        _currentPuzzleKey = null;
     }
 
     private void OnPuzzleSolved()
@@ -290,6 +317,7 @@ public static ArenaManager Instance { get; private set; }
 
     private IEnumerator Shake(float duration, float magnitude)
     {
+        if (Camera.main == null) yield break;
         Vector3 originalPos = Camera.main.transform.localPosition;
         float elapsed = 0.0f;
         while (elapsed < duration)

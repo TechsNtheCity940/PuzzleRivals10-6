@@ -102,9 +102,9 @@ public class TargetShootingPuzzle : BasePuzzle
                 tile.SetSprite(frames[0]);
             }
 
-            tile.OnClicked += OnTargetClicked;
-            
-            ActiveTarget active = new ActiveTarget
+            tile.OnClicked += (UITile t) => OnTargetClicked((GridTile)t);
+
+                    ActiveTarget active = new ActiveTarget
             {
                 tile = tile,
                 spawnTime = Time.time,
@@ -252,7 +252,7 @@ public class TargetShootingPuzzle : BasePuzzle
         }
     }
 
-    private void ClearBoard()
+    protected override void ClearBoard()
     {
         StopAllCoroutines();
 

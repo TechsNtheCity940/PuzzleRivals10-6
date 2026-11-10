@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 85746cacd038b404fa48e739d0ebe8d9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4559576718232422553
+    second: target_receiver_00
+  - first:
+      213: -255990065275955451
+    second: target_receiver_01
+  - first:
+      213: 3098099293110843197
+    second: target_receiver_02
+  - first:
+      213: 1958759072175706090
+    second: target_receiver_03
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: target_receiver_0
+      name: target_receiver_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +148,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6433bbce3a3ea8841ab9db64fe4e0d2a
-      internalID: -4728004157261287187
+      spriteID: 99882681eded64f30800000000000000
+      internalID: 4559576718232422553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: target_receiver_1
+      name: target_receiver_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +170,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4d8f96b396c980e4b8d7c4597822c97c
-      internalID: 353752823813360822
+      spriteID: 5079235546a827cf0800000000000000
+      internalID: -255990065275955451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: target_receiver_2
+      name: target_receiver_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +192,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e721417b46cca0649824a276f7f7b19d
-      internalID: -438539838766162995
+      spriteID: d37b2c484e8aefa20800000000000000
+      internalID: 3098099293110843197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: target_receiver_3
+      name: target_receiver_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,10 +214,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: eb218604e87ef754f8a701b492cd9014
-      internalID: -1075965854022790338
+      spriteID: aef4b998ff8ee2b10800000000000000
+      internalID: 1958759072175706090
       vertices: []
       indices: 
       edges: []
@@ -225,6 +237,10 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       target_receiver_0: -4728004157261287187
+      target_receiver_00: 4559576718232422553
+      target_receiver_01: -255990065275955451
+      target_receiver_02: 3098099293110843197
+      target_receiver_03: 1958759072175706090
       target_receiver_1: 353752823813360822
       target_receiver_2: -438539838766162995
       target_receiver_3: -1075965854022790338

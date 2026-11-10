@@ -18,6 +18,7 @@ public class GameState : MonoBehaviour
     public AudioClip sfxPuzzleSolve;
     public AudioClip sfxPuzzlePlace;
     public AudioClip sfxPuzzleRotate;
+    public AudioClip sfxPuzzleError;
     public AudioClip sfxUiClick;
     public AudioClip sfxUiHover;
     public AudioClip sfxUiConfirm;

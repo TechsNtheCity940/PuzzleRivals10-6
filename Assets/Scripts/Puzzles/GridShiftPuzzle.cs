@@ -69,7 +69,7 @@ public class GridShiftPuzzle : BasePuzzle
                 {
                     if (tileFrames != null && val < tileFrames.Length)
                         gt.SetSprite(tileFrames[val]);
-                    gt.OnClicked += OnTileClicked;
+                    gt.OnClicked += (UITile t) => OnTileClicked((GridTile)t);
                 }
             }
         }

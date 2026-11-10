@@ -1,0 +1,3 @@
+# No LFS for this commit
+*.md text
+*.cs text

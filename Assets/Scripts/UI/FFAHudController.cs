@@ -42,7 +42,7 @@ public class FFAHudController : MonoBehaviour
     private MatchLeaderboard leaderboard;
     private bool restarting;
     private readonly List<PlayerCard> cards = new List<PlayerCard>();
-    private bool built;
+    private bool built = false;
 
     private HashSet<int> eliminatedPlayerIds = new HashSet<int>();
 
@@ -52,11 +52,21 @@ public class FFAHudController : MonoBehaviour
 
         // Wait for the match manager to come online and build its players.
         float timeout = 10f;
-        while ((RankedMatchManager.Instance == null ||
-                RankedMatchManager.Instance.allPlayers.Count == 0) && timeout > 0f)
+        while ((RankedMatchManager.Instance == null) && timeout > 0f)
         {
             timeout -= Time.deltaTime;
             yield return null;
+        }
+
+        // Create test players if none exist
+        if (RankedMatchManager.Instance != null && RankedMatchManager.Instance.allPlayers.Count == 0)
+        {
+            var players = new List<Player>();
+            for (int i = 0; i < 4; i++)
+            {
+                players.Add(new Player(i, $"Player{i + 1}", i == 0));
+            }
+            RankedMatchManager.Instance.InitializeMatch(players, matchSeed: 12345);
         }
 
         match = RankedMatchManager.Instance;
@@ -107,7 +117,7 @@ public class FFAHudController : MonoBehaviour
             CosmeticLoadout loadout = default;
             if (lib != null)
             {
-                if (player.isLocal && ProfileManager.Instance != null)
+                if (player.isLocal && ProfileManager.Instance != null && ProfileManager.Instance.currentProfile != null)
                     loadout = lib.BuildLocalLoadout(ProfileManager.Instance.currentProfile);
                 else
                     loadout = lib.BuildRandomLoadout(rivalRng);
@@ -250,7 +260,7 @@ public class FFAHudController : MonoBehaviour
         if (leaderboardPrefab == null || match == null) return;
 
         var lib = CosmeticLibrary.Instance;
-        var results = match.GetRankedResults();
+        List<Player> results = match.GetRankedResults();
         var entries = new List<LeaderboardEntry>();
         for (int i = 0; i < results.Count; i++)
         {
@@ -269,7 +279,7 @@ public class FFAHudController : MonoBehaviour
         {
             Canvas canvas = cardContainer != null
                 ? cardContainer.GetComponentInParent<Canvas>()
-                : FindAnyObjectByType<Canvas>();
+                : (Canvas)FindAnyObjectByType<Canvas>();
             Transform parent = canvas != null ? canvas.transform : null;
             leaderboard = Instantiate(leaderboardPrefab, parent);
             RectTransform rt = leaderboard.GetComponent<RectTransform>();

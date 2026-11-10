@@ -3,7 +3,55 @@ guid: 4226d7610fb52ee4ba5ed41349aeabb8
 labels:
 - UnityAI
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3961831832626055069
+    second: pipe_receiver_v2_00
+  - first:
+      213: -6038700971262207711
+    second: pipe_receiver_v2_01
+  - first:
+      213: -8459948352411485777
+    second: pipe_receiver_v2_02
+  - first:
+      213: -8367924174453567392
+    second: pipe_receiver_v2_03
+  - first:
+      213: 5804331428144227300
+    second: pipe_receiver_v2_04
+  - first:
+      213: 3158368510522877610
+    second: pipe_receiver_v2_05
+  - first:
+      213: 5753044087689619346
+    second: pipe_receiver_v2_06
+  - first:
+      213: 6814512582043389643
+    second: pipe_receiver_v2_07
+  - first:
+      213: 6551387545928836979
+    second: pipe_receiver_v2_08
+  - first:
+      213: -3846677496804720271
+    second: pipe_receiver_v2_09
+  - first:
+      213: -6095976491125936598
+    second: pipe_receiver_v2_10
+  - first:
+      213: -7138433499265478671
+    second: pipe_receiver_v2_11
+  - first:
+      213: -4276429184464559463
+    second: pipe_receiver_v2_12
+  - first:
+      213: -6838879958097439678
+    second: pipe_receiver_v2_13
+  - first:
+      213: 1020254484134275216
+    second: pipe_receiver_v2_14
+  - first:
+      213: -1358931215900448627
+    second: pipe_receiver_v2_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -71,7 +119,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -125,12 +173,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipe_receiver_v2_0
+      name: pipe_receiver_v2_00
       rect:
         serializedVersion: 2
         x: 0
         y: 768
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -138,21 +186,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8bc8efe1094c9034b8c3f7e4f9b973f8
-      internalID: -2493094490726006963
+      spriteID: d97c283af014bf630800000000000000
+      internalID: 3961831832626055069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_1
+      name: pipe_receiver_v2_01
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1291c170679323ca0800000000000000
+      internalID: -6038700971262207711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_02
       rect:
         serializedVersion: 2
         x: 512
         y: 768
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -160,21 +230,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 772a4f31ced21b1478a278c6528b507f
-      internalID: -5380365430767764729
+      spriteID: fa9bc54dbc9389a80800000000000000
+      internalID: -8459948352411485777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_2
+      name: pipe_receiver_v2_03
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0609a4a6c492fdb80800000000000000
+      internalID: -8367924174453567392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_04
       rect:
         serializedVersion: 2
         x: 0
         y: 512
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -182,21 +274,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 648819ed34548f14a90f9502f3fc0314
-      internalID: -7023937769256943669
+      spriteID: 4e32c256ea02d8050800000000000000
+      internalID: 5804331428144227300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_3
+      name: pipe_receiver_v2_05
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6ee733d67c4db20800000000000000
+      internalID: 3158368510522877610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_06
       rect:
         serializedVersion: 2
         x: 512
         y: 512
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -204,21 +318,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9cef721a7500eff49ae014d09dbd8d0e
-      internalID: -3655922495923056282
+      spriteID: 297a6e7ed1be6df40800000000000000
+      internalID: 5753044087689619346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_4
+      name: pipe_receiver_v2_07
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce402aa613029e50800000000000000
+      internalID: 6814512582043389643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_08
       rect:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -226,21 +362,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d05bdce145d94264ca0205ec8a473900
-      internalID: 8739597901990731768
+      spriteID: 377a10523443bea50800000000000000
+      internalID: 6551387545928836979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_5
+      name: pipe_receiver_v2_09
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171477d723bdd9ac0800000000000000
+      internalID: -3846677496804720271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_10
       rect:
         serializedVersion: 2
         x: 512
         y: 256
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -248,21 +406,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7af930fc9ce641742b513a266a9dff3b
-      internalID: 2637564527293915655
+      spriteID: a2e6e4fddadb66ba0800000000000000
+      internalID: -6095976491125936598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_6
+      name: pipe_receiver_v2_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff488fad803fec90800000000000000
+      internalID: -7138433499265478671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -270,21 +450,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1bdfa6d956e67b14bab1949f8b645433
-      internalID: 1095149041567585820
+      spriteID: 99260e0705217a4c0800000000000000
+      internalID: -4276429184464559463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipe_receiver_v2_7
+      name: pipe_receiver_v2_13
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 0
-        width: 512
+        width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -292,10 +472,54 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f4b03ddfd270aa04785c36518b464753
-      internalID: 2258795939901951446
+      spriteID: 244501c79ea6711a0800000000000000
+      internalID: -6838879958097439678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098a25b3c0ca82e00800000000000000
+      internalID: 1020254484134275216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipe_receiver_v2_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d886012524b142de0800000000000000
+      internalID: -1358931215900448627
       vertices: []
       indices: 
       edges: []
@@ -315,7 +539,23 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       pipe_receiver_v2_0: -2493094490726006963
+      pipe_receiver_v2_00: 3961831832626055069
+      pipe_receiver_v2_01: -6038700971262207711
+      pipe_receiver_v2_02: -8459948352411485777
+      pipe_receiver_v2_03: -8367924174453567392
+      pipe_receiver_v2_04: 5804331428144227300
+      pipe_receiver_v2_05: 3158368510522877610
+      pipe_receiver_v2_06: 5753044087689619346
+      pipe_receiver_v2_07: 6814512582043389643
+      pipe_receiver_v2_08: 6551387545928836979
+      pipe_receiver_v2_09: -3846677496804720271
       pipe_receiver_v2_1: -5380365430767764729
+      pipe_receiver_v2_10: -6095976491125936598
+      pipe_receiver_v2_11: -7138433499265478671
+      pipe_receiver_v2_12: -4276429184464559463
+      pipe_receiver_v2_13: -6838879958097439678
+      pipe_receiver_v2_14: 1020254484134275216
+      pipe_receiver_v2_15: -1358931215900448627
       pipe_receiver_v2_2: -7023937769256943669
       pipe_receiver_v2_3: -3655922495923056282
       pipe_receiver_v2_4: 8739597901990731768

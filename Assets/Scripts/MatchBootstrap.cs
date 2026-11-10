@@ -19,6 +19,7 @@ public class MatchBootstrap : MonoBehaviour
 
     [Header("Refs")]
     public Canvas canvas;
+    public GameObject bombPrefab;
 
     [Header("HUD Roots (toggled by mode)")]
     public GameObject ffaHudRoot;
@@ -79,11 +80,10 @@ public class MatchBootstrap : MonoBehaviour
     {
         var go = new GameObject("RankedMatchManager");
         var mgr = go.AddComponent<RankedMatchManager>();
-        mgr.puzzleOverlayPrefabs = new List<GameObject>(overlayPrefabs);
+        mgr.puzzlePrefabs = new List<GameObject>(overlayPrefabs);
         mgr.matchCanvas = canvas;
-        mgr.playerCount = 4;
-        mgr.humanSlots = mm != null ? mm.humanSlots : null;
-        mgr.InitializeMatch(seed);
+        mgr.bombPrefab = bombPrefab;
+        mgr.InitializeMatch(CreateTestPlayers(4, mm != null ? mm.humanSlots : null), seed, mm != null ? mm.humanSlots : null);
         Debug.Log("MatchBootstrap: started 4-Player Ranked FFA.");
     }
 
@@ -93,13 +93,26 @@ public class MatchBootstrap : MonoBehaviour
     {
         var go = new GameObject("BrainVSBrainManager");
         var bvb = go.AddComponent<BrainVSBrainManager>();
-        bvb.canvas = canvas;
-        bvb.overlayPrefabs = new List<GameObject>(overlayPrefabs);
-        bvb.botSolveInterval = bvbBotInterval;
         bvb.realPlayers = mm != null ? mm.realPlayers : 1;
         bvb.opponentIsBot = mm == null || mm.realPlayers < 2;
+        bvb.canvas = canvas;
+        bvb.overlayPrefabs = new List<GameObject>(overlayPrefabs);
         bvb.InitializeMatch(seed);
         Debug.Log("MatchBootstrap: started Brain VS Brain.");
+    }
+    
+    private List<Player> CreateTestPlayers(int count, List<int> humanSlots)
+    {
+        var players = new List<Player>();
+        int localSlot = GameState.Instance != null ? GameState.Instance.localPlayerIndex : 0;
+        for (int i = 0; i < count; i++)
+        {
+            bool isHuman = humanSlots == null || humanSlots.Contains(i);
+            var player = new Player(i, i == localSlot ? "YOU" : $"Player{i + 1}", i == localSlot);
+            player.isBot = !isHuman;
+            players.Add(player);
+        }
+        return players;
     }
 
     // ---- NetManager / Search overlay ----

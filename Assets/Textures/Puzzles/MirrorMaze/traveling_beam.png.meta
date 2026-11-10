@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 79219b811db5352459ac4f203562130f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7414293380759803789
+    second: traveling_beam_00
+  - first:
+      213: -4868384414648982355
+    second: traveling_beam_01
+  - first:
+      213: 2094059609680779382
+    second: traveling_beam_02
+  - first:
+      213: -6206935288999946910
+    second: traveling_beam_03
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -123,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: traveling_beam_0
+      name: traveling_beam_00
       rect:
         serializedVersion: 2
         x: 0
@@ -136,16 +148,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 572cc9041d97014409693c3430291bf7
-      internalID: -6132122435961555908
+      spriteID: d87d7b41c8cd4e660800000000000000
+      internalID: 7414293380759803789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: traveling_beam_1
+      name: traveling_beam_01
       rect:
         serializedVersion: 2
         x: 256
@@ -158,16 +170,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6f3168429023de24a823e3d0cb41dbd5
-      internalID: -4639496660882895612
+      spriteID: da4acce2b26007cb0800000000000000
+      internalID: -4868384414648982355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: traveling_beam_2
+      name: traveling_beam_02
       rect:
         serializedVersion: 2
         x: 512
@@ -180,16 +192,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ff04363f76666e14885930d7ad6fbfd9
-      internalID: -2860149833462565573
+      spriteID: 6781485ce189f0d10800000000000000
+      internalID: 2094059609680779382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: traveling_beam_3
+      name: traveling_beam_03
       rect:
         serializedVersion: 2
         x: 768
@@ -202,10 +214,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 56e624314e5d8e24aa5edb1b5e3bdfda
-      internalID: -5708716693870545744
+      spriteID: 265525b8d398cd9a0800000000000000
+      internalID: -6206935288999946910
       vertices: []
       indices: 
       edges: []
@@ -225,6 +237,10 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       traveling_beam_0: -6132122435961555908
+      traveling_beam_00: 7414293380759803789
+      traveling_beam_01: -4868384414648982355
+      traveling_beam_02: 2094059609680779382
+      traveling_beam_03: -6206935288999946910
       traveling_beam_1: -4639496660882895612
       traveling_beam_2: -2860149833462565573
       traveling_beam_3: -5708716693870545744

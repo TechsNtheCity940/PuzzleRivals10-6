@@ -27,7 +27,6 @@ public class PlayerCard : MonoBehaviour
     public Image cardExplosionImage; // overlay on player card
 
     private Player boundPlayer;
-    private UISpriteSheetAnimator bombAnimator;
     private Coroutine bombPulseRoutine;
 
     public Player BoundPlayer => boundPlayer;
@@ -131,7 +130,6 @@ public class PlayerCard : MonoBehaviour
                 StopCoroutine(bombPulseRoutine);
                 bombPulseRoutine = null;
             }
-            if (bombAnimator != null) bombAnimator.Stop();
             bombIcon.gameObject.SetActive(false);
         }
     }

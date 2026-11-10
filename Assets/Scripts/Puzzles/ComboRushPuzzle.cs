@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -89,9 +90,7 @@ public class ComboRushPuzzle : BasePuzzle
     {
         if (gridContainer == null) return;
         for (int i = gridContainer.childCount - 1; i >= 0; i--)
-        {
             Destroy(gridContainer.GetChild(i).gameObject);
-        }
     }
 
     private ComboRushTile CreateTile(int col, int row, bool animate = false, int forcedType = 0)
@@ -128,7 +127,8 @@ public class ComboRushPuzzle : BasePuzzle
             SetTilePosition(tile, col, row, false);
         }
 
-        tile.OnClicked += HandleTileClicked;
+        // Subscribe using lambda to cast UITile to ComboRushTile
+        tile.OnClicked += (UITile t) => HandleTileClicked((ComboRushTile)t);
         tiles[col, row] = tile;
         return tile;
     }
