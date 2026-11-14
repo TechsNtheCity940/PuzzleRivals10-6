@@ -23,6 +23,10 @@ public class MatchmakingResult
     public string roomId = "";
     public List<int> humanSlots = new List<int>();
     public List<int> aiSlots = new List<int>();
+    
+    // Player display names (puzzleTags) for human players
+    // Index corresponds to slot index in humanSlots
+    public List<string> playerNames = new List<string>();
 }
 
 /// <summary>
