@@ -135,14 +135,20 @@ public class NetManager : MonoBehaviour
         Debug.Log($"[Matchmaking] Searching for real players ({totalSlots} slots, {timeout:0.0}s timeout)...");
 
         // Try Unity Multiplayer Center first
-        if (_unityServicesInitialized && matchmakingClient == null)
+        if (_unityServicesInitialized)
         {
-            yield return StartCoroutine(FindMatchViaMPCCenter(totalSlots, localSlot, timeout, result, ref online, humans, onComplete));
+            SetupMPCClient();
+            if (matchmakingClient != null)
+            {
+                yield return StartCoroutine(FindMatchViaMPCCenter(...));
+                mpCenterSuccess = online;  // Track success
+            }
         }
-        else if (!_unityServicesInitialized)
+
+            // HTTP fallback if MP Center didn't succeed
+        if (!mpCenterSuccess)
         {
-            // Fallback to HTTP-based matchmaking (for WebGL when MP Center not fully configured)
-            yield return StartCoroutine(FindMatchViaHttpFallback(totalSlots, timeout, result, ref online, humans, onComplete));
+            yield return StartCoroutine(FindMatchViaHttpFallback(...));
         }
 
         // Fill remaining slots with AI bots
