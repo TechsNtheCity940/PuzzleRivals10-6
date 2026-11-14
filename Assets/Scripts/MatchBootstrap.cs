@@ -33,32 +33,123 @@ public class MatchBootstrap : MonoBehaviour
 
     // Every match first searches for real players via NetManager, then fills any
     // unfilled lobby slots with AI bots before booting the mode.
-    private IEnumerator Start()
+private IEnumerator Start()
+{
+    EnsureCanvas();
+    EnsureNetManager();
+
+    GameState.Mode mode = GameState.Instance != null ? GameState.Instance.currentMode : GameState.Mode.FFA;
+    if (mode == GameState.Mode.NONE) mode = GameState.Mode.FFA;
+    bool isBvb = mode == GameState.Mode.BVB;
+
+    int totalSlots = isBvb ? 2 : 4;
+    int localSlot = GameState.Instance != null ? GameState.Instance.localPlayerIndex : 0;
+    localSlot = Mathf.Clamp(localSlot, 0, totalSlots - 1);
+
+    // Hide gameplay HUDs during the search.
+    if (ffaHudRoot != null) ffaHudRoot.SetActive(false);
+    if (bvbHudRoot != null) bvbHudRoot.SetActive(false);
+
+    // Build loading screen with player cards
+    var loadingScreenGO = new GameObject("LoadingScreen", typeof(RectTransform));
+    loadingScreenGO.transform.SetParent(canvas.transform, false);
+    var loadingScreen = loadingScreenGO.AddComponent<LoadingScreen>();
+    
+    // Configure the loading screen
+    ConfigureLoadingScreen(loadingScreen, totalSlots, localSlot);
+    
+    // Initial status
+    loadingScreen.RefreshStatus(1, totalSlots - 1); // Start with local player
+
+    MatchmakingResult mm = null;
+    
+    // Use a callback that updates the loading screen as players are found
+    NetManager.Instance.FindMatch(totalSlots, localSlot, searchTimeout, result => 
     {
-        EnsureCanvas();
-        EnsureNetManager();
+        mm = result;
+        loadingScreen.ShowMatchFound(result.realPlayers, result.botCount);
+    });
 
-        GameState.Mode mode = GameState.Instance != null ? GameState.Instance.currentMode : GameState.Mode.FFA;
-        if (mode == GameState.Mode.NONE) mode = GameState.Mode.FFA;
-        bool isBvb = mode == GameState.Mode.BVB;
+    // Wait for matchmaking to complete
+    float searchStart = Time.time;
+    while (mm == null && (Time.time - searchStart) < searchTimeout + 2f)
+    {
+        // Periodically update player cards based on current state
+        // (In a real implementation, this would poll or receive callbacks)
+        yield return null;
+    }
 
-        int totalSlots = isBvb ? 2 : 4;
-        int localSlot = GameState.Instance != null ? GameState.Instance.localPlayerIndex : 0;
-        localSlot = Mathf.Clamp(localSlot, 0, totalSlots - 1);
+    if (mm == null)
+    {
+        loadingScreen.Show(totalSlots, new List<int> { localSlot }, 
+            Enumerable.Range(0, totalSlots).Where(i => i != localSlot).ToList(), localSlot);
+        mm = new MatchmakingResult { totalSlots = totalSlots, realPlayers = 1, botCount = totalSlots - 1, 
+            humanSlots = new List<int> { localSlot } };
+    }
 
-        // Hide gameplay HUDs during the search.
-        if (ffaHudRoot != null) ffaHudRoot.SetActive(false);
-        if (bvbHudRoot != null) bvbHudRoot.SetActive(false);
+    yield return new WaitForSeconds(1.2f);
+    
+    // Clean up loading screen
+    Object.Destroy(loadingScreenGO);
 
-        TextMeshProUGUI mainText, subText;
-        var overlay = BuildSearchOverlay(out mainText, out subText);
-        mainText.text = "SEARCHING FOR PLAYERS...";
-        subText.text = isBvb ? "1v1 Brain VS Brain" : "4-Player Ranked FFA";
+    // Reveal the correct HUD and boot the mode with the resolved roster.
+    if (ffaHudRoot != null) ffaHudRoot.SetActive(!isBvb);
+    if (bvbHudRoot != null) bvbHudRoot.SetActive(isBvb);
 
-        MatchmakingResult mm = null;
-        yield return NetManager.Instance.FindMatch(totalSlots, localSlot, searchTimeout, r => mm = r);
-        if (mm == null)
-            mm = new MatchmakingResult { totalSlots = totalSlots, realPlayers = 1, botCount = totalSlots - 1, humanSlots = new List<int> { localSlot } };
+    int seed = System.Environment.TickCount;
+    if (isBvb) BootBrainVsBrain(seed, mm);
+    else BootFFA(seed, mm);
+}
+
+private void ConfigureLoadingScreen(LoadingScreen loadingScreen, int totalSlots, int localSlot)
+{
+    // Create simple card prefab for loading display
+    var cardPrefab = CreateSimpleCardPrefab();
+    loadingScreen.playerCardPrefab = cardPrefab;
+    
+    // Set up container
+    var containerGO = new GameObject("CardContainer");
+    containerGO.transform.SetParent(loadingScreen.transform, false);
+    loadingScreen.cardContainer = containerGO.transform;
+    
+    // Set up text references
+    var mainTextGO = new GameObject("StatusMain");
+    mainTextGO.transform.SetParent(loadingScreen.transform, false);
+    mainTextGO.AddComponent<RectTransform>().anchoredPosition = new Vector2(0, 40);
+    loadingScreen.statusText = mainTextGO.AddComponent<TMPro.TextMeshProUGUI>();
+    loadingScreen.statusText.fontSize = 54;
+    loadingScreen.statusText.alignment = TMPro.TextAlignmentOptions.Center;
+    
+    var subTextGO = new GameObject("StatusSub");
+    subTextGO.transform.SetParent(loadingScreen.transform, false);
+    subTextGO.AddComponent<RectTransform>().anchoredPosition = new Vector2(0, -40);
+    loadingScreen.subText = subTextGO.AddComponent<TMPro.TextMeshProUGUI>();
+    loadingScreen.subText.fontSize = 32;
+    loadingScreen.subText.alignment = TMPro.TextAlignmentOptions.Center;
+}
+
+private GameObject CreateSimpleCardPrefab()
+{
+    var go = new GameObject("PlayerCardPrefab");
+    var rt = go.AddComponent<RectTransform>();
+    rt.sizeDelta = new Vector2(150, 200);
+    
+    var bg = go.AddComponent<Image>();
+    bg.color = new Color(0.1f, 0.1f, 0.2f, 0.9f);
+    
+    var nameTextGO = new GameObject("NameText");
+    nameTextGO.transform.SetParent(go.transform, false);
+    nameTextGO.AddComponent<RectTransform>().anchorMin = new Vector2(0.5f, 1);
+    nameTextGO.AddComponent<RectTransform>().anchorMax = new Vector2(0.5f, 1);
+    nameTextGO.AddComponent<RectTransform>().anchoredPosition = new Vector2(0, -10);
+    nameTextGO.AddComponent<RectTransform>().sizeDelta = new Vector2(140, 40);
+    var nameText = nameTextGO.AddComponent<TMPro.TextMeshProUGUI>();
+    nameText.fontSize = 18;
+    nameText.alignment = TMPro.TextAlignmentOptions.Center;
+    nameText.color = Color.white;
+    
+    return go;
+    }
 
         mainText.text = mm.online ? "MATCH FOUND" : "NO PLAYERS ONLINE";
         subText.text = mm.realPlayers + " real  -  " + mm.botCount + (mm.botCount == 1 ? " AI bot" : " AI bots");
