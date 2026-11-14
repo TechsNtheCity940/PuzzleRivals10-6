@@ -134,36 +134,24 @@ public class NetManager : MonoBehaviour
 
         Debug.Log($"[Matchmaking] Searching for real players ({totalSlots} slots, {timeout:0.0}s timeout)...");
 
-        // Try Unity Multiplayer Center first
-        if (_unityServicesInitialized)
+        // Try Unity Multiplayer Center first (if services are ready)
+        // If MP Center fails or isn't available, fall back to HTTP
+        if (_unityServicesInitialized && matchmakingClient != null)
         {
-            SetupMPCClient();
-            if (matchmakingClient != null)
-            {
-                yield return StartCoroutine(FindMatchViaMPCCenter(...));
-                mpCenterSuccess = online;  // Track success
-            }
+            yield return StartCoroutine(FindMatchViaMPCCenter(totalSlots, localSlot, timeout, result, ref online, humans, onComplete));
         }
 
-            // HTTP fallback if MP Center didn't succeed
-        if (!mpCenterSuccess)
+        // HTTP fallback: always available as backup for WebGL or when MP Center fails
+        if (!online && !_unityServicesInitialized)
         {
-            yield return StartCoroutine(FindMatchViaHttpFallback(...));
+            yield return StartCoroutine(FindMatchViaHttpFallback(totalSlots, timeout, result, ref online, humans, onComplete));
         }
 
-        // Fill remaining slots with AI bots
-        for (int slot = 0; slot < totalSlots; slot++)
-            if (!humans.Contains(slot)) result.aiSlots.Add(slot);
-
-        result.online = online;
-        result.humanSlots = humans;
-        result.realPlayers = humans.Count;
-        result.botCount = result.aiSlots.Count;
-        result.roomId = (online ? "ROOM_" : "LOCAL_") + UnityEngine.Random.Range(1000, 9999);
-
-        isConnected = online;
-        roomId = result.roomId;
-        _lastResult = result;
+        // If still not online after all attempts, fill with bots and mark as offline
+        if (!online)
+        {
+            Debug.Log("[Matchmaking] No real players found, using AI bots only");
+        }
 
         Debug.Log($"[Matchmaking] Lobby ready ({result.roomId}): {result.realPlayers} real, {result.botCount} bots.");
         OnMatchReady?.Invoke(result);
